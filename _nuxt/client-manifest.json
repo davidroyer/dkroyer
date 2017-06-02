@@ -1,19 +1,19 @@
 {
-  "publicPath": "/_nuxt/",
+  "publicPath": "/dkroyer/_nuxt/",
   "all": [
     "0.nuxt.bundle.1e2e91691f014442a09e.js",
     "1.nuxt.bundle.730a9b8c93e8ee61a287.js",
     "2.nuxt.bundle.7d8374e51a697fab8893.js",
     "3.nuxt.bundle.3143c0da8fe6b7a90d08.js",
     "vendor.bundle.1eea32431023940d9bd1.js",
-    "nuxt.bundle.9060560923f94b7a106e.js",
-    "manifest.5aba3d5bdcb8a1f9015c.js",
+    "nuxt.bundle.b1d32a6ae3ab5c96c1c0.js",
+    "manifest.e976bfa1d4c6796cddc3.js",
     "index.html"
   ],
   "initial": [
-    "manifest.5aba3d5bdcb8a1f9015c.js",
+    "manifest.e976bfa1d4c6796cddc3.js",
     "vendor.bundle.1eea32431023940d9bd1.js",
-    "nuxt.bundle.9060560923f94b7a106e.js"
+    "nuxt.bundle.b1d32a6ae3ab5c96c1c0.js"
   ],
   "async": [
     "0.nuxt.bundle.1e2e91691f014442a09e.js",
