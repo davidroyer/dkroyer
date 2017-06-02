@@ -1,25 +1,25 @@
 {
   "publicPath": "/dkroyer/_nuxt/",
   "all": [
-    "0.nuxt.bundle.1e2e91691f014442a09e.js",
-    "1.nuxt.bundle.730a9b8c93e8ee61a287.js",
-    "2.nuxt.bundle.7d8374e51a697fab8893.js",
-    "3.nuxt.bundle.3143c0da8fe6b7a90d08.js",
+    "0.nuxt.bundle.55875853075250f14984.js",
+    "1.nuxt.bundle.6cfc1557784579a7c7ce.js",
+    "2.nuxt.bundle.5c761df8cf5f6ff2e8e3.js",
+    "3.nuxt.bundle.50179c8a9e70135200df.js",
     "vendor.bundle.1eea32431023940d9bd1.js",
-    "nuxt.bundle.b1d32a6ae3ab5c96c1c0.js",
-    "manifest.e976bfa1d4c6796cddc3.js",
+    "nuxt.bundle.c0eace17d16c6185f2b6.js",
+    "manifest.c6d4b9da3b58971a22e1.js",
     "index.html"
   ],
   "initial": [
-    "manifest.e976bfa1d4c6796cddc3.js",
+    "manifest.c6d4b9da3b58971a22e1.js",
     "vendor.bundle.1eea32431023940d9bd1.js",
-    "nuxt.bundle.b1d32a6ae3ab5c96c1c0.js"
+    "nuxt.bundle.c0eace17d16c6185f2b6.js"
   ],
   "async": [
-    "0.nuxt.bundle.1e2e91691f014442a09e.js",
-    "1.nuxt.bundle.730a9b8c93e8ee61a287.js",
-    "2.nuxt.bundle.7d8374e51a697fab8893.js",
-    "3.nuxt.bundle.3143c0da8fe6b7a90d08.js"
+    "0.nuxt.bundle.55875853075250f14984.js",
+    "1.nuxt.bundle.6cfc1557784579a7c7ce.js",
+    "2.nuxt.bundle.5c761df8cf5f6ff2e8e3.js",
+    "3.nuxt.bundle.50179c8a9e70135200df.js"
   ],
   "modules": {
     "12295838": [
@@ -451,10 +451,10 @@
     "ef33174c": [
       0
     ],
-    "3b0975fe": [
+    "6b092521": [
       3
     ],
-    "333add14": [
+    "605d9598": [
       2
     ],
     "ea7e0034": [
@@ -466,14 +466,20 @@
     "1de103c2": [
       0
     ],
-    "6dc84e5e": [
+    "1353a304": [
       3
     ],
-    "1f6b0331": [
+    "87fd495e": [
       2
     ],
     "160e0943": [
       1
+    ],
+    "7ab7f445": [
+      3
+    ],
+    "de4ac2a6": [
+      2
     ],
     "7bfeb782": [
       1
@@ -484,14 +490,8 @@
     "19ef5678": [
       0
     ],
-    "4e8f69e8": [
-      3
-    ],
     "656ef2b0": [
       0
-    ],
-    "04113423": [
-      2
     ],
     "6a688a17": [
       0
@@ -505,6 +505,12 @@
     "c3b88f7a": [
       1
     ],
+    "4423c5a0": [
+      3
+    ],
+    "e6917d70": [
+      2
+    ],
     "5e18f3f4": [
       1
     ],
@@ -514,17 +520,17 @@
     "83cbd828": [
       0
     ],
-    "ea4ac17a": [
-      3
-    ],
     "3e73487a": [
       0
     ],
-    "e05d4284": [
-      2
-    ],
     "141fab32": [
       0
+    ],
+    "bea2abb6": [
+      3
+    ],
+    "13fb5c8d": [
+      2
     ],
     "0e681da2": [
       1
@@ -534,12 +540,6 @@
     ],
     "6fdcaa38": [
       0
-    ],
-    "74861fc8": [
-      3
-    ],
-    "f19c1bfa": [
-      2
     ],
     "5d915012": [
       0
