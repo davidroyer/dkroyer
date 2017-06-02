@@ -14,9 +14,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
-  router: {
-    base: '/dkroyer/'
-  }
+  // router: {
+  //   base: '/dkroyer/'
+  // },
   /*
   ** Customize the progress-bar color
   */

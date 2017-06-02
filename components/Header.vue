@@ -67,15 +67,20 @@ nav {
 
     li {
         list-style-type: none;
-        margin: 1em;
+          margin: .25em;
 
         a {
             color: #d7d7d7;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1.15em;
-
+            padding: .5em 1em;
+            text-decoration: none;
             &.nuxt-link-active {
                 color: #41B883;
+            }
+
+            &:hover {
+              text-decoration: underline;
             }
         }
     }
