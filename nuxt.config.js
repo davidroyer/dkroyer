@@ -3,7 +3,8 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Intro - David Royer - Web Designer & Developer',
+    title: 'David Royer - Web Designer & Developer',
+    titleTemplate: '%s - David Royer - Web Designer & Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

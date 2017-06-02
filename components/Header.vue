@@ -80,6 +80,7 @@ nav {
             }
 
             &:hover {
+              cursor: pointer;
               text-decoration: underline;
             }
         }
