@@ -1,27 +1,36 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
-      <h1 class="title">
-        NUXT
-      </h1>
-      <h2 class="subtitle">
-        Universal Vue.js Application
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
+      <h1 class="title">Index File</h1>
+
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~components/Logo.vue'
 
+
+import Logo from '~components/Logo.vue'
+// console.log(fireAuth);
 export default {
+  head: {
+    // script: [
+    //   { src: 'https://www.gstatic.com/firebasejs/4.1.1/firebase.js' }
+    // ]
+  },
   components: {
     Logo
+  },
+  data() {
+    return {
+      user: null
+    }
+  },
+  created () {
+
+  },
+  methods: {
+
   }
 }
 </script>

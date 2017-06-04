@@ -1,7 +1,8 @@
 <template>
   <div>
     <app-header/>
-    <!-- <fire></fire> -->
+    <h1>ADMIN LAYOUT</h1>
+    <fire></fire>
     <nuxt class="test"/>
 
     <app-footer/>
@@ -12,13 +13,13 @@
 
 import AppHeader from '~components/Header.vue'
 import AppFooter from '~components/Footer.vue'
-// import Fire from '~components/Fire.vue'
+import Fire from '~components/Fire.vue'
 
 export default {
   components: {
     AppHeader,
     AppFooter,
-    // Fire
+    Fire
   }
 }
 </script>

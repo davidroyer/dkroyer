@@ -22,6 +22,12 @@ export default {
       }, {
         href: '/contact',
         title: 'Contact'
+      }, {
+        href: '/login',
+        title: 'Login'
+      }, {
+        href: '/admin',
+        title: 'Admin'
       }]
     }
   }
@@ -39,7 +45,7 @@ header {
 .header {
     background: #40526b;
     color: white;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +62,7 @@ header {
     }
 }
 h1 {
-    color: white;
+    // color: white;
     margin: 0;
     // font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 400;

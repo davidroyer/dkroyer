@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+
       <h1 class="title">
         About
       </h1>

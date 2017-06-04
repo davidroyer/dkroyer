@@ -5,6 +5,8 @@
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
   "dependencies": {
+    "firebase": "^4.1.1",
+    "firebaseui": "^2.0.0",
     "nuxt": "latest"
   },
   "scripts": {
