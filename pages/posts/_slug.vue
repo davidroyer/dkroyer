@@ -46,6 +46,7 @@ export default {
 
   .title {
     margin-bottom: 1em;
+    text-align: center;
   }
   .postNavigation {
     font-size: .9em;

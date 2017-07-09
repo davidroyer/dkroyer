@@ -1,10 +1,12 @@
 <template>
   <section class="container">
-      <h1 class="title">Home File</h1>
+      <h1 class="title">Welcome</h1>
       <div class="postsNavigation">
-        <a class="button is-success">Success</a>
         <template v-for="post in posts">
-          <nuxt-link class="card" :key="post.slug" :to="'/posts/'+post.slug">{{post.title}}</nuxt-link>
+          <nuxt-link class="" :key="post.slug" :to="'/posts/'+post.slug">
+            {{post.title}}
+            <!-- <div v-html="post.description"></div> -->
+          </nuxt-link>
         </template>
       </div>
   </section>

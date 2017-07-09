@@ -1,10 +1,16 @@
 <template>
-<footer class="footer">
-    <div>
-      Footer Here
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Copyright David Royer</p>
+        <p>
+          <a class="icon" href="https://github.com/davidroyer">
+            <i class="fa fa-github"></i>
+          </a>
+        </p>
+      </div>
     </div>
-
-</footer>
+  </footer>
 </template>
 
 <script>
@@ -12,28 +18,8 @@
 </script>
 
 <style lang="scss">
-.footer {
-    background: #40526b;
-    color: white;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    .logo {
-        margin-bottom: 1em;
-    }
-
-    .flexWrapper {
-        display: flex;
-        justify-content: center;
-
-        .flexColumn {
-            color: white;
-            margin: 1em;
-            flex: 30%;
-        }
-    }
-
-    a {
-        color: #01D4A7;
-    }
-}
+  .footer {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+  }
 </style>
