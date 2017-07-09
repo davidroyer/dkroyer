@@ -12,14 +12,19 @@
 </template>
 
 <script>
+
+// const api = require.context(`~/static/api/posts.json`)
 export default {
   head: {
     title: 'About Me'
+  },
+  async asyncData({params}) {
+    let slug = params.slug
+    const api = await import(`~/static/api/posts.json`)
+    return {
+      posts: api
+    }
   }
-  // metaInfo: {
-  //   // title will be injected into parent titleTemplate
-  //   title: 'About Me'
-  // }
 }
 </script>
 

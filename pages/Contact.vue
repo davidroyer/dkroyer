@@ -45,23 +45,23 @@ export default {
     padding: .25em;
 
   }
-  button {
-    -webkit-appearance: none;
-    background: white;
-    border: #40526b 2px solid;
-    font-size: 1em;
-    padding: .5em 1.25em;
-    border-radius: 3px;
-    font-family: "Roboto";
-    font-weight: 500;
-    cursor: pointer;
-    transition: all .2s ease;
-
-    &:hover {
-      font-weight: 700;
-      background: #40526b;
-      color: white;
-    }
-  }
+  // button {
+  //   -webkit-appearance: none;
+  //   background: white;
+  //   border: #40526b 2px solid;
+  //   font-size: 1em;
+  //   padding: .5em 1.25em;
+  //   border-radius: 3px;
+  //   font-family: "Roboto";
+  //   font-weight: 500;
+  //   cursor: pointer;
+  //   transition: all .2s ease;
+  //
+  //   &:hover {
+  //     font-weight: 700;
+  //     background: #40526b;
+  //     color: white;
+  //   }
+  // }
 }
 </style>

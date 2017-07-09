@@ -1,6 +1,8 @@
 <template>
   <section class="container blogPost">
-      <h1 class="title">{{$route.params.slug}}</h1>
+    <!-- @click.stop="$router.push('/postsview')"  -->
+      <button class="reversed postNavigation" @click.stop ="$router.push('/')"> << Back</button>
+      <h1 class="title" v-text="title"></h1>
       <div class="CONTENT" v-html="content"></div>
   </section>
 </template>
@@ -19,14 +21,18 @@ function retrievePostFromSlug(posts, slug) {
   }
 }
 
-
 export default {
+  head () {
+    return {
+      title: this.title
+    }
+  },
   async asyncData ({params}) {
     const {attributes, body} = await import(`~/static/blog/${params.slug}.md`)
 
     return {
-      // ...attributes
-      attributes: attributes,
+      ...attributes,
+      // attributes: attributes,
       content: MD.render(body)
     }
   }
@@ -40,6 +46,10 @@ export default {
 
   .title {
     margin-bottom: 1em;
+  }
+  .postNavigation {
+    font-size: .9em;
+    padding: .5em .75em;
   }
 }
 </style>

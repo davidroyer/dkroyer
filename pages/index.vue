@@ -1,9 +1,11 @@
 <template>
   <section class="container">
       <h1 class="title">Home File</h1>
-      <template v-for="post in posts">
-        <nuxt-link class="card" :key="post.slug" :to="'/posts/'+post.slug">{{post.title}}</nuxt-link>
-      </template>
+      <div class="postsNavigation">
+        <template v-for="post in posts">
+          <nuxt-link class="card" :key="post.slug" :to="'/posts/'+post.slug">{{post.title}}</nuxt-link>
+        </template>
+      </div>
   </section>
 </template>
 
@@ -14,13 +16,20 @@ import axios from '~plugins/axios'
 
 export default {
   async asyncData({params}) {
-    let slug = params.slug
-    const {data} = await axios.get(`/api/posts.json`)
+    const PostsObject = await import(`~/static/api/posts.json`)
 
     return {
-      posts: data
+      posts: PostsObject
     }
   },
+  // async asyncData({params}) {
+  //   let slug = params.slug
+  //   const {data} = await axios.get(`/api/posts.json`)
+  //
+  //   return {
+  //     posts: data
+  //   }
+  // },
   components: {
     Logo
   },
@@ -37,6 +46,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.postsNavigation {
+  a {
+    margin: 1em;
+  }
+}
 </style>
