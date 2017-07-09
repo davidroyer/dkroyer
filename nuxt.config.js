@@ -60,7 +60,8 @@ module.exports = {
   },
   generate: {
     routes: function() {
-      return axios.get(`http://localhost:3000/api/posts.json`)
+      let baseURL = process.env.BASE_URL || 'http://localhost:3000'
+      return axios.get(`${baseURL}/api/posts.json`)
       .then((response) => {
         console.log(response);
         let posts = response.data
