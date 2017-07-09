@@ -34,6 +34,8 @@ module.exports = {
     ]
   },
   modules: [
+    '@nuxtjs/bulma',
+    '@nuxtjs/font-awesome',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
     // ['@nuxtjs/markdownit', { linkify: true } ]
   ],
@@ -100,7 +102,8 @@ module.exports = {
     //     })
     //   }
     // }
+  },
+  router: {
+    middleware: 'menu'
   }
-
-
 }

@@ -5,6 +5,8 @@
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/bulma": "^1.0.1",
+    "@nuxtjs/font-awesome": "^1.0.1",
     "@nuxtjs/google-analytics": "^0.2.0",
     "@nuxtjs/markdownit": "^0.0.2",
     "axios": "^0.16.2",
