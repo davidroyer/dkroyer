@@ -1,21 +1,17 @@
 <template>
   <section class="container">
       <h1 class="title">
-        Admin
+        Web Development Resources
       </h1>
+
   </section>
 </template>
 
 <script>
 export default {
-  layout: 'admin',
   head: {
-    title: 'Admin Page'
+    title: 'Web Development Resources'
   }
-  // metaInfo: {
-  //   // title will be injected into parent titleTemplate
-  //   title: 'About Me'
-  // }
 }
 </script>
 

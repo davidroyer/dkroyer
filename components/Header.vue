@@ -1,8 +1,8 @@
 <template>
 <header class="header">
-  <h1 class="logoName">David<span>Royer</span></h1>
+  <h1 class="flexItem logoName">David<span>Royer</span></h1>
   <!-- <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" /> -->
-  <nav>
+  <nav class="flexItem">
     <li v-for="(link, key) in links">
       <nuxt-link exact :to="link.href">{{link.title}}</nuxt-link>
     </li>
@@ -66,10 +66,23 @@ header {
       max-height: 100%;
     }
 
+    .flexItem {
+      flex: 1 1 100%;
+
+      @media (min-width: 681px) {
+        flex: none;
+      }
+    }
+
     .logoName {
       font-weight: 100;
+      font-size: 1.75em;
+
+      @media (min-width: 681px) {
+        font-size: 2.25em;
+      }
       span {
-        font-weight: 900;
+        font-weight: 700;
       }
     }
 }

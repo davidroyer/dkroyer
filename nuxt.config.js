@@ -19,7 +19,11 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
+  modules: [
+    // ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }]
+  ],
   plugins: [
+    { src: '~plugins/googleAnalytics.js', ssr: false }
     // ssr: false to only include it on client-side
     // { src: '~plugins/fireAuth.js', ssr: false }
   ],
@@ -31,6 +35,7 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   css: [
+    // { src: '~assets/css/4mindesign.scss', lang: 'scss'}
     { src: '~assets/css/main.scss', lang: 'scss'}
   ],
   /*
