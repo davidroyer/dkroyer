@@ -58,17 +58,16 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  // generate: {
-  //   routes: function() {
-  //     let baseURL = process.env.BASE_URL || 'http://localhost:3000'
-  //     return axios.get(`${baseURL}/api/posts.json`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       let posts = response.data
-  //       return createRoutes(posts)
-  //     })
-  //   }
-  // },
+  generate: {
+    routes: function() {
+      let baseURL = process.env.baseUrl
+      return axios.get(`https://www.davidroyer.me/api/posts.json`)
+      .then((response) => {
+        let posts = response.data
+        return createRoutes(posts)
+      })
+    }
+  },
   build: {
     // vendor: ['firebase']
     /*
