@@ -8,7 +8,7 @@
     "@nuxtjs/google-analytics": "^0.2.0",
     "firebase": "^4.1.1",
     "firebaseui": "^2.0.0",
-    "nuxt": "latest"
+    "nuxt": "1.0.0-alpha.4"
   },
   "scripts": {
     "dev": "nuxt",
