@@ -21,14 +21,6 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }]
   ],
-  // plugins: [
-  //   { src: '~plugins/googleAnalytics.js', ssr: false }
-  //   // ssr: false to only include it on client-side
-  //   // { src: '~plugins/fireAuth.js', ssr: false }
-  // ],
-  // router: {
-  //   base: '/dkroyer/'
-  // },
   /*
   ** Customize the progress-bar color
   */
