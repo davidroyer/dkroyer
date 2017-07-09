@@ -59,16 +59,16 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  // generate: {
-  //   routes: function() {
-  //     let baseURL = process.env.baseUrl
-  //     return axios.get(`https://www.davidroyer.me/api/posts.json`)
-  //     .then((response) => {
-  //       let posts = response.data
-  //       return createRoutes(posts)
-  //     })
-  //   }
-  // },
+  generate: {
+    routes: function() {
+      let baseURL = process.env.baseUrl
+      return axios.get(`http://localhost:3000/api/posts.json`)
+      .then((response) => {
+        let posts = response.data
+        return createRoutes(posts)
+      })
+    }
+  },
   build: {
     loaders: [
       {
