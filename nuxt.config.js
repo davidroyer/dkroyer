@@ -1,25 +1,17 @@
 // import axios from './plugins/axios.js'
 const axios = require('axios')
+const postsObject = require('./static/api/posts.json')
 
 function createRoutes(posts)  {
   var routes = []
 
-  for(let postKey in posts) {
+  for (let postKey in posts) {
     let post = posts[postKey]
     let route = `/posts/${post.slug}`
     routes.push(route)
   }
   return routes
 }
-
-//
-// for(let post in posts) {
-//   console.log(post);
-//   let route = `/posts/${post.slug}`
-//   routes.push(route)
-// }
-//
-
 
 module.exports = {
   /*
@@ -61,12 +53,14 @@ module.exports = {
   },
   generate: {
     routes: function() {
-      let baseURL = process.env.baseUrl
-      return axios.get(`http://localhost:3000/api/posts.json`)
-      .then((response) => {
-        let posts = response.data
-        return createRoutes(posts)
-      })
+      return createRoutes(postsObject)
+      // let baseURL = process.env.baseUrl
+      // return axios.get(`http://localhost:3000/api/posts.json`)
+      //
+      // .then((response) => {
+      //   let posts = response.data
+      //   return createRoutes(posts)
+      // })
     }
   },
   build: {

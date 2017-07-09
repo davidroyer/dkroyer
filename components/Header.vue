@@ -77,12 +77,14 @@ header {
     .logoName {
       font-weight: 100;
       font-size: 1.75em;
+      letter-spacing: -2px;
 
       @media (min-width: 681px) {
         font-size: 2.25em;
       }
       span {
         font-weight: 700;
+        margin-left: 3px;
       }
     }
 }

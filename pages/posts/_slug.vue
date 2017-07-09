@@ -3,7 +3,7 @@
     <!-- @click.stop="$router.push('/postsview')"  -->
       <button class="reversed postNavigation" @click.stop ="$router.push('/')"> << Back</button>
       <h1 class="title" v-text="title"></h1>
-      <div class="CONTENT" v-html="content"></div>
+      <div class="content" v-html="content"></div>
   </section>
 </template>
 
