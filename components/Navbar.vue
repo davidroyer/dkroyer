@@ -85,9 +85,12 @@ export default {
 
 <style lang="scss">
 .logo {
-  font-size: 2em;
+  font-size: 1.5em;
   color: #555;
 
+  @media (min-width: 1000px) {
+    font-size: 2em;
+  }
   span:first-of-type {
     margin-right: 3px;
     font-weight: 700;
