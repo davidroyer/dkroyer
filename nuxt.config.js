@@ -37,7 +37,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['firebase']
+    // vendor: ['firebase']
     /*
     ** Run ESLINT on save
     */

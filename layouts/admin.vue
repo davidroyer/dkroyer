@@ -2,9 +2,7 @@
   <div>
     <app-header/>
     <h1>ADMIN LAYOUT</h1>
-    <fire></fire>
     <nuxt class="test"/>
-
     <app-footer/>
   </div>
 </template>
@@ -13,13 +11,11 @@
 
 import AppHeader from '~components/Header.vue'
 import AppFooter from '~components/Footer.vue'
-import Fire from '~components/Fire.vue'
 
 export default {
   components: {
     AppHeader,
-    AppFooter,
-    Fire
+    AppFooter
   }
 }
 </script>

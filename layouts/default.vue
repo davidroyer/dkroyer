@@ -12,7 +12,6 @@
 
 import AppHeader from '~components/Header.vue'
 import AppFooter from '~components/Footer.vue'
-// import Fire from '~components/Fire.vue'
 
 export default {
   components: {

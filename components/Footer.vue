@@ -15,7 +15,8 @@
 .footer {
     background: #40526b;
     color: white;
-    padding: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     .logo {
         margin-bottom: 1em;
     }

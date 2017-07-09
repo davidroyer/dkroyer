@@ -1,6 +1,6 @@
 <template>
 <header class="header">
-  <h1>David<span>Royer</span></h1>
+  <h1 class="logoName">David<span>Royer</span></h1>
   <!-- <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" /> -->
   <nav>
     <li v-for="(link, key) in links">
@@ -55,7 +55,8 @@ header {
     height: 100px;
     z-index: 60;
     box-shadow: 0 2px 5px 0 rgba(40, 31, 31, 0.56), 0 2px 10px 0 rgba(32, 32, 32, 0.52);
-    padding: .5em 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -63,6 +64,13 @@ header {
 
     .logo {
       max-height: 100%;
+    }
+
+    .logoName {
+      font-weight: 100;
+      span {
+        font-weight: 900;
+      }
     }
 }
 h1 {
