@@ -1,3 +1,26 @@
+// import axios from './plugins/axios.js'
+const axios = require('axios')
+
+function createRoutes(posts)  {
+  var routes = []
+
+  for(let postKey in posts) {
+    let post = posts[postKey]
+    let route = `/posts/${post.slug}`
+    routes.push(route)
+  }
+  return routes
+}
+
+//
+// for(let post in posts) {
+//   console.log(post);
+//   let route = `/posts/${post.slug}`
+//   routes.push(route)
+// }
+//
+
+
 module.exports = {
   /*
   ** Headers of the page
@@ -32,6 +55,19 @@ module.exports = {
   /*
   ** Build configuration
   */
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  generate: {
+    routes: function() {
+      return axios.get(`http://localhost:3000/api/posts.json`)
+      .then((response) => {
+        console.log(response);
+        let posts = response.data
+        return createRoutes(posts)
+      })
+    }
+  },
   build: {
     // vendor: ['firebase']
     /*

@@ -1,5 +1,6 @@
 ---
 title: Test Post 2
+slug: test-post-2
 description: Description for post 2
 ---
 
