@@ -17,13 +17,6 @@
 export default {
   head: {
     title: 'About Me'
-  },
-  async asyncData({params}) {
-    let slug = params.slug
-    const api = await import(`~/static/api/posts.json`)
-    return {
-      posts: api
-    }
   }
 }
 </script>

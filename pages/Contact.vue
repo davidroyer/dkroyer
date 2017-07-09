@@ -3,7 +3,22 @@
       <h1 class="title">
         Contact Me
       </h1>
-      <form class="contactForm" name="contact" action="" netlify>
+      <form name="contact" action="thank-you" netlify>
+        <p>
+          <label>Your Name: <input type="text" name="name"></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email"></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
+      <!-- <form class="contactForm" name="contact" action="thank-you" netlify>
         <label for="name">
           Name
           <input type="text" name="name" value="">
@@ -12,9 +27,8 @@
           Name
           <textarea rows="8" cols="50" name="message"></textarea>
         </label>
-        <button class="">Submit Form</button>
-
-      </form>
+        <button type="submit">Submit Form</button>
+      </form> -->
   </section>
 </template>
 
@@ -45,23 +59,5 @@ export default {
     padding: .25em;
 
   }
-  // button {
-  //   -webkit-appearance: none;
-  //   background: white;
-  //   border: #40526b 2px solid;
-  //   font-size: 1em;
-  //   padding: .5em 1.25em;
-  //   border-radius: 3px;
-  //   font-family: "Roboto";
-  //   font-weight: 500;
-  //   cursor: pointer;
-  //   transition: all .2s ease;
-  //
-  //   &:hover {
-  //     font-weight: 700;
-  //     background: #40526b;
-  //     color: white;
-  //   }
-  // }
 }
 </style>
