@@ -6,10 +6,14 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/google-analytics": "^0.2.0",
+    "@nuxtjs/markdownit": "^0.0.2",
     "axios": "^0.16.2",
     "firebase": "^4.1.1",
     "firebaseui": "^2.0.0",
-    "nuxt": "1.0.0-alpha.4"
+    "json-loader": "^0.5.4",
+    "markdown-it-front-matter": "^0.1.2",
+    "nuxt": "1.0.0-alpha.4",
+    "yaml-frontmatter-loader": "^0.1.0"
   },
   "scripts": {
     "dev": "nuxt",

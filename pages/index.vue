@@ -13,14 +13,14 @@ import Logo from '~components/Logo.vue'
 import axios from '~plugins/axios'
 
 export default {
-  async asyncData({params}) {
-    // let slug = params.slug
-    // const {data} = await axios.get(`https://www.davidroyer.me/api/posts.json/api/posts.json`)
-    //
-    // return {
-    //   posts: data
-    // }
-  },
+  // async asyncData({params}) {
+  //   let slug = params.slug
+  //   const {data} = await axios.get(`/api/posts.json`)
+  //
+  //   return {
+  //     posts: data
+  //   }
+  // },
   components: {
     Logo
   },

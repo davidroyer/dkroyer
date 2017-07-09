@@ -42,7 +42,8 @@ module.exports = {
     ]
   },
   modules: [
-    ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }]
+    ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
+    // ['@nuxtjs/markdownit', { linkify: true } ]
   ],
   /*
   ** Customize the progress-bar color
@@ -58,17 +59,39 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  generate: {
-    routes: function() {
-      let baseURL = process.env.baseUrl
-      return axios.get(`https://www.davidroyer.me/api/posts.json`)
-      .then((response) => {
-        let posts = response.data
-        return createRoutes(posts)
-      })
-    }
-  },
+  // generate: {
+  //   routes: function() {
+  //     let baseURL = process.env.baseUrl
+  //     return axios.get(`https://www.davidroyer.me/api/posts.json`)
+  //     .then((response) => {
+  //       let posts = response.data
+  //       return createRoutes(posts)
+  //     })
+  //   }
+  // },
   build: {
+    loaders: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1KO
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1 KO
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      },
+      {
+         test: /\.md$/,
+         use: [ 'json-loader', 'yaml-frontmatter-loader' ]
+      }
+    ]
     // vendor: ['firebase']
     /*
     ** Run ESLINT on save
