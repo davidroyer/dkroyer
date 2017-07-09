@@ -1,7 +1,12 @@
 <template>
   <section class="container blogPost">
     <!-- @click.stop="$router.push('/postsview')"  -->
-      <button class="reversed postNavigation" @click.stop ="$router.push('/')"> << Back</button>
+      <button class="reversed postNavigation button is-info is-outlined" @click.stop ="$router.push('/')">
+        <!-- <span class="icon"> -->
+          <i class="fa fa-arrow-left"></i>
+        <!-- </span> -->
+      </button>
+      <!-- <a class="button is-primary is-outlined">Outlined</a> -->
       <h1 class="title" v-text="title"></h1>
       <div class="content" v-html="content"></div>
   </section>

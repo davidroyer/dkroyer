@@ -6,13 +6,13 @@
       <h1 class="logo"><span>David</span><span>Royer</span></h1>
       </a>
 
-      <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <a class="navbar-item is-hidden-desktop" href="https://github.com/davidroyer" target="_blank">
         <span class="icon" style="color: #333;">
           <i class="fa fa-github"></i>
         </span>
       </a>
 
-      <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <a class="navbar-item is-hidden-desktop" href="https://twitter.com/DavidRoyer_" target="_blank">
         <span class="icon" style="color: #55acee;">
           <i class="fa fa-twitter"></i>
         </span>

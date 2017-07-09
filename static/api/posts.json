@@ -21,5 +21,12 @@
     "preview": "# This is where the content begins",
     "content": "\n\n# This is where the content begins\n",
     "basename": "test-post-3"
+  },
+  "test-post-4": {
+    "title": "Test Post 4",
+    "slug": "test-post-4",
+    "preview": "# This is where the content begins",
+    "content": "\n\n# This is where the content begins\n",
+    "basename": "test-post-4"
   }
 }
