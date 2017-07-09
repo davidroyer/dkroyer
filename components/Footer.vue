@@ -14,6 +14,8 @@
 <style lang="scss">
 .footer {
     background: #40526b;
+    color: white;
+    padding: 2em;
     .logo {
         margin-bottom: 1em;
     }

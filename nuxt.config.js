@@ -4,8 +4,8 @@ module.exports = {
   */
   ssr: false,
   head: {
-    title: 'David Royer - Web Designer & Developer',
-    titleTemplate: '%s - David Royer - Web Designer & Developer',
+    title: 'David Royer - Front End Web Developer',
+    titleTemplate: '%s - David Royer - Front End Web Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

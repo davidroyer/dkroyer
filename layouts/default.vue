@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="siteWrapper">
     <app-header/>
     <!-- <fire></fire> -->
-    <nuxt class="test"/>
+    <nuxt class="siteContent"/>
 
     <app-footer/>
   </div>
@@ -24,6 +24,16 @@ export default {
 </script>
 
 <style>
+.siteWrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.siteContent {
+  flex: 1
+}
+
 html
 {
   /*font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;*/

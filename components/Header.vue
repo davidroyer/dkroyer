@@ -1,5 +1,6 @@
 <template>
 <header class="header">
+  <h1>David<span>Royer</span></h1>
   <!-- <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" /> -->
   <nav>
     <li v-for="(link, key) in links">
@@ -13,22 +14,24 @@
 export default {
   data() {
     return {
-      links: [{
-        href: '/',
-        title: 'Home'
-      }, {
-        href: '/about',
-        title: 'About'
-      }, {
-        href: '/contact',
-        title: 'Contact'
-      }, {
-        href: '/login',
-        title: 'Login'
-      }, {
-        href: '/admin',
-        title: 'Admin'
-      }]
+      links:[
+          {
+            href: '/',
+            title: 'Home'
+          }, {
+            href: '/about',
+            title: 'About'
+          }, {
+            href: '/contact',
+            title: 'Contact'
+          // }, {
+          //   href: '/login',
+          //   title: 'Login'
+          // }, {
+          //   href: '/admin',
+          //   title: 'Admin'
+        }
+      ]
     }
   }
 }
@@ -49,11 +52,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 100px;
     z-index: 60;
     box-shadow: 0 2px 5px 0 rgba(40, 31, 31, 0.56), 0 2px 10px 0 rgba(32, 32, 32, 0.52);
-    padding: .5em 1em;
+    padding: .5em 2em;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -77,12 +81,13 @@ nav {
 
         a {
             color: #d7d7d7;
-            font-weight: 500;
+            font-weight: 400;
             font-size: 1.15em;
             padding: .5em 1em;
             text-decoration: none;
             &.nuxt-link-active {
                 color: #41B883;
+                font-weight: 500;
             }
 
             &:hover {
