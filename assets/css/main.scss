@@ -2,3 +2,12 @@
 @import 'variables';
 @import 'base';
 @import 'buttons';
+
+
+.container.siteContent {
+  padding: 1em;
+
+  @media(min-width: 1000px) {
+    padding: 2em;
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar has-shadow">
+  <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
       <!--  NOTE Add Image Version Here -->
@@ -34,10 +34,10 @@
         </div>
 
         <div class="navbar-end">
-          <a class="navbar-item" href="https://github.com/jgthms/bulma" target="_blank">
+          <a class="navbar-item" href="https://github.com/davidroyer" target="_blank">
             Github
           </a>
-          <a class="navbar-item" href="https://twitter.com/jgthms" target="_blank">
+          <a class="navbar-item" href="https://twitter.com/davidroyer)" target="_blank">
             Twitter
           </a>
           <div class="navbar-item">
@@ -47,9 +47,9 @@
                   class="button"
                   data-social-network="Twitter"
                   data-social-action="tweet"
-                  data-social-target="http://bulma.io"
+                  data-social-target="https://www.davidroyer.me"
                   target="_blank"
-                  href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&url=http://bulma.io&via=jgthms">
+                  href="https://twitter.com/intent/tweet?text=DavidRoyer: Front End Web Developer&url=http://davidroyer.me&via=davidroyer_">
                   <span class="icon">
                     <i class="fa fa-twitter"></i>
                   </span>

@@ -1,6 +1,8 @@
 <template>
-<header class="header">
-  <navbar :navLinks="links"></navbar>
+<header class="header has-shadow">
+  <div class="container navbarContainer">
+    <navbar :navLinks="links"></navbar>
+  </div>
   <!-- <h1 class="flexItem logoName">David<span>Royer</span></h1> -->
   <!-- <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" /> -->
   <!-- <nav class="flexItem">
@@ -42,7 +44,10 @@ export default {
 }
 </script>
 
-// <style lang="scss">
+<style lang="scss">
+  .navbarContainer {
+    padding: 0;
+  }
 // header {
 //     // background: #009688;
 //     background: #35495e;

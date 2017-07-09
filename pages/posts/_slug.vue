@@ -6,8 +6,8 @@
           <i class="fa fa-arrow-left"></i>
         <!-- </span> -->
       </button>
-      <!-- <a class="button is-primary is-outlined">Outlined</a> -->
-      <h1 class="title" v-text="title"></h1>
+      <hero :title="title" :subtitle="description"></hero>
+      <!-- <h1 class="title" v-text=""></h1> -->
       <div class="content" v-html="content"></div>
   </section>
 </template>
@@ -15,6 +15,7 @@
 <script>
 import Logo from '~components/Logo.vue'
 import axios from '~plugins/axios'
+import Hero from '~components/Hero.vue'
 
 const MD = require('markdown-it')();
 
@@ -32,6 +33,9 @@ export default {
       title: this.title
     }
   },
+  components: {
+    Hero
+  },
   async asyncData ({params}) {
     const {attributes, body} = await import(`~/static/blog/${params.slug}.md`)
 
@@ -45,6 +49,11 @@ export default {
 </script>
 
 <style lang="scss">
+.siteContent {
+  .content {
+    padding: 3em .5em
+  }
+}
 .blogPost {
   width: 100%;
   text-align: left;
@@ -56,6 +65,17 @@ export default {
   .postNavigation {
     font-size: .9em;
     padding: .5em .75em;
+    bottom: 1em;
+    left: 1em;
+    position: fixed;
+    z-index: 9999999;
+    background-color: white !important;
+    @media (min-width: 1000px) {
+      // z-index: 999;
+      top: 11px;
+      left: 20px;
+      // top: 25px;
+    }
   }
 }
 </style>
