@@ -1,8 +1,37 @@
 <template>
   <section class="container">
-      <h1 class="title">
-        Contact Me
-      </h1>
+    <h1 class="title">
+      Contact Me
+    </h1>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form method="post">
+      <input type="hidden" name="form-name" value="contact" />
+      <p>
+        <label>
+          Your Name: <input type="text" name="name" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your Email: <input type="email" name="email" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message: <textarea name="message" />
+        </label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+
       <form name="contact" action="thank-you" netlify>
         <p>
           <label>Your Name: <input type="text" name="name"></label>

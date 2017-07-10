@@ -37,7 +37,7 @@
           <a class="navbar-item" href="https://github.com/davidroyer" target="_blank">
             Github
           </a>
-          <a class="navbar-item" href="https://twitter.com/davidroyer)" target="_blank">
+          <a class="navbar-item" href="https://twitter.com/davidroyer_" target="_blank">
             Twitter
           </a>
           <div class="navbar-item">
