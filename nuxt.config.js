@@ -33,12 +33,16 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
+  plugins: [
+    { src: '~/plugins/vue-resource.js', ssr: false }
+  ],
   modules: [
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
     // ['@nuxtjs/markdownit', { linkify: true } ]
   ],
+
   /*
   ** Customize the progress-bar color
   */
@@ -66,6 +70,9 @@ module.exports = {
     }
   },
   build: {
+    extend (config) {
+      config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
+    },
     loaders: [
       {
         test: /\.(png|jpe?g|gif|svg)$/,

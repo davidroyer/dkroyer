@@ -6,7 +6,7 @@
           <i class="fa fa-arrow-left"></i>
         <!-- </span> -->
       </button>
-      <hero :title="title" :subtitle="description"></hero>
+      <!-- <hero :title="title" v-if="description" :subtitle="description"></hero> -->
       <!-- <h1 class="title" v-text=""></h1> -->
       <div class="content" v-html="content"></div>
   </section>

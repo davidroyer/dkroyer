@@ -32,7 +32,7 @@
       </p>
     </form> -->
 
-      <form @submit.prevent="handleForm($event)" action="/thank-you" name="contact" netlify>
+      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
         <p>
           <label>Your Name: <input type="text" name="name"></label>
         </p>
@@ -63,11 +63,21 @@
 
 <script>
 import 'whatwg-fetch'
+import VueResource from '~plugins/vue-resource'
+// console.log(VueResource);
+var root = 'https://jsonplaceholder.typicode.com';
 
+// $.ajax({
+//   url: root + '/posts/1',
+//   method: 'GET'
+// }).then(function(data) {
+//   console.log(data);
+// });
 export default {
   head: {
     title: 'Contact Me'
   },
+
   methods: {
     handleForm($event) {
       let action = $event.target.action
@@ -75,10 +85,20 @@ export default {
       // var data = new FormData(form)
       // console.log(data);
 
-      fetch(action, {
-        method: 'POST',
-        body: new FormData(form)
-      })
+
+
+      let formData = new FormData(document.getElementById('contactForm'));
+      this.$http.post('/thank-you', formData, {
+        emulateJSON: true
+      }).then(response => {
+         console.log(response);
+         alert('Thanks!')
+      }, response => {});
+
+      // fetch(action, {
+      //   method: 'POST',
+      //   body: new FormData(form)
+      // })
 
       // $("#my-form").submit(function(e) {
       //   e.preventDefault();
@@ -88,7 +108,25 @@ export default {
       //     alert("Thank you!");
       //   });
       // });
+    },
+    test() {
+      var root = 'https://jsonplaceholder.typicode.com/posts/1';
+
+      this.$http.get(root).then(response => {
+
+        // get body data
+        var Data = response.body;
+        console.log(Data);
+      }, response => {
+        // error callback
+      });
+
     }
+  },
+  mounted() {
+    console.log(this);
+    // console.log(this.$http);
+    this.test()
   }
 }
 </script>
