@@ -34,13 +34,13 @@
 
       <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
         <p>
-          <label>Your Name: <input type="text" name="name"></label>
+          <label>Your Name: <input type="text" v-model="form.name" name="name"></label>
         </p>
         <p>
-          <label>Your Email: <input type="email" name="email"></label>
+          <label>Your Email: <input type="email" v-model="form.email" name="email"></label>
         </p>
         <p>
-          <label>Message: <textarea name="message"></textarea></label>
+          <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
         </p>
         <p>
           <button type="submit">Send</button>
@@ -77,27 +77,37 @@ export default {
   head: {
     title: 'Contact Me'
   },
-
+  data() {
+    return {
+      form: {
+        'form-name': 'contact',
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
   methods: {
     handleForm($event) {
       $event.preventDefault()
       let action = $event.target.action
-      var form = document.querySelector('form')
+      // var form = document.querySelector('form')
       // var data = new FormData(form)
       // console.log(data);
+      let form = this.form
 
+      const {name, email, message} = this.form
 
       let body = {
         'form-name': 'contact',
-        name: 'David Royer',
-        email: 'aimdc@me.com',
-        phone: '5027511110',
-        message: 'TEST'
+        name: name,
+        email: email,
+        message: message
       }
-      let formData = new FormData(document.getElementById('contactForm'));
 
-      formData.append('form-name', 'contact')
-
+      this.$http.options.headers = {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
       this.$http.post('/thank-you', body, {
         emmulateJSON: true
       }).then(response => {
@@ -119,6 +129,8 @@ export default {
       //   });
       // });
     },
+    result() {
+    },
     test() {
       var root = 'https://jsonplaceholder.typicode.com/posts/1';
 
@@ -134,9 +146,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this);
-    // console.log(this.$http);
-    this.test()
   }
 }
 </script>
