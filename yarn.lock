@@ -3694,6 +3694,10 @@ pako@~0.2.0:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
 
+parallelshell@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/parallelshell/-/parallelshell-3.0.1.tgz#0587ce1535350543916d8f3d329fbfa4a0355f22"
+
 param-case@2.1.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"

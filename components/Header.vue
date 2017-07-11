@@ -1,7 +1,7 @@
 <template>
 <header class="header has-shadow">
   <div class="container navbarContainer">
-    <navbar :navLinks="links"></navbar>
+      <navbar :navLinks="links"></navbar>
   </div>
   <!-- <h1 class="flexItem logoName">David<span>Royer</span></h1> -->
   <!-- <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" /> -->

@@ -18,7 +18,9 @@
     "yaml-frontmatter-loader": "^0.1.0"
   },
   "scripts": {
+    "api": "node ./json-api-maker/index.js",
     "dev": "nuxt",
+    "dev:api": "parallelshell 'yarn api' 'yarn dev'",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -39,6 +41,7 @@
     "gh-pages": "^1.0.0",
     "markdown-to-json": "^0.5.1",
     "node-sass": "^4.5.3",
+    "parallelshell": "^3.0.1",
     "sass-loader": "^6.0.5"
   }
 }

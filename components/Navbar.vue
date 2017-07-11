@@ -18,15 +18,16 @@
         </span>
       </a>
 
-      <div class="navbar-burger burger" :class="{'is-active': menuIsActive}"@click="$store.commit('toggleMenuState')" data-target="navMenuExample">
+      <div class="navbar-burger burger" :class="{'is-active': menuIsActive}" @click="$store.commit('toggleMenuState')" data-target="navMenuExample">
         <span></span>
         <span></span>
         <span></span>
       </div>
     </div>
 
-    <transition name="slide">
-      <div id="navMenuExample" class="navbar-menu" :class="{'is-active': menuIsActive}">
+
+    <!-- <transition name="slide"> -->
+      <div id="navMenuExample" class="navbar-menu is-active" :class="{'menuIsActive': menuIsActive}">
         <div class="navbar-start">
           <template v-for="(link, key) in navLinks">
             <nuxt-link exact class="navbar-item" :to="link.href">{{link.title}}</nuxt-link>
@@ -68,7 +69,7 @@
           </div>
         </div>
       </div>
-    </transition>
+    <!-- </transition> -->
   </nav>
 </template>
 
@@ -84,6 +85,41 @@ export default {
 </script>
 
 <style lang="scss">
+
+.navbar-brand {
+  position: relative;
+  z-index: 999999;
+  background: white;
+}
+
+@media (max-width: 999px) {
+  .navbar-menu {
+    position: absolute;
+    top: 54px;
+    background: rgb(190, 190, 190);
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    transition: all .35s ease-in-out;
+    transform: translateY(-100%);
+    background: white;
+    z-index: 9;
+    text-align: left;
+    &.menuIsActive {
+      transform: translateY(0%);
+    }
+  }
+}
+
+.slide-enter-active, .slide-leave-active {
+  // transition: opacity 1.5s;
+  transition: all .4s ease-in-out;
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active in <2.1.8 */ {
+  // opacity: 0;
+  transform: translateY(-100%);
+  transition: all .4s ease-in-out;
+}
 .logo {
   font-size: 1.5em;
   color: #555;
