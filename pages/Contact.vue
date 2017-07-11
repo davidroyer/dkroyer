@@ -80,19 +80,29 @@ export default {
 
   methods: {
     handleForm($event) {
+      $event.preventDefault()
       let action = $event.target.action
       var form = document.querySelector('form')
       // var data = new FormData(form)
       // console.log(data);
 
 
-
+      let body = {
+        'form-name': 'contact',
+        name: 'David Royer',
+        email: 'aimdc@me.com',
+        phone: '5027511110',
+        message: 'TEST'
+      }
       let formData = new FormData(document.getElementById('contactForm'));
-      this.$http.post('/thank-you', formData, {
-        emulateJSON: true
+
+      formData.append('form-name', 'contact')
+
+      this.$http.post('/thank-you', body, {
+        emmulateJSON: true
       }).then(response => {
          console.log(response);
-         alert('Thanks!')
+        //  alert('Thanks!')
       }, response => {});
 
       // fetch(action, {
