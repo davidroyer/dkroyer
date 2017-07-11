@@ -33,15 +33,42 @@
     </form> -->
 
       <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
-        <p>
+        <!-- <p>
           <label>Your Name: <input type="text" v-model="form.name" name="name"></label>
-        </p>
-        <p>
+        </p> -->
+        <div class="field">
+          <label class="label">Name</label>
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
+            <span class="icon is-small is-left">
+              <i class="fa fa-user"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <p class="control has-icons-left">
+            <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <p class="control has-icons-left">
+            <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
+            <span class="icon is-small is-left">
+              <i class="fa fa-pencil-square"></i>
+            </span>
+          </p>
+        </div>
+        <!-- <p>
           <label>Your Email: <input type="email" v-model="form.email" name="email"></label>
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
           <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
-        </p>
+        </p> -->
         <p>
           <button type="submit">Send</button>
         </p>
@@ -111,8 +138,7 @@ export default {
       this.$http.post('/thank-you', body, {
         emmulateJSON: true
       }).then(response => {
-         console.log(response);
-        //  alert('Thanks!')
+        this.$router.push('/thank-you')
       }, response => {});
 
       // fetch(action, {
@@ -151,9 +177,27 @@ export default {
 </script>
 
 <style lang="scss">
+.siteContent {
+  max-width: 100%;
+
+}
+#contactForm {
+  margin: 0 auto;
+  text-align: left;
+  width: 600px;
+  max-width: 100%;
+  textarea {
+    padding-left: 2.25em;
+
+    &:focus ~ .icon {
+      color: #7a7a7a;
+    }
+  }
+}
 .contactForm {
 
   font-family: 'Roboto';
+
   label {
     display: block;
     margin: 2em 1em;
