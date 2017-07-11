@@ -4,13 +4,13 @@
       Contact Me
     </h1>
     <!-- A little help for the Netlify post-processing bots -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <!-- <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
-    </form>
+    </form> -->
 
-    <form method="post">
+    <!-- <form method="post">
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <label>
@@ -30,9 +30,9 @@
       <p>
         <button type="submit">Send</button>
       </p>
-    </form>
+    </form> -->
 
-      <form name="contact" action="thank-you" netlify>
+      <form @submit.prevent="handleForm($event)" action="/thank-you" name="contact" netlify>
         <p>
           <label>Your Name: <input type="text" name="name"></label>
         </p>
@@ -62,9 +62,33 @@
 </template>
 
 <script>
+import 'whatwg-fetch'
+
 export default {
   head: {
     title: 'Contact Me'
+  },
+  methods: {
+    handleForm($event) {
+      let action = $event.target.action
+      var form = document.querySelector('form')
+      // var data = new FormData(form)
+      // console.log(data);
+
+      fetch(action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+
+      // $("#my-form").submit(function(e) {
+      //   e.preventDefault();
+      //
+      //   var $form = $(this);
+      //   $.post($form.attr("action"), $form.serialize()).then(function() {
+      //     alert("Thank you!");
+      //   });
+      // });
+    }
   }
 }
 </script>
