@@ -6,7 +6,7 @@
           <i class="fa fa-arrow-left"></i>
         <!-- </span> -->
       </button>
-      <!-- <hero :title="title" v-if="description" :subtitle="description"></hero> -->
+      <hero :title="title" v-if="description" :subtitle="description"></hero>
       <!-- <h1 class="title" v-text=""></h1> -->
       <div class="content" v-html="content"></div>
   </section>
@@ -70,6 +70,9 @@ export default {
     position: fixed;
     z-index: 9999999;
     background-color: white !important;
+    &:hover, &:focus {
+      background-color: #3273dc !important;
+    }
     @media (min-width: 1000px) {
       // z-index: 999;
       top: 11px;

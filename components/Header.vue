@@ -31,9 +31,9 @@ export default {
           }, {
             href: '/contact',
             title: 'Contact'
-          // }, {
-          //   href: '/login',
-          //   title: 'Login'
+          }, {
+            href: '/posts',
+            title: 'Blog Posts'
           // }, {
           //   href: '/admin',
           //   title: 'Admin'
