@@ -1,22 +1,22 @@
 <template>
-  <section class="container" >
-      <div class="postsNavigation">
-        <!-- <template v-for="post in posts">
-          <nuxt-link class="" :key="post.slug" :to="'/posts/'+post.slug">
-            {{post.title}}
-          </nuxt-link>
-        </template> -->
-      </div>
-  </section>
+  <div class="home">
+    <div class="hero">
+        <h1 class="title">Welcome</h1>
+    </div>
+  </div>
 </template>
 
 <script>
 // import axios from 'axios'
 import Logo from '~components/Logo.vue'
 import axios from '~plugins/axios'
+import Hero from '~components/Hero.vue'
 
 export default {
-  layout: 'home',
+  components: {
+    Hero
+  },
+  // layout: 'home',
   async asyncData({params}) {
     const PostsObject = await import(`~/static/api/posts.json`)
 
@@ -49,6 +49,35 @@ export default {
 </script>
 
 <style lang="scss">
+.home {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('~assets/images/blog-me.jpeg');
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .title {
+    color: white;
+    font-size: 10vw;
+    margin-left: .25em;
+    margin-top: -2em;
+    font-weight: 500;
+
+    @media (min-width: 1400px) {
+      font-size: 140px;
+    }
+    /*
+    margin-left: 48px;*/
+  }
+
+}
 .postsNavigation {
   a {
     margin: 1em;

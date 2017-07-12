@@ -3,7 +3,9 @@
     <app-header/>
     <!-- <fire></fire> -->
     <!-- <hero></hero> -->
-    <nuxt class="siteContent"/>
+    <!-- <transition name="layout" mode="out-in"> -->
+      <nuxt class="siteContent"/>
+
     <app-footer/>
   </div>
 </template>

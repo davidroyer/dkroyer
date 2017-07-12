@@ -2,10 +2,12 @@
   <div class="siteWrapper home">
     <app-header/>
     <!-- <fire></fire> -->
-    <div class="hero">
+    <!-- <div class="hero">
       <h1 class="title">Welcome</h1>
-    </div>
-    <nuxt class="siteContent"/>
+    </div> -->
+
+      <nuxt class="siteContent"/>
+
     <app-footer/>
   </div>
 </template>

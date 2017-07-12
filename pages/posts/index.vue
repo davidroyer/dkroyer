@@ -4,15 +4,14 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title is-2" v-text="$metaInfo.title"></h1>
-          <h1 class="subtitle is-4" v-if="subtitle" v-text="subtitle"></h1>
         </div>
       </div>
     </section>
       <div class="postsNavigation">
         <template v-for="post in posts">
-          <nuxt-link class="" :key="post.slug" :to="'/posts/'+post.slug">
-            {{post.title}}
-            <!-- <div v-html="post.description"></div> -->
+          <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
+            <span class="title" v-text="post.title"></span>
+            <div class="postPreview" v-html="post.preview"></div>
           </nuxt-link>
         </template>
       </div>
@@ -67,8 +66,48 @@ export default {
 
 <style lang="scss">
 .postsNavigation {
-  a {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .postLink {
     margin: 1em;
+    padding: 1em;
+    flex: 1 1 100%;
+    height: 180px;
+    text-align: left;
+    min-width: 100px;
+    max-width: 100%;;
+    display: flex;
+    flex-flow: row wrap;
+    background: rgba(216, 216, 216, 0.24);
+    border: none;
+    transition: .3s ease;
+
+    &:hover {
+    box-shadow: 0 2px 5px 0 rgba(40, 31, 31, 0.2), 0 2px 10px 0 rgba(101, 101, 101, 0.12);
+    transform: scale(1.05);
+      .title {
+        // font-size: 2.15em;
+        // font-weight: 400;
+        // text-decoration: underline;
+      }
+    }
+
+    @media (min-width: 500px) {
+      flex: 1 1 200px;
+      max-width: 300px;
+    }
+
+    .title {
+      flex-basis: 100%;
+      align-self: flex-start;
+      transition: .3s ease;
+    }
+
+    .postPreview {
+      align-self: center;
+    }
   }
 }
 </style>
