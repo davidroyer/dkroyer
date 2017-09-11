@@ -18,6 +18,7 @@
   "test-post-3": {
     "title": "Test Post 3",
     "slug": "test-post-3",
+    "description": "Description for post 3",
     "preview": "# This is where the content begins\n\n## compile\n\nHow did you do this?\n\nIt even reloaded!?!",
     "content": "\n\n# This is where the content begins\n\n## compile\n\nHow did you do this?\n\nIt even reloaded!?!\n",
     "basename": "test-post-3"
@@ -25,6 +26,7 @@
   "test-post-4": {
     "title": "Test Post 4",
     "slug": "test-post-4",
+    "description": "Description for post 4",
     "preview": "# This is where the content begins\n\n710\n\n- what??",
     "content": "\n\n# This is where the content begins\n\n710\n\n- what??\n",
     "basename": "test-post-4"

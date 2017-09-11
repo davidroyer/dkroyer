@@ -34,14 +34,14 @@
           </template>
         </div>
 
-        <div class="navbar-end">
+        <div class="navbar-end is-hidden-touch">
           <a class="navbar-item" href="https://github.com/davidroyer" target="_blank">
             Github
           </a>
           <a class="navbar-item" href="https://twitter.com/davidroyer_" target="_blank">
             Twitter
           </a>
-          <div class="navbar-item">
+          <!-- <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
                 <a id="twitter"
@@ -57,16 +57,8 @@
                   <span>Tweet</span>
                 </a>
               </p>
-              <p class="control">
-                <a class="button is-primary" href="https://github.com/jgthms/bulma/archive/0.4.3.zip">
-                  <span class="icon">
-                    <i class="fa fa-download"></i>
-                  </span>
-                  <span>Download</span>
-                </a>
-              </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     <!-- </transition> -->

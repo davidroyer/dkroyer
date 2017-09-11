@@ -19,13 +19,13 @@ import Hero from '~components/Hero.vue'
 
 const MD = require('markdown-it')();
 
-function retrievePostFromSlug(posts, slug) {
-  for(let postKey in posts) {
-    if (postKey === slug) {
-      return posts[postKey]
-    }
-  }
-}
+// function retrievePostFromSlug(posts, slug) {
+//   for(let postKey in posts) {
+//     if (postKey === slug) {
+//       return posts[postKey]
+//     }
+//   }
+// }
 
 export default {
   head () {

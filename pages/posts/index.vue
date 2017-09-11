@@ -1,12 +1,15 @@
 <template>
-  <section class="container" >
+  <div class="container" >
     <section class="hero is-primary is-bold is-small">
       <div class="hero-body">
-        <div class="container has-text-centered">
+        <div class="has-text-centered">
           <h1 class="title is-2" v-text="$metaInfo.title"></h1>
         </div>
       </div>
     </section>
+      <div class="message">
+        <h2 class="subtitle is-3">Coming Soon...</h2>
+      </div>
       <div class="postsNavigation">
         <template v-for="post in posts">
           <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
@@ -15,7 +18,7 @@
           </nuxt-link>
         </template>
       </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -65,6 +68,13 @@ export default {
 </script>
 
 <style lang="scss">
+.message {
+  padding: 4em;
+    background: none;
+}
+.has-text-centered {
+  padding: 2em 0;
+}
 .postsNavigation {
   display: flex;
   flex-flow: row wrap;

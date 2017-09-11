@@ -12,11 +12,20 @@
 </template>
 
 <script>
+const MD = require('markdown-it')();
 
-// const api = require.context(`~/static/api/posts.json`)
 export default {
   head: {
     title: 'About Me'
+  },
+  async asyncData ({}) {
+    const {body} =  await import(`./about/about.md`)
+
+    return {
+      // ...attributes,
+      // attributes: attributes,
+      content: MD.render(body)
+    }
   }
 }
 </script>
