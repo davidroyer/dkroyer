@@ -103,7 +103,7 @@ export default {
     width: 100%;
     background-size: 900px;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: 0 0;
     position: relative;
     background-attachment: fixed;
     height: 350px;
@@ -145,7 +145,7 @@ export default {
     max-width: 90%;
     margin: 0 auto;
     font-size: 3.5em;
-    font-weight: 300;
+    font-weight: 200;
 
     @media (min-width: 400px) {
       // max-width: 70%;

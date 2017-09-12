@@ -7,13 +7,13 @@
       </a>
 
       <div class="nav-right">
-        <a class="nav-item is-hidden-desktop" href="https://github.com/davidroyer" rel="noopener" target="_blank">
+        <a class="nav-item is-hidden-mobile is-hidden-desktop" href="https://github.com/davidroyer" rel="noopener" target="_blank">
           <icon name="github" scale="1.5"></icon>
         </a>
-        <a class="nav-item is-hidden-desktop" href="https://twitter.com/DavidRoyer_" rel="noopener" target="_blank">
+        <a class="nav-item is-hidden-mobile is-hidden-desktop" href="https://twitter.com/DavidRoyer_" rel="noopener" target="_blank">
           <icon name="twitter" scale="1.5"></icon>
         </a>
-        <a class="nav-item is-hidden-desktop" href="https://www.linkedin.com/in/dkroyer/" rel="noopener" target="_blank">
+        <a class="nav-item is-hidden-mobile is-hidden-desktop" href="https://www.linkedin.com/in/dkroyer/" rel="noopener" target="_blank">
           <icon name="linkedin-square" scale="1.5"></icon>
         </a>
       </div>
