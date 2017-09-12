@@ -145,8 +145,6 @@ export default {
 }
 .contactForm {
 
-  font-family: 'Roboto';
-
   label {
     display: block;
     margin: 2em 1em;
