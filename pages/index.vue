@@ -33,33 +33,17 @@
 </template>
 
 <script>
-// import axios from 'axios'
-import Logo from '~/components/Logo.vue'
-import axios from '~/plugins/axios'
-import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
-    Hero
-  },
-  // layout: 'home',
-  async asyncData({params}) {
-    // const PostsObject = await import(`~/static/api/posts.json`)
-
-    return {
-      // posts: PostsObject
-    }
-  },
-  components: {
-    Logo
+    // Logo
   },
   data() {
     return {
-      user: null
+      // user: null
     }
   },
   created () {
-
   },
   methods: {
   }

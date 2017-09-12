@@ -3,39 +3,9 @@
     <h1 class="title">
       Contact Me
     </h1>
-    <!-- A little help for the Netlify post-processing bots -->
-    <!-- <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form> -->
-
-    <!-- <form method="post">
-      <input type="hidden" name="form-name" value="contact" />
-      <p>
-        <label>
-          Your Name: <input type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea name="message" />
-        </label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-    </form> -->
 
       <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
-        <!-- <p>
-          <label>Your Name: <input type="text" v-model="form.name" name="name"></label>
-        </p> -->
+
         <div class="field">
           <label class="label">Name</label>
           <p class="control has-icons-left">
@@ -63,43 +33,18 @@
             </span>
           </p>
         </div>
-        <!-- <p>
-          <label>Your Email: <input type="email" v-model="form.email" name="email"></label>
-        </p> -->
-        <!-- <p>
-          <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
-        </p> -->
+
         <p>
           <button type="submit">Send</button>
         </p>
       </form>
-
-      <!-- <form class="contactForm" name="contact" action="thank-you" netlify>
-        <label for="name">
-          Name
-          <input type="text" name="name" value="">
-        </label>
-        <label for="name">
-          Name
-          <textarea rows="8" cols="50" name="message"></textarea>
-        </label>
-        <button type="submit">Submit Form</button>
-      </form> -->
   </section>
 </template>
 
 <script>
-import 'whatwg-fetch'
-import VueResource from '~/plugins/vue-resource'
-// console.log(VueResource);
-var root = 'https://jsonplaceholder.typicode.com';
 
-// $.ajax({
-//   url: root + '/posts/1',
-//   method: 'GET'
-// }).then(function(data) {
-//   console.log(data);
-// });
+import VueResource from '~/plugins/vue-resource'
+
 export default {
   head: {
     title: 'Contact Me'

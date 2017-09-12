@@ -46,15 +46,14 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   css: [
-    // { src: '~/assets/css/4mindesign.scss', lang: 'scss'}
-    'bulma',
+    // { src: 'bulma/css/bulma.css', lang: 'css'},
     { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
   /*
   ** Build configuration
   */
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    // baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
   // generate: {
   //   routes: function() {
@@ -69,47 +68,10 @@ module.exports = {
   //   }
   // },
   build: {
-    // extend (config) {
-    //
-    //   config.module.rules.push({
-    //       test: /\.md$/,
-    //       use: [
-    //           // [ 'json-loader', 'yaml-frontmatter-loader' ]
-    //           { loader: 'json-loader' },
-    //           { loader: 'yaml-frontmatter-loader' }
-    //           // { loader: 'html-loader' },
-    //           // { loader: 'highlight-loader' },
-    //           // { loader: 'markdown-loader', options: { renderer } }
-    //       ]
-    //   });
-    //   config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
-    // }
-    // loaders: [
-    //   {
-    //     test: /\.(png|jpe?g|gif|svg)$/,
-    //     loader: 'url-loader',
-    //     query: {
-    //       limit: 1000, // 1KO
-    //       name: 'img/[name].[hash:7].[ext]'
-    //     }
-    //   },
-    //   {
-    //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    //     loader: 'url-loader',
-    //     query: {
-    //       limit: 1000, // 1 KO
-    //       name: 'fonts/[name].[hash:7].[ext]'
-    //     }
-    //   },
-    //   {
-    //      test: /\.md$/,
-    //      use: [ 'json-loader', 'yaml-frontmatter-loader' ]
-    //   }
-    // ]
-    // vendor: ['firebase']
     /*
     ** Run ESLINT on save
     */
+    extractCSS: true
     // extend (config, ctx) {
     //   if (ctx.isClient) {
     //     config.module.rules.push({

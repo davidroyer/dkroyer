@@ -22,14 +22,10 @@
 </template>
 
 <script>
-// import axios from 'axios'
-import Logo from '~/components/Logo.vue'
 import axios from '~/plugins/axios'
-import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
-    Hero
   },
   head () {
     return {
@@ -51,12 +47,8 @@ export default {
   //     posts: data
   //   }
   // },
-  components: {
-    Logo
-  },
   data() {
     return {
-      user: null
     }
   },
   created () {

@@ -1,13 +1,7 @@
 <template>
   <div class="siteWrapper home">
     <app-header/>
-    <!-- <fire></fire> -->
-    <!-- <div class="hero">
-      <h1 class="title">Welcome</h1>
-    </div> -->
-
       <nuxt class="siteContent"/>
-
     <app-footer/>
   </div>
 </template>
@@ -16,14 +10,11 @@
 
 import AppHeader from '~/components/Header.vue'
 import AppFooter from '~/components/Footer.vue'
-import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
     AppHeader,
-    AppFooter,
-    Hero
-    // Fire
+    AppFooter
   }
 }
 </script>

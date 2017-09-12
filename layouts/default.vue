@@ -14,14 +14,11 @@
 
 import AppHeader from '~/components/Header.vue'
 import AppFooter from '~/components/Footer.vue'
-import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
     AppHeader,
-    AppFooter,
-    Hero
-    // Fire
+    AppFooter
   }
 }
 </script>

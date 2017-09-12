@@ -11,6 +11,7 @@
     "@nuxtjs/markdownit": "^0.0.2",
     "@nuxtjs/pwa": "^0.2.1",
     "axios": "^0.16.2",
+    "bulma": "0.4.4",
     "firebase": "^4.1.1",
     "firebaseui": "^2.0.0",
     "json-loader": "^0.5.4",
