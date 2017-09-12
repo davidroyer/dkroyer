@@ -39,6 +39,7 @@ module.exports = {
   modules: [
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome',
+    '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
     // ['@nuxtjs/markdownit', { linkify: true } ]
   ],
