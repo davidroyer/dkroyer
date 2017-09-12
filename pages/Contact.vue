@@ -1,7 +1,6 @@
 <template>
   <section class="container">
-    <h1 class="title">
-      Contact Me
+    <h1 class="title">Contact Me
     </h1>
 
       <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
@@ -25,7 +24,7 @@
           </p>
         </div>
         <div class="field">
-          <label class="label">Message</label>
+          <label for="message" class="label">Message</label>
           <p class="control has-icons-left">
             <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
             <span class="icon is-small is-left">
@@ -35,7 +34,7 @@
         </div>
 
         <p>
-          <button type="submit">Send</button>
+          <button class="submit" type="submit">Send</button>
         </p>
       </form>
   </section>
@@ -49,7 +48,7 @@ export default {
   head: {
     title: 'Contact Me'
   },
-  data() {
+  asyncData ({}) {
     return {
       form: {
         'form-name': 'contact',
@@ -125,6 +124,11 @@ export default {
 .siteContent {
   max-width: 100%;
 
+}
+.submit {
+  padding: .75em 1.5em;
+  min-width: 120px;
+  border-radius: 0;
 }
 #contactForm {
   margin: 0 auto;
