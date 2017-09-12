@@ -3,15 +3,33 @@
 @import 'base';
 @import 'buttons';
 
-
 .container.siteContent {
   padding: 1em;
-
   @media(min-width: 1000px) {
     padding: 2em;
   }
 }
 
-i.fa {
-  font-size: 20px;
+a.nav-item.is-hidden-desktop {
+  transition: 0.25s ease;
+  height: 80%;
+  top: 10%;
+  position: relative;
+  border-radius: 8%;
+  margin-left: 4px;
+  
+  &:focus,
+  &:hover {
+    background: #4a4a4a;
+    color: white;
+
+    svg {
+      color: white;
+      transition: .25s ease;
+    }
+  }
+}
+
+.nuxt-progress {
+z-index: 9999999 !important;
 }

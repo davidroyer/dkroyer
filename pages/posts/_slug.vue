@@ -2,9 +2,7 @@
   <section class="container blogPost">
     <!-- @click.stop="$router.push('/postsview')"  -->
       <button class="reversed postNavigation button is-info is-outlined" @click.stop ="$router.push('/')">
-        <!-- <span class="icon"> -->
-          <i class="fa fa-arrow-left"></i>
-        <!-- </span> -->
+
       </button>
       <!-- <hero :title="title" v-if="description" :subtitle="description"></hero>
       <div class="content" v-html="content"></div> -->

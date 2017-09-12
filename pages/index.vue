@@ -33,10 +33,12 @@
 </template>
 
 <script>
-
+// import Icon from 'vue-awesome/components/Icon.vue'
+// console.log(Icon);
+// console.log(Vuez);
 export default {
   components: {
-    // Logo
+    // Icon
   },
   data() {
     return {
@@ -68,6 +70,7 @@ export default {
     // padding: 2em;
     margin-right: auto;
     margin-left: auto;
+    padding: 2.5em 2em 4.5em;
   }
   .hero {
     display: flex;

@@ -7,16 +7,14 @@
       </a>
 
       <div class="nav-right">
-        <a class="nav-item is-hidden-desktop" href="https://github.com/davidroyer" target="_blank">
-          <span class="icon" style="color: #333;">
-            <i class="fa fa-github"></i>
-          </span>
+        <a class="nav-item is-hidden-desktop" href="https://github.com/davidroyer" rel="noopener" target="_blank">
+          <icon name="github" scale="1.5"></icon>
         </a>
-
-        <a class="nav-item is-hidden-desktop" href="https://twitter.com/DavidRoyer_" target="_blank">
-          <span class="icon" style="color: #55acee;">
-            <i class="fa fa-twitter"></i>
-          </span>
+        <a class="nav-item is-hidden-desktop" href="https://twitter.com/DavidRoyer_" rel="noopener" target="_blank">
+          <icon name="twitter" scale="1.5"></icon>
+        </a>
+        <a class="nav-item is-hidden-desktop" href="https://www.linkedin.com/in/dkroyer/" rel="noopener" target="_blank">
+          <icon name="linkedin-square" scale="1.5"></icon>
         </a>
       </div>
 
@@ -37,10 +35,10 @@
         </div>
 
         <div class="navbar-end is-hidden-touch">
-          <a class="navbar-item" href="https://github.com/davidroyer" target="_blank">
+          <a class="navbar-item" href="https://github.com/davidroyer" rel="noopener" target="_blank">
             Github
           </a>
-          <a class="navbar-item" href="https://twitter.com/davidroyer_" target="_blank">
+          <a class="navbar-item" href="https://twitter.com/davidroyer_" rel="noopener" target="_blank">
             Twitter
           </a>
           <!-- <div class="navbar-item">
@@ -51,7 +49,7 @@
                   data-social-network="Twitter"
                   data-social-action="tweet"
                   data-social-target="https://www.davidroyer.me"
-                  target="_blank"
+                  rel="noopener" target="_blank"
                   href="https://twitter.com/intent/tweet?text=DavidRoyer: Front End Web Developer&url=http://davidroyer.me&via=davidroyer_">
                   <span class="icon">
                     <i class="fa fa-twitter"></i>
@@ -80,6 +78,9 @@ export default {
 
 <style lang="scss">
 
+.nav-item {
+  padding: .5rem .6rem;
+}
 .navbar-brand {
   position: relative;
   z-index: 999999;
@@ -130,4 +131,6 @@ export default {
 .has-shadow {
   box-shadow: 0 2px 3px hsla(0,0%,4%,.1);
 }
+// twitter
+// style="color: #55acee;"
 </style>

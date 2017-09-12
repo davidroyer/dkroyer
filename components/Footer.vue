@@ -5,7 +5,7 @@
         <p>Copyright David Royer</p>
         <p>
           <a class="icon" href="https://github.com/davidroyer">
-            <i class="fa fa-github"></i>
+            <icon name="github" color="#00d1b2" scale="2"></icon>
           </a>
         </p>
       </div>

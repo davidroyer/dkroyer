@@ -34,9 +34,9 @@ export default {
           }, {
             href: '/posts',
             title: 'Blog Posts'
-          // }, {
-          //   href: '/admin',
-          //   title: 'Admin'
+          }, {
+            href: '/test',
+            title: 'Test'
         }
       ]
     }

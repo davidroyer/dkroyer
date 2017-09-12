@@ -17,6 +17,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  mode: 'spa',
   head: {
     title: 'David Royer - Front End Web Developer',
     titleTemplate: '%s - David Royer - Front End Web Developer',
@@ -31,11 +32,12 @@ module.exports = {
     ]
   },
   plugins: [
-    { src: '~/plugins/vue-resource.js', ssr: false }
+    { src: '~/plugins/vue-resource.js', ssr: false },
+    { src: '~/plugins/vue-awesome.js', ssr: false }
   ],
   modules: [
     '@nuxtjs/bulma',
-    '@nuxtjs/font-awesome',
+    // '@nuxtjs/font-awesome',
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
     // ['@nuxtjs/markdownit', { linkify: true } ]
