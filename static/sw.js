@@ -19,8 +19,8 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/_nuxt/app.9142a8648426bf87a794.js",
-    "revision": "04af06550d92c08df1df7943c6c30c13"
+    "url": "/_nuxt/app.734b1fedce56a3024f22.js",
+    "revision": "cdc28ba3f5c83d38565758e1dda5cca8"
   },
   {
     "url": "/_nuxt/common.6986c8c0d754b7107a96.js",
@@ -35,8 +35,8 @@ const fileManifest = [
     "revision": "bb7750a47afedbb0680dbc14cc2e2cda"
   },
   {
-    "url": "/_nuxt/manifest.3a058a838043fe4007b0.js",
-    "revision": "1b57a06167cf3c4792dc35f3268c303c"
+    "url": "/_nuxt/manifest.3bf2f18fc1b72bbb5e18.js",
+    "revision": "5837ea470a2c3393afce195aa2071ee1"
   },
   {
     "url": "/_nuxt/pages/About.cefc205db99dfe41036c.js",
