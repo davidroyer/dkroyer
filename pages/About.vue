@@ -19,12 +19,12 @@ export default {
     title: 'About Me'
   },
   async asyncData ({}) {
-    const {body} =  await import(`./about/about.md`)
+    // const {body} =  await import(`~/static/about.md`)
 
     return {
       // ...attributes,
       // attributes: attributes,
-      content: MD.render(body)
+      // content: MD.render(body)
     }
   }
 }

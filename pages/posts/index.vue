@@ -10,22 +10,22 @@
       <div class="message">
         <h2 class="subtitle is-3">Coming Soon...</h2>
       </div>
-      <div class="postsNavigation">
+      <!-- <div class="postsNavigation">
         <template v-for="post in posts">
           <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
             <span class="title" v-text="post.title"></span>
             <div class="postPreview" v-html="post.preview"></div>
           </nuxt-link>
         </template>
-      </div>
+      </div> -->
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
-import Logo from '~components/Logo.vue'
-import axios from '~plugins/axios'
-import Hero from '~components/Hero.vue'
+import Logo from '~/components/Logo.vue'
+import axios from '~/plugins/axios'
+import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
@@ -37,10 +37,10 @@ export default {
     }
   },
   async asyncData({params}) {
-    const PostsObject = await import(`~/static/api/posts.json`)
+    // const PostsObject = await import(`~/static/api/posts.json`)
 
     return {
-      posts: PostsObject
+      // posts: PostsObject
     }
   },
   // async asyncData({params}) {

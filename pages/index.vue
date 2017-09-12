@@ -34,9 +34,9 @@
 
 <script>
 // import axios from 'axios'
-import Logo from '~components/Logo.vue'
-import axios from '~plugins/axios'
-import Hero from '~components/Hero.vue'
+import Logo from '~/components/Logo.vue'
+import axios from '~/plugins/axios'
+import Hero from '~/components/Hero.vue'
 
 export default {
   components: {
@@ -44,10 +44,10 @@ export default {
   },
   // layout: 'home',
   async asyncData({params}) {
-    const PostsObject = await import(`~/static/api/posts.json`)
+    // const PostsObject = await import(`~/static/api/posts.json`)
 
     return {
-      posts: PostsObject
+      // posts: PostsObject
     }
   },
   components: {
@@ -92,15 +92,22 @@ export default {
     align-items: center;
     justify-content: flex-start;
     background: url('~assets/images/blog-me.jpeg');
-    height: 600px;
     width: 100%;
-    background-size: cover;
+    background-size: 900px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     position: relative;
     background-attachment: fixed;
-    height: 450px;
+    height: 350px;
 
+    @media (min-width: 750px) {
+        background-size: 1200px;
+    }
+    @media (min-width: 1050px) {
+      background-size: cover;
+      height: 450px;
+      background-position: top;
+    }
     &:before {
       content: '';
       position: absolute;

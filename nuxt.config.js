@@ -1,6 +1,6 @@
 // import axios from './plugins/axios.js'
 const axios = require('axios')
-const postsObject = require('./static/api/posts.json')
+// const postsObject = require('./static/api/posts.json')
 
 function createRoutes(posts)  {
   var routes = []
@@ -48,8 +48,9 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   css: [
-    // { src: '~assets/css/4mindesign.scss', lang: 'scss'}
-    { src: '~assets/css/main.scss', lang: 'scss'}
+    // { src: '~/assets/css/4mindesign.scss', lang: 'scss'}
+    'bulma/css/bulma.css',
+    { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
   /*
   ** Build configuration
@@ -57,44 +58,69 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  generate: {
-    routes: function() {
-      return createRoutes(postsObject)
-      // let baseURL = process.env.baseUrl
-      // return axios.get(`http://localhost:3000/api/posts.json`)
-      //
-      // .then((response) => {
-      //   let posts = response.data
-      //   return createRoutes(posts)
-      // })
-    }
-  },
+  // generate: {
+  //   routes: function() {
+  //     return createRoutes(postsObject)
+  //     // let baseURL = process.env.baseUrl
+  //     // return axios.get(`http://localhost:3000/api/posts.json`)
+  //     //
+  //     // .then((response) => {
+  //     //   let posts = response.data
+  //     //   return createRoutes(posts)
+  //     // })
+  //   }
+  // },
+  // build: {
+  //   extend (config) {
+  //     config.module.rules.forEach((rule) => {
+  //       if (isVueRule(rule)) {
+  //         rule.query.loaders.sass.push(sassResourcesLoader)
+  //         rule.query.loaders.scss.push(sassResourcesLoader)
+  //       }
+  //       if (isSASSRule(rule)) {
+  //         rule.use.push(sassResourcesLoader)
+  //       }
+  //     })
+  //   }
+  // }
   build: {
     extend (config) {
-      config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
-    },
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000, // 1KO
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000, // 1 KO
-          name: 'fonts/[name].[hash:7].[ext]'
-        }
-      },
-      {
-         test: /\.md$/,
-         use: [ 'json-loader', 'yaml-frontmatter-loader' ]
-      }
-    ]
+
+      // config.module.rules.push({
+      //     test: /\.md$/,
+      //     use: [
+      //         // [ 'json-loader', 'yaml-frontmatter-loader' ]
+      //         { loader: 'json-loader' },
+      //         { loader: 'yaml-frontmatter-loader' }
+      //         // { loader: 'html-loader' },
+      //         // { loader: 'highlight-loader' },
+      //         // { loader: 'markdown-loader', options: { renderer } }
+      //     ]
+      // });
+      // config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
+    }
+    // loaders: [
+    //   {
+    //     test: /\.(png|jpe?g|gif|svg)$/,
+    //     loader: 'url-loader',
+    //     query: {
+    //       limit: 1000, // 1KO
+    //       name: 'img/[name].[hash:7].[ext]'
+    //     }
+    //   },
+    //   {
+    //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    //     loader: 'url-loader',
+    //     query: {
+    //       limit: 1000, // 1 KO
+    //       name: 'fonts/[name].[hash:7].[ext]'
+    //     }
+    //   },
+    //   {
+    //      test: /\.md$/,
+    //      use: [ 'json-loader', 'yaml-frontmatter-loader' ]
+    //   }
+    // ]
     // vendor: ['firebase']
     /*
     ** Run ESLINT on save

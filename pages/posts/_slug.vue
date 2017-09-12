@@ -6,16 +6,15 @@
           <i class="fa fa-arrow-left"></i>
         <!-- </span> -->
       </button>
-      <hero :title="title" v-if="description" :subtitle="description"></hero>
-      <!-- <h1 class="title" v-text=""></h1> -->
-      <div class="content" v-html="content"></div>
+      <!-- <hero :title="title" v-if="description" :subtitle="description"></hero>
+      <div class="content" v-html="content"></div> -->
   </section>
 </template>
 
 <script>
-import Logo from '~components/Logo.vue'
-import axios from '~plugins/axios'
-import Hero from '~components/Hero.vue'
+import Logo from '~/components/Logo.vue'
+import axios from '~/plugins/axios'
+import Hero from '~/components/Hero.vue'
 
 const MD = require('markdown-it')();
 
@@ -30,19 +29,19 @@ const MD = require('markdown-it')();
 export default {
   head () {
     return {
-      title: this.title
+      // title: this.title
     }
   },
   components: {
     Hero
   },
   async asyncData ({params}) {
-    const {attributes, body} = await import(`~/static/blog/${params.slug}.md`)
+    // const {attributes, body} = await import(`~/static/blog/${params.slug}.md`)
 
     return {
-      ...attributes,
-      // attributes: attributes,
-      content: MD.render(body)
+      // ...attributes,
+      // // attributes: attributes,
+      // content: MD.render(body)
     }
   }
 }

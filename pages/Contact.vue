@@ -90,7 +90,7 @@
 
 <script>
 import 'whatwg-fetch'
-import VueResource from '~plugins/vue-resource'
+import VueResource from '~/plugins/vue-resource'
 // console.log(VueResource);
 var root = 'https://jsonplaceholder.typicode.com';
 
