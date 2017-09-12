@@ -25,9 +25,6 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Personal site of David Royer. Front-End Web Designer and Developer' }
     ],
-    // script: [
-    //   { src: 'https://www.gstatic.com/firebasejs/4.1.1/firebase.js' }
-    // ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
@@ -71,35 +68,22 @@ module.exports = {
   //     // })
   //   }
   // },
-  // build: {
-  //   extend (config) {
-  //     config.module.rules.forEach((rule) => {
-  //       if (isVueRule(rule)) {
-  //         rule.query.loaders.sass.push(sassResourcesLoader)
-  //         rule.query.loaders.scss.push(sassResourcesLoader)
-  //       }
-  //       if (isSASSRule(rule)) {
-  //         rule.use.push(sassResourcesLoader)
-  //       }
-  //     })
-  //   }
-  // }
   build: {
-    extend (config) {
-
-      // config.module.rules.push({
-      //     test: /\.md$/,
-      //     use: [
-      //         // [ 'json-loader', 'yaml-frontmatter-loader' ]
-      //         { loader: 'json-loader' },
-      //         { loader: 'yaml-frontmatter-loader' }
-      //         // { loader: 'html-loader' },
-      //         // { loader: 'highlight-loader' },
-      //         // { loader: 'markdown-loader', options: { renderer } }
-      //     ]
-      // });
-      // config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
-    }
+    // extend (config) {
+    //
+    //   config.module.rules.push({
+    //       test: /\.md$/,
+    //       use: [
+    //           // [ 'json-loader', 'yaml-frontmatter-loader' ]
+    //           { loader: 'json-loader' },
+    //           { loader: 'yaml-frontmatter-loader' }
+    //           // { loader: 'html-loader' },
+    //           // { loader: 'highlight-loader' },
+    //           // { loader: 'markdown-loader', options: { renderer } }
+    //       ]
+    //   });
+    //   config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
+    // }
     // loaders: [
     //   {
     //     test: /\.(png|jpe?g|gif|svg)$/,
