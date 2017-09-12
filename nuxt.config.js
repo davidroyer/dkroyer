@@ -50,7 +50,7 @@ module.exports = {
   loading: { color: '#3B8070' },
   css: [
     // { src: '~/assets/css/4mindesign.scss', lang: 'scss'}
-    'bulma/css/bulma.css',
+    'bulma',
     { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
   /*
