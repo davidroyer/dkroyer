@@ -17,20 +17,10 @@
 </template>
 
 <script>
-const MD = require('markdown-it')();
 
 export default {
   head: {
     title: 'About Me'
-  },
-  async asyncData ({}) {
-    // const {body} =  await import(`~/static/about.md`)
-
-    return {
-      // ...attributes,
-      // attributes: attributes,
-      // content: MD.render(body)
-    }
   }
 }
 </script>

@@ -11,7 +11,6 @@
 
 <script>
 
-// const api = require.context(`~/static/api/posts.json`)
 export default {
   head: {
     title: 'Thank You'
