@@ -4,6 +4,7 @@ const postsObject = require('./static/api/posts.json')
 
 function createRoutes(posts)  {
   var routes = []
+
   for (let postKey in posts) {
     let post = posts[postKey]
     let route = `/posts/${post.slug}`
@@ -16,7 +17,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  mode: 'spa',
+  // mode: 'spa',
   head: {
     title: 'David Royer - Front End Web Developer',
     titleTemplate: '%s - David Royer - Front End Web Developer',
