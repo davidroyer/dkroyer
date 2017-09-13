@@ -19,8 +19,8 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/_nuxt/app.dabe6dd9938de9b45772.js",
-    "revision": "c5c16f441e194b572cd86dedd29bd5f1"
+    "url": "/_nuxt/app.b5a9bde159a556451b7c.js",
+    "revision": "d20f0252004427c3d5767fb093f89d10"
   },
   {
     "url": "/_nuxt/common.3d0e224dec9f08f0df8a.js",
@@ -31,48 +31,48 @@ const fileManifest = [
     "revision": "dec143a0b72e618abbe7394cb93feab7"
   },
   {
-    "url": "/_nuxt/layouts/default.92f08fb887f8710872d4.js",
-    "revision": "6d67c16f7daaec3915332cf0ee367c0d"
+    "url": "/_nuxt/layouts/default.ba2ced6ee982c00d2005.js",
+    "revision": "b950f983fc738fb1045058eca8dd69f9"
   },
   {
-    "url": "/_nuxt/layouts/home.47751d925e3335812173.js",
-    "revision": "843859c2715fe5ba233cc9f0f1fc7bd0"
+    "url": "/_nuxt/layouts/home.49913cc177f92a7632bd.js",
+    "revision": "6a8e2e3435e9920f2962e09bebbf7f8f"
   },
   {
-    "url": "/_nuxt/manifest.83cad2d3cdd7aba155bd.js",
-    "revision": "9630b4aeaac213c0cb4b428063a95687"
+    "url": "/_nuxt/manifest.539d841b7e663cd4fcf3.js",
+    "revision": "954b62cd7be646e8f2932a995c9fdf89"
   },
   {
-    "url": "/_nuxt/pages/About.71678a8b2cda750ff8e0.js",
-    "revision": "2587840fadf47c7fb37292b193066626"
+    "url": "/_nuxt/pages/About.9bef2135118fffb45ce2.js",
+    "revision": "f300eb3b522975a601d400f2ee9aced2"
   },
   {
-    "url": "/_nuxt/pages/Contact.04d5a5e4adb6ade25a2f.js",
-    "revision": "f2f4d9f9edf9ad5a8d4f27db41fe674a"
+    "url": "/_nuxt/pages/Contact.7f6334a05b87882f298c.js",
+    "revision": "aebeac21f10fcb94329f77723b33739b"
   },
   {
-    "url": "/_nuxt/pages/index.d794a8b48c62aa159df2.js",
-    "revision": "cf214e848476dcfe2b5595a099981be0"
+    "url": "/_nuxt/pages/index.1d4a420e862e3bbf976d.js",
+    "revision": "d5d011f416fd903cf7e367a683a4b5d9"
   },
   {
     "url": "/_nuxt/pages/posts/_slug.f7b8d850449cdc262bdd.js",
     "revision": "4196aebf0a2668f8f929273af3e8553d"
   },
   {
-    "url": "/_nuxt/pages/posts/index.2c01e02bc65e77dbbf33.js",
-    "revision": "32476d620c9138a8a4e761ab09b75436"
+    "url": "/_nuxt/pages/posts/index.e788612091c771e272ff.js",
+    "revision": "10aab37e3b17925fb0eb3990d6380ab4"
   },
   {
     "url": "/_nuxt/pages/resources.5207316c3f19511814d8.js",
     "revision": "83db10b22ffe4a5349ad888dbeba86b6"
   },
   {
-    "url": "/_nuxt/pages/Site.0c6cc7afb8daf74aed02.js",
-    "revision": "c024edf1e3697dd5b80218e82f338dad"
+    "url": "/_nuxt/pages/Site.2f5e41fd265e54f3c99a.js",
+    "revision": "b916fef57c3ec2dc7236c52a9dedfb7c"
   },
   {
-    "url": "/_nuxt/pages/thank-you.fba44ea3c5cb2832c994.js",
-    "revision": "502bb424ef0189761c7445e8fce608db"
+    "url": "/_nuxt/pages/thank-you.a57b37ad6d95e0a58380.js",
+    "revision": "ed56ad2c0f824bb387609b4be5c1d7e3"
   }
 ];
 

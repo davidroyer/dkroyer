@@ -72,6 +72,7 @@ export default {
       font-weight: 300;
       font-size: 2.5em;
 
+
       @media (min-width: 750px) {
         font-size: 3.5em;
       }
@@ -104,7 +105,7 @@ export default {
     width: 100%;
     background-size: 900px;
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: -100px 0;
     position: relative;
     background-attachment: fixed;
     height: 350px;
@@ -140,7 +141,7 @@ export default {
     font-weight: 500;
     position: relative;
     text-align: left;
-
+    transition: all .2s ease;
 
     text-align: center;
     max-width: 90%;
@@ -198,24 +199,16 @@ export default {
   margin-top: 3em;
   border-top: 1px solid gray;
   padding-top: 3em;
-  ul {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    list-style-type: none;
-    margin-left: 0;
-    text-align: center;
-    li {
-      margin: .5em .75em;
-      text-align: center;
-    }
-  }
+
   .days, .nights {
-    padding: 1em 1.5em;
     width: 50%;
     flex: none !important;
     margin: 0;
-    // padding: 1em 1.6em;
+    padding: 0;
+
+    @media (min-width: 750px) {
+      padding: 1em 1.6em;
+    }
     h3 {
       font-weight: 300;
       text-transform: capitalize;
@@ -228,9 +221,22 @@ export default {
         padding: 0 1em;
       }
     }
-    li {
-      font-weight: 600;
-      font-size: 1.05em;
+    ul {
+      @media (max-width: 599px) {
+        display: block;
+      }
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      list-style-type: none;
+      margin-left: 0;
+      text-align: center;
+      li {
+        margin: .5em .75em;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.05em;
+      }
     }
   }
   .nights {
