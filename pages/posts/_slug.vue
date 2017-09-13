@@ -1,46 +1,24 @@
 <template>
   <section class="container blogPost">
     <!-- @click.stop="$router.push('/postsview')"  -->
-      <button class="reversed postNavigation button is-info is-outlined" @click.stop ="$router.push('/')">
-
-      </button>
-      <!-- <hero :title="title" v-if="description" :subtitle="description"></hero>
-      <div class="content" v-html="content"></div> -->
+      <button class="reversed postNavigation button is-info is-outlined" @click.stop ="$router.push('/posts')">Back</button>
+      <hero :title="title" ></hero>
+      <div class="content" v-html="$data.__content"></div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import axios from '~/plugins/axios'
-import Hero from '~/components/Hero.vue'
-
-const MD = require('markdown-it')();
-
-// function retrievePostFromSlug(posts, slug) {
-//   for(let postKey in posts) {
-//     if (postKey === slug) {
-//       return posts[postKey]
-//     }
-//   }
-// }
-
+import Hero from '@/components/Hero'
 export default {
-  head () {
+  async asyncData({params}) {
+    const Post = await import(`@/static/Articles/${params.slug}.md`)
+
     return {
-      // title: this.title
+      ...Post
     }
   },
   components: {
     Hero
-  },
-  async asyncData ({params}) {
-    // const {attributes, body} = await import(`~/static/blog/${params.slug}.md`)
-
-    return {
-      // ...attributes,
-      // // attributes: attributes,
-      // content: MD.render(body)
-    }
   }
 }
 </script>

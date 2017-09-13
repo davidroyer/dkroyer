@@ -8,7 +8,7 @@
     "@nuxtjs/bulma": "^1.0.3",
     "@nuxtjs/font-awesome": "^1.0.1",
     "@nuxtjs/google-analytics": "^0.2.0",
-    "@nuxtjs/markdownit": "^0.0.2",
+    "@nuxtjs/markdownit": "^1.1.2",
     "@nuxtjs/pwa": "^0.2.1",
     "axios": "^0.16.2",
     "bulma": "0.4.4",
@@ -16,6 +16,7 @@
     "firebaseui": "^2.0.0",
     "json-loader": "^0.5.4",
     "markdown-it-front-matter": "^0.1.2",
+    "markdown-with-front-matter-loader": "^0.1.0",
     "nuxt": "latest",
     "vue-awesome": "^2.3.3",
     "vue-resource": "^1.3.4",
@@ -29,7 +30,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "compile": "m2j -w 100 -c static/blog/* -o static/api/posts.json",
+    "compile": "m2j -w 100 -c static/Articles/* -o static/api/posts.json",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "deploy": "nuxt generate && firebase deploy",
@@ -44,9 +45,12 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
     "gh-pages": "^1.0.0",
+    "html-loader": "^0.5.1",
     "markdown-to-json": "^0.5.1",
     "node-sass": "^4.5.3",
     "parallelshell": "^3.0.1",
-    "sass-loader": "^6.0.5"
+    "sass-loader": "^6.0.5",
+    "vue-content-loader": "^0.1.3",
+    "vue-markdown-loader": "^2.2.1"
   }
 }

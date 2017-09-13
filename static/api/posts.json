@@ -1,0 +1,34 @@
+{
+  "Vuex-FirebaseAdmin": {
+    "layout": "posts",
+    "title": "Vuex Firebase Admin",
+    "slug": "vuex-firebase-admin",
+    "preview": "#Use Firepower for your Admin",
+    "content": "\n\n#Use Firepower for your Admin\n",
+    "basename": "Vuex-FirebaseAdmin"
+  },
+  "nuxt-ssr-firebase": {
+    "layout": "posts",
+    "title": "Vuex Firebase Admin",
+    "slug": "vuex-firebase-admin",
+    "preview": "#Use Firepower for your Admin\n\n- item 1\n- item 2",
+    "content": "\n\n#Use Firepower for your Admin\n\n- item 1\n- item 2\n",
+    "basename": "nuxt-ssr-firebase"
+  },
+  "using-nuxtjs": {
+    "layout": "posts",
+    "title": "Using Nuxt.js",
+    "slug": "using-nuxtjs",
+    "preview": "# Getting started with Nuxt.js\n\n## What is Nuxt.js?\n - item 1\n - item 2\n - item 3",
+    "content": "\n\n# Getting started with Nuxt.js\n\n## What is Nuxt.js?\n - item 1\n - item 2\n - item 3\n",
+    "basename": "using-nuxtjs"
+  },
+  "vuex-firebase-admin": {
+    "layout": "posts",
+    "title": "Vuex Firebase Admin",
+    "slug": "vuex-firebase-admin",
+    "preview": "#Use Firepower for your Admin\n\n*italic*\n\n**bold**",
+    "content": "\n\n#Use Firepower for your Admin\n\n*italic*\n\n**bold**\n",
+    "basename": "vuex-firebase-admin"
+  }
+}

@@ -10,14 +10,14 @@
       <div class="message">
         <h2 class="subtitle is-3">Coming Soon...</h2>
       </div>
-      <!-- <div class="postsNavigation">
+      <div class="postsNavigation">
         <template v-for="post in posts">
           <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
             <span class="title" v-text="post.title"></span>
-            <div class="postPreview" v-html="post.preview"></div>
+            <!-- <div class="postPreview" v-html="post.preview"></div> -->
           </nuxt-link>
         </template>
-      </div> -->
+      </div>
   </div>
 </template>
 
@@ -33,10 +33,10 @@ export default {
     }
   },
   async asyncData({params}) {
-    // const PostsObject = await import(`~/static/api/posts.json`)
+    const PostsObject = await import(`~/static/api/posts.json`)
 
     return {
-      // posts: PostsObject
+      posts: PostsObject
     }
   },
   // async asyncData({params}) {
@@ -83,11 +83,15 @@ export default {
     display: flex;
     flex-flow: row wrap;
     background: rgba(216, 216, 216, 0.24);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
     border: none;
     transition: .3s ease;
-
+    .title {
+      font-size: 1.6rem;
+    }
     &:hover {
-    box-shadow: 0 2px 5px 0 rgba(40, 31, 31, 0.2), 0 2px 10px 0 rgba(101, 101, 101, 0.12);
+    // box-shadow: 0 2px 5px 0 rgba(40, 31, 31, 0.2), 0 2px 10px 0 rgba(101, 101, 101, 0.12);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transform: scale(1.05);
       .title {
         // font-size: 2.15em;
