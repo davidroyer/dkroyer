@@ -72,6 +72,7 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
+    vendor: ['vue-awesome'],
     extractCSS: true
     // extend (config, ctx) {
     //   if (ctx.isClient) {
