@@ -17,7 +17,7 @@ a.nav-item.is-hidden-desktop {
   position: relative;
   border-radius: 8%;
   margin-left: 4px;
-  
+
   &:focus,
   &:hover {
     background: #4a4a4a;
@@ -32,4 +32,14 @@ a.nav-item.is-hidden-desktop {
 
 .nuxt-progress {
 z-index: 9999999 !important;
+}
+
+.container.content {
+  text-align: left;
+  max-width: 800px;
+  font-weight: 500;
+  font-size: 1.05em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2.5em 2em 4.5em;
 }

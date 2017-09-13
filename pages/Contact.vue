@@ -1,43 +1,47 @@
 <template>
-  <section class="container">
-    <h1 class="title">Contact Me
-    </h1>
+  <div class="contact">
+    <div class="hero is-primary is-bold is-small">
+      <div class="container">
+        <h1 class="title">Get In Touch</h1>
+      </div>
+    </div>
+          <section class="container content">
+        <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
 
-      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify>
+          <div class="field">
+            <label class="label">Name</label>
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <p class="control has-icons-left">
+              <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <label for="message" class="label">Message</label>
+            <p class="control has-icons-left">
+              <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
+              <span class="icon is-small is-left">
+                <i class="fa fa-pencil-square"></i>
+              </span>
+            </p>
+          </div>
 
-        <div class="field">
-          <label class="label">Name</label>
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
-            <span class="icon is-small is-left">
-              <i class="fa fa-user"></i>
-            </span>
+          <p>
+            <button class="submit" type="submit">Send</button>
           </p>
-        </div>
-        <div class="field">
-          <label class="label">Email</label>
-          <p class="control has-icons-left">
-            <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
-            <span class="icon is-small is-left">
-              <i class="fa fa-envelope"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <label for="message" class="label">Message</label>
-          <p class="control has-icons-left">
-            <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
-            <span class="icon is-small is-left">
-              <i class="fa fa-pencil-square"></i>
-            </span>
-          </p>
-        </div>
-
-        <p>
-          <button class="submit" type="submit">Send</button>
-        </p>
-      </form>
-  </section>
+        </form>
+      </section>
+  </div>
 </template>
 
 <script>

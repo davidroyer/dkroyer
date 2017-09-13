@@ -26,17 +26,17 @@ export default {
             href: '/',
             title: 'Home'
           }, {
-            href: '/about',
-            title: 'About'
+            href: '/site',
+            title: 'Site Info'
           }, {
             href: '/contact',
             title: 'Contact'
           }, {
             href: '/posts',
             title: 'Blog Posts'
-          }, {
-            href: '/test',
-            title: 'Test'
+          // }, {
+          //   href: '/test',
+          //   title: 'Test'
         }
       ]
     }

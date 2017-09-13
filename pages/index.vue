@@ -46,7 +46,7 @@
         <li>Firebase (All services/products including cloud functions),</li>
         <li>Vue.js</li>
         <li>Nuxt.js</li>
-        <li>Node,</li>
+        <li>Node</li>
         <li>Express.js</li>
       </ul>
     </section>
@@ -88,7 +88,7 @@ export default {
     text-align: left;
     max-width: 800px;
     font-weight: 500;
-    // padding: 2em;
+    font-size: 1.05em;
     margin-right: auto;
     margin-left: auto;
     padding: 2.5em 2em 4.5em;
