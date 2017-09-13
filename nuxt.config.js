@@ -17,6 +17,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  mode: 'spa',
   head: {
     title: 'David Royer - Front End Web Developer',
     titleTemplate: '%s - David Royer - Front End Web Developer',
