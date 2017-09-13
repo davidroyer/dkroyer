@@ -1,12 +1,8 @@
 <template>
   <div class="siteWrapper">
-    <app-header/>
-    <!-- <fire></fire> -->
-    <!-- <hero></hero> -->
-    <!-- <transition name="layout" mode="out-in"> -->
+    <app-header></app-header>
       <nuxt class="siteContent"/>
-
-    <app-footer/>
+    <app-footer></app-footer>
   </div>
 </template>
 

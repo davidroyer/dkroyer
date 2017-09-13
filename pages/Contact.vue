@@ -10,32 +10,16 @@
 
       <div class="field">
         <label class="label">Name</label>
-        <p class="control has-icons-left">
-          <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
-          <span class="icon is-small is-left">
-            <i class="fa fa-user"></i>
-          </span>
-        </p>
+        <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
       </div>
       <div class="field">
         <label class="label">Email</label>
-        <p class="control has-icons-left">
-          <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
-          <span class="icon is-small is-left">
-            <i class="fa fa-envelope"></i>
-          </span>
-        </p>
+        <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
       </div>
       <div class="field">
         <label for="message" class="label">Message</label>
-        <p class="control has-icons-left">
-          <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
-          <span class="icon is-small is-left">
-            <i class="fa fa-pencil-square"></i>
-          </span>
-        </p>
+        <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
       </div>
-
         <button class="submit" type="submit">Send</button>
 
     </form>
@@ -50,7 +34,7 @@ export default {
   head: {
     title: 'Contact Me'
   },
-  asyncData({}) {
+  data () {
     return {
       form: {
         'form-name': 'contact',

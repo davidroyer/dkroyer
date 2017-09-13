@@ -7,7 +7,7 @@
   </div>
   <div class="container content">
 
-    <img class="headshot" src="~static/images/headshot.jpg" alt="">
+    <img class="headshot" src="~static/images/headshot.jpg" alt="David Royer Headshot">
     <p>This site is built with Nuxt.js. At its core, Nuxt is a framework for creating Universal Apps (Apps that can run the same code on client and server). It can also be used as a static site generator which is how I as using it.
     </p>
     <p>In addition to being a static site, my site is actually a PWA (Progress Web App), as well.</p>
