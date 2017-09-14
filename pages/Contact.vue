@@ -6,7 +6,8 @@
       </div>
     </div>
     <section class="container content">
-      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" data-netlify="true">
+      <form id="contactForm" method='post' @submit.prevent="handleForm($event)" name="contact" data-netlify="true">
+        <input type='hidden' name='form-name' value='contact' />
         <div class="field">
           <label class="label">Name</label>
           <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
