@@ -1,28 +1,28 @@
 <template>
-<div class="contact">
-  <div class="hero is-primary is-bold is-small">
-    <div class="container">
-      <h1 class="title">Get In Touch</h1>
+  <div class="contact">
+    <div class="hero is-primary is-bold is-small">
+      <div class="container">
+        <h1 class="title">Get In Touch</h1>
+      </div>
     </div>
+    <section class="container content">
+      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact">
+        <div class="field">
+          <label class="label">Name</label>
+          <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <input class="input" type="email" placeholder="Email input" v-model="email" name="email">
+        </div>
+        <div class="field">
+          <label for="message" class="label">Message</label>
+          <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
+        </div>
+      </form>
+      <button class="submit" type="submit">Send</button>
+    </section>
   </div>
-  <section class="container content">
-    <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify _lpchecked="1">
-      <div class="field">
-        <label class="label">Name</label>
-        <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
-      </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <input required="required" class="input" type="email" placeholder="Email input" v-model="email" name="email">
-      </div>
-      <div class="field">
-        <label for="message" class="label">Message</label>
-        <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
-      </div>
-        <button class="submit" type="submit">Send</button>
-    </form>
-  </section>
-</div>
 </template>
 
 <script>
@@ -87,11 +87,11 @@ export default {
     text-align: left;
     width: 600px;
     max-width: 100%;
-    textarea {
-        &:focus ~ .icon {
-            color: #7a7a7a;
-        }
-    }
+    // textarea {
+    //     &:focus ~ .icon {
+    //         color: #7a7a7a;
+    //     }
+    // }
 }
 .contactForm {
 
