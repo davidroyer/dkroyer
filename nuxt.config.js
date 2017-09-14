@@ -38,8 +38,7 @@ module.exports = {
   //   },
   // ],
   plugins: [
-    { src: '~/plugins/vue-resource.js', ssr: false },
-    { src: '~/plugins/vue-awesome.js', ssr: false }
+    { src: '~/plugins/vue-resource.js', ssr: false }
   ],
   modules: [
     '@nuxtjs/bulma',
@@ -86,7 +85,7 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    vendor: ['vue-awesome'],
+    // vendor: ['vue-awesome'],
     extractCSS: true,
     extend (config, ctx) {
       config.module.rules.push({

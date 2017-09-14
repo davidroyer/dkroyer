@@ -10,15 +10,15 @@
 
       <div class="field">
         <label class="label">Name</label>
-        <input class="input" type="text" placeholder="Your Name" v-model="form.name" name="name">
+        <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
       </div>
       <div class="field">
         <label class="label">Email</label>
-        <input required class="input" type="email" placeholder="Email input" v-model="form.email" name="email">
+        <input required class="input" type="email" placeholder="Email input" v-model="email" name="email">
       </div>
       <div class="field">
         <label for="message" class="label">Message</label>
-        <textarea required class="textarea" placeholder="Your Message..." v-model="form.message" name="message"></textarea>
+        <textarea required class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
       </div>
         <button class="submit" type="submit">Send</button>
 
@@ -36,31 +36,29 @@ export default {
   },
   data () {
     return {
-      form: {
         'form-name': 'contact',
         name: '',
         email: '',
         message: ''
-      }
     }
   },
   methods: {
     handleForm($event) {
       $event.preventDefault()
       let action = $event.target.action
-      let form = this.form
+      // let form = this.form
 
-      const {
-        name,
-        email,
-        message
-      } = this.form
+      // const {
+      //   name,
+      //   email,
+      //   message
+      // } = this.form
 
       let body = {
         'form-name': 'contact',
-        name: name,
-        email: email,
-        message: message
+        name: this.name,
+        email: this.email,
+        message: this.message
       }
 
       this.$http.options.headers = {
@@ -92,7 +90,6 @@ export default {
     width: 600px;
     max-width: 100%;
     textarea {
-        padding-left: 2.25em;
         &:focus ~ .icon {
             color: #7a7a7a;
         }

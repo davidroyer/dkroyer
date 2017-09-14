@@ -52,21 +52,12 @@
           </ul>
         </div>
       </div>
-      <h3>test</h3>
-        <div v-html="$data.__content"></div>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({params}) {
-    const Post = await import(`@/static/md/markdown.md`)
-
-    return {
-      ...Post
-    }
-  }
 }
 </script>
 

@@ -131,6 +131,17 @@ export default {
 .has-shadow {
   box-shadow: 0 2px 3px hsla(0,0%,4%,.1);
 }
+
+.navbar-burger span {
+  width: 25px !important;
+  height: 1.5px !important;
+  &:first-child {
+    margin-top: -10px !important;
+  }
+  &:nth-child(3) {
+    margin-top: 7px !important;
+  }
+}
 // twitter
 // style="color: #55acee;"
 </style>
