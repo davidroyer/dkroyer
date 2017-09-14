@@ -6,7 +6,7 @@
       </div>
     </div>
     <section class="container content">
-      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact">
+      <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" data-netlify="true">
         <div class="field">
           <label class="label">Name</label>
           <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
@@ -19,8 +19,9 @@
           <label for="message" class="label">Message</label>
           <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
         </div>
+        <button class="submit" type="submit">Send</button>
       </form>
-      <button class="submit" type="submit">Send</button>
+
     </section>
   </div>
 </template>
