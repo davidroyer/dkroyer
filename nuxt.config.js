@@ -14,7 +14,7 @@ function createRoutes(posts)  {
 
 module.exports = {
   head: {
-    title: 'David Royer - Front End Web Developer',
+    // title: 'David Royer - Front End Web Developer',
     titleTemplate: '%s - David Royer - Front End Web Developer',
     meta: [
       { charset: 'utf-8' },
