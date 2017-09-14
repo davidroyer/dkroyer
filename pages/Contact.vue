@@ -6,7 +6,21 @@
     </div>
   </div>
   <section class="container content">
-    <div><h4>TEST HERE!</h4></div>
+    <form id="contactForm" @submit.prevent="handleForm($event)" name="contact" netlify _lpchecked="1">
+      <div class="field">
+        <label class="label">Name</label>
+        <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <input required="required" class="input" type="email" placeholder="Email input" v-model="email" name="email">
+      </div>
+      <div class="field">
+        <label for="message" class="label">Message</label>
+        <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
+      </div>
+        <button class="submit" type="submit">Send</button>
+    </form>
   </section>
 </div>
 </template>
