@@ -99,10 +99,15 @@ export default {
     }
   }
 }
+.navbar {
+  min-height: 4.25rem;
+}
 .navbar-brand {
   position: relative;
   z-index: 999999;
   background: white;
+  align-items: center;
+  min-height: 4.25rem;
 }
 
 @media (max-width: 999px) {
@@ -174,6 +179,7 @@ a.navbar-item.nuxt-link-exact-active.nuxt-link-active {
     }
   }
 }
+
 
 // .navbar-burger span {
 //   width: 25px !important;

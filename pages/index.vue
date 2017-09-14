@@ -29,7 +29,7 @@
       </div>
 
       <h2 class="about__title">About Me</h2>
-      <p class="about__text">I currently work at The Learning House. While my official title is Front End Web Designer, it would be more accurate as Front End Web Developer.</p>
+      <p class="about__text">I currently work at The Learning House in Lousville, KY as a member of the Web Team. While my official title is Front End Web Designer, it would be more accurate as Front End Web Developer.</p>
       <div class="timeWrapper">
         <div class="days">
           <h3>I spend most</br>days…</h3>
