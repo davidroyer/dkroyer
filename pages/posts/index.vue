@@ -1,23 +1,22 @@
 <template>
-  <div class="container" >
-    <section class="hero is-primary is-bold is-small">
-      <div class="hero-body">
-        <div class="has-text-centered">
-          <h1 class="title is-2" v-text="$metaInfo.title"></h1>
+  <div class="blog">
+    <div class="hero is-primary is-bold is-small">
+      <div class="container">
+        <h1 class="title" v-text="$metaInfo.title"></h1>
+      </div>
+    </div>
+      <section class="container">
+        <div class="message">
+          <h2 class="subtitle is-3">Coming Soon...</h2>
         </div>
-      </div>
-    </section>
-      <div class="message">
-        <h2 class="subtitle is-3">Coming Soon...</h2>
-      </div>
-      <div class="postsNavigation">
-        <template v-for="post in posts">
-          <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
-            <span class="title" v-text="post.title"></span>
-            <!-- <div class="postPreview" v-html="post.preview"></div> -->
-          </nuxt-link>
-        </template>
-      </div>
+        <!-- <div class="postsNavigation">
+          <template v-for="post in posts">
+            <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
+              <span class="title" v-text="post.title"></span>
+            </nuxt-link>
+          </template>
+        </div> -->
+      </section>
   </div>
 </template>
 
@@ -70,7 +69,7 @@ export default {
 .postsNavigation {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .postLink {
     margin: 1em;
@@ -101,8 +100,8 @@ export default {
     }
 
     @media (min-width: 500px) {
-      flex: 1 1 200px;
-      max-width: 300px;
+      flex: 1 1 240px;
+      max-width: 450px;
     }
 
     .title {

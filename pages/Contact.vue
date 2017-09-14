@@ -20,10 +20,9 @@
           <label for="message" class="label">Message</label>
           <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
         </div>
-        <input class="button btn submit" type="submit" value="Submit">
-
-      </form>
         <button class="submit" type="submit">Send</button>
+      </form>
+
     </section>
   </div>
 </template>
@@ -84,6 +83,8 @@ export default {
     padding: 0.75em 1.5em;
     min-width: 120px;
     border-radius: 0;
+    margin-left: auto;
+    display: block;
 }
 #contactForm {
     margin: 0 auto;

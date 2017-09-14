@@ -32,7 +32,7 @@
       <p class="about__text">I currently work at The Learning House. While my official title is Front End Web Designer, it would be more accurate as Front End Web Developer.</p>
       <div class="timeWrapper">
         <div class="days">
-          <h3>I spend most of my days…</h3>
+          <h3>I spend most</br>days…</h3>
           <ul>
             <li>Javascript heavy tasks</li>
             <li>Form Validation</li>
@@ -42,7 +42,7 @@
           </ul>
         </div>
         <div class="nights">
-          <h3>I spend most of my nights…</h3>
+          <h3>I spend most nights…</h3>
           <ul>
             <li>Firebase</li>
             <li>Vue.js</li>
@@ -87,7 +87,7 @@ export default {
   .container.content {
     text-align: left;
     max-width: 950px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.05em;
     margin-right: auto;
     margin-left: auto;

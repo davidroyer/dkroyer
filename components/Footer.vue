@@ -31,11 +31,13 @@
 
 <style lang="scss">
   .footer {
-    padding-top: 1rem;
-    padding-bottom: 0rem;
-
+    padding: 0;
     .container {
-      padding: 1.5em 1.5em 2.5em;
+      @media (max-width: 999px) {
+        padding: 1.5em
+      }
+      padding: 2.25em;
+      padding-bottom: 2.75em;
     }
     .footer-icons {
       display: flex;
@@ -55,8 +57,8 @@
       }
       svg {
         fill: #00d1b2;
-        width:35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
 
         &#twitter {
           top: 4px;
@@ -64,8 +66,6 @@
         }
 
         &#linkedin {
-          width: 33px;
-          height: 33px;
           position: relative;
           top: -4px;
         }
