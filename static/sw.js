@@ -23,80 +23,76 @@ const fileManifest = [
     "revision": "a70191b62b03b3db8a5da819931d7d79"
   },
   {
-    "url": "/_nuxt/13.7759b83e5445a42def67.js",
-    "revision": "18ff22820fab775b1e40b230901c83d6"
+    "url": "/_nuxt/13.68de673fe8723f3d7601.js",
+    "revision": "ab062d108b14c83f796b967f3bb8553a"
   },
   {
-    "url": "/_nuxt/14.f2240965911d3e0d38fb.js",
-    "revision": "c1247d616d646bb9ed1cc53b2e37d76d"
+    "url": "/_nuxt/14.7e9426b0253c6237c446.js",
+    "revision": "6cc5425b19a4eca608d13fe7ef4e21f5"
   },
   {
-    "url": "/_nuxt/15.0d4077f651b4d045844c.js",
-    "revision": "65506987b370cb94f2c4e50e0b42190c"
+    "url": "/_nuxt/15.4ed199636b8f514faea2.js",
+    "revision": "99c52138ac99e19a7042a6c07becbff9"
   },
   {
-    "url": "/_nuxt/16.fff46c070ebc0c262852.js",
-    "revision": "e9f2f61322d3006cbabc870570f39861"
+    "url": "/_nuxt/16.dfb2b5f0b59090a1c702.js",
+    "revision": "f4fc901de0374bb2f96e21981316aa81"
   },
   {
-    "url": "/_nuxt/17.debb50a0ccb5e305af5f.js",
-    "revision": "5f3912ecb56e2836f8ee7835afcfbfeb"
+    "url": "/_nuxt/app.fd7dad159c7048594923.js",
+    "revision": "66451f283151546a703f2e678f23e012"
   },
   {
-    "url": "/_nuxt/app.9e1e8e0072aea28a93d7.js",
-    "revision": "f2cb7e91395793fd8a4cb453ec53269a"
+    "url": "/_nuxt/common.13ccb3d366b3921474fc49716ea5005a.css",
+    "revision": "189a640e9ad23431afde5db863a6cbcc"
   },
   {
-    "url": "/_nuxt/common.7efcfc26ad6fada45839.js",
-    "revision": "b1bd5be96b3b7c7d523c0dcd627f2b20"
+    "url": "/_nuxt/common.3d0e224dec9f08f0df8a.js",
+    "revision": "a932cc8f6cf8cc8d1a953aeee4813d24"
   },
   {
-    "url": "/_nuxt/common.b9ee2dcdf43b56f506c62117e953c849.css",
-    "revision": "dec143a0b72e618abbe7394cb93feab7"
+    "url": "/_nuxt/layouts/default.a5c5f3d95491bb4b8096.js",
+    "revision": "4250d211bc564df3a604cebfdc1c1e46"
   },
   {
-    "url": "/_nuxt/layouts/default.d30be2d8c07ef536dafe.js",
-    "revision": "359b7dda4f28a9db3588b3c0677ad69e"
+    "url": "/_nuxt/layouts/home.4543d0f7c8fee4b45c45.js",
+    "revision": "7ca25e9318b4fd4474b2d306c029d679"
   },
   {
-    "url": "/_nuxt/layouts/home.0f61d99d99e47ee30038.js",
-    "revision": "669fb780a2ca7484bb9d8a87c67131a7"
+    "url": "/_nuxt/manifest.acadb0c45fa320e51c87.js",
+    "revision": "3fa70808a1bad70897737a8116629502"
   },
   {
-    "url": "/_nuxt/manifest.ab64038c3addc7ad7184.js",
-    "revision": "70a0b334de9c1336c26fadd54687bfbb"
+    "url": "/_nuxt/pages/About.9bef2135118fffb45ce2.js",
+    "revision": "f300eb3b522975a601d400f2ee9aced2"
   },
   {
-    "url": "/_nuxt/pages/About.dd52a7fd4f8f57eb382d.js",
-    "revision": "03f1d3323e680c652b7a7e24402f7cf5"
+    "url": "/_nuxt/pages/Contact.c577e6f48361f3f4c864.js",
+    "revision": "630309d61d46958310a4d70b3ea4e3d9"
   },
   {
-    "url": "/_nuxt/pages/Contact.c6579569fdf0fa0fad21.js",
-    "revision": "d0749b731a99070da622840bb684aef3"
+    "url": "/_nuxt/pages/index.52721ddd965c235ec401.js",
+    "revision": "10b6054c24387489b0ca8c9cd7cffb7b"
   },
   {
-    "url": "/_nuxt/pages/index.f0aa39eb66cafef4ae0d.js",
-    "revision": "fab4209485708d8c1287ec03f369d3f1"
-  },
-  {
-    "url": "/_nuxt/pages/posts/_slug.54c613f3d50e779fc647.js",
-    "revision": "8970a8f468b4f1f850e15470310e24f0"
+    "url": "/_nuxt/pages/posts/_slug.f918231c21224bae0da5.js",
+    "revision": "6b127d67dff4d88bd7274c0f76699318"
   },
   {
     "url": "/_nuxt/pages/posts/index.ad58f0d46c2f6864ba09.js",
     "revision": "2091adfc93cd538c695d60ba91fb8b92"
   },
   {
-    "url": "/_nuxt/pages/resources.6fb472e37dbb8a46f7ae.js",
-    "revision": "1706bc1feda0aa5dcaa847eabc5fd47c"
+    "url": "/_nuxt/pages/resources.5207316c3f19511814d8.js",
+    "revision": "83db10b22ffe4a5349ad888dbeba86b6"
   },
   {
     "url": "/_nuxt/pages/Site.158b563f6eb8f6533f1b.js",
     "revision": "b8803545deaaec24c6f2691743cb6d2e"
   },
   {
-    "url": "/_nuxt/pages/thank-you.6abb31998c1f88fb3527.js",
-    "revision": "7bee0f29c87eb930dd6af11e89313bea"
+    "url": "/_nuxt/pages/thank-you.a57b37ad6d95e0a58380.js",
+    "revision": "ed56ad2c0f824bb387609b4be5c1d7e3"
   }
 ];
 

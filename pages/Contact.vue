@@ -34,7 +34,7 @@ export default {
   head: {
     title: 'Contact Me'
   },
-  data () {
+  async asyncData({}) {
     return {
         'form-name': 'contact',
         name: '',
