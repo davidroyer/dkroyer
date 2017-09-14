@@ -19,9 +19,10 @@
           <label for="message" class="label">Message</label>
           <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
         </div>
-        <button class="submit" type="submit">Send</button>
-      </form>
+        <input class="button btn submit" type="submit" value="Submit">
 
+      </form>
+        <button class="submit" type="submit">Send</button>
     </section>
   </div>
 </template>
