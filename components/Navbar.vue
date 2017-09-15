@@ -91,7 +91,10 @@ export default {
 
 #navMenuButton {
   &:focus {
-    border: 2px solid;
+    @media (min-width: 1000px) {
+          border: 2px solid;
+    }
+
   }
 }
 .nav-item {
