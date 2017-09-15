@@ -1,7 +1,7 @@
 {
   "name": "dkroyer",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Personal site of David Royer, Front-End Web Designer and Developer",
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
   "dependencies": {

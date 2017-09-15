@@ -19,14 +19,20 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Personal site of David Royer. Front-End Web Designer and Developer' }
+      { hid: 'description', name: 'description', content: 'Personal site of David Royer, Front-End Web Designer and Developer' },
+      {
+        property: 'og:image',
+        content: 'https://www.davidroyer.me/site.jpg'
+      },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:site', content: '@davidroyer_' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Roboto' }
       // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
-
   plugins: [
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
