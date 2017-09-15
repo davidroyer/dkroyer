@@ -33,6 +33,11 @@ module.exports = {
       // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
+  manifest: {
+    name: 'David Royer',
+    description: 'Personal site of David Royer, Front-End Web Designer and Developer',
+    theme_color: '#188269'
+  },
   plugins: [
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
