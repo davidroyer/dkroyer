@@ -101,7 +101,7 @@
     align-content: center;
     align-items: center;
     justify-content: flex-start;
-    background: url('~assets/images/blog-me.jpeg');
+    background: url('~/assets/images/blog-me.jpeg');
     width: 100%;
     background-size: 900px;
     background-repeat: no-repeat;

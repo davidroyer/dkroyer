@@ -26,6 +26,16 @@ export default {
 </script>
 
 <style lang="scss">
+.hero {
+  // background: url('~assets/images/macMouse.jpg');
+  // width: 100%;
+  // background-size: 900px;
+  // background-repeat: no-repeat;
+  // background-position: -100px 0;
+  // position: relative;
+  // background-attachment: fixed;
+  // height: 350px;
+}
 .headshot {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.45);
   text-align: center;

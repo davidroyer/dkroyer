@@ -8,11 +8,11 @@
 </template>
 
 <script>
-export default {
-  head: {
-    title: 'Web Development Resources'
+  export default {
+    head: {
+      title: 'Web Development Resources'
+    }
   }
-}
 </script>
 
 <style lang="scss">

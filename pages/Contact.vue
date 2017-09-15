@@ -9,11 +9,11 @@
       <form id="contactForm" method='post' @submit.prevent="handleForm($event)" name="contact" data-netlify="true">
         <input type='hidden' name='form-name' value='contact' />
         <div class="field">
-          <label class="label">Name</label>
+          <label for="name" class="label">Name</label>
           <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
         </div>
         <div class="field">
-          <label class="label">Email</label>
+          <label for="email" class="label">Email</label>
           <input class="input" type="email" placeholder="Email input" v-model="email" name="email">
         </div>
         <div class="field">
