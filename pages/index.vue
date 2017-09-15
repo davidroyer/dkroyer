@@ -105,7 +105,7 @@
     width: 100%;
     background-size: 900px;
     background-repeat: no-repeat;
-    background-position: -100px 0;
+    background-position: -170px 0;
     position: relative;
     background-attachment: fixed;
     height: 350px;
@@ -205,7 +205,11 @@
     flex: none !important;
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: center;
+    align-content: stretch;
     @media (min-width: 750px) {
       padding: 1em 1.6em;
     }
@@ -231,6 +235,7 @@
       list-style-type: none;
       margin-left: 0;
       text-align: center;
+      align-content: baseline;
       li {
         margin: .5em .75em;
         text-align: center;

@@ -8,9 +8,12 @@
   <div class="container content">
 
     <img class="headshot" src="~/assets/images/headshot.jpg" alt="David Royer Headshot">
-    <p>This site is built with Nuxt.js. At its core, Nuxt is a framework for creating Universal Apps (Apps that can run the same code on client and server). It can also be used as a static site generator which is how I as using it.
+    <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. At its core, Nuxt is a framework for creating Universal Apps (Apps that can run the same code on client and server). It can also be used as a static site generator which is how I as using it for this site.
     </p>
     <p>In addition to being a static site, my site is actually a PWA (Progress Web App), as well.</p>
+    <p>I've spent a coniderable amount of time recently working to understand improved performance and use <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a>, by Google as one of my tools to accmplish this.</p>
+    <caption>The Lighthouse scores for this site</caption>
+    <img src="~/assets/images/davidroyer-lighthouse-top.png" alt="Lighthouse Scores for https://www.davidroyer.me">
 
   </div>
 </div>
@@ -26,6 +29,11 @@ export default {
 </script>
 
 <style lang="scss">
+caption {
+  display: block;
+  font-weight: 600;
+  margin-top: 2em;
+}
 .hero {
   // background: url('~assets/images/macMouse.jpg');
   // width: 100%;
