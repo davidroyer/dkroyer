@@ -42,22 +42,13 @@ module.exports = {
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
   modules: [
-    '@nuxtjs/bulma',
+    // '@nuxtjs/bulma',
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
-    // '@nuxtjs/markdownit'
   ],
-  // markdownit: {
-  //   preset: 'default',
-  //   linkify: true,
-  //   breaks: true,
-  //   use: [
-  //     'markdown-it-front-matter'
-  //   ]
-  // },
   loading: { color: '#3B8070' },
   css: [
-    // { src: 'bulma/css/bulma.css', lang: 'css'},
+    { src: '~/assets/css/btest.sass', lang: 'sass'},
     { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
   env: {

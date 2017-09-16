@@ -31,9 +31,17 @@
 import VueResource from '~/plugins/vue-resource'
 
 export default {
-  head: {
-    title: 'Contact Me'
+  head () {
+    return {
+      title: 'Contact Me',
+      meta: [
+        { hid: 'description', name: 'description', content: 'My custom description' }
+      ]
+    }
   },
+  // head: {
+  //   title: 'Contact Me'
+  // },
   asyncData({}) {
     return {
         'form-name': 'contact',

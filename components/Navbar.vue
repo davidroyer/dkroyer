@@ -79,9 +79,14 @@ export default {
     },
 
     listenForLast (isLastNavItem, newlyFocusedEl) {
-      if (isLastNavItem && !newlyFocusedEl.classList.contains('navbar-item') ) {
-        this.$store.commit('toggleMenuState')
+      if (isLastNavItem && newlyFocusedEl != null) {
+        if (!newlyFocusedEl.classList.contains('navbar-item')) {
+          this.$store.commit('toggleMenuState')
+        }
       }
+      // if (isLastNavItem && !newlyFocusedEl.classList.contains('navbar-item') ) {
+      //   this.$store.commit('toggleMenuState')
+      // }
     }
   }
 }

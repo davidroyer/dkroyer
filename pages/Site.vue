@@ -12,8 +12,12 @@
     </p>
     <p>In addition to being a static site, my site is actually a PWA (Progress Web App), as well.</p>
     <p>I've spent a coniderable amount of time recently working to understand improved performance and use <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a>, by Google as one of my tools to accmplish this.</p>
-    <caption>The Lighthouse scores for this site</caption>
-    <img src="~/assets/images/davidroyer-lighthouse-top.png" alt="Lighthouse Scores for https://www.davidroyer.me">
+    <!-- <caption>The Lighthouse scores for this site</caption> -->
+
+    <figure>
+      <figcaption>The Lighthouse scores for this site</figcaption>
+      <img src="~/assets/images/davidroyer-lighthouse-top.png" alt="Lighthouse Scores for https://www.davidroyer.me">
+    </figure>
 
   </div>
 </div>
@@ -29,21 +33,12 @@ export default {
 </script>
 
 <style lang="scss">
-caption {
+figcaption {
   display: block;
   font-weight: 600;
   margin-top: 2em;
 }
-.hero {
-  // background: url('~assets/images/macMouse.jpg');
-  // width: 100%;
-  // background-size: 900px;
-  // background-repeat: no-repeat;
-  // background-position: -100px 0;
-  // position: relative;
-  // background-attachment: fixed;
-  // height: 350px;
-}
+
 .headshot {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.45);
   text-align: center;
