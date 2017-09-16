@@ -22,7 +22,7 @@
         </a>
       </div>
 
-      <div id="navMenuButton" aria-controls="navMenu" ref="navMenuButton" tabindex="0"  class="navbar-burger burger" :class="{'is-active': menuIsActive}"
+      <div id="navMenuButton" aria-controls="navMenu" ref="navMenuButton" class="navbar-burger burger" :class="{'is-active': menuIsActive}"
         aria-label="Button for mobile navigation menu"
         :aria-expanded="menuIsActive"
         @keyup.enter.prevent="$store.commit('toggleMenuState')"
@@ -178,10 +178,14 @@ a.navbar-item.nuxt-link-exact-active.nuxt-link-active {
   @media (min-width: 1000px) {
     font-size: 2em;
   }
-  span:first-of-type {
-    margin-right: 3px;
-    font-weight: 700;
+  span {
+    font-weight: 300;
+    &:first-of-type {
+      margin-right: 3px;
+      font-weight: 700;
+    }
   }
+
 }
 
 .has-shadow {

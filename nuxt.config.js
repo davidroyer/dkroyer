@@ -14,7 +14,6 @@ function createRoutes(posts)  {
 
 module.exports = {
   head: {
-    // title: 'David Royer - Front End Web Developer',
     titleTemplate: '%s - David Royer - Front End Web Developer',
     meta: [
       { charset: 'utf-8' },
@@ -30,7 +29,6 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900|Roboto+Condensed:400,700,700i' }
     ]
   },
   manifest: {
@@ -42,7 +40,6 @@ module.exports = {
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
   modules: [
-    // '@nuxtjs/bulma',
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
   ],
@@ -51,30 +48,17 @@ module.exports = {
     { src: '~/assets/css/btest.sass', lang: 'sass'},
     { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
-  env: {
-    // baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-  },
   generate: {
     routes: function() {
       return createRoutes(postsObject)
     }
   },
   build: {
-    /*
-    ** Run ESLINT on save
-    */
-    // vendor: ['vue-awesome'],
     extractCSS: true,
     extend (config, ctx) {
       config.module.rules.push({
         test: /\.md$/,
-        // use: [
-        //   'raw-loader',
-        //  'markdown-with-front-matter-loader'
-        // ]
         use: [ 'markdown-with-front-matter-loader' ]
-        // loader: 'markdown-with-front-matter-loader'
-        // loader: 'vue-content-loader'
       })
       // if (ctx.isClient) {
       //   config.module.rules.push({

@@ -6371,10 +6371,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-awesome@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-2.3.3.tgz#e83f976fe5c7f86d207c24ca33731bdc6e9906a9"
-
 vue-content-loader@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/vue-content-loader/-/vue-content-loader-0.1.3.tgz#a56c409513f86ca99e780bafb382fca6eeef32a6"

@@ -60,8 +60,12 @@ export default {
 
 <style lang="scss">
 .message {
-  padding: 4em;
-    background: none;
+  padding: 2em 0em;
+  background: none;
+
+  @media (min-width: 750px) {
+    padding: 4em;
+  }
 }
 .has-text-centered {
   padding: 2em 0;

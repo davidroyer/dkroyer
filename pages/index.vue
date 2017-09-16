@@ -29,7 +29,7 @@
       </div>
 
       <h2 class="about__title">About Me</h2>
-      <p class="about__text">I currently work at The Learning House in Lousville, KY as a member of the Web Team. While my official title is Front End Web Designer, it would be more accurate as Front End Web Developer.</p>
+      <p class="about__text">I currently work at The Learning House in Lousville, KY as a member of the Web Team. While my official title is Front End Web Designer, the title of Front End Web Developer is far more accurate based on my active responsibilities.</p>
       <div class="timeWrapper">
         <div class="days">
           <h3>I spend most</br>days…</h3>
@@ -148,7 +148,7 @@
     margin: 0 auto;
     font-size: 3.5em;
     font-weight: 200;
-
+    line-height: 1.1;
     @media (min-width: 400px) {
       // max-width: 70%;
       font-size: 3.5em;

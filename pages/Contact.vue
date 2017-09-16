@@ -10,17 +10,17 @@
         <input type='hidden' name='form-name' value='contact' />
         <div class="field">
           <label for="name" class="label">Name</label>
-          <input class="input" type="text" placeholder="Your Name" v-model="name" name="name">
+          <input class="input" required type="text" placeholder="Your Name" v-model="name" name="name">
         </div>
         <div class="field">
           <label for="email" class="label">Email</label>
-          <input class="input" type="email" placeholder="Email input" v-model="email" name="email">
+          <input class="input" required type="email" placeholder="Email input" v-model="email" name="email">
         </div>
         <div class="field">
           <label for="message" class="label">Message</label>
           <textarea class="textarea" placeholder="Your Message..." v-model="message" name="message"></textarea>
         </div>
-        <button class="submit" type="submit">Send</button>
+        <button class="submit" required type="submit">Send</button>
       </form>
 
     </section>
@@ -33,15 +33,9 @@ import VueResource from '~/plugins/vue-resource'
 export default {
   head () {
     return {
-      title: 'Contact Me',
-      meta: [
-        { hid: 'description', name: 'description', content: 'My custom description' }
-      ]
+      title: 'Contact'
     }
   },
-  // head: {
-  //   title: 'Contact Me'
-  // },
   asyncData({}) {
     return {
         'form-name': 'contact',
@@ -88,7 +82,7 @@ export default {
 
 }
 .submit {
-    padding: 0.75em 1.5em;
+    padding: 0.5em 1.5em;
     min-width: 120px;
     border-radius: 0;
     margin-left: auto;
@@ -99,18 +93,13 @@ export default {
     text-align: left;
     width: 600px;
     max-width: 100%;
-    // textarea {
-    //     &:focus ~ .icon {
-    //         color: #7a7a7a;
-    //     }
-    // }
 }
 .contactForm {
 
     label {
         display: block;
         margin: 2em 1em;
-        // width: 100%;
+
         text-align: left;
     }
 
