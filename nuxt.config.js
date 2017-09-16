@@ -41,11 +41,12 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/bulma',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
   ],
   loading: { color: '#3B8070' },
   css: [
-    { src: '~/assets/css/btest.sass', lang: 'sass'},
+    // { src: '~/assets/css/btest.sass', lang: 'sass'},
     { src: '~/assets/css/main.scss', lang: 'scss'}
   ],
   generate: {
