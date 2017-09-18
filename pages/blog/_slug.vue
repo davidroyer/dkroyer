@@ -8,6 +8,18 @@
 <script>
 import Hero from '@/components/Hero'
 export default {
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post.title
+        }
+      ]
+    }
+  },
   asyncData: async ({ app, params, payload }) => ({
     post: await app.$content('/blog').get(params.slug) || payload
   }),
