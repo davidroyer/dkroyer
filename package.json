@@ -5,6 +5,7 @@
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/axios": "^4.3.0",
     "@nuxtjs/bulma": "^1.0.3",
     "@nuxtjs/font-awesome": "^1.0.1",
     "@nuxtjs/google-analytics": "^0.2.0",
@@ -18,6 +19,8 @@
     "markdown-it-front-matter": "^0.1.2",
     "markdown-with-front-matter-loader": "^0.1.0",
     "nuxt": "latest",
+    "nuxtent": "^0.2.78",
+    "prismjs": "^1.8.1",
     "vue-resource": "^1.3.4",
     "whatwg-fetch": "^2.0.3",
     "yaml-frontmatter-loader": "^0.1.0"
@@ -29,6 +32,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "content": "nuxtent generate",
     "compile": "m2j -w 100 -c static/Articles/* -o static/api/posts.json",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",

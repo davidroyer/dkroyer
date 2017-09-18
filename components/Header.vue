@@ -25,7 +25,7 @@ export default {
             href: '/contact',
             title: 'Contact'
           }, {
-            href: '/posts',
+            href: '/blog',
             title: 'Blog Posts'
         }
       ]

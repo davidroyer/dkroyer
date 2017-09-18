@@ -9,13 +9,13 @@
         <div class="message">
           <h2 class="subtitle is-3">Coming Soon...</h2>
         </div>
-        <!-- <div class="postsNavigation">
+        <div class="postsNavigation">
           <template v-for="post in posts">
-            <nuxt-link class="postLink card has-shadow" :key="post.slug" :to="'/posts/'+post.slug">
+            <nuxt-link class="postLink card has-shadow" :key="post.permalink" :to="'/blog'+post.permalink">
               <span class="title" v-text="post.title"></span>
             </nuxt-link>
           </template>
-        </div> -->
+        </div>
       </section>
   </div>
 </template>
@@ -31,21 +31,11 @@ export default {
       title: 'Blog Posts'
     }
   },
-  async asyncData({params}) {
-    const PostsObject = await import(`~/static/api/posts.json`)
-
+  async asyncData ({ app }) {
     return {
-      posts: PostsObject
+      posts: await app.$content('/blog').getAll()
     }
   },
-  // async asyncData({params}) {
-  //   let slug = params.slug
-  //   const {data} = await axios.get(`/api/posts.json`)
-  //
-  //   return {
-  //     posts: data
-  //   }
-  // },
   data() {
     return {
     }

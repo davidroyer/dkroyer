@@ -1,4 +1,7 @@
 const axios = require('axios')
+const { join } = require('path')
+const fs = require('fs')
+const loaders = require('./config/extend_loader.js')
 const postsObject = require('./static/api/posts.json')
 
 function createRoutes(posts)  {
@@ -40,6 +43,7 @@ module.exports = {
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
   modules: [
+    'nuxtent',
     '@nuxtjs/pwa',
     '@nuxtjs/bulma',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
@@ -47,31 +51,32 @@ module.exports = {
   loading: { color: '#3B8070' },
   css: [
     // { src: '~/assets/css/btest.sass', lang: 'sass'},
-    { src: '~/assets/css/main.scss', lang: 'scss'}
+    { src: '~/assets/css/main.scss', lang: 'scss'},
+    'prismjs/themes/prism-coy.css',
+    // '~/assets/css/atom-dark.css'
   ],
-  generate: {
-    routes: function() {
-      return createRoutes(postsObject)
-    }
-  },
+  // generate: {
+  //   routes: function() {
+  //     return createRoutes(postsObject)
+  //   }
+  // },
   build: {
     extractCSS: true,
     extend (config, ctx) {
-      config.module.rules.push({
-        test: /\.md$/,
-        use: [ 'markdown-with-front-matter-loader' ]
-      })
-      // if (ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // }
+      config.module.rules.push(loaders.json_loader)
+      if (ctx.dev && ctx.isClient) {
+        // config.module.rules.push(loaders.lint_loader)
+      }
     }
   },
   router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '/blog/:slug',
+        component: resolve(__dirname, 'pages/blog/_slug.vue')
+      })
+    },
     middleware: 'menu'
   }
 }
