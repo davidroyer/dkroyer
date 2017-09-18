@@ -50,7 +50,6 @@ router: {
 ---
 
 # Tip 3 - Performance
-
 I personally believe using the <a target="/\_blank" rel="noopener" href=https://github.com/nuxt-community/modules/tree/master/modules/pwa>PWA Module</a> is the easiest modification one can do for the biggest impact on his/her site. While customization is possible, it is not required and all it takes to use it is by add 1 line to the modules sections of `nuxt.config.js` like so:
 
 ```js

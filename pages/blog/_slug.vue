@@ -31,7 +31,6 @@ export default {
     max-width: 100%;
   }
   .title {
-    // margin-bottom: 1em;
     text-align: center;
   }
   hr {
@@ -39,13 +38,13 @@ export default {
   }
 
   .content {
-    padding-left: 30px;
     color: #4c4c4c;
-    // font-size: 1em;
     font-size: 1.05em;
     h1 {
-      margin-left: -20px;
       color: #4c4c4c;
+    }
+    .subtitle {
+      font-weight: 100;
     }
   }
 }
