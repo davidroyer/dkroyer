@@ -2,27 +2,29 @@
   <section class="container blogPost">
       <hero :title="this.post.title" ></hero>
       <div class=" container content" v-html="this.post.body"></div>
-      <social-sharing
-        class="socialShare"
-        :url="url"
-        :title="this.post.title"
-        description="Learn Nuxt.js Tips"
-        twitter-user="davidroyer_"
-        inline-template>
+      <transition appear name="slide">
+        <social-sharing
+          class="socialShare"
+          :url="url"
+          :title="this.post.title"
+          description="Learn Nuxt.js Tips"
+          twitter-user="davidroyer_"
+          inline-template>
 
-       <div>
-         <span id="socialShareCTA">Share</span>
-           <network network="email">
-              <i class="fa fa-envelope"></i>
-           </network>
-           <network network="facebook">
-             <i class="fa fa-facebook"></i>
-           </network>
-           <network network="twitter">
-             <i class="fa fa-twitter"></i>
-           </network>
-       </div>
-      </social-sharing>
+         <div>
+           <span id="socialShareCTA">Share</span>
+             <network network="email">
+                <i class="fa fa-envelope"></i>
+             </network>
+             <network network="facebook">
+               <i class="fa fa-facebook"></i>
+             </network>
+             <network network="twitter">
+               <i class="fa fa-twitter"></i>
+             </network>
+         </div>
+        </social-sharing>
+      </transition>
   </section>
 </template>
 
@@ -56,6 +58,7 @@ export default {
 <style lang="scss">
 .socialShare {
   position: fixed;
+  z-index: 999;
   bottom: 30px;
   right: 30px;
   background: white;

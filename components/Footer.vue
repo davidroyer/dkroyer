@@ -26,6 +26,8 @@
 
 <style lang="scss">
   .footer {
+    position: relative;
+    z-index: 999;
     padding: 0;
     .container {
       @media (max-width: 999px) {
