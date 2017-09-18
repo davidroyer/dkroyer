@@ -1,9 +1,6 @@
 <template>
   <section class="container blogPost">
-    <!-- @click.stop="$router.push('/postsview')"  -->
-      <!-- <button class="reversed postNavigation button is-info is-outlined" @click.stop ="$router.push('/blog')">Back</button> -->
       <hero :title="post.title" ></hero>
-      <!-- <nuxtent-body :body="post.body" /> -->
       <div class=" container content" v-html="post.body"></div>
   </section>
 </template>
@@ -34,8 +31,22 @@ export default {
     max-width: 100%;
   }
   .title {
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     text-align: center;
+  }
+  hr {
+    margin: 2.5em 0;
+  }
+
+  .content {
+    padding-left: 30px;
+    color: #4c4c4c;
+    // font-size: 1em;
+    font-size: 1.05em;
+    h1 {
+      margin-left: -20px;
+      color: #4c4c4c;
+    }
   }
 }
 </style>

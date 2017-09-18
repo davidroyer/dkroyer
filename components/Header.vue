@@ -1,7 +1,7 @@
 <template>
 <header class="header has-shadow">
   <div class="container navbarContainer">
-      <navbar :navLinks="links"></navbar>
+    <navbar :navLinks="links"></navbar>
   </div>
 </header>
 </template>
@@ -26,7 +26,7 @@ export default {
             title: 'Contact'
           }, {
             href: '/blog',
-            title: 'Blog Posts'
+            title: 'Blog'
         }
       ]
     }

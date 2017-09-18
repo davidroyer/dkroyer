@@ -50,16 +50,9 @@ module.exports = {
   ],
   loading: { color: '#3B8070' },
   css: [
-    // { src: '~/assets/css/btest.sass', lang: 'sass'},
     { src: '~/assets/css/main.scss', lang: 'scss'},
     'prismjs/themes/prism-coy.css',
-    // '~/assets/css/atom-dark.css'
   ],
-  // generate: {
-  //   routes: function() {
-  //     return createRoutes(postsObject)
-  //   }
-  // },
   build: {
     extractCSS: true,
     extend (config, ctx) {
