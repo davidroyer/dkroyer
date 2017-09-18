@@ -77,10 +77,29 @@ export default {
   border-left: 2px solid #4c4c4c;
   border-top: 2px solid #4c4c4c;
   padding: .5em .75em;
-  @media (min-width: 749px) {
-      padding: .5em 1.25em;
-  }
 
+// Non fixed version
+  border: none;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    width: 130px;
+    margin-right: auto;
+    margin-bottom: 4.5em;
+    justify-content: space-between;
+    display: flex;
+    transition: background-color .25s ease;
+    cursor: pointer;
+    @media (min-width: 749px) {
+        padding: .5em 1.25em;
+    }
+
+    &:hover {
+      // cursor: pointer
+      color: white;
+      background: #4c4c4c;
+    }
   svg {
     stroke-width: 20px;
     height: 25px;
@@ -89,32 +108,31 @@ export default {
     // margin: 0 .5em;
     cursor: pointer;
     transition: .2s ease;
-    &:hover {
-      fill: #00d1b2;
-    }
+    fill: #00d1b2;
+
   }
   span {
     margin: 0 .5em;
-    cursor: pointer;
+
     transition: .2s ease;
     &:hover {
-      color: #00d1b2;
+      // color: #00d1b2;
     }
   }
   #socialShareCTA {
-    cursor: auto;
-    font-size: .9em;
+    cursor: pointer;
+    font-size: 1em;
     margin: 0 5px 0;
     text-transform: uppercase;
     font-weight: 700;
-    &:hover {
-      color: initial;
-    }
+    // &:hover {
+    //   color: initial;
+    // }
   }
 }
 .siteContent {
   .content {
-    padding: 3em .5em
+    padding: 3em .5em 1em;
   }
 }
 
