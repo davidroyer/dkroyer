@@ -56,17 +56,21 @@ export default {
 <style lang="scss">
 .socialShare {
   position: fixed;
-  z-index: 999;
-  bottom: 30px;
-  right: 30px;
+  z-index: 99999;
+  // bottom: 30px;
+  // right: 30px;
   background: white;
-  padding: .5em;
   box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.55);
-  padding: .5em 1em;
-  border-radius: 40px;
+  // padding: .5em 1em;
+  // border-radius: 40px;
   display: flex;
   align-items: center;
-
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  border-left: 2px solid gray;
+  border-top: 2px solid gray;
+  padding: .5em;
   span {
     margin: 0 .5em;
     cursor: pointer;
