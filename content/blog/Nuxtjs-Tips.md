@@ -6,12 +6,12 @@ tags:
 ---
 
 # Tip 1 - Learn Vuex
-I put off on learning Vuex for a long time, and used simpler ways of handling global state. When I finally took the time to understand Vuex though, it paid off greatly when working with Nuxt.js.
+I put off on learning Vuex for a long time, and used simpler ways of handling global state. When I took the time to understand Vuex though, it paid off greatly when working with Nuxt.js.
 
 ---
 
 # Tip 2 - Using Middleware for Mobile Menus
-When a link was clicked by using the mobile menu, the menu would stay open and transition into next the route. I wanted the menu to close on route change.
+When a link was clicked using the mobile menu, it would stay open instead of closing before transitioning routes. I wanted the menu to close on route change.
 
 A couple things needed to happen to accomplish this. (*Disclaimer: I am using Vuex for state management*)
 
@@ -28,7 +28,7 @@ A couple things needed to happen to accomplish this. (*Disclaimer: I am using Vu
   }
   ```
 
-2. Add a function to the `middleware` directory. It would to check if the menu was active and if so then toggle that state (making it inactive).
+2. Add a function to the `middleware` directory. It would to check if the menu was active, and if so then toggle that state (making it inactive).
 
   ```js
   // This is `middleware/menu.js`

@@ -8,7 +8,7 @@
   <div class="container content">
 
     <img class="headshot" src="~/assets/images/headshot.jpg" alt="David Royer Headshot">
-    <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. Whil at its core, Nuxt is a framework for creating Universal Apps, it can also be used as to create static sites which is how I as using it for this site.
+    <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. While at its core, Nuxt is a framework for creating Universal Apps, it can also be used as to create static sites which is how I as using it for this site.
     </p>
     <p>The site is hosted on <a href="https://www.netlify.com/">Netlify</a>. They offer amazing services and are constantly adding new benifits and features.</p>
     <p>In addition to being a static site, my site is actually a PWA (Progress Web App), as well.</p>
