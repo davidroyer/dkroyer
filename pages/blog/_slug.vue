@@ -84,16 +84,13 @@ export default {
     position: relative;
     display: block;
     margin-left: auto;
-    width: 130px;
+    width: 140px;
     margin-right: auto;
     margin-bottom: 4.5em;
     justify-content: space-between;
     display: flex;
     transition: background-color .25s ease;
     cursor: pointer;
-    @media (min-width: 749px) {
-        padding: .5em 1.25em;
-    }
 
     &:hover {
       // cursor: pointer
