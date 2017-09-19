@@ -28,7 +28,7 @@ A couple things needed to happen to accomplish this. (*Disclaimer: I am using Vu
   }
   ```
 
-2. Add a function to the `middleware` directory. It would to check if the menu was active, and if so then toggle that state (making it inactive).
+2. Add a function to the `middleware` directory. It checks if the menu is active. If so, toggle that state (making it inactive).
 
   ```js
   // This is `middleware/menu.js`
@@ -40,7 +40,7 @@ A couple things needed to happen to accomplish this. (*Disclaimer: I am using Vu
   }
   ```
 
-3. Register this middleware to run when the route changes by adding it inside `nuxt.config.js`. It is set to `menu` because our middleware file name was `menu.js`.
+3. Register this middleware to run when the route changes by adding it inside `nuxt.config.js`. It is set to `menu` because our middleware file name is `menu.js`.
 ```js
 router: {
   middleware: 'menu'
@@ -50,7 +50,7 @@ router: {
 ---
 
 # Tip 3 - Performance
-I personally believe using the <a target="/\_blank" rel="noopener" href=https://github.com/nuxt-community/modules/tree/master/modules/pwa>PWA Module</a> is the easiest modification one can do for the biggest impact on his/her site. While customization is possible, it is not required and all it takes to use it is by add 1 line to the modules sections of `nuxt.config.js` like so:
+I personally believe using the <a target="/\_blank" rel="noopener" href=https://github.com/nuxt-community/modules/tree/master/modules/pwa>PWA Module</a> is the easiest modification one can do for the biggest impact on his/her site. While customization is possible, it's not required. All that's needed to begin reaping the benefits is adding 1 line to the modules sections of `nuxt.config.js` like so:
 
 ```js
 // `nuxt.config.js`
