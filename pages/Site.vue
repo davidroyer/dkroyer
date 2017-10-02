@@ -10,9 +10,9 @@
     <img class="headshot" src="~/assets/images/headshot.jpg" alt="David Royer Headshot">
     <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. Nuxt.js at its core is a framework for building Universal Vue.js Apps but can also be used as to create static sites which is how I am using it for this site.
     </p>
-    <p>The site is hosted on <a href="https://www.netlify.com/">Netlify</a>. They offer amazing services and constantly add new features and benifits.</p>
-    <p>In addition to being a static site, this site a PWA (Progress Web App), as well.</p>
-    <p>I've spent a coniderable amount of time working to improve site performance by using Google's<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a>as one of my tools to accmplish this.</p>
+    <p>The site is hosted on <a href="https://www.netlify.com/">Netlify</a>. They offer amazing services and constantly add new features and benefits.</p>
+    <p>In addition to being a static site, this site is a PWA (Progress Web App) as well.</p>
+    <p>I've spent a considerable amount of time working to improve performance for this site. One of the more helpful tools in this process has been Google's <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a> tool. They offer a Chome Extension, making it easy to use and beneficial for helping developers create better sites.</p>
     <!-- <caption>The Lighthouse scores for this site</caption> -->
 
     <figure>
