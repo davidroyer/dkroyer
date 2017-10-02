@@ -12,7 +12,7 @@
     </p>
     <p>The site is hosted on <a href="https://www.netlify.com/">Netlify</a>. They offer amazing services and constantly add new features and benefits.</p>
     <p>In addition to being a static site, this site is a PWA (Progress Web App) as well.</p>
-    <p>I've spent a considerable amount of time working to improve performance for this site. One of the more helpful tools in this process has been Google's <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a> tool. They offer a Chome Extension, making it easy to use and beneficial for helping developers create better sites.</p>
+    <p>I've spent a considerable amount of time working to improve performance for this site. One of the more helpful tools in this process has been Google's <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a> tool. They offer a Chome Extension, making it simple to use and beneficial for helping developers create better sites.</p>
     <!-- <caption>The Lighthouse scores for this site</caption> -->
 
     <figure>
