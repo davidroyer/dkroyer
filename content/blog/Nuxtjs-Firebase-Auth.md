@@ -14,8 +14,9 @@ Nuxt.js.
 <a target="/\_blank" rel="noopener" href=https://github.com/davidroyer/nuxt-firebase-auth>Github Repo</a>
 
 **_Notes:_**
-- Using Nuxt.js `mode: 'spa'` via `nuxt.config.js`
-- Using Firebase Hosting but it should work with any static hosting provider
+- I am using `mode: 'spa'` via `nuxt.config.js`
+- You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console
+- I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings via your Firebase Console under the Sign-In Methods Tab
 
 I have created 3 files that handle the issues faced when attempting to use Firebase Auth with Nuxt.js.
 
@@ -114,6 +115,7 @@ function isAdminRoute(route) {
   }
 }
 ```
+
 We will tell Nuxt.js to use this file by declaring it in `nuxt.config.js` as follows:
 
 ```js
