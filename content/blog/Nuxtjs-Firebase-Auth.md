@@ -1,0 +1,123 @@
+---
+title: "Using Firebase Auth with Nuxt.js"
+tags:
+  - vue
+  - nuxt
+  - firebase
+---
+
+This article is an overview of getting Firebase Auth working with
+Nuxt.js.
+
+<a target="/\_blank" rel="noopener" href=https://nuxt-firebase-auth.firebaseapp.com/>Live Demo</a>
+
+<a target="/\_blank" rel="noopener" href=https://github.com/davidroyer/nuxt-firebase-auth>Github Repo</a>
+
+**_Notes:_**
+- Using Nuxt.js `mode: 'spa'` via `nuxt.config.js`
+- Using Firebase Hosting but it should work with any static hosting provider
+
+I have created 3 files that handle the issues faced when attempting to use Firebase Auth with Nuxt.js.
+
+- `fireinit.js`
+- `fireauth.js`
+- `router-auth.js`
+
+
+# Firebase App Setup
+To setup the firebase app with credentials, I created `services/fireinit.js`. One key line that helps remedy possible issues is:
+
+`!firebase.apps.length ? firebase.initializeApp(config) : ''`
+
+This is if/else statement in condensed form. It checks if any firebase apps already exist.
+
+If one does not exist, initialize the app, otherwise do nothing.
+
+  ```js
+  // This is `services/fireinit.js`
+
+  import * as firebase from 'firebase/app'
+  import 'firebase/auth'
+  import 'firebase/firestore'
+  import 'firebase/database'
+
+  var config = {
+    apiKey: "AIzaSyAzdoAjlM9YlQ-gl8VRayCxtJbnrl9qDsw",
+    authDomain: "nuxt-firebase-auth.firebaseapp.com",
+    databaseURL: "https://nuxt-firebase-auth.firebaseio.com",
+    projectId: "nuxt-firebase-auth",
+    storageBucket: "nuxt-firebase-auth.appspot.com",
+    messagingSenderId: "316484287956"
+  };
+
+  !firebase.apps.length ? firebase.initializeApp(config) : ''
+  export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
+  export const auth = firebase.auth();
+  export const DB = firebase.database();
+  export const StoreDB = firebase.firestore();
+  export default firebase
+  ```
+
+---
+
+# Handling User Authentication State
+Firebase provides `onAuthStateChanged` to handle all aspects user state. I created `fireauth.js` to setup this functionality
+
+  ```js
+  // This is `@plugins/fireauth.js`
+
+  import { auth } from '@/services/fireinit.js'
+
+  export default (context) => {
+    const {store} = context
+
+    return new Promise((resolve, reject) => {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          return resolve(store.commit('setUser', user))
+        }
+        return resolve();
+      })
+    })
+  }
+  ```
+---
+
+# Protecting Authenticated Routes
+This is a function that checks for 2 different scenarios.
+
+**Scenario 1:**
+There is a user and the next route is `/login`
+
+*Redirect to `/admin`*
+
+<br>
+
+**Scenario 2:**
+There is not a user and the next route is `/admin` or a sub-route such as, `/admin/settings`
+
+  *Redirect to `/login`*
+
+<br>
+
+```js
+// This is `@middleware/router-auth.js`
+
+export default function ({ store, redirect, route }) {
+  store.state.user != null && route.name == 'login' ? redirect('/admin') : ''
+  store.state.user == null && isAdminRoute(route) ? redirect('/login') : ''
+}
+
+function isAdminRoute(route) {
+  if (route.matched.some(record => record.path == '/admin')) {
+    return true
+  }
+}
+```
+We will tell Nuxt.js to use this file by declaring it in `nuxt.config.js` as follows:
+
+```js
+router: {
+  middleware: 'router-auth'
+}
+```
