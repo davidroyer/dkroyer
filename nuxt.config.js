@@ -63,13 +63,13 @@ module.exports = {
     }
   },
   router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '/blog/:slug',
-        component: resolve(__dirname, 'pages/blog/_slug.vue')
-      })
-    },
+    // extendRoutes (routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '/blog/:slug',
+    //     component: resolve(__dirname, 'pages/blog/_slug.vue')
+    //   })
+    // },
     middleware: 'menu'
   }
 }
