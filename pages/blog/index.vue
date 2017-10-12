@@ -10,7 +10,7 @@
           <template v-for="post in posts">
             <nuxt-link class="postLink card has-shadow" tag="li" :key="post.permalink" :to="'/blog'+post.permalink">
               <a class="title" v-text="post.title"></a>
-              <span class="postLink__date">{{post.date}}</span>
+              <span class="postLink__date">{{post.publishDate}}</span>
               <!-- <div></div> -->
             </nuxt-link>
           </template>
@@ -56,7 +56,7 @@ export default {
 
   .postLink {
     margin: 1em;
-    padding: 1em;
+    padding: 1em 1.5em;
     flex: 1 1 100%;
     height: 180px;
     // text-align: left;

@@ -160,7 +160,18 @@ export default {
   hr {
     margin: 2.5em 0;
   }
+  .flexContainer {
+    display: flex;
+    margin: 1em 0;
 
+    & > a {
+      margin: .5em 1em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
   .content {
     color: #4c4c4c;
     font-size: 1.05em;

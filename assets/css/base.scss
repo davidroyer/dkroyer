@@ -97,12 +97,14 @@ a {
 }
 
 .container {
-  padding: 2em;
+  padding: 2em .5em;
   text-align: center;
   max-width: 1200px;
-
   transition: all .35s cubic-bezier(.55,0,.1,1);
 
+  @media (min-width: 750px) {
+    padding: 2em;
+  }
   p {
     // max-width: 800px;
   }
