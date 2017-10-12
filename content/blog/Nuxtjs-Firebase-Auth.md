@@ -1,22 +1,22 @@
 ---
 title: "Using Firebase Auth with Nuxt.js"
+subtitle: "Part 1"
 tags:
   - vue
   - nuxt
   - firebase
 ---
 
-This article is an overview of getting Firebase Auth working with
-Nuxt.js.
+This article is an overview of using Nuxt.js. with Firebase Authentication. In Part 2, I will go in more detail, hoping to shed some light on what's happening in the code to make this work.
 
 <a target="/\_blank" rel="noopener" href=https://nuxt-firebase-auth.firebaseapp.com/>Live Demo</a>
 
 <a target="/\_blank" rel="noopener" href=https://github.com/davidroyer/nuxt-firebase-auth>Github Repo</a>
 
 **_Notes:_**
-- I am using `mode: 'spa'` via `nuxt.config.js`
-- You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console
-- I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings via your Firebase Console under the Sign-In Methods Tab
+- I am using `mode: 'spa'` via `nuxt.config.js`.
+- You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console.
+- I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings via your Firebase Console under the Sign-In Methods Tab.
 
 I have created 3 files that handle the issues faced when attempting to use Firebase Auth with Nuxt.js.
 
@@ -24,15 +24,15 @@ I have created 3 files that handle the issues faced when attempting to use Fireb
 - `fireauth.js`
 - `router-auth.js`
 
-
+---
 # Firebase App Setup
-To setup the firebase app with credentials, I created `services/fireinit.js`. One key line that helps remedy possible issues is:
+To setup/initialize the firebase app with credentials, I created `services/fireinit.js`. An issue commonly seen by developers is Firebase telling us an app already exist. The line below solves this issue.
 
 `!firebase.apps.length ? firebase.initializeApp(config) : ''`
 
-This is if/else statement in condensed form. It checks if any firebase apps already exist.
+This is `if/else` statement in shortened form. It checks if any firebase apps already exist.
 
-If one does not exist, initialize the app, otherwise do nothing.
+If one does not exist, initialize the app, otherwise do nothing because it's already happened so we're good to go.
 
   ```js
   // This is `services/fireinit.js`
@@ -43,12 +43,12 @@ If one does not exist, initialize the app, otherwise do nothing.
   import 'firebase/database'
 
   var config = {
-    apiKey: "AIzaSyAzdoAjlM9YlQ-gl8VRayCxtJbnrl9qDsw",
-    authDomain: "nuxt-firebase-auth.firebaseapp.com",
-    databaseURL: "https://nuxt-firebase-auth.firebaseio.com",
-    projectId: "nuxt-firebase-auth",
-    storageBucket: "nuxt-firebase-auth.appspot.com",
-    messagingSenderId: "316484287956"
+    apiKey: "yourProjectValueHere",
+    authDomain: "yourProjectValueHere",
+    databaseURL: "yourProjectValueHere",
+    projectId: "yourProjectValueHere",
+    storageBucket: "yourProjectValueHere",
+    messagingSenderId: "yourProjectValueHere",
   };
 
   !firebase.apps.length ? firebase.initializeApp(config) : ''
@@ -62,7 +62,7 @@ If one does not exist, initialize the app, otherwise do nothing.
 ---
 
 # Handling User Authentication State
-Firebase provides `onAuthStateChanged` to handle all aspects user state. I created `fireauth.js` to setup this functionality
+Firebase provides `onAuthStateChanged` to handle user state. I created `fireauth.js` to setup this functionality
 
   ```js
   // This is `@plugins/fireauth.js`
@@ -85,21 +85,22 @@ Firebase provides `onAuthStateChanged` to handle all aspects user state. I creat
 ---
 
 # Protecting Authenticated Routes
-This is a function that checks for 2 different scenarios.
 
 **Scenario 1:**
-There is a user and the next route is `/login`
+A user is already signed-in and the next route is `/login`
 
 *Redirect to `/admin`*
 
 <br>
 
 **Scenario 2:**
-There is not a user and the next route is `/admin` or a sub-route such as, `/admin/settings`
+There is not a user signed-in and the next route is `/admin` or a sub-route such as, `/admin/settings`
 
   *Redirect to `/login`*
 
 <br>
+
+This functions checks for the 2 scenarios:
 
 ```js
 // This is `@middleware/router-auth.js`
