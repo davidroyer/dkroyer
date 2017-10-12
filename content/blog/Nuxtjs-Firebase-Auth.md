@@ -1,5 +1,5 @@
 ---
-title: "Using Firebase Auth with Nuxt.js"
+title: "Using Firebase Auth With Nuxt.js"
 subtitle: "Part 1"
 data: 2017-10-11
 tags:
