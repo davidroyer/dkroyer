@@ -7,7 +7,7 @@ tags:
   - firebase
 ---
 
-This article is an overview of using Nuxt.js. with Firebase Authentication. In Part 2, I will go in more detail, hoping to shed some light on what's happening in the code to make this work.
+This article is an overview of using Nuxt.js with Firebase Authentication. In Part 2, I will go in more detail, hoping to shed some light on what's happening in the code to make this work.
 
 <a target="/\_blank" rel="noopener" href=https://nuxt-firebase-auth.firebaseapp.com/>Live Demo</a>
 
