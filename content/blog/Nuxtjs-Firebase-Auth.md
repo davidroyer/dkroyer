@@ -106,7 +106,7 @@ There is not a user signed-in and the next route is `/admin` or a sub-route such
 
 <br>
 
-This functions checks for the 2 scenarios:
+This function checks for the 2 scenarios:
 
 ```js
 // This is `@middleware/router-auth.js`
