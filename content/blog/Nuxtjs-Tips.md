@@ -1,5 +1,6 @@
 ---
 title: "Tips After Building a Site with Nuxt.js"
+date: 2017-9-18
 tags:
   - vue
   - nuxt

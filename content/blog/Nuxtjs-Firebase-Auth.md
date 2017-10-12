@@ -1,6 +1,7 @@
 ---
 title: "Using Firebase Auth with Nuxt.js"
 subtitle: "Part 1"
+data: 2017-10-11
 tags:
   - vue
   - nuxt
