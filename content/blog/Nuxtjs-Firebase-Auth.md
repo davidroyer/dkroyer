@@ -58,10 +58,9 @@ If one does not exist, initialize the app, otherwise do nothing because it's alr
   };
 
   !firebase.apps.length ? firebase.initializeApp(config) : ''
-  export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
-  export const auth = firebase.auth();
-  export const DB = firebase.database();
-  export const StoreDB = firebase.firestore();
+  export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+  export const auth = firebase.auth()
+  export const DB = firebase.database()
   export default firebase
   ```
 
