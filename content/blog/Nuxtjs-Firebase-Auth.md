@@ -1,21 +1,21 @@
 ---
 title: "Using Firebase Auth With Nuxt.js"
 subtitle: "Part 1"
-data: 2017-10-11
+date: 2017-10-11
 tags:
   - vue
   - nuxt
   - firebase
 ---
 
-This article is an overview of using Nuxt.js with Firebase Authentication. In Part 2, I will go in more detail, hoping to shed some light on what's happening in the code to make this work.
+This article is an overview of using Nuxt.js with Firebase Authentication. In Part 2, I will provide more detail on specifics on what's happening in the code.
 
 <a target="/\_blank" rel="noopener" href=https://nuxt-firebase-auth.firebaseapp.com/>Live Demo</a>
 
 <a target="/\_blank" rel="noopener" href=https://github.com/davidroyer/nuxt-firebase-auth>Github Repo</a>
 
 **_Notes:_**
-- I am using `mode: 'spa'` via `nuxt.config.js`.
+- I am using SPA mode with Nuxt.js which is implemented by setting the option `mode: 'spa'` in `nuxt.config.js`.
 - You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console.
 - I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings via your Firebase Console under the Sign-In Methods Tab.
 
@@ -31,7 +31,7 @@ To setup/initialize the firebase app with credentials, I created `services/firei
 
 `!firebase.apps.length ? firebase.initializeApp(config) : ''`
 
-This is `if/else` statement in shortened form. It checks if any firebase apps already exist.
+This is an `if/else` statement in shortened form. It checks if any firebase apps already exist.
 
 If one does not exist, initialize the app, otherwise do nothing because it's already happened so we're good to go.
 
@@ -117,6 +117,7 @@ function isAdminRoute(route) {
   }
 }
 ```
+<br>
 
 We will tell Nuxt.js to use this file by declaring it in `nuxt.config.js` as follows:
 
@@ -125,3 +126,6 @@ router: {
   middleware: 'router-auth'
 }
 ```
+<br>
+
+With all of this in place, we are able to use Firebase Authentication with Nuxt.js to protect the `/admin` route as well as child routes such as `/admin/settings`.
