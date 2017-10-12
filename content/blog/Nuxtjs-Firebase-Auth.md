@@ -1,13 +1,13 @@
 ---
-title: "Using Firebase Auth With Nuxt.js"
+title: "Using Firebase Authentication With Nuxt.js"
 subtitle: Part 1
 publishDate: "2017-10-11"
+description: "Overview of using Firebase Authentication with Nuxt.js by David Royer."
 tags:
   - vue
   - nuxt
   - firebase
 ---
-
 This article is an overview of using Nuxt.js with Firebase Authentication. In Part 2, I will provide a more detailed explanation of the concepts used in this example.
 
 <div class="flexContainer">
@@ -15,13 +15,11 @@ This article is an overview of using Nuxt.js with Firebase Authentication. In Pa
 <a target="/\_blank" rel="noopener" href=https://github.com/davidroyer/nuxt-firebase-auth>Github Repo</a>
 </div>
 
-**_Notes:_**
-- I am using SPA mode with Nuxt.js which is implemented by setting the option `mode: 'spa'` in `nuxt.config.js`.
+![alt text](/post_nuxt-firebase-authentication.jpg "Screenshot")
+**_Note:_**
+*I am using SPA mode with Nuxt.js which is implemented by setting the option `mode: 'spa'` in `nuxt.config.js`.*
 
-- You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console.
-
-- I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings.
-
+---
 The 3 files I created to handle the authentication are listed below and we'll go through each one.
 
 - `fireinit.js`
@@ -67,7 +65,7 @@ If one does not exist, initialize the app, otherwise do nothing because it's alr
 ---
 
 # Handling User Authentication State
-Firebase provides `onAuthStateChanged` to handle user state. I created `fireauth.js` to setup this functionality
+Firebase provides `onAuthStateChanged` to handle user state. I created `fireauth.js` to setup this functionality.
 
   ```js
   // This is `@plugins/fireauth.js`
@@ -130,4 +128,4 @@ router: {
 ```
 <br>
 
-With all of this in place, we are able to use Firebase Authentication with Nuxt.js to protect the `/admin` route as well as child routes such as `/admin/settings`.
+With all of this in place, we are able to use Firebase Authentication with Nuxt.js to protect the `/admin` route and and any nested routes such as `/admin/settings`.

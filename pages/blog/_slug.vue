@@ -41,7 +41,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.title
+          content: this.post.description ? this.post.description : this.post.title
         }
       ]
     }
@@ -151,11 +151,17 @@ export default {
 .blogPost {
   width: 100%;
   text-align: left;
+
   .hero > .container {
     max-width: 100%;
   }
   .title {
     text-align: center;
+  }
+
+  img {
+    box-shadow: 0 5px 13px hsla(0, 0%, 30%, 0.65);
+    margin: 0 0 2em 0;
   }
   hr {
     margin: 2.5em 0;
@@ -163,7 +169,7 @@ export default {
   .flexContainer {
     display: flex;
     margin: 1em 0;
-
+    justify-content: center;
     & > a {
       margin: .5em 1em;
 

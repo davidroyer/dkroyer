@@ -1,7 +1,8 @@
 ---
-title: Tips After Building a Site with Nuxt.js
+title: "Tips After Building a Site with Nuxt.js"
 date: 2017-9-18
 publishDate: 2017-9-18
+description: "A few tips for Nuxt.js after my experience of building my new personal site with it."
 tags:
   - vue
   - nuxt
