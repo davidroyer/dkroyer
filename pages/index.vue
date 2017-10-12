@@ -176,7 +176,6 @@
 .svgIcons {
   display: flex;
   justify-content: space-around;
-  justify-content: space-evenly;
   flex-flow: row wrap;
   align-items: center;
   svg {
