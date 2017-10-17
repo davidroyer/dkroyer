@@ -1,15 +1,15 @@
 <template>
   <section class="blogPost">
-    <hero :title="this.post.title" :subtitle="this.post.subtitle"></hero>
-    <div class=" container content" v-html="this.post.body"></div>
+
+    <hero :title="post.title" :subtitle="post.subtitle"></hero>
+    <div class=" container content" v-html="post.body"></div>
     <social-sharing
       class="socialShare"
       :url="url"
-      :title="this.post.title"
+      :title="post.title"
       description="Learn Nuxt.js Tips"
       twitter-user="davidroyer_"
       inline-template>
-
      <div>
 
          <!-- <network network="email">
@@ -38,11 +38,9 @@ export default {
     return {
       title: this.post.title,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.post.description ? this.post.description : this.post.title
-        }
+        { hid: 'description', name: 'description', content: this.post.description ? this.post.description : this.post.title },
+        { name: 'twitter:image', content: this.post.twitterImage },
+        { name: 'twitter:image:alt', content: 'Nuxt.js logo' }
       ]
     }
   },

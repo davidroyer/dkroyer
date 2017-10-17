@@ -3,6 +3,7 @@ title: "Using Firebase Authentication With Nuxt.js"
 subtitle: Part 1
 publishDate: "2017-10-11"
 description: "Overview of using Firebase Authentication with Nuxt.js by David Royer."
+twitterImage: '/post_nuxt-firebase-authentication.jpg'
 tags:
   - vue
   - nuxt
