@@ -11,7 +11,7 @@ export default {
   }),
   head: {
     meta: [
-      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@davidroyer_' },
       { name: 'twitter:title', content: 'Nuxt.js Twitter Card' },
       { name: 'twitter:description', content: 'Nuxt.js lets you handle custom headers for your app with vue-meta' },
