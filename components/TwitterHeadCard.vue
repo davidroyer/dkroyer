@@ -15,7 +15,7 @@ export default {
       { name: 'twitter:site', content: '@davidroyer_' },
       { name: 'twitter:title', content: 'Nuxt.js Twitter Card' },
       { name: 'twitter:description', content: 'Nuxt.js lets you handle custom headers for your app with vue-meta' },
-      { name: 'twitter:image', content: '~/static/post_nuxt-firebase-authentication.jpg' },
+      { name: 'twitter:image', content: '/post_nuxt-firebase-authentication.jpg' },
       { name: 'twitter:image:alt', content: 'Nuxt.js logo' }
     ]
   }
