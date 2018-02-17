@@ -59,3 +59,14 @@ body {
   -moz-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+
+.tags {
+  margin-left: auto;
+  margin-right: auto;
+
+  .tag {
+    margin: .5em;
+    font-weight: 500;
+  }
+}

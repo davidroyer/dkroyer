@@ -43,7 +43,7 @@ module.exports = {
     { src: '~/plugins/vue-resource.js', ssr: false }
   ],
   modules: [
-    'nuxtent',
+    // 'nuxtent',
     '@nuxtjs/pwa',
     '@nuxtjs/bulma',
     ['@nuxtjs/google-analytics', { ua: 'UA-56060335-5' }],
@@ -61,6 +61,10 @@ module.exports = {
         // config.module.rules.push(loaders.lint_loader)
       }
     }
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || "https://fire-tests.firebaseio.com",
+    fbAPIKey: "AIzaSyApB_tw8EabiOtZ193fu4VazZbM00jlPBA"
   },
   router: {
     extendRoutes (routes, resolve) {

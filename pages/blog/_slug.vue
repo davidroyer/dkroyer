@@ -1,15 +1,15 @@
 <template>
   <section class="blogPost">
-    <hero :title="this.post.title" :subtitle="this.post.subtitle"></hero>
-    <div class=" container content" v-html="this.post.body"></div>
+    <hero :tags="post.tags" :title="post.title" :subtitle="post.subtitle || 'Subtitle Holder'"></hero>
+
+    <div class=" container content" v-html="post.content"></div>
     <social-sharing
       class="socialShare"
-      :url="url"
-      :title="this.post.title"
+      :url="$route.fullPath"
+      :title="post.title"
       description="Learn Nuxt.js Tips"
       twitter-user="davidroyer_"
       inline-template>
-
      <div>
 
          <!-- <network network="email">
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Hero from '@/components/Hero'
 import SocialSharing from '@/plugins/vue-social-sharing'
 
@@ -46,10 +47,15 @@ export default {
       ]
     }
   },
-  asyncData: async ({ app, params, payload, route }) => ({
-    post: await app.$content('/blog').get(params.slug) || payload,
-    url: `https://www.davidroyer.me${route.fullPath}`
-  }),
+  async asyncData({app, params, payload}) {
+    const {data} = await axios.get(`https://nuxtfireapi.firebaseio.com/posts.json?orderBy="slug"&equalTo="${params.slug}"&print=pretty`)
+    const keys = Object.keys(data)
+    const post = data[keys[0]]
+
+    return {
+      post
+    }
+  },
   components: {
     Hero
   }

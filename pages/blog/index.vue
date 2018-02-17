@@ -7,11 +7,14 @@
     </div>
       <section class="container">
         <div class="postsNavigation">
-          <template v-for="post in posts">
-            <nuxt-link class="postLink card has-shadow" tag="li" :key="post.permalink" :to="'/blog'+post.permalink">
+          <template v-for="(post, key) in posts">
+            <nuxt-link class="postLink card has-shadow" tag="li" :key="key" exact :to="`/blog/${post.slug}`">
               <a class="title" v-text="post.title"></a>
-              <span class="postLink__date">{{post.publishDate}}</span>
-              <!-- <div></div> -->
+              <div class="post-detail tags" v-if="post.tags" >
+                <template v-for="(tag, index) in post.tags">
+                  <div class="tag">{{tag}}</div>
+                </template>
+              </div>
             </nuxt-link>
           </template>
         </div>
@@ -20,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   components: {
@@ -30,8 +34,9 @@ export default {
     }
   },
   async asyncData ({ app }) {
+    const {data} = await axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
     return {
-      posts: await app.$content('/blog').getAll()
+      posts: data
     }
   }
 }
@@ -79,6 +84,17 @@ export default {
       margin-bottom: 0;
       align-self: center;
     }
+
+    .tags {
+      margin-left: auto;
+      margin-right: auto;
+
+      .tag {
+        margin: .5em;
+        font-weight: 500;
+      }
+    }
+
     &__date {
       margin-left: auto;
       margin-right: auto;
