@@ -3,6 +3,7 @@ const { join } = require('path')
 const fs = require('fs')
 const loaders = require('./config/extend_loader.js')
 const postsObject = require('./static/api/posts.json')
+const _ = require('lodash');
 
 function createRoutes(posts)  {
   var routes = []
@@ -64,16 +65,29 @@ module.exports = {
   },
   env: {
     baseUrl: process.env.BASE_URL || "https://fire-tests.firebaseio.com",
-    fbAPIKey: "AIzaSyApB_tw8EabiOtZ193fu4VazZbM00jlPBA"
+    fbAPIKey: "AIzaSyDi-EfdKQoaQ1klE4dhv87TzHEC_3NvnsM"
   },
-  router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '/blog/:slug',
-        component: resolve(__dirname, 'pages/blog/_slug.vue')
+
+  generate: {
+    routes: function() {
+      return axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
+      .then((res) => {
+        return _.map(res.data, function(post, key) {
+          return `/blog/${post.slug}`
+        })
+
       })
-    },
+    }
+  },
+
+  router: {
+    // extendRoutes (routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '/blog/:slug',
+    //     component: resolve(__dirname, 'pages/blog/_slug.vue')
+    //   })
+    // },
     middleware: 'menu'
   }
 }

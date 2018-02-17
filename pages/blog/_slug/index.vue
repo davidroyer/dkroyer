@@ -42,7 +42,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.description ? this.post.description : this.post.title
+          content: this.post.excerpt ? this.post.excerpt : "Placeholder content"
         }
       ]
     }
