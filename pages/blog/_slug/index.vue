@@ -1,6 +1,6 @@
 <template>
   <section class="blogPost">
-    <hero :tags="post.tags" :title="post.title" :subtitle="post.subtitle || 'Subtitle Holder'"></hero>
+    <hero :tags="post.tags" :title="post.title" :subtitle="post.subtitle"></hero>
 
     <div class=" container content" v-html="post.content"></div>
     <social-sharing

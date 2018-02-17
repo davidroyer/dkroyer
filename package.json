@@ -15,6 +15,7 @@
     "bulma": "0.4.4",
     "firebase": "^4.1.1",
     "firebaseui": "^2.0.0",
+    "hanabi": "^0.4.0",
     "json-loader": "^0.5.4",
     "markdown-it-front-matter": "^0.1.2",
     "markdown-with-front-matter-loader": "^0.1.0",
