@@ -98,14 +98,17 @@ module.exports = {
   },
 
   generate: {
-    routes: async function() {
-      const { data } = axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
-      return _.map(data, function(post, key) {
-        return {
-          route: `/blog/${post.slug}`,
-          payload: post
-        }
-      })
+    routes: function() {
+      return axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
+        .then((res) => {
+          return _.map(res.data, function(post, key) {
+            return {
+              route: `/blog/${post.slug}`,
+              payload: post
+            }
+          })
+
+        })
     }
   },
 
