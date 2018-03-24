@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-// .title
+.tags {
+  justify-content: center;
+}
 </style>

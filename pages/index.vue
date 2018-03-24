@@ -118,6 +118,11 @@
       height: 450px;
       background-position: top;
     }
+    @media (min-width: 1450px) {
+      background-size: cover;
+      height: 650px;
+      background-position: top;
+    }
     &:before {
       content: '';
       position: absolute;

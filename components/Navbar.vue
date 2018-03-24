@@ -218,7 +218,7 @@ a.navbar-item.nuxt-link-exact-active.nuxt-link-active {
 
       &:nth-child(3) {
         margin-left: -5px;
-        transform: translateY(-7px) rotate(-45deg) !important;
+        transform: translateY(-13px) rotate(-45deg) !important;
       }
     }
   }
