@@ -1,78 +1,64 @@
-importScripts('workbox-sw.prod.v1.3.0.js');
-
-/**
- * DO NOT EDIT THE FILE MANIFEST ENTRY
- *
- * The method precache() does the following:
- * 1. Cache URLs in the manifest to a local cache.
- * 2. When a network request is made for any of these URLs the response
- *    will ALWAYS comes from the cache, NEVER the network.
- * 3. When the service worker changes ONLY assets with a revision change are
- *    updated, old cache entries are left as is.
- *
- * By changing the file manifest manually, your users may end up not receiving
- * new versions of files because the revision hasn't changed.
- *
- * Please use workbox-build or some other tool / approach to generate the file
- * manifest which accounts for changes to local files and update the revision
- * accordingly.
- */
-const fileManifest = [
-  {
-    "url": "/_nuxt/app.d911a2e9dd9e3943e78c.js",
-    "revision": "31233ff77f695aeb9b8e6608d00a2abe"
-  },
-  {
-    "url": "/_nuxt/common.5c4b32427d3c7cf02d57.js",
-    "revision": "55dd895c83d21344073207dc6ca3334e"
-  },
-  {
-    "url": "/_nuxt/common.c93405f74547826865fe0e16d0505761.css",
-    "revision": "5f6951ac42e915d5318525705866f8fc"
-  },
-  {
-    "url": "/_nuxt/layouts/default.86dd6f3f688c87601079.js",
-    "revision": "cbeed3df591089111eb151f672cba44e"
-  },
-  {
-    "url": "/_nuxt/manifest.0bc3acf8b7fd691e1157.js",
-    "revision": "e5b7659275a6189c9b7f54b9c332e426"
-  },
-  {
-    "url": "/_nuxt/pages/About.58050bd68eec63c6b0c5.js",
-    "revision": "18bda60bff0205d9acc332f0fb2d250e"
-  },
-  {
-    "url": "/_nuxt/pages/blog/_slug/index.6fd599c8f814528bd37e.js",
-    "revision": "6e33975bd638e1bdc10b722050eb2208"
-  },
-  {
-    "url": "/_nuxt/pages/blog/index.ea96e59332b86003b8bb.js",
-    "revision": "aa523c7616dbf8f7018f3cf901d9a88e"
-  },
-  {
-    "url": "/_nuxt/pages/Contact.45bc61e016deefc3dd52.js",
-    "revision": "53f7273a16567fbfe5356e4ff6dd82c3"
-  },
-  {
-    "url": "/_nuxt/pages/index.1eb75870b5b4ea51da59.js",
-    "revision": "4296a382cb145681b36a8fc59310e7f1"
-  },
-  {
-    "url": "/_nuxt/pages/Site.6108659d3dd423b9fc46.js",
-    "revision": "07c5b32dab581de713c0813587d40486"
-  },
-  {
-    "url": "/_nuxt/pages/thank-you.6abb31998c1f88fb3527.js",
-    "revision": "7bee0f29c87eb930dd6af11e89313bea"
-  }
-];
+importScripts('/_nuxt/workbox.3de3418b.js')
 
 const workboxSW = new self.WorkboxSW({
-  "cacheId": "dkroyer_1.0.0",
+  "cacheId": "dkroyer",
   "clientsClaim": true,
   "directoryIndex": "/"
-});
-workboxSW.precache(fileManifest);
-workboxSW.router.registerRoute('/**', workboxSW.strategies.networkFirst({}), 'GET');
-workboxSW.router.registerRoute('/_nuxt/**', workboxSW.strategies.cacheFirst({}), 'GET');
+})
+
+workboxSW.precache([
+  {
+    "url": "/_nuxt/app.c1bdda214ecc9869bd8717b3c14e5d38.css",
+    "revision": "c1bdda214ecc9869bd8717b3c14e5d38"
+  },
+  {
+    "url": "/_nuxt/app.edd7b4f0c1bdfd378c0a.js",
+    "revision": "f8039d0b1624a74d6e1d47038e76dcf2"
+  },
+  {
+    "url": "/_nuxt/layouts/default.d8d8fe0ed2a2cff3c9fa.js",
+    "revision": "833cafac4ff85ac398bb66c713d843af"
+  },
+  {
+    "url": "/_nuxt/manifest.afd4eac624e11af18802.js",
+    "revision": "d77c693916adee87084a41159a994b9d"
+  },
+  {
+    "url": "/_nuxt/pages/About.f427fe208a230af6f00c.js",
+    "revision": "ded86d448e57516394e629f9e745124d"
+  },
+  {
+    "url": "/_nuxt/pages/blog/_slug/index.5cab70834c84efc4a2fa.js",
+    "revision": "3fe0ee4fee96c7bfb6abfa1ac36e9c35"
+  },
+  {
+    "url": "/_nuxt/pages/blog/index.5acd5d9c4159c95b4f9d.js",
+    "revision": "ec9741ac9bc839e27b6180f3befddf69"
+  },
+  {
+    "url": "/_nuxt/pages/Contact.c1fb5afed8158adbc7d6.js",
+    "revision": "1a86801934747e98c5a16e0f35b2c684"
+  },
+  {
+    "url": "/_nuxt/pages/index.4ced72f5f9679a06298b.js",
+    "revision": "6a6cada4eec810fc5fc1e92312269a2d"
+  },
+  {
+    "url": "/_nuxt/pages/Site.70ced4e31f1685a52738.js",
+    "revision": "c9ec678a03729e368588a89a0ece6e3e"
+  },
+  {
+    "url": "/_nuxt/pages/thank-you.2998c39481c2eb49fbf0.js",
+    "revision": "ce696f51d2d087f1655be87eb79366e0"
+  },
+  {
+    "url": "/_nuxt/vendor.fb181da8651a2cebe118.js",
+    "revision": "286cf1c5453b463a95cb70b3c6e770a0"
+  }
+])
+
+
+workboxSW.router.registerRoute(new RegExp('/_nuxt/.*'), workboxSW.strategies.cacheFirst({}), 'GET')
+
+workboxSW.router.registerRoute(new RegExp('/.*'), workboxSW.strategies.networkFirst({}), 'GET')
+

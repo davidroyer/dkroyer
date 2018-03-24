@@ -193,25 +193,37 @@ a.navbar-item.nuxt-link-exact-active.nuxt-link-active {
 }
 .navbar-burger {
   span {
-    margin-left: -13px;
+    margin-left: -5px;
     width: 25px !important;
-    height: 1.5px !important;
+    height: 2.5px !important;
     &:first-child {
       margin-top: -10px !important;
+      margin-top: -4px !important;
+
     }
     &:nth-child(3) {
       margin-top: 7px !important;
+      top: calc(50% + 2px) !important;
     }
   }
 
   &.is-active {
     span {
 
-      &:first-child, &:nth-child(3) {
-        margin-left: -10px;
+      &:first-child {
+        margin-left: -5px;
+        // transform: translateY(-5px) rotate(-45deg) !important;
+
+      }
+
+      &:nth-child(3) {
+        margin-left: -5px;
+        transform: translateY(-7px) rotate(-45deg) !important;
       }
     }
   }
+
+
 }
 
 </style>
