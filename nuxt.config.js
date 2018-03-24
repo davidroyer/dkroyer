@@ -1,22 +1,6 @@
 const axios = require('axios')
-const {
-  join
-} = require('path')
-const fs = require('fs')
-const loaders = require('./config/extend_loader.js')
-const postsObject = require('./static/api/posts.json')
+
 const _ = require('lodash');
-
-function createRoutes(posts) {
-  var routes = []
-
-  for (let postKey in posts) {
-    let post = posts[postKey]
-    let route = `/posts/${post.slug}`
-    routes.push(route)
-  }
-  return routes
-}
 
 module.exports = {
   head: {
@@ -58,12 +42,12 @@ module.exports = {
       }
     ]
   },
+
   manifest: {
     name: 'David Royer',
     description: 'Personal site of David Royer, Front-End Web Designer and Developer',
     theme_color: '#188269'
   },
-
 
   plugins: [{
     src: '~/plugins/vue-resource.js',
@@ -105,37 +89,28 @@ module.exports = {
 
     extractCSS: true,
 
-    extend(config, ctx) {
-      config.module.rules.push(loaders.json_loader)
-      if (ctx.isDev && ctx.isClient) {
-        // config.module.rules.push(loaders.lint_loader)
-      }
-    }
+    extend(config, ctx) {}
   },
-
 
   env: {
     baseUrl: process.env.BASE_URL || "https://fire-tests.firebaseio.com",
     fbAPIKey: "AIzaSyDi-EfdKQoaQ1klE4dhv87TzHEC_3NvnsM"
   },
 
-
   generate: {
-    routes: function() {
-      return axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
-        .then((res) => {
-          return _.map(res.data, function(post, key) {
-            return `/blog/${post.slug}`
-          })
-
-        })
+    routes: async function() {
+      const { data } = axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
+      return _.map(data, function(post, key) {
+        return {
+          route: `/blog/${post.slug}`,
+          payload: post
+        }
+      })
     }
   },
-
 
   router: {
     middleware: 'menu'
   }
-
 
 }

@@ -13,3 +13,4 @@ dist
 # Firebase
 firebase.json
 .firebaserc
+.netlify
