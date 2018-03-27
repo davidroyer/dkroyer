@@ -17,10 +17,27 @@
 </template>
 
 <script>
+import allPosts from '~/apollo/queries/allPosts'
 
 export default {
   head: {
     title: 'About Me'
+  },
+  async asyncData({params, payload, error, app}) {
+
+    if (payload) return { allPosts: payload }
+    else {
+      let {data} = await app.apolloProvider.defaultClient.query(
+        { query: allPosts, prefetch: true }
+      )
+      return { posts: data.allPosts }
+    }
+  },
+  data: () => ({
+    loading: 0
+  }),
+  apollo: {
+    $loadingKey: 'loading'
   }
 }
 </script>

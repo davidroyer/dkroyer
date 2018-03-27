@@ -1,6 +1,34 @@
 const axios = require('axios')
-
 const _ = require('lodash');
+const { createApolloFetch } = require('apollo-fetch');
+const GRAPHCMS_API = 'https://api.graphcms.com/simple/v1/myBlog'
+const gql = require('graphql-tag')
+const fetch = createApolloFetch({
+  uri: GRAPHCMS_API,
+});
+
+const query = `
+  query AllPosts {
+    allPosts(
+      filter: {isPublished: true}
+    ) {
+      id,
+      title,
+      slug,
+      content,
+      tags,
+      authors {
+        id,
+        name,
+        avatar {
+          id,
+          handle,
+          url
+        }
+      }
+    }
+  }
+`
 
 module.exports = {
   head: {
@@ -56,13 +84,27 @@ module.exports = {
 
 
   modules: [
-    // 'nuxtent',
+    '@nuxtjs/apollo',
     ['@nuxtjs/pwa', { icon: false }],
-    '@nuxtjs/bulma', ['@nuxtjs/google-analytics', {
+    '@nuxtjs/markdownit',
+    '@nuxtjs/bulma',
+    ['@nuxtjs/google-analytics', {
       ua: 'UA-56060335-5'
     }],
   ],
 
+  markdownit: {
+    html: true,
+    linkify: true,
+    typographer: true,
+    injected: true
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: '~/apollo/client-configs/default.js'
+    }
+  },
 
   loading: {
     color: '#3B8070'
@@ -73,7 +115,7 @@ module.exports = {
       src: '~/assets/css/main.scss',
       lang: 'scss'
     },
-    'prismjs/themes/prism-coy.css',
+    // 'prismjs/themes/prism-coy.css',
   ],
 
   build: {
@@ -92,23 +134,17 @@ module.exports = {
     extend(config, ctx) {}
   },
 
-  env: {
-    baseUrl: process.env.BASE_URL || "https://fire-tests.firebaseio.com",
-    fbAPIKey: "AIzaSyDi-EfdKQoaQ1klE4dhv87TzHEC_3NvnsM"
-  },
 
   generate: {
-    routes: function() {
-      return axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
-        .then((res) => {
-          return _.map(res.data, function(post, key) {
-            return {
-              route: `/blog/${post.slug}`,
-              payload: post
-            }
-          })
-
-        })
+    fallback: true,
+    routes: async function() {
+      const {data} = await fetch({query})
+      return data.allPosts.map((post) => {
+        return {
+          route: '/blog/' + post.slug,
+          payload: post
+        }
+      })
     }
   },
 

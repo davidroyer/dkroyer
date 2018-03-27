@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import allPosts from '~/apollo/queries/allPosts'
 
 export default {
   components: {
@@ -33,11 +33,21 @@ export default {
       title: 'Blog Posts'
     }
   },
-  async asyncData ({ app }) {
-    const {data} = await axios.get('https://nuxtfireapi.firebaseio.com/posts.json')
-    return {
-      posts: data
+  async asyncData({params, payload, error, app}) {
+
+    if (payload) return { allPosts: payload }
+    else {
+      let {data} = await app.apolloProvider.defaultClient.query(
+        { query: allPosts, prefetch: true }
+      )
+      return { posts: data.allPosts }
     }
+  },
+  data: () => ({
+    loading: 0
+  }),
+  apollo: {
+    $loadingKey: 'loading'
   }
 }
 </script>

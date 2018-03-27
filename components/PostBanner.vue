@@ -14,8 +14,24 @@
 
 <script>
 export default {
-  name: 'Hero',
-  props: ['title', 'subtitle', 'tags']
+  name: 'PostBanner',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    subtitle: {
+      type: String,
+      default: ''
+    },
+    tags: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+    // ['title', 'subtitle', 'tags']
+  }
 }
 </script>
 

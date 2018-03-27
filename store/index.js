@@ -1,16 +1,18 @@
-import Vuex from 'vuex'
+export const state = () => ({
+  menuIsActive: false,
+  post: {}
+})
 
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      menuIsActive: false
-    },
-    mutations: {
-      toggleMenuState (state) {
-        state.menuIsActive = !state.menuIsActive
-      }
-    }
-  })
+export const mutations = {
+  toggleMenuState (state) {
+    state.menuIsActive = !state.menuIsActive
+  },
+
+  setCurrentPost(state, post) {
+    state.post = post
+  }
 }
 
-export default createStore
+export const getters = {
+  currentPost: state => state.post
+}

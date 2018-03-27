@@ -28,6 +28,7 @@
 import axios from 'axios'
 import Hero from '@/components/Hero'
 import PostContent from '@/components/PostContent'
+import PostMarkdown from '@/components/PostMarkdown'
 import SocialSharing from '@/plugins/vue-social-sharing'
 
 export default {
@@ -44,7 +45,6 @@ export default {
       link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' }
-        // { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css' }
       ]
     }
   },
@@ -63,7 +63,8 @@ export default {
   },
   components: {
     Hero,
-    PostContent
+    PostContent,
+    PostMarkdown
   }
 }
 </script>
