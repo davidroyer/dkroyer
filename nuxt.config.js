@@ -1,5 +1,3 @@
-const axios = require('axios')
-const _ = require('lodash');
 const { createApolloFetch } = require('apollo-fetch');
 const GRAPHCMS_API = 'https://api.graphcms.com/simple/v1/myBlog'
 const gql = require('graphql-tag')
