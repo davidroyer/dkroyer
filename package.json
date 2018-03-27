@@ -20,6 +20,7 @@
     "graphql-tag": "^2.8.0",
     "highlight.js": "^9.12.0",
     "nuxt": "^1.4.0",
+    "nuxt-bulma-slim": "^0.3.2",
     "prismjs": "^1.13.0",
     "vue-resource": "^1.5.0",
     "vue-social-sharing": "^2.3.3"

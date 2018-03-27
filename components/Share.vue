@@ -25,4 +25,4 @@ export default {
 }
 </script>
 
-<style src="@/assets/css/social-share.scss" lang="scss"></style>
+<style src="@/assets/scss/social-share.scss" lang="scss"></style>

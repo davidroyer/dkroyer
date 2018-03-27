@@ -6,7 +6,7 @@
         <PostMarkdown :markdown="post.content"/>
       </article>
 
-      <Share :title="post.title"/>
+      <Share :title="$metaInfo.title"/>
     </section>
 </template>
 
@@ -35,7 +35,9 @@
     //     return { post: data.post }
     //   }
     // },
-
+    // asyncData() {
+    //   return
+    // },
     data: () => ({
       loading: 0
     }),
@@ -52,7 +54,7 @@
           { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css' }
         ],
         meta: [
-          { hid: 'description', name: 'description', content: 'My custom description' }
+          { hid: 'description', name: 'description', content: this.post.description }
         ]
       }
     },
@@ -73,7 +75,7 @@
   }
 </script>
 
-<style src="@/assets/css/post.scss" lang="scss"></style>
+<style src="@/assets/scss/post.scss" lang="scss"></style>
 <style scoped>
   .placeholder {
     height: 366px;

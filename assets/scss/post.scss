@@ -49,6 +49,16 @@
     pre {
       background: transparent;
       padding: 0;
+      font-size: 0.825em !important;
+    }
+
+    .hljs-attribute,
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-meta-keyword,
+    .hljs-name,
+    .hljs-selector-tag {
+      font-weight: normal !important;
     }
 
     .hljs {

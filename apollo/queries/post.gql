@@ -5,6 +5,7 @@ query post($slug: String!) {
     slug,
     content,
     tags,
+    description,
     authors {
       id,
       name,

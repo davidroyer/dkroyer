@@ -87,7 +87,8 @@ module.exports = {
     '@nuxtjs/apollo',
     ['@nuxtjs/pwa', { icon: false }],
     '@nuxtjs/markdownit',
-    '@nuxtjs/bulma',
+    // '@nuxtjs/bulma',
+    'nuxt-bulma-slim',
     ['@nuxtjs/google-analytics', {
       ua: 'UA-56060335-5'
     }],
@@ -112,10 +113,9 @@ module.exports = {
 
 
   css: [{
-      src: '~/assets/css/main.scss',
+      src: '~/assets/scss/main.scss',
       lang: 'scss'
-    },
-    // 'prismjs/themes/prism-coy.css',
+    }
   ],
 
   build: {
