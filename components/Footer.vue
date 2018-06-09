@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p>Copyright &copy; 2017 David Royer</p>
+        <p>Copyright &copy; 2018 David Royer</p>
         <div class="footer-icons">
             <a aria-label="Github profile" class="nav-item" href="https://github.com/davidroyer" rel="noopener" target="_blank">
               <svg id="githubFooter" width="50px" viewBox="0 0 128 128">

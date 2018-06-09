@@ -53,14 +53,36 @@
         </div>
       </div>
     </section>
+
+
+    <section class="featured container">
+      <h2 class="featured-title title has-text-centered is-2">Featured Projects</h2>
+      <div class="repos">
+
+        <div class="repo card has-shadow" v-for="item in githubData" :key="">
+          <h3 class="title is-5">{{item.name}}</h3>
+          <p class="subtitle is-6">Stars: {{item.stargazers_count}}</p>
+          <a :href="item.html_url" target="_blank">View Repo</a>
+        </div>
+      </div>
+      <!-- <pre>{{githubData}}</pre> -->
+    </section>
   </div>
 </template>
 
 <script>
+const popularReposUrl = 'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
   export default {
     head: {
       title: 'Home'
-    }
+    },
+    async asyncData({params, payload, error, app}) {
+      return fetch(popularReposUrl)
+        .then(response => response.json())
+        .then(data => {
+          return { githubData: data.items }
+        });
+    },
   }
 </script>
 <style lang="scss">
@@ -109,7 +131,36 @@
     position: relative;
     background-attachment: fixed;
     height: 350px;
+    .title {
+      color: white;
+      font-size: 3em;
+      font-weight: 500;
+      position: relative;
+      text-align: left;
+      transition: all .2s ease;
 
+      text-align: center;
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 3.5em;
+      font-weight: 200;
+      line-height: 1.1;
+      @media (min-width: 400px) {
+        // max-width: 70%;
+        font-size: 3.5em;
+      }
+
+      @media (min-width: 750px) {
+        // max-width: 70%;
+        font-size: 4.5em;
+      }
+
+      @media (min-width: 1400px) {
+        font-size: 100px;
+      }
+      /*
+      margin-left: 48px;*/
+    }
     @media (min-width: 750px) {
         background-size: 1200px;
     }
@@ -140,36 +191,7 @@
       margin-right: auto;
     }
   }
-  .title {
-    color: white;
-    font-size: 3em;
-    font-weight: 500;
-    position: relative;
-    text-align: left;
-    transition: all .2s ease;
 
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
-    font-size: 3.5em;
-    font-weight: 200;
-    line-height: 1.1;
-    @media (min-width: 400px) {
-      // max-width: 70%;
-      font-size: 3.5em;
-    }
-
-    @media (min-width: 750px) {
-      // max-width: 70%;
-      font-size: 4.5em;
-    }
-
-    @media (min-width: 1400px) {
-      font-size: 100px;
-    }
-    /*
-    margin-left: 48px;*/
-  }
 
 }
 .postsNavigation {
@@ -263,4 +285,38 @@
 
 }
 
+.featured {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-top: 1px solid gray;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &-title {
+  font-weight: 300;
+  margin-bottom: 3rem;
+  }
+  .repos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .repo {
+      width: 300px;
+      margin: 1em;
+      padding: .5em;
+
+      .title {
+        color: #4a4a4a;
+      }
+      .subtitle {
+        margin-top: -1.25rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
 </style>
