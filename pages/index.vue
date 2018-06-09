@@ -82,7 +82,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
         .then(data => {
           return { githubData: data.items }
         });
-    },
+    }
   }
 </script>
 <style lang="scss">

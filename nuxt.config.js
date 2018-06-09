@@ -117,6 +117,7 @@ module.exports = {
   ],
 
   build: {
+    // analyze: true,
     postcss: {
       plugins: {
         'postcss-cssnext': {

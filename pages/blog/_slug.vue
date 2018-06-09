@@ -26,18 +26,6 @@
       store.commit('setCurrentPost', data.post)
     },
 
-    // async asyncData({params, payload, error, app}) {
-    //   if (payload) return { post: payload }
-    //   else {
-    //     let {data} = await app.apolloProvider.defaultClient.query(
-    //       { query: post, prefetch: true, variables: {slug: params.slug} }
-    //     )
-    //     return { post: data.post }
-    //   }
-    // },
-    // asyncData() {
-    //   return
-    // },
     data: () => ({
       loading: 0
     }),
