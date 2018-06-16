@@ -58,42 +58,50 @@
     <section class="featured container">
       <h2 class="featured-title title has-text-centered is-2">Featured Projects</h2>
       <div class="repos">
-
         <div class="repo card has-shadow" v-for="item in githubData" :key="">
           <h3 class="title is-5">{{item.name}}</h3>
           <p class="subtitle is-6">Stars: {{item.stargazers_count}}</p>
           <a :href="item.html_url" target="_blank">View Repo</a>
         </div>
       </div>
-      <!-- <pre>{{githubData}}</pre> -->
     </section>
   </div>
 </template>
 
 <script>
-const popularReposUrl = 'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
-  export default {
-    head: {
-      title: 'Home'
-    },
-    async asyncData({params, payload, error, app}) {
-      return fetch(popularReposUrl)
-        .then(response => response.json())
-        .then(data => {
-          return { githubData: data.items }
-        });
-    }
+const popularReposUrl =
+  "https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6";
+export default {
+  head: {
+    title: "Home"
+  },
+  // async asyncData({params, payload, error, app}) {
+  //   return fetch(popularReposUrl)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       return { githubData: data.items }
+  //     });
+  // },
+  data: () => ({
+    githubData: []
+  }),
+
+  async created() {
+    return fetch(popularReposUrl)
+      .then(response => response.json())
+      .then(data => {
+        this.githubData = data.items;
+      });
   }
+};
 </script>
 <style lang="scss">
 .home {
   .about {
-
     &__title {
       text-align: center;
       font-weight: 300;
       font-size: 2.5em;
-
 
       @media (min-width: 750px) {
         font-size: 3.5em;
@@ -105,7 +113,6 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-
     }
   }
   .container.content {
@@ -123,7 +130,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
     align-content: center;
     align-items: center;
     justify-content: flex-start;
-    background: url('~/assets/images/blog-me.jpeg');
+    background: url("~/assets/images/blog-me.jpeg");
     width: 100%;
     background-size: 900px;
     background-repeat: no-repeat;
@@ -137,7 +144,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       font-weight: 500;
       position: relative;
       text-align: left;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
 
       text-align: center;
       max-width: 90%;
@@ -162,7 +169,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       margin-left: 48px;*/
     }
     @media (min-width: 750px) {
-        background-size: 1200px;
+      background-size: 1200px;
     }
     @media (min-width: 1050px) {
       background-size: cover;
@@ -175,14 +182,14 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       background-position: top;
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(to bottom right,#383838,#1a1e17);
-      opacity: .7;
+      background-image: linear-gradient(to bottom right, #383838, #1a1e17);
+      opacity: 0.7;
     }
 
     .container {
@@ -191,8 +198,6 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       margin-right: auto;
     }
   }
-
-
 }
 .postsNavigation {
   a {
@@ -207,8 +212,8 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
   align-items: center;
   svg {
     flex: 0 1 75px;
-    margin: .25em;
-    padding: .5em;
+    margin: 0.25em;
+    padding: 0.5em;
     @media (min-width: 750px) {
       flex: 0 1 90px;
     }
@@ -226,7 +231,8 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
   border-top: 1px solid gray;
   padding-top: 3em;
 
-  .days, .nights {
+  .days,
+  .nights {
     width: 50%;
     flex: none !important;
     margin: 0;
@@ -243,7 +249,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       font-weight: 300;
       text-transform: capitalize;
       text-align: center;
-      padding: 0 .5em;
+      padding: 0 0.5em;
       @media (min-width: 750px) {
         font-size: 2em;
       }
@@ -263,7 +269,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
       text-align: center;
       align-content: baseline;
       li {
-        margin: .5em .75em;
+        margin: 0.5em 0.75em;
         text-align: center;
         font-weight: 600;
         font-size: 1.05em;
@@ -282,7 +288,6 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
     border-right: 1px solid gray;
     // background: rgba(255, 233, 44, 0.65)
   }
-
 }
 
 .featured {
@@ -296,8 +301,8 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
   margin-right: auto;
 
   &-title {
-  font-weight: 300;
-  margin-bottom: 3rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
   }
   .repos {
     display: flex;
@@ -307,7 +312,7 @@ const popularReposUrl = 'https://api.github.com/search/repositories?q=user:david
     .repo {
       width: 300px;
       margin: 1em;
-      padding: .5em;
+      padding: 0.5em;
 
       .title {
         color: #4a4a4a;
