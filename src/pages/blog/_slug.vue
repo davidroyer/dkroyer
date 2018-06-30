@@ -109,6 +109,9 @@ pre[class*='language-'] code {
   overflow: auto;
 }
 
+.content {
+  overflow-x: hidden;
+}
 @media (max-width: 419px) {
   .content pre[class*='language-'] {
     padding: 1.75rem 2.15rem;
