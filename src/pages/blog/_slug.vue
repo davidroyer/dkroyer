@@ -21,17 +21,17 @@ const metaDescription = 'Get description from blog post'
 export default {
   head() {
     return {
-      title: 'Blog',
+      title: this.post.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: metaDescription
+          content: this.post.description
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: metaDescription
+          content: this.post.description
         },
         {
           hid: 'og:type',
@@ -98,5 +98,22 @@ pre[class*='language-'] {
 .content code[class*='language-'],
 pre[class*='language-'] code {
   color: #f1f1f1 !important;
+}
+
+.content pre,
+.content pre[class*='language-'] {
+  line-height: 1.4;
+  padding: 1.25rem 1.5rem;
+  margin: 0.85rem 0;
+  // background: transparent;
+  overflow: auto;
+}
+
+@media (max-width: 419px) {
+  .content pre[class*='language-'] {
+    padding: 2rem 2.5rem;
+    margin: 0.85rem -1.5rem !important;
+    border-radius: 0 !important;
+  }
 }
 </style>

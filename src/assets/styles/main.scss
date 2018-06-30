@@ -1,17 +1,13 @@
 @tailwind preflight;
-
 @tailwind components;
 
 /* Custom Components */
-@import "base";
-@import "components/nav";
-@import "components/hero";
-@import "components/vbutton";
+@import 'base';
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/vbutton';
 
 @tailwind utilities;
 
-/* Custom Utilities */
-@import "utilities/transitions";
-@import "content";
-// @import "utilities/accessibilty";
-// @import "utilities/menu";
+@import 'utilities/transitions';
+@import 'content';

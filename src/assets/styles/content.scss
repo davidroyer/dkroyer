@@ -5,5 +5,15 @@ p {
 pre {
   margin-top: 1em !important;
   margin-bottom: 2em !important;
-  // @apply .mt-4 .mb-8;
+}
+
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply .leading-tight .mb-2;
+  }
 }

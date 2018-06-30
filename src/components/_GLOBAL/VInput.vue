@@ -49,7 +49,5 @@ export default {
 
 <style lang="scss" module>
 .input {
-  // display: block;
-  // width: 100%;
 }
 </style>
