@@ -4,11 +4,11 @@ export const state = () => ({
   testValue: 'Initial',
   navLinks: [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    // { name: 'About', path: '/about' },
     { name: 'Site Info', path: '/site-info' },
-    { name: 'Projects', path: '/projects' },
+    // { name: 'Projects', path: '/projects' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Examples', path: '/examples' },
+    // { name: 'Examples', path: '/examples' },
     { name: 'Contact', path: '/contact' }
   ],
   post: {}

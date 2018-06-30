@@ -45,30 +45,13 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
+  width: 200px;
+  max-width: 100%;
+  border-radius: 20%;
 }
 
 .title {
   text-align: center;
 }
-
-// .hero {
-//   min-height: 120px;
-//   height: Initial !important;
-//   max-height: 350px;
-//   // background-image: linear-gradient(141deg, #22292f, #0b3176 71%, #5661b3);
-//   background-image: linear-gradient(
-//     141deg,
-//     #22292f,
-//     rgba(32, 35, 58, 0.75),
-//     71%,
-//     rgba(34, 41, 47, 0.75)
-//   );
-//
-//   color: white;
-//
-//   .container {
-//     position: relative;
-//   }
-// }
 </style>

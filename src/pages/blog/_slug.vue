@@ -1,11 +1,18 @@
 <template>
-  <v-wrapper>
-    <nuxt-link to="/">Home</nuxt-link> /
-    <nuxt-link to="/blog">Blog</nuxt-link> /
-    {{ post.linktitle }}
-    <h1 class="post-title">{{ post.title }} </h1>
-    <nuxtent-body class="content" :body="post.body" />
-  </v-wrapper>
+  <div class="post">
+    <v-hero class="page-heading">
+      <v-headline class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white" :tag="1">
+        {{ post.title }}
+      </v-headline>
+    </v-hero>
+    <v-wrapper>
+      <div class="breadcrumbs absolute">
+        <nuxt-link to="/">Home</nuxt-link> /
+        <nuxt-link to="/blog">Blog</nuxt-link> /
+      </div>
+      <nuxtent-body class="content" :body="post.body" />
+    </v-wrapper>
+  </div>
 </template>
 
 <script>
@@ -47,7 +54,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.breadcrumbs {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+}
+.post {
+  .container {
+    position: relative;
+    padding-top: 2.5rem !important;
+  }
+}
 pre {
   border-radius: 6px;
 }
