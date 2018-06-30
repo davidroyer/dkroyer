@@ -116,4 +116,8 @@ pre[class*='language-'] code {
     border-radius: 0 !important;
   }
 }
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #282c34 !important;
+}
 </style>
