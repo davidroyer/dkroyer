@@ -111,7 +111,7 @@ pre[class*='language-'] code {
 
 @media (max-width: 419px) {
   .content pre[class*='language-'] {
-    padding: 2rem 2.5rem;
+    padding: 1.75rem 2.15rem;
     margin: 0.85rem -1.5rem !important;
     border-radius: 0 !important;
   }
