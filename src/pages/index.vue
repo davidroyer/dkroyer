@@ -96,6 +96,7 @@ export default {
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+
       .list-header {
         text-transform: capitalize;
         margin-top: 2rem;
@@ -103,6 +104,14 @@ export default {
         margin-bottom: -0.5rem;
         font-weight: 600;
       }
+
+      ul {
+        padding-left: 30px !important;
+      }
+      li {
+        list-style: disc;
+      }
+
       p {
         margin-bottom: 1rem;
       }

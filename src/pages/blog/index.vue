@@ -6,9 +6,9 @@
       </v-headline>
     </v-hero>
     <v-wrapper>
-      <ul class="my-6 py-4 post-list flex flex-wrap justify-between">
+      <ul class="my-2 sm:my-6 py-4 post-list flex flex-wrap justify-start sm:justify-around">
         <li v-for="(post, index) in posts" :key="index" class="mx-4 my-4">
-          <nuxt-link class="font-semibold" :to="post.permalink">{{ post.title }}</nuxt-link>
+          <nuxt-link class="font-medium text-2xl no-underline hover:underline" :to="post.permalink">{{ post.title }}</nuxt-link>
           <div class="tags flex">
             <div class="tag text-sm mr-4" v-for="(postTag, index) in post.tags" :key="index">
               <nuxt-link class="tag-link no-underline font-bold" :to="'/tags/' + postTag | slugify">

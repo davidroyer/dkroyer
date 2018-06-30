@@ -45,8 +45,7 @@ img {
 
 ul,
 ol {
-  padding-left: 30px;
-  // @apply .list-reset;
+  @apply .list-reset;
 }
 
 a,
