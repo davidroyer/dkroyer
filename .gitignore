@@ -12,3 +12,7 @@ build
 dist
 
 sw.*
+
+.BACKUP
+.DKROYER_BACKUP
+.NUXTENT
