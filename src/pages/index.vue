@@ -4,8 +4,8 @@
     <v-headline class="relative px-4 text-5xl md:text-6xl lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
   </v-hero>
   <v-wrapper>
-    <section class="about my-8 border-b-2">
-      <v-headline :tag="2" headlineClasses="text-center text-4xl">About Me</v-headline>
+    <section class="about mt-0 mb-8 border-b-2">
+      <v-headline :tag="2" headlineClasses="mt-0 text-center text-4xl">About Me</v-headline>
       <p>I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
       <!-- <p>If you wondering what exactly this developer role consists of because you've never heard of it, that would be expected because it's not one commonly used. Nevertheless, my responsbilities consist of handling anything that code intensive.</p> -->
       <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
@@ -89,10 +89,10 @@ export default {
 <style lang="scss" scoped>
 .home {
   section {
-    padding: 1em 0 4.5em;
+    padding: 1em 0 3.5em;
 
     &.about {
-      padding: 1em 0.5em 4.5em;
+      padding: 1em 0.5em 3.5em;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
