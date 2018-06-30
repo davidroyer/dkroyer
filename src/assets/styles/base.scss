@@ -11,8 +11,8 @@ body {
 }
 
 html {
-  font-size: responsive 16px 20px;
-  font-range: config("screens.sm") config("screens.xl");
+  font-size: responsive 17px 20px;
+  font-range: config('screens.sm') config('screens.xl');
   overflow-y: scroll;
 }
 
@@ -20,7 +20,7 @@ body {
   @apply .font-sans .text-base .bg-grey-lightest .text-black;
 
   line-height: responsive 1.6rem 2rem;
-  line-height-range: config("screens.sm") config("screens.xl");
+  line-height-range: config('screens.sm') config('screens.xl');
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
@@ -32,7 +32,11 @@ h1,
 h2,
 h3,
 h4 {
-  @apply .font-bold;
+  @apply .font-bold .mt-6 .mb-4 .pb-2;
+}
+
+.post h2 {
+  @apply .border-b-2 .mt-8 .mb-6 .pt-6 .border-grey-light;
 }
 
 img {
@@ -41,7 +45,8 @@ img {
 
 ul,
 ol {
-  @apply .list-reset;
+  padding-left: 30px;
+  // @apply .list-reset;
 }
 
 a,
@@ -63,4 +68,8 @@ a,
 p,
 li {
   word-wrap: break-word;
+}
+
+li {
+  @apply .mb-2;
 }

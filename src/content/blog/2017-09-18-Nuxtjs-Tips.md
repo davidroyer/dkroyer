@@ -20,7 +20,6 @@ A couple things needed to happen to accomplish this. (_Disclaimer: I am using Vu
 
 1. Use Vuex to keep track of my menu state.
 
-
 ```js
 state: {
   menuIsActive: false
@@ -34,13 +33,12 @@ mutations: {
 
 2. Add a function to the `middleware` directory. It checks if the menu is active. If so, toggle that state (making it inactive).
 
-
 ```js
 // This is `middleware/menu.js`
 
 export default function({ store }) {
   if (store.state.menuIsActive === true) {
-    store.commit("toggleMenuState");
+    store.commit('toggleMenuState')
   }
 }
 ```
@@ -49,7 +47,7 @@ export default function({ store }) {
 
 ```js
 router: {
-  middleware: "menu";
+  middleware: 'menu'
 }
 ```
 
@@ -63,8 +61,8 @@ I personally believe using the <a target="/\_blank" rel="noopener" href=https://
 // `nuxt.config.js`
 
 module.exports = {
-  modules: ["@nuxtjs/pwa"]
-};
+  modules: ['@nuxtjs/pwa']
+}
 ```
 
 Also, I wanted to use a Google font via CDN but received a performance warning when testing with <a target="/\_blank" rel="noopener" href=https://developers.google.com/web/tools/lighthouse/>Lighthouse</a>. I was able to eliminate the warning by preloading the font in `nuxt.config.js`.
@@ -78,11 +76,11 @@ module.exports = {
   head: {
     link: [
       {
-        rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css?family=Roboto"
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css?family=Roboto'
       }
     ]
   }
-};
+}
 ```

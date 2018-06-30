@@ -1,3 +1,9 @@
 p {
-  @apply .my-4 .leading-normal;
+  @apply .my-2 .leading-normal;
+}
+
+pre {
+  margin-top: 1em !important;
+  margin-bottom: 2em !important;
+  // @apply .mt-4 .mb-8;
 }

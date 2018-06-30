@@ -1,6 +1,6 @@
 <template>
   <div class="input max-w-sm mx-auto my-6">
-    <label v-text="label" :for="id" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"></label>
+    <label v-text="label" :for="id" class="block uppercase tracking-wide text-grey-darker text-sm font-bold mb-2"></label>
     <input
       :type="type"
       :value="value"
