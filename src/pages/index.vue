@@ -6,7 +6,7 @@
   <v-wrapper>
     <section class="about mt-0 mb-8 border-b-2">
       <v-headline :tag="2" headlineClasses="mt-0 text-center text-4xl">About Me</v-headline>
-      <p>I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
+      <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
       <!-- <p>If you wondering what exactly this developer role consists of because you've never heard of it, that would be expected because it's not one commonly used. Nevertheless, my responsbilities consist of handling anything that code intensive.</p> -->
       <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
       <ul>
@@ -97,6 +97,9 @@ export default {
       margin-left: auto;
       margin-right: auto;
 
+      &-introtext {
+        margin-top: -1.25rem;
+      }
       .list-header {
         text-transform: capitalize;
         margin-top: 2rem;
