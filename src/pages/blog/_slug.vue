@@ -106,7 +106,7 @@ pre[class*='language-'] code {
   padding: 1.25rem 1.5rem;
   margin: 0.85rem 0;
   // background: transparent;
-  overflow: auto;
+  // overflow: auto;
 }
 
 @media (max-width: 419px) {

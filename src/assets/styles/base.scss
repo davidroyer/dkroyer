@@ -13,12 +13,16 @@ body {
 html {
   font-size: responsive 17px 20px;
   font-range: config('screens.sm') config('screens.xl');
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   @apply .font-sans .text-base .bg-grey-lightest .text-black;
   overflow-x: hidden;
+  overflow-y: scroll;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   line-height: responsive 1.6rem 2rem;
   line-height-range: config('screens.sm') config('screens.xl');
   font-variant-ligatures: none;
