@@ -6,11 +6,9 @@ npm-debug.log
 
 # Nuxt build
 .nuxt
+build
 
 # Nuxt generate
 dist
 
-# Firebase
-firebase.json
-.firebaserc
-.netlify
+sw.*

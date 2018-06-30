@@ -1,43 +1,42 @@
 {
-  "name": "dkroyer",
-  "version": "1.0.0",
-  "description": "Personal site of David Royer, Front-End Web Designer and Developer",
+  "name": "nuxt-tailwind",
+  "version": "0.0.2",
+  "description": "Nuxt.js project",
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
-  "dependencies": {
-    "@nuxtjs/apollo": "^3.0.5",
-    "@nuxtjs/axios": "^5.1.1",
-    "@nuxtjs/bulma": "^1.1.0",
-    "@nuxtjs/font-awesome": "^1.0.3",
-    "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/markdownit": "^1.2.0",
-    "@nuxtjs/pwa": "^2.0.8",
-    "apollo-cache-inmemory": "^1.1.12",
-    "apollo-fetch": "^0.7.0",
-    "apollo-link": "^1.2.1",
-    "apollo-link-http": "^1.5.3",
-    "graphql": "^0.13.2",
-    "graphql-tag": "^2.8.0",
-    "highlight.js": "^9.12.0",
-    "nuxt": "^1.4.0",
-    "nuxt-bulma-slim": "^0.3.2",
-    "prismjs": "^1.13.0",
-    "vue-resource": "^1.5.0",
-    "vue-social-sharing": "^2.3.3"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "serve": "yarn generate && http-server dist",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "deploy": "nuxt generate && firebase deploy",
-    "gdeploy": "nuxt generate && gh-pages -d dist -b gh-pages"
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/vue-fontawesome": "^0.0.23",
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/pwa": "^2.0.8",
+    "@nuxtjs/sitemap": "^0.1.1",
+    "autoprefixer": "^8.0.0",
+    "nuxt": "^1.0.0",
+    "tailwindcss": "^0.5.3"
   },
   "devDependencies": {
-    "cross-env": "^5.1.4",
-    "node-sass": "^4.8.3",
-    "sass-loader": "^6.0.7"
+    "babel-eslint": "^8.2.1",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "glob-all": "^3.1.0",
+    "lodash": "^4.17.10",
+    "node-sass": "^4.9.0",
+    "purgecss-webpack-plugin": "^1.2.0",
+    "sass-loader": "^7.0.3"
   }
 }

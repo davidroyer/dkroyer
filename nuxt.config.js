@@ -1,154 +1,208 @@
-const { createApolloFetch } = require('apollo-fetch');
-const GRAPHCMS_API = 'https://api.graphcms.com/simple/v1/myBlog'
-const gql = require('graphql-tag')
-const fetch = createApolloFetch({
-  uri: GRAPHCMS_API,
-});
+const path = require("path");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
+const glob = require("glob-all");
+const config = require("./website.config");
 
-const query = `
-  query AllPosts {
-    allPosts(
-      filter: {isPublished: true}
-    ) {
-      id,
-      title,
-      slug,
-      content,
-      tags,
-      authors {
-        id,
-        name,
-        avatar {
-          id,
-          handle,
-          url
-        }
-      }
-    }
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-z0-9-:/]+/g) || [];
   }
-`
+}
+const purgecssWhitelistPatterns = [
+  /^__/,
+  /^fa/,
+  /^page-/,
+  /^nuxt/,
+  /^scale/,
+  /^slide/,
+  /^enter/,
+  /^leave/
+];
 
 module.exports = {
+  /**
+   * Custom source and build directories
+   * @see https://nuxtjs.org/api/configuration-srcdir
+   * @see https://nuxtjs.org/api/configuration-builddir
+   */
+  srcDir: "./src",
+  buildDir: "./build",
+
+  /*
+   ** Headers of the page
+   */
   head: {
-    titleTemplate: '%s - David Royer - Front End Web Developer',
-    meta: [{
-        charset: 'utf-8'
+    titleTemplate: `%s - ${config.siteTitle}`,
+    meta: [
+      {
+        charset: "utf-8"
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        name: "viewport",
+        content: "width=device-width, initial-scale=1"
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: 'Personal site of David Royer, Front-End Web Designer and Developer'
+        hid: "description",
+        name: "description",
+        content: config.siteDescription
       },
       {
-        property: 'og:image',
-        content: 'https://www.davidroyer.me/site.jpg'
+        property: "twitter:site",
+        content: config.twitterUsername
       },
       {
-        property: 'twitter:card',
-        content: 'summary_large_image'
+        property: "twitter:creator",
+        content: config.twitterUsername
       },
       {
-        property: 'twitter:site',
-        content: '@davidroyer_'
+        hid: "og:title",
+        property: "og:title",
+        content: config.ogTitle
       },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: config.ogType
+      },
+      {
+        hid: "og:host",
+        property: "og:host",
+        content: config.siteUrl
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: `${config.siteUrl}/${config.ogImage}`
+      },
+      {
+        hid: "twitter:card",
+        property: "twitter:card",
+        content: "summary"
+      }
     ],
-    link: [{
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      },
+    link: [
       {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css?family=Roboto'
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
       }
-    ]
-  },
-
-  manifest: {
-    name: 'David Royer',
-    description: 'Personal site of David Royer, Front-End Web Designer and Developer',
-    theme_color: '#188269'
-  },
-
-  plugins: [{
-    src: '~/plugins/vue-resource.js',
-    ssr: false
-  }],
-
-
-  modules: [
-    '@nuxtjs/apollo',
-    ['@nuxtjs/pwa', { icon: false }],
-    '@nuxtjs/markdownit',
-    // '@nuxtjs/bulma',
-    'nuxt-bulma-slim',
-    ['@nuxtjs/google-analytics', {
-      ua: 'UA-56060335-5'
-    }],
-  ],
-
-  markdownit: {
-    html: true,
-    linkify: true,
-    typographer: true,
-    injected: true
-  },
-
-  apollo: {
-    clientConfigs: {
-      default: '~/apollo/client-configs/default.js'
+    ],
+    bodyAttrs: {
+      class: "font-sans leading-normal"
     }
   },
 
+  /*
+   ** Customize the progress bar color
+   */
   loading: {
-    color: '#3B8070'
+    color: "#6574cd"
   },
 
+  /**
+   * Custom Nuxt plugins
+   * @see https://nuxtjs.org/guide/plugins
+   */
+  plugins: ["~/plugins/global-components"],
 
-  css: [{
-      src: '~/assets/scss/main.scss',
-      lang: 'scss'
-    }
-  ],
+  /**
+   * Custom Nuxt modules
+   * @see https://nuxtjs.org/guide/modules/
+   */
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/google-analytics", "@nuxtjs/pwa"],
 
+  /**
+   * PWA Manifest
+   * @see http://nuxt-pwa/manifest
+   */
+  manifest: {
+    name: config.ogTitle,
+    short_name: config.shortName,
+    description: config.siteDescription,
+    theme_color: config.themeColor
+  },
+
+  /**
+   * PWA Icon
+   * @see http://nuxt-pwa/icon
+   */
+  icon: true,
+
+  /**
+   * Google analytics
+   * @see https://github.com/nuxt-community/analytics-module
+   */
+  "google-analytics": {
+    id: config.analyticsID
+  },
+
+  /**
+   * Sitemap
+   * @see https://github.com/nuxt-community/sitemap-module
+   */
+  sitemap: {
+    hostname: config.siteUrl,
+    generate: true
+  },
+
+  /*
+   ** Build configuration
+   */
   build: {
-    // analyze: true,
-    postcss: {
-      plugins: {
-        'postcss-cssnext': {
-          features: {
-            customProperties: false
-          }
-        }
-      }
-    },
-
+    watch: ["./website.config.js"],
     extractCSS: true,
 
-    extend(config, ctx) {}
-  },
+    postcss: [require("tailwindcss")("./tailwind.js"), require("autoprefixer")],
 
+    extend(config, { isDev, isClient }) {
+      /**
+       * Enable removal of unused icons when building (tree shaking) for FontAwsome
+       */
+      config.resolve.alias["@fortawesome/fontawesome-free-brands$"] =
+        "@fortawesome/fontawesome-free-brands/shakable.es.js";
+      config.resolve.alias["@fortawesome/fontawesome-free-regular$"] =
+        "@fortawesome/fontawesome-free-regular/shakable.es.js";
+      config.resolve.alias["@fortawesome/fontawesome-free-solid$"] =
+        "@fortawesome/fontawesome-free-solid/shakable.es.js";
 
-  generate: {
-    fallback: true,
-    routes: async function() {
-      const {data} = await fetch({query})
-      return data.allPosts.map((post) => {
-        return {
-          route: '/blog/' + post.slug,
-          payload: post
-        }
-      })
+      if (!isDev) {
+        config.plugins.push(
+          /**
+           * PurgeCSS
+           * @see https://github.com/FullHuman/purgecss
+           */
+          new PurgecssPlugin({
+            keyframes: false,
+            paths: glob.sync([
+              path.join(__dirname, "./src/pages/**/*.vue"),
+              path.join(__dirname, "./src/layouts/**/*.vue"),
+              path.join(__dirname, "./src/components/**/*.vue")
+              // path.join(__dirname, "./src/components/.GLOBAL/**/*.vue")
+            ]),
+            extractors: [
+              {
+                extractor: TailwindExtractor,
+                extensions: ["html", "js", "vue", "css", "scss"]
+              }
+            ],
+            whitelist: ["html", "body"],
+            whitelistPatterns: purgecssWhitelistPatterns
+          })
+        );
+      }
+      if (isDev && isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        });
+      }
     }
   },
+  css: ["~/assets/styles/main.scss"],
 
   router: {
-    middleware: 'menu'
+    middleware: ["menu"]
   }
-
-}
+};
