@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-tailwind",
-  "version": "0.0.2",
-  "description": "Nuxt.js project",
+  "name": "dkroyer",
+  "version": "1.1.0",
+  "description": "Personal site of David Royer, Front-End Web Designer and Developer",
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
   "scripts": {
