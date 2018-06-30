@@ -8,7 +8,7 @@
 
   <v-wrapper>
     <div class="w-full max-w-md mx-auto">
-      <form class="form bg-white shadow-md rounded-lg px-8 pb-8 my-6">
+      <form class="form bg-white shadow-md rounded-md px-4 pb-8 my-6">
         <div class="my-6">
           <v-input required v-model="form.firstName" id="firstName" label="Your First Name"></v-input>
         </div>
