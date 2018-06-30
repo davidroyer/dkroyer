@@ -204,5 +204,9 @@ module.exports = {
 
   router: {
     middleware: ['menu']
+  },
+
+  generate: {
+    fallback: true
   }
 }
