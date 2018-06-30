@@ -1,27 +1,27 @@
-const Prism = require("prismjs");
-var loadLanguages = require("prismjs/components/index.js");
-loadLanguages(["json"]);
+const Prism = require('prismjs')
+var loadLanguages = require('prismjs/components/index.js')
+loadLanguages(['json'])
 
 module.exports = {
   content: [
     [
-      "projects",
+      'projects',
       {
-        page: "/projects/_slug",
-        permalink: "/projects/:slug",
+        page: '/projects/_slug',
+        permalink: '/projects/:slug',
         isPost: false,
-        generate: ["get", "getAll"]
+        generate: ['get', 'getAll']
       }
     ],
 
     [
-      "blog",
+      'blog',
       {
-        page: "/blog/_slug",
-        permalink: "/blog/:slug",
+        page: '/blog/_slug',
+        permalink: '/blog/:slug',
         isPost: true,
         anchorLevel: 4,
-        generate: ["get", "getAll"]
+        generate: ['get', 'getAll']
       }
     ]
   ],
@@ -33,18 +33,16 @@ module.exports = {
           return `<pre class="language-${lang}"><code class="language-${lang}">${Prism.highlight(
             code,
             Prism.languages[lang] || Prism.languages.markup
-          )}</code></pre>`;
-        };
+          )}</code></pre>`
+        }
       }
     }
   },
 
   api: function(isStatic) {
     return {
-      baseURL: "http://localhost:3000",
-      browserBaseURL: isStatic
-        ? "https://nuxtent--nuxt-tailwind.netlify.com"
-        : ""
-    };
+      baseURL: 'http://localhost:3000',
+      browserBaseURL: isStatic ? 'https://dev--dkroyer.netlify.com/' : ''
+    }
   }
-};
+}
