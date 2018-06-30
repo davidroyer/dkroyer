@@ -1,26 +1,26 @@
 <template>
-<div class="about">
-  <div class="hero is-primary is-bold is-small">
-    <div class="container">
-      <h1 class="title">Site Info - Technical Information</h1>
-    </div>
-  </div>
-  <div class="container content">
+<div class="site-info">
+  <v-hero class="page-heading">
+    <v-headline class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white" :tag="1">
+      Site Info - Technical Information
+    </v-headline>
+  </v-hero>
 
+  <v-wrapper>
     <img class="headshot" src="~/assets/images/headshot.jpg" alt="David Royer Headshot">
-    <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. Nuxt.js at its core is a framework for building Universal Vue.js Apps but can also be used as to create static sites which is how I am using it for this site.
+    <p>This site is built with <a href="https://nuxtjs.org/" rel="noopener" target="_blank">Nuxt.js</a> and <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue.js</a>. Nuxt.js at its core is a framework for building Universal Vue.js Apps but
+      can also be used as to create static sites which is how I am using it for this site.
     </p>
     <p>The site is hosted on <a href="https://www.netlify.com/">Netlify</a>. They offer amazing services and constantly add new features and benefits.</p>
     <p>In addition to being a static site, this site is a PWA (Progress Web App) as well.</p>
-    <p>I've spent a considerable amount of time working to improve performance for this site. One of the more helpful tools in this process has been Google's <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a> tool. They offer a Chome Extension, making it simple to use and beneficial for helping developers create better sites.</p>
+    <p>I've spent a considerable amount of time working to improve performance for this site. One of the more helpful tools in this process has been Google's <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener" target="_blank">Lighthouse</a>      tool. They offer a Chome Extension, making it simple to use and beneficial for helping developers create better sites.</p>
     <!-- <caption>The Lighthouse scores for this site</caption> -->
 
     <figure>
       <figcaption>The Lighthouse scores for this site</figcaption>
       <img src="~/assets/images/davidroyer-lighthouse-top.png" alt="Lighthouse Scores for https://www.davidroyer.me">
     </figure>
-
-  </div>
+  </v-wrapper>
 </div>
 </template>
 
@@ -52,15 +52,23 @@ figcaption {
   text-align: center;
 }
 
-.hero {
-  min-height: 120px;
-  height: Initial !important;
-  max-height: 350px;
-  background-image: linear-gradient(141deg, #22292f, #0b3176 71%, #5661b3);
-  color: white;
-
-  .container {
-    position: relative;
-  }
-}
+// .hero {
+//   min-height: 120px;
+//   height: Initial !important;
+//   max-height: 350px;
+//   // background-image: linear-gradient(141deg, #22292f, #0b3176 71%, #5661b3);
+//   background-image: linear-gradient(
+//     141deg,
+//     #22292f,
+//     rgba(32, 35, 58, 0.75),
+//     71%,
+//     rgba(34, 41, 47, 0.75)
+//   );
+//
+//   color: white;
+//
+//   .container {
+//     position: relative;
+//   }
+// }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-black text-white text-sm w-full flex flex-col items-center justify-center py-6"
+    class="footer text-white text-sm w-full flex flex-col items-center justify-center py-6"
     role="contentinfo"
     itemscope
     itemtype="http://schema.org/WPFooter">
@@ -31,7 +31,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
+.footer {
+  // background-color: hsla(208, 16%, 16%, 0.85);
+  background-color: rgba(34, 41, 47, 0.9);
+}
 .svg-inline--fa {
   font-size: 24px;
 }

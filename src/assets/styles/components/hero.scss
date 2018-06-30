@@ -9,7 +9,6 @@
   background-repeat: no-repeat;
   background-position: -170px 0;
   position: relative;
-  background-attachment: fixed;
   height: 350px;
 
   @media (min-width: 750px) {
@@ -20,25 +19,34 @@
     height: 450px;
     background-position: top;
   }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    // background-image: linear-gradient(to bottom right, #383838, #1a1e17);
-    // background-image: linear-gradient(
-    //   to bottom right,
-    //   rgba(32, 35, 58, 0.75),
-    //   rgba(34, 41, 47, 0.75)
-    // );
-    opacity: 0.7;
-  }
 
   .container {
     padding: 0;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.hero {
+  &.page-heading {
+    color: white;
+    min-height: 90px;
+    height: Initial !important;
+    max-height: 350px;
+    background-image: linear-gradient(141deg, #3e4264a6, rgba(32, 35, 58, 0.75), 71%, #3e4264a6);
+
+    .container {
+      position: relative;
+    }
+
+    .headline {
+      @apply .my-2 .py-2;
+    }
+  }
+}
+
+@screen md {
+  .hero.page-heading {
+    min-height: 125px;
   }
 }

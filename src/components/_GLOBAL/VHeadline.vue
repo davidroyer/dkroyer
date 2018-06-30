@@ -1,5 +1,5 @@
 <template>
-  <component :is="'h' + tag" class="mb-4 leading-tight" :class="headlineClasses">
+  <component :is="'h' + tag" class="headline mb-4 leading-tight" :class="headlineClasses">
     <slot>
         This is the default text
     </slot>
