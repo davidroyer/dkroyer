@@ -5,7 +5,7 @@ module.exports = {
   analyticsID: 'UA-56060335-5',
   siteTitle: 'David Royer - Front End Web Developer', // Navigation and Site Title
   shortName: 'D.Royer', // Alternative Site title for SEO
-  siteUrl: 'https://dev--dkroyer.netlify.com', // Domain of your site. No trailing slash!
+  siteUrl: 'https://www.davidroyer.me', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
   siteDescription: 'Personal site of David Royer, Front-End Web Designer and Developer.',
