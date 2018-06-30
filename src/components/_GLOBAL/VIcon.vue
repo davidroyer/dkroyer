@@ -53,6 +53,7 @@ export default {
         sync: require('@fortawesome/fontawesome-free-solid/faSync'),
         user: require('@fortawesome/fontawesome-free-solid/faUser'),
         star: require('@fortawesome/fontawesome-free-solid/faStar'),
+        tag: require('@fortawesome/fontawesome-free-solid/faTag'),
         xCircle: require('@fortawesome/fontawesome-free-regular/faTimesCircle'),
 
         github: require('@fortawesome/fontawesome-free-brands/faGithub'),
