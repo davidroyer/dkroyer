@@ -5,7 +5,7 @@
   </v-hero>
   <v-wrapper>
     <section class="about mt-0 mb-8 border-b-2">
-      <v-headline :tag="2" headlineClasses="mt-0 text-center text-4xl">About Me</v-headline>
+      <v-headline :tag="2" headlineClasses="mt-0 text-center text-indigo-darker text-5xl">About Me</v-headline>
       <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
       <!-- <p>If you wondering what exactly this developer role consists of because you've never heard of it, that would be expected because it's not one commonly used. Nevertheless, my responsbilities consist of handling anything that code intensive.</p> -->
       <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
@@ -15,31 +15,45 @@
         <li>Did a major overhaul to our wordpress theme that is used as a starting point for our marketing sites. The overhaul inlcuded switching from Gulp to using Webpack via Laravel Mix</li>
       </ul>
     </section>
+
     <section class="featured text-center my-8 border-b-2">
-      <h2 class="text-4xl pt-6 mb-0">My Featured Projects</h2>
-      <div class="repos sm:flex flex-wrap justify-around">
-        <div class="repo border-2 border-grey-light card has-shadow pt-4 pb-6" v-for="item in popularRepos" :key="item.id">
-          <h3 class="mt-2 pb-1 mb-0">{{item.name}}</h3>
-          <p class="subtitle mt-0 is-6 font-semibold text-lg">
-            <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
-          </p>
-          <a class="mt-6 pt-4 block" :href="item.html_url" target="_blank">View Repo</a>
+      <h2 class="text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
+
+      <div class="px-2">
+        <div class="-mx-2 flex flex-wrap justify-around">
+          <div class="card-wrapper card-wrapper-github flex px-2" v-for="item in popularRepos" :key="item.id">
+            <v-card class="shadow-md w-full py-2">
+              <div slot="header" class="-mt-4">
+                <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
+                <p class="subtitle mt-0 font-semibold text-lg">
+                  <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
+                </p>
+              </div>
+              <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank">View Repo</a>
+            </v-card>
+          </div>
         </div>
       </div>
     </section>
+
     <section class="new-noteworthy text-center my-8 border-b-2">
-      <h2 class="text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
-      <div class="repos sm:flex flex-wrap justify-around">
-        <div class="repo border-2 border-grey-light card has-shadow pt-4 pb-6">
-          <h3 class="mt-2 pb-1 mb-0">{{noteworthyRepo.name}}</h3>
-          <p v-if="noteworthyRepo.stargazers_count > 0" class="subtitle mt-0 is-6 font-semibold text-lg">
-            <v-icon name="star" font-size="18px"></v-icon> {{noteworthyRepo.stargazers_count}}
-          </p>
-          <!-- <div v-html="noteworthyRepo.description"></div> -->
-          <a class="mt-6 pt-4 block" :href="noteworthyRepo.html_url" target="_blank">View Repo</a>
+      <h2 class="text-indigo-darker text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
+
+      <div class="flex flex-wrap justify-center">
+        <div class="card-wrapper card-wrapper-github">
+          <v-card class="shadow-md w-full py-2">
+            <div slot="header" class="-mt-4">
+              <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{noteworthyRepo.name}}</h3>
+              <p class="subtitle mt-0 font-semibold text-lg">
+                <v-icon name="star" font-size="18px"></v-icon> {{noteworthyRepo.stargazers_count}}
+              </p>
+            </div>
+            <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank">View Repo</a>
+          </v-card>
         </div>
       </div>
     </section>
+
   </v-wrapper>
 </div>
 </template>

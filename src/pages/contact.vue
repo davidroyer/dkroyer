@@ -89,7 +89,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   .form {
-    margin-top: -60px;
+    margin-top: -40px;
     padding-top: 3rem;
   }
 }

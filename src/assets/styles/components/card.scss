@@ -1,0 +1,24 @@
+.card {
+  &-wrapper {
+    max-width: 400px;
+
+    &-github {
+      width: 280px;
+    }
+  }
+  &-header {
+    &-link {
+      // @apply .text-indigo-darker ;
+    }
+  }
+
+  &-content {
+  }
+
+  &-footer {
+  }
+}
+
+a.card-header-link {
+  @apply .text-indigo-darker;
+}
