@@ -21,7 +21,7 @@ body {
   @apply .font-sans .text-base .bg-grey-lightest .text-black;
   overflow-x: hidden;
   overflow-y: scroll;
-  overflow: scroll;
+  // overflow: scroll;
   -webkit-overflow-scrolling: touch;
   line-height: responsive 1.6rem 2rem;
   line-height-range: config('screens.sm') config('screens.xl');
