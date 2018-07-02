@@ -1,6 +1,9 @@
 const Prism = require('prismjs')
 const config = require('./website.config')
-var loadLanguages = require('prismjs/components/index.js')
+const loadLanguages = require('prismjs/components/index.js')
+const externalLinks = require('markdown-it-link-attributes')
+const container = require('markdown-it-container')
+
 loadLanguages(['json'])
 
 module.exports = {
@@ -37,7 +40,13 @@ module.exports = {
           )}</code></pre>`
         }
       }
-    }
+    },
+    plugins: [
+      createContainer('tip', 'TIP'),
+      createContainer('warning', 'WARNING'),
+      createContainer('danger', 'DANGER'),
+      [externalLinks, { target: '_blank', rel: 'noopener' }]
+    ]
   },
 
   api: function(isStatic) {
@@ -46,4 +55,32 @@ module.exports = {
       browserBaseURL: isStatic ? config.siteUrl : ''
     }
   }
+}
+
+/**
+ * Helper Function to create HTML for custom containers for markdown
+ * @param  {[type]} klass        [description]
+ * @param  {[type]} defaultTitle [description]
+ * @return {[type]}              [description]
+ */
+function createContainer(klass, defaultTitle) {
+  return [
+    container,
+    klass,
+    {
+      render(tokens, idx) {
+        const token = tokens[idx]
+        const info = token.info
+          .trim()
+          .slice(klass.length)
+          .trim()
+        if (token.nesting === 1) {
+          return `<div class="${klass} custom-block"><p class="custom-block-title">${info ||
+            defaultTitle}</p>\n`
+        } else {
+          return `</div>\n`
+        }
+      }
+    }
+  ]
 }
