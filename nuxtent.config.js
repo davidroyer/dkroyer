@@ -52,7 +52,7 @@ module.exports = {
   api: function(isStatic) {
     return {
       baseURL: 'http://localhost:3000',
-      browserBaseURL: isStatic ? config.siteUrl : ''
+      browserBaseURL: isStatic ? 'https://dev--dkroyer.netlify.com' : ''
     }
   }
 }
