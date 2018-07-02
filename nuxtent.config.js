@@ -39,14 +39,14 @@ module.exports = {
             Prism.languages[lang] || Prism.languages.markup
           )}</code></pre>`
         }
-      }
-    },
-    plugins: [
-      createContainer('tip', 'TIP'),
-      createContainer('warning', 'WARNING'),
-      createContainer('danger', 'DANGER'),
-      [externalLinks, { target: '_blank', rel: 'noopener' }]
-    ]
+      },
+      plugins: [
+        createContainer('tip', 'TIP'),
+        createContainer('warning', 'WARNING'),
+        createContainer('danger', 'DANGER'),
+        [externalLinks, { target: '_blank', rel: 'noopener' }]
+      ]
+    }
   },
 
   api: function(isStatic) {

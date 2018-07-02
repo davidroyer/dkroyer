@@ -10,6 +10,23 @@ tags:
 
 I put off on learning Vuex for a long time, and used simpler ways of handling global state. When I took the time to understand Vuex though, it paid off greatly when working with Nuxt.js.
 
+## Custom Containers
+
+::: tip
+TIP
+This is a warning
+:::
+
+::: warning
+WARNING
+This is a warning
+:::
+
+::: danger
+WARNING
+This is a dangerous thing
+:::
+
 ---
 
 # Tip 2 - Using Middleware for Mobile Menus
