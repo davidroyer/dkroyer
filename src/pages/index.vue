@@ -7,7 +7,6 @@
     <section class="about mt-0 mb-8 border-b-2">
       <v-headline :tag="2" headlineClasses="mt-0 text-center text-indigo-darker text-5xl">About Me</v-headline>
       <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
-      <!-- <p>If you wondering what exactly this developer role consists of because you've never heard of it, that would be expected because it's not one commonly used. Nevertheless, my responsbilities consist of handling anything that code intensive.</p> -->
       <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
       <ul>
         <li>In change of handling all front-end aspects of building, testing, documenting, and integrating a new form system using Vue.js in prepartion of use for our 20+ marketing sites.</li>
@@ -17,7 +16,7 @@
     </section>
 
     <section class="featured text-center my-8 border-b-2">
-      <h2 class="text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
+      <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
 
       <div class="px-2">
         <div class="-mx-2 flex flex-wrap justify-around">
@@ -37,7 +36,7 @@
     </section>
 
     <section class="new-noteworthy text-center my-8 border-b-2">
-      <h2 class="text-indigo-darker text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
+      <h2 class="font-semibold text-indigo-darker text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
 
       <div class="flex flex-wrap justify-center">
         <div class="card-wrapper card-wrapper-github">

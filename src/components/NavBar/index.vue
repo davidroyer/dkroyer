@@ -1,14 +1,22 @@
 <template>
     <div class="navbar">
       <logo></logo>
-      <button
+      <v-menu-button
+        @click="$store.commit('toggleMenuState')"
+        :checked="mobileMenuIsActive"
+        :class="[ 'nav-btn', {'text-white font-bold': mobileMenuIsActive}]"
+        :aria-label="navButtonText"
+        :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
+        aria-controls="nav-mobile">
+      </v-menu-button>
+      <!-- <button
         @click="$store.commit('toggleMenuState')"
         v-text="navButtonText"
         class="nav-btn"
         :class="{'text-white font-bold': mobileMenuIsActive}"
         aria-controls="nav-mobile"
         :aria-expanded="mobileMenuIsActive ? 'true' : 'false'">
-      </button>
+      </button> -->
 
       <template v-if="isMobile">
         <transition name="scale">
@@ -20,11 +28,11 @@
 </template>
 
 <script>
-import NavLinks from "./NavLinks";
-import Logo from "./Logo";
+import NavLinks from './NavLinks'
+import Logo from './Logo'
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
   components: {
     NavLinks,
     Logo
@@ -37,46 +45,46 @@ export default {
 
   computed: {
     navLinksArray() {
-      return this.$store.state.navLinks;
+      return this.$store.state.navLinks
     },
 
     mobileMenuIsActive() {
-      return this.$store.state.menuIsActive;
+      return this.$store.state.menuIsActive
     },
 
     navButtonText() {
-      return this.mobileMenuIsActive ? "Close" : "Menu";
+      return this.mobileMenuIsActive ? 'Close' : 'Menu'
     },
 
     isMobile() {
-      return this.windowWidth <= 767;
+      return this.windowWidth <= 767
     }
   },
 
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener("resize", this.getWindowWidth);
-      window.addEventListener("resize", this.getWindowHeight);
+      window.addEventListener('resize', this.getWindowWidth)
+      window.addEventListener('resize', this.getWindowHeight)
 
       //Init
-      this.getWindowWidth();
-      this.getWindowHeight();
-    });
+      this.getWindowWidth()
+      this.getWindowHeight()
+    })
   },
 
   methods: {
     getWindowWidth(event) {
-      this.windowWidth = document.documentElement.clientWidth;
+      this.windowWidth = document.documentElement.clientWidth
     },
 
     getWindowHeight(event) {
-      this.windowHeight = document.documentElement.clientHeight;
+      this.windowHeight = document.documentElement.clientHeight
     }
   },
 
   beforeDestroy() {
-    window.removeEventListener("resize", this.getWindowWidth);
-    window.removeEventListener("resize", this.getWindowHeight);
+    window.removeEventListener('resize', this.getWindowWidth)
+    window.removeEventListener('resize', this.getWindowHeight)
   }
-};
+}
 </script>

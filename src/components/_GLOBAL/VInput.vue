@@ -8,7 +8,7 @@
       :name="id"
       class="appearance-none block w-full text-grey-darker border border-grey-light rounded py-3 px-4 leading-tight"
       :class="$style.input"
-      v-on="listeners"
+      v-on="inputListeners"
       v-bind="$attrs"
     >
   </div>
@@ -37,7 +37,7 @@ export default {
     }
   },
   computed: {
-    listeners() {
+    inputListeners() {
       return {
         ...this.$listeners,
         input: event => this.$emit('input', event.target.value)

@@ -1,8 +1,15 @@
 .navbar {
   height: 80px;
   @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;
-}
 
+  // .text-white.v-menu-button {
+  //   & > span,
+  //   &:after,
+  //   &:before {
+  //     background-color: white !important;
+  //   }
+  // }
+}
 .nav {
   &-list {
     @apply .flex .flex-col .justify-start .list-reset;

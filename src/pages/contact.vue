@@ -15,9 +15,8 @@
         <div class="my-6">
           <v-input required v-model="form.email" id="email" type="email" label="Your Email"></v-input>
         </div>
-        <div class="mb-8 pt-4 max-w-sm mx-auto">
-          <label class="block uppercase text-grey-darker text-sm font-bold mb-2" for="message">Message</label>
-          <textarea required id="message" v-model="form.message" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-normal" name="message" rows="8" cols="80" placeholder="Write A Message..."></textarea>
+        <div class="mb-8 max-w-sm mx-auto">
+          <v-text required id="message" v-model="form.message" label="Message"></v-text>
         </div>
         <div class="flex items-center justify-between max-w-sm mx-auto">
           <v-button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-black hover:bg-white hover:text-black hover:border-black hover:border-2 text-white font-bold py-2 px-4 rounded">Send</v-button>
