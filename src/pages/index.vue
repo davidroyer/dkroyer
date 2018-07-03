@@ -28,7 +28,7 @@
                   <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
                 </p>
               </div>
-              <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank">View Repo</a>
+              <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
             </v-card>
           </div>
         </div>
@@ -47,7 +47,7 @@
                 <v-icon name="star" font-size="18px"></v-icon> {{noteworthyRepo.stargazers_count}}
               </p>
             </div>
-            <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank">View Repo</a>
+            <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
           </v-card>
         </div>
       </div>

@@ -45,7 +45,7 @@ module.exports = {
       createContainer('tip', 'TIP'),
       createContainer('warning', 'WARNING'),
       createContainer('danger', 'DANGER'),
-      [externalLinks, { target: '_blank', rel: 'noopener' }]
+      [externalLinks, { target: '_blank', rel: 'noopener noreferrer' }]
     ]
   },
 
