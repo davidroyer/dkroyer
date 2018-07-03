@@ -151,6 +151,20 @@ module.exports = {
   build: {
     watch: ['./website.config.js'],
     extractCSS: true,
+
+    vendor: ['babel-polyfill'],
+
+    babel: {
+      presets: [
+        [
+          'vue-app',
+          {
+            useBuiltIns: true,
+            targets: { ie: 11, uglify: true }
+          }
+        ]
+      ]
+    },
     extend(config, { isDev, isClient }) {
       /**
        * Enable removal of unused icons when building (tree shaking) for FontAwsome
