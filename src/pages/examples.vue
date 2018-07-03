@@ -17,7 +17,10 @@
         <h2 class="mb-4">Promise Test - Without babel-ie-preset</h2>
         <div>{{$store.state.testValue}}</div>
         <v-button @click="$store.dispatch('promiseTest')">Run</v-button>
+      </section>
 
+      <section class="border-b-2 my-8 py-8 gallery">
+        <v-gallery></v-gallery>
       </section>
 
       <section class="border-b-2 my-8 py-8 vicons">

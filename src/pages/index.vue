@@ -1,46 +1,39 @@
 <template>
-<div class="home">
-  <v-hero>
-    <v-headline class="relative px-4 text-5xl md:text-6xl lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
-  </v-hero>
-  <v-wrapper>
-    <section class="about mt-0 mb-8 border-b-2">
-      <v-headline :tag="2" headlineClasses="mt-0 text-center text-indigo-darker text-5xl">About Me</v-headline>
-      <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
-      <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
-      <ul>
-        <li>In change of handling all front-end aspects of building, testing, documenting, and integrating a new form system using Vue.js in prepartion of use for our 20+ marketing sites.</li>
-        <li>Built a custom Vue.js Filtering Plugin so our site users can quickly and easily find the degree they are lookging for.</li>
-        <li>Did a major overhaul to our wordpress theme that is used as a starting point for our marketing sites. The overhaul inlcuded switching from Gulp to using Webpack via Laravel Mix</li>
-      </ul>
-    </section>
+  <div class="home">
+    <v-hero>
+      <v-headline class="relative px-4 text-5xl md:text-6xl lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
+    </v-hero>
+    <v-wrapper>
+      <section class="about mt-0 mb-8 border-b-2">
+        <v-headline :tag="2" headlineClasses="mt-0 text-center text-indigo-darker text-5xl">About Me</v-headline>
+        <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
+        <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
+        <ul>
+          <li>In change of handling all front-end aspects of building, testing, documenting, and integrating a new form system using Vue.js in prepartion of use for our 20+ marketing sites.</li>
+          <li>Built a custom Vue.js Filtering Plugin so our site users can quickly and easily find the degree they are lookging for.</li>
+          <li>Did a major overhaul to our wordpress theme that is used as a starting point for our marketing sites. The overhaul inlcuded switching from Gulp to using Webpack via Laravel Mix</li>
+        </ul>
+      </section>
 
-    <section class="featured text-center my-8 border-b-2">
-      <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
-
-      <div class="px-2">
-        <div class="-mx-2 flex flex-wrap justify-around">
-          <div class="card-wrapper card-wrapper-github flex px-2" v-for="item in popularRepos" :key="item.id">
-            <v-card class="shadow-md w-full py-2">
-              <div slot="header" class="-mt-4">
-                <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
-                <p class="subtitle mt-0 font-semibold text-lg">
-                  <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
-                </p>
-              </div>
-              <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
-            </v-card>
-          </div>
+      <section class="featured text-center my-8 border-b-2">
+        <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
+        <div class="grid">
+          <v-card v-for="(item, index) in popularRepos" :key="index" class="shadow-md w-full py-2">
+            <div slot="header" class="-mt-4">
+              <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
+              <p class="subtitle mt-0 font-semibold text-lg">
+                <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
+              </p>
+            </div>
+            <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
+          </v-card>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="new-noteworthy text-center my-8 border-b-2">
-      <h2 class="font-semibold text-indigo-darker text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
-
-      <div class="flex flex-wrap justify-center">
-        <div class="card-wrapper card-wrapper-github">
-          <v-card class="shadow-md w-full py-2">
+      <section class="new-noteworthy text-center my-8 border-b-2">
+        <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
+        <div class="grid">
+          <v-card class="shadow-md w-full max-w-sm mx-auto py-2">
             <div slot="header" class="-mt-4">
               <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{noteworthyRepo.name}}</h3>
               <p class="subtitle mt-0 font-semibold text-lg">
@@ -50,11 +43,10 @@
             <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
           </v-card>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </v-wrapper>
-</div>
+    </v-wrapper>
+  </div>
 </template>
 
 <script>
@@ -101,6 +93,26 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+  }
+  .featured {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1.5rem;
+
+      @media screen and (min-width: 560px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
   section {
     padding: 1em 0 3.5em;
 
@@ -134,11 +146,11 @@ export default {
     }
   }
 
-  .repo {
-    flex: 0 1 250px;
-    margin: 2em 1em !important;
-    position: relative;
-  }
+  // .repo {
+  //   flex: 0 1 250px;
+  //   margin: 2em 1em !important;
+  //   position: relative;
+  // }
   .hero {
     background-attachment: fixed;
     background-image: url('~/assets/images/blog-me.jpeg');
