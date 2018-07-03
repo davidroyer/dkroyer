@@ -151,9 +151,6 @@ module.exports = {
   build: {
     watch: ['./website.config.js'],
     extractCSS: true,
-
-    postcss: [require('tailwindcss')('./tailwind.js'), require('autoprefixer')],
-
     extend(config, { isDev, isClient }) {
       /**
        * Enable removal of unused icons when building (tree shaking) for FontAwsome
@@ -177,7 +174,6 @@ module.exports = {
               path.join(__dirname, './src/pages/**/*.vue'),
               path.join(__dirname, './src/layouts/**/*.vue'),
               path.join(__dirname, './src/components/**/*.vue')
-              // path.join(__dirname, "./src/components/.GLOBAL/**/*.vue")
             ]),
             extractors: [
               {
