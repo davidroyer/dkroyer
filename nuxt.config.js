@@ -151,9 +151,6 @@ module.exports = {
   build: {
     watch: ['./website.config.js'],
     extractCSS: true,
-
-    vendor: ['babel-polyfill'],
-
     babel: {
       presets: [
         [
@@ -165,6 +162,7 @@ module.exports = {
         ]
       ]
     },
+    vendor: ['babel-polyfill'],
     extend(config, { isDev, isClient }) {
       /**
        * Enable removal of unused icons when building (tree shaking) for FontAwsome
