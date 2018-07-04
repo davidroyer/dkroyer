@@ -154,15 +154,8 @@ module.exports = {
     extractCSS: true,
     extend(config, { isDev, isClient }) {
       /**
-       * Enable removal of unused icons when building (tree shaking) for FontAwsome
+       * Use purgecss when building for production
        */
-      // config.resolve.alias['@fortawesome/free-brands-svg-icons$'] =
-      //   '@fortawesome/free-brands-svg-icons/shakable.es.js'
-      // config.resolve.alias['@fortawesome/free-regular-svg-icons$'] =
-      //   '@fortawesome/free-regular-svg-icons/shakable.es.js'
-      // config.resolve.alias['@fortawesome/free-solid-svg-icons$'] =
-      //   '@fortawesome/free-solid-svg-icons/shakable.es.js'
-
       if (!isDev) {
         config.plugins.push(
           /**

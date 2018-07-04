@@ -6,7 +6,7 @@
     <v-wrapper>
       <section class="about mt-0 mb-8 border-b-2">
         <v-headline :tag="2" headlineClasses="mt-0 text-center text-indigo-darker text-5xl">About Me</v-headline>
-        
+
 
         <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
         <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
@@ -126,6 +126,7 @@ export default {
 
       &-introtext {
         margin-top: -1.25rem;
+        line-height: 2;
       }
       .list-header {
         text-transform: capitalize;
@@ -140,6 +141,10 @@ export default {
       }
       li {
         list-style: disc;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
       }
 
       p {
