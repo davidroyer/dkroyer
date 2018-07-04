@@ -149,30 +149,19 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    analyze: true,
     watch: ['./website.config.js'],
     extractCSS: true,
-    babel: {
-      presets: [
-        [
-          'vue-app',
-          {
-            useBuiltIns: true,
-            targets: { ie: 11, uglify: true }
-          }
-        ]
-      ]
-    },
-    vendor: ['babel-polyfill'],
     extend(config, { isDev, isClient }) {
       /**
        * Enable removal of unused icons when building (tree shaking) for FontAwsome
        */
-      config.resolve.alias['@fortawesome/fontawesome-free-brands$'] =
-        '@fortawesome/fontawesome-free-brands/shakable.es.js'
-      config.resolve.alias['@fortawesome/fontawesome-free-regular$'] =
-        '@fortawesome/fontawesome-free-regular/shakable.es.js'
-      config.resolve.alias['@fortawesome/fontawesome-free-solid$'] =
-        '@fortawesome/fontawesome-free-solid/shakable.es.js'
+      // config.resolve.alias['@fortawesome/free-brands-svg-icons$'] =
+      //   '@fortawesome/free-brands-svg-icons/shakable.es.js'
+      // config.resolve.alias['@fortawesome/free-regular-svg-icons$'] =
+      //   '@fortawesome/free-regular-svg-icons/shakable.es.js'
+      // config.resolve.alias['@fortawesome/free-solid-svg-icons$'] =
+      //   '@fortawesome/free-solid-svg-icons/shakable.es.js'
 
       if (!isDev) {
         config.plugins.push(

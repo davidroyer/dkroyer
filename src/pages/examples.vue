@@ -26,11 +26,11 @@
       <section class="border-b-2 my-8 py-8 vicons">
         <h2 class="mb-4">Icons</h2>
         <v-icon name="user"></v-icon>
-        <v-icon name="xCircle"></v-icon>
+        <!-- <v-icon name="xCircle"></v-icon> -->
         <v-icon name="star"></v-icon>
         <hr class="examples-hr">
         <v-icon font-size="40px" name="user"></v-icon>
-        <v-icon font-size="40px" name="xCircle"></v-icon>
+        <!-- <v-icon font-size="40px" name="xCircle"></v-icon> -->
         <v-icon font-size="40px" name="star"></v-icon>
       </section>
 
