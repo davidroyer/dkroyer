@@ -14,11 +14,11 @@
 
 <script>
 import Case from 'case'
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
-import { faSync, faUser, faStar, faTag } from '@fortawesome/free-solid-svg-icons'
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
-import { faTwitter, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-library.add(faSync, faUser, faStar, faTag, faTimesCircle, faTwitter, faGithub, faLinkedinIn)
+// import { library, icon } from '@fortawesome/fontawesome-svg-core'
+// import { faSync, faUser, faStar, faTag } from '@fortawesome/free-solid-svg-icons'
+// import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+// import { faTwitter, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+// library.add(faSync, faUser, faStar, faTag, faTimesCircle, faTwitter, faGithub, faLinkedinIn)
 
 export default {
   name: 'VIcon',

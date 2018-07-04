@@ -24,7 +24,8 @@
             <div slot="header" class="-mt-4">
               <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
               <p class="subtitle mt-0 font-semibold text-lg">
-                <v-icon name="star" font-size="18px"></v-icon> {{item.stargazers_count}}
+                <fa-icon icon="star" style="font-size: 17px"></fa-icon>
+                {{item.stargazers_count}}
               </p>
             </div>
             <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
@@ -39,7 +40,8 @@
             <div slot="header" class="-mt-4">
               <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{noteworthyRepo.name}}</h3>
               <p class="subtitle mt-0 font-semibold text-lg">
-                <v-icon name="star" font-size="18px"></v-icon> {{noteworthyRepo.stargazers_count}}
+                <fa-icon icon="star" style="font-size: 17px"></fa-icon>
+                {{noteworthyRepo.stargazers_count}}
               </p>
             </div>
             <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>

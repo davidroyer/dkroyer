@@ -1,4 +1,4 @@
-const tailwind = require('./tailwind')
+// const tailwind = require('./tailwind')
 
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
@@ -18,6 +18,17 @@ module.exports = {
   ogLanguage: 'de_DE', // Facebook Language
 
   // Manifest and Progress color
-  themeColor: tailwind.colors['grey-darkest'],
-  backgroundColor: tailwind.colors['indigo']
+  themeColor: 'purple',
+  backgroundColor: '#222',
+  // themeColor: tailwind.colors['grey-darkest'],
+  // backgroundColor: tailwind.colors['indigo'],
+
+  /**
+   * Icons To Load
+   */
+  faConfig: {
+    brands: ['faTwitter', 'faGithub', 'faLinkedinIn'],
+    regular: ['faTimesCircle'],
+    solid: ['faAdjust', 'faSync', 'faUser', 'faStar', 'faTag']
+  }
 }

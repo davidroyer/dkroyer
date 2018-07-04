@@ -7,13 +7,13 @@
     <div>Copyright &copy; {{ fullYear }} David Royer</div>
     <div class="social-links flex justify-center">
       <a class="m-2" href="https://github.com/davidroyer" target="_blank" rel="noopener" aria-label="github">
-        <v-icon fa-style="brands" name="github"></v-icon>
+        <fa-icon :icon="['fab', 'github']"></fa-icon>
       </a>
       <a class="m-2" href="https://twitter.com/DavidRoyer_" target="_blank" rel="noopener" aria-label="twitter">
-        <v-icon fa-style="brands" name="twitter"></v-icon>
+        <fa-icon :icon="['fab', 'twitter']"></fa-icon>
       </a>
       <a class="m-2" href="https://www.linkedin.com/in/dkroyer/" target="_blank" rel="noopener" aria-label="linkedIn">
-        <v-icon fa-style="brands" name="linkedinIn"></v-icon>
+        <fa-icon :icon="['fab', 'linkedin-in']"></fa-icon>
       </a>
     </div>
   </footer>

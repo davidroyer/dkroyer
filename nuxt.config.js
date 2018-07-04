@@ -109,8 +109,35 @@ module.exports = {
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
    */
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/google-analytics', '@nuxtjs/pwa', 'nuxtent'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa',
+    'nuxtent',
+    'nuxt-fontawesome'
+  ],
 
+  /**
+   * Nuxt fontawesome module
+   * @type {Object}
+   */
+  fontawesome: {
+    component: 'fa-icon',
+    imports: [
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: config.faConfig.brands
+      },
+      {
+        set: '@fortawesome/free-regular-svg-icons',
+        icons: config.faConfig.regular
+      },
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: config.faConfig.solid
+      }
+    ]
+  },
   /**
    * PWA Manifest
    * @see http://nuxt-pwa/manifest

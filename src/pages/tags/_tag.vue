@@ -2,7 +2,8 @@
   <div class="container px-4 mx-auto max-w-xl">
       <h1 class="text-center">Tags Page</h1>
       <h2 class="text-center">
-        <v-icon font-size="17px" name="tag"></v-icon> Tag: <span class="font-light" v-text="$route.params.tag"></span>
+        <fa-icon icon="tag" style="font-size: 17px"></fa-icon>
+        Tag: <span class="font-light" v-text="$route.params.tag"></span>
       </h2>
       <hr/>
       <ul class="my-6 py-4 post-list flex flex-wrap justify-between">
@@ -11,7 +12,7 @@
           <div class="tags flex">
             <div class="tag text-sm mr-4" v-for="(postTag, index) in post.tags" :key="index">
               <nuxt-link class="tag-link no-underline font-bold" :to="'/tags/' + postTag | slugify">
-                <v-icon font-size="12px" name="tag"></v-icon> {{postTag}}
+                <fa-icon icon="tag" style="font-size: 12px"></fa-icon> {{postTag}}
               </nuxt-link>
             </div>
           </div>

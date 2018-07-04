@@ -14,6 +14,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-brands-svg-icons": "^5.1.0",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/vue-fontawesome": "^0.1.0",
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
@@ -25,6 +30,7 @@
     "markdown-it-link-attributes": "^2.1.0",
     "nuxt": "^1.0.0",
     "nuxt-babel": "^0.1.2",
+    "nuxt-fontawesome": "^0.3.0",
     "nuxtent": "^1.4.1",
     "prismjs": "^1.15.0",
     "slugify": "^1.3.0",
@@ -32,10 +38,6 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-common-types": "^0.2.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.0",
-    "@fortawesome/free-brands-svg-icons": "^5.1.0",
-    "@fortawesome/free-regular-svg-icons": "^5.1.0",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "babel-eslint": "^8.2.1",
     "babel-preset-es2015-ie": "^6.7.0",
     "eslint": "^4.15.0",
