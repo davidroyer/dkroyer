@@ -8,16 +8,7 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:/]+/g) || []
   }
 }
-const purgecssWhitelistPatterns = [
-  /^__/,
-  /^fa/,
-  /^page-/,
-  /^nuxt/,
-  /^scale/,
-  /^slide/,
-  /^enter/,
-  /^leave/
-]
+const purgecssWhitelistPatterns = [/^__/, /^fa/, /^page-/, /^nuxt/, /^scale/, /^slide/, /^enter/, /^leave/]
 
 module.exports = {
   /**
@@ -109,13 +100,7 @@ module.exports = {
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
    */
-  modules: [
-    '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/pwa',
-    'nuxtent',
-    'nuxt-fontawesome'
-  ],
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/google-analytics', '@nuxtjs/pwa', 'nuxtent', 'nuxt-fontawesome'],
 
   /**
    * Nuxt fontawesome module
@@ -126,15 +111,15 @@ module.exports = {
     imports: [
       {
         set: '@fortawesome/free-brands-svg-icons',
-        icons: config.faConfig.brands
+        icons: config.fontAwesomeIcons.brands
       },
       {
         set: '@fortawesome/free-regular-svg-icons',
-        icons: config.faConfig.regular
+        icons: config.fontAwesomeIcons.regular
       },
       {
         set: '@fortawesome/free-solid-svg-icons',
-        icons: config.faConfig.solid
+        icons: config.fontAwesomeIcons.solid
       }
     ]
   },
@@ -176,9 +161,9 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    analyze: true,
-    watch: ['./website.config.js'],
+    // analyze: true,
     extractCSS: true,
+
     extend(config, { isDev, isClient }) {
       /**
        * Use purgecss when building for production

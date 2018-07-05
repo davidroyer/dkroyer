@@ -1,3 +1,5 @@
+const { colors } = require('./tailwind.config')
+
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
   analyticsID: 'UA-56060335-5',
@@ -16,27 +18,15 @@ module.exports = {
   ogLanguage: 'de_DE', // Facebook Language
 
   // Manifest and Progress color
-  themeColor: 'purple',
-  backgroundColor: '#222',
-  // themeColor: tailwind.colors['grey-darkest'],
-  // backgroundColor: tailwind.colors['indigo'],
+  themeColor: colors['grey-darkest'],
+  backgroundColor: colors['indigo'],
 
   /**
    * Icons To Load
    */
-  faConfig: {
+  fontAwesomeIcons: {
     brands: ['faTwitter', 'faGithub', 'faLinkedinIn'],
     regular: ['faTimesCircle'],
     solid: ['faAdjust', 'faSync', 'faUser', 'faStar', 'faTag']
-  },
-
-  navLinks: [
-    { name: 'Home', path: '/' },
-    // { name: 'About', path: '/about' },
-    { name: 'Site Info', path: '/site-info' },
-    // { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    // { name: 'Examples', path: '/examples' },
-    { name: 'Contact', path: '/contact' }
-  ]
+  }
 }
