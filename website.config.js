@@ -1,5 +1,3 @@
-// const tailwind = require('./tailwind')
-
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
   analyticsID: 'UA-56060335-5',
@@ -30,5 +28,15 @@ module.exports = {
     brands: ['faTwitter', 'faGithub', 'faLinkedinIn'],
     regular: ['faTimesCircle'],
     solid: ['faAdjust', 'faSync', 'faUser', 'faStar', 'faTag']
-  }
+  },
+
+  navLinks: [
+    { name: 'Home', path: '/' },
+    // { name: 'About', path: '/about' },
+    { name: 'Site Info', path: '/site-info' },
+    // { name: 'Projects', path: '/projects' },
+    { name: 'Blog', path: '/blog' },
+    // { name: 'Examples', path: '/examples' },
+    { name: 'Contact', path: '/contact' }
+  ]
 }

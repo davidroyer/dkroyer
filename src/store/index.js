@@ -1,16 +1,10 @@
+const config = require('@@/website.config')
+
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
   testValue: 'Initial',
-  navLinks: [
-    { name: 'Home', path: '/' },
-    // { name: 'About', path: '/about' },
-    { name: 'Site Info', path: '/site-info' },
-    // { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    // { name: 'Examples', path: '/examples' },
-    { name: 'Contact', path: '/contact' }
-  ],
+  navLinks: config.navLinks,
   post: {}
 })
 
