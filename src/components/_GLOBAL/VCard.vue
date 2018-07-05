@@ -1,12 +1,12 @@
 <template>
-  <div :class="['vcard', $style.card]">
-    <div :class="['vcard-header', $style.cardHeader]">
-      <slot name="header">
-        <div class="font-bold text-xl mb-2">You need to add something in the header slot...</div>
-      </slot>
-      <slot name="content"></slot>
+  <div class="v-card">
+    <div class="v-card-header">
+      <slot name="header"></slot>
     </div>
-    <div :class="['vcard-footer', $style.cardFooter]">
+    <div class="v-card-body">
+      <slot name="body"></slot>
+    </div>
+    <div class="v-card-footer">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -18,12 +18,20 @@ export default {
 }
 </script>
 
-<style lang="postcss" module>
-.card {
-  composes: max-w-sm rounded overflow-hidden my-6 from global;
-}
+<style lang="scss">
+.v-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
 
-.cardHeader, .cardFooter {
-   composes: px-6 py-4 from global;
+  &-header {
+    flex: 1;
+  }
+  &-body {
+    flex: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 </style>

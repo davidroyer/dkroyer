@@ -1,4 +1,6 @@
-.card {
+.v-card {
+  @apply .shadow-lg;
+
   &-wrapper {
     max-width: 400px;
 
@@ -7,14 +9,16 @@
     }
   }
   &-header {
+    // @apply .py-4;
     &-link {
     }
   }
 
-  &-content {
+  &-body {
   }
 
   &-footer {
+    // @apply .py-4;
   }
 }
 
