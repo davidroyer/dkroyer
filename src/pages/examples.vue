@@ -25,13 +25,13 @@
 
       <section class="border-b-2 my-8 py-8 vicons">
         <h2 class="mb-4">Icons</h2>
-        <v-icon name="user"></v-icon>
-        <!-- <v-icon name="xCircle"></v-icon> -->
-        <v-icon name="star"></v-icon>
+        <fa-icon icon="user"></fa-icon>
+        <!-- <fa-icon icon="xCircle"></fa-icon> -->
+        <fa-icon icon="star"></fa-icon>
         <hr class="examples-hr">
-        <v-icon font-size="40px" name="user"></v-icon>
-        <!-- <v-icon font-size="40px" name="xCircle"></v-icon> -->
-        <v-icon font-size="40px" name="star"></v-icon>
+        <fa-icon style="font-size: 40px" icon="user"></fa-icon>
+        <!-- <fa-icon style="font-size: 40px" :icon="['far', 'timesCircle']"></fa-icon> -->
+        <fa-icon style="font-size: 40px" icon="star"></fa-icon>
       </section>
 
       <section class="border-b-2 my-8 py-8 vinputs">
