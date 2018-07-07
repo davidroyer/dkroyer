@@ -18,17 +18,13 @@ This article is an overview of using Nuxt.js with Firebase Authentication. In Pa
 **_Notes:_**
 
 * I am using SPA mode with Nuxt.js which is implemented by setting the option `mode: 'spa'` in `nuxt.config.js`.
-
 * You need to enable the Sign-In Method for Google from the Authentication settings via your Firebase Console.
-
 * I am using Firebase Hosting but it should work with any static hosting provider. However, you'll need to authorize that domain via your Firebase Console in Authentication settings via your Firebase Console under the Sign-In Methods Tab.
 
 I have created 3 files that handle the issues faced when attempting to use Firebase Auth with Nuxt.js.
 
 * `fireinit.js`
-
 * `fireauth.js`
-
 * `router-auth.js`
 
 ---
@@ -46,26 +42,26 @@ If one does not exist, initialize the app, otherwise do nothing because it's alr
 ```js
 // This is `services/fireinit.js`
 
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/database";
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/database'
 
 var config = {
-  apiKey: "yourProjectValueHere",
-  authDomain: "yourProjectValueHere",
-  databaseURL: "yourProjectValueHere",
-  projectId: "yourProjectValueHere",
-  storageBucket: "yourProjectValueHere",
-  messagingSenderId: "yourProjectValueHere"
-};
+  apiKey: 'yourProjectValueHere',
+  authDomain: 'yourProjectValueHere',
+  databaseURL: 'yourProjectValueHere',
+  projectId: 'yourProjectValueHere',
+  storageBucket: 'yourProjectValueHere',
+  messagingSenderId: 'yourProjectValueHere'
+}
 
-!firebase.apps.length ? firebase.initializeApp(config) : "";
-export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
-export const DB = firebase.database();
-export const StoreDB = firebase.firestore();
-export default firebase;
+!firebase.apps.length ? firebase.initializeApp(config) : ''
+export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+export const auth = firebase.auth()
+export const DB = firebase.database()
+export const StoreDB = firebase.firestore()
+export default firebase
 ```
 
 ---
@@ -77,20 +73,20 @@ Firebase provides `onAuthStateChanged` to handle user state. I created `fireauth
 ```js
 // This is `@plugins/fireauth.js`
 
-import { auth } from "@/services/fireinit.js";
+import { auth } from '@/services/fireinit.js'
 
 export default context => {
-  const { store } = context;
+  const { store } = context
 
   return new Promise((resolve, reject) => {
     auth.onAuthStateChanged(user => {
       if (user) {
-        return resolve(store.commit("setUser", user));
+        return resolve(store.commit('setUser', user))
       }
-      return resolve();
-    });
-  });
-};
+      return resolve()
+    })
+  })
+}
 ```
 
 ---
@@ -113,13 +109,13 @@ This functions checks for the 2 scenarios:
 // This is `@middleware/router-auth.js`
 
 export default function({ store, redirect, route }) {
-  store.state.user != null && route.name == "login" ? redirect("/admin") : "";
-  store.state.user == null && isAdminRoute(route) ? redirect("/login") : "";
+  store.state.user != null && route.name == 'login' ? redirect('/admin') : ''
+  store.state.user == null && isAdminRoute(route) ? redirect('/login') : ''
 }
 
 function isAdminRoute(route) {
-  if (route.matched.some(record => record.path == "/admin")) {
-    return true;
+  if (route.matched.some(record => record.path == '/admin')) {
+    return true
   }
 }
 ```
@@ -128,7 +124,7 @@ We will tell Nuxt.js to use this file by declaring it in `nuxt.config.js` as fol
 
 ```js
 router: {
-  middleware: "router-auth";
+  middleware: 'router-auth'
 }
 ```
 

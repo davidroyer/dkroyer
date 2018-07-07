@@ -1,6 +1,6 @@
-p {
-  @apply .my-2 .leading-normal;
-}
+// p {
+//   @apply .my-2 .leading-normal;
+// }
 
 pre {
   margin-top: 1em !important;
@@ -16,6 +16,22 @@ pre {
   h6 {
     @apply .leading-tight .mb-2;
   }
+}
+
+ul,
+ol {
+  padding-left: 25px;
+  @screen md {
+    padding-left: 30px;
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 // Custom Containers

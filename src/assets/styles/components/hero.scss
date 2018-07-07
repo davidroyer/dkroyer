@@ -11,10 +11,11 @@
   position: relative;
   height: 350px;
 
-  @media (min-width: 750px) {
+  @screen md {
     background-size: 1200px;
   }
-  @media (min-width: 1050px) {
+
+  @screen lg {
     background-size: cover;
     height: 450px;
     background-position: top;
@@ -40,6 +41,10 @@
       71%,
       rgba(62, 66, 100, 0.6509803921568628)
     );
+
+    @screen md {
+      min-height: 125px;
+    }
     .container {
       position: relative;
     }
@@ -47,11 +52,5 @@
     .headline {
       @apply .my-2 .py-2;
     }
-  }
-}
-
-@screen md {
-  .hero.page-heading {
-    min-height: 125px;
   }
 }
