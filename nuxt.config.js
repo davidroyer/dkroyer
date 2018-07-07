@@ -163,8 +163,8 @@ module.exports = {
     interval: 1000,
     routes() {
       return Promise.all([
-        axios.get(`${config.siteUrl}/_nuxt/content/blog/_all.json`),
-        axios.get(`${config.siteUrl}/_nuxt/content/projects/_all.json`)
+        axios.get(`${baseUrl}/_nuxt/content/blog/_all.json`),
+        axios.get(`${baseUrl}/_nuxt/content/projects/_all.json`)
       ]).then(data => {
         const posts = data[0]
         const projects = data[1]
