@@ -10,7 +10,7 @@
     <div class="px-2">
       <div class="-mx-2 flex flex-wrap justify-around">
 
-        <div class="card-wrapper px-2" v-for="(post, index) in posts" :key="index">
+        <div class="card-wrapper px-2 my-4" v-for="(post, index) in posts" :key="index">
           <v-card>
             <div slot="header" class="leading-tight font-bold text-xl">
               <nuxt-link class="card-header-link no-underline hover:underline" :to="post.permalink">{{post.title}}</nuxt-link>
