@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="v-icon">
     <svg v-html="iconHtml"
       :width="fontSize"
@@ -79,4 +79,4 @@ export default {
     cursor: pointer;
   }
 }
-</style>
+</style> -->

@@ -12,7 +12,7 @@
           <div class="tags flex">
             <div class="tag text-sm mr-4" v-for="(postTag, index) in post.tags" :key="index">
               <nuxt-link class="tag-link no-underline font-bold" :to="'/tags/' + postTag | slugify">
-                <v-icon font-size="12px" name="tag"></v-icon> {{postTag}}
+            
               </nuxt-link>
             </div>
           </div>

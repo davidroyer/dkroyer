@@ -71,8 +71,8 @@
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
         <v-transition name="slide-x">
           <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
-            <v-icon font-size="32px" class="fixed sidebar-close" name="xCircle" button @click="$store.commit('toggleSidebar')"></v-icon>
-            Something here
+            <!-- <fa-icon @click="$store.commit('toggleSidebar')" style="font-size: 32px" icon="user"></fa-icon> -->
+            <v-button @click="$store.commit('toggleSidebar')">Close</v-button>
           </v-sidebar>
         </v-transition>
       </section>

@@ -2,6 +2,9 @@ const path = require('path')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const config = require('./website.config')
+const axios = require('axios')
+const isProduction = process.env.NODE_ENV === 'production'
+const baseUrl = config.siteUrl
 
 class TailwindExtractor {
   static extract(content) {
@@ -152,11 +155,24 @@ module.exports = {
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
    */
+  // sitemap: {
+  //   hostname: config.siteUrl,
+  //   generate: true,
+  //   routes() {
+  //     return axios.get('/content-api/blog').then(res => res.data.map(post => '/blog/' + post.permalink))
+  //   }
+  // },
   sitemap: {
-    hostname: config.siteUrl,
-    generate: true
+    path: '/sitemap.xml',
+    hostname: `${baseUrl}`,
+    cacheTime: 1000 * 60 * 150,
+    generate: true,
+    routes() {
+      return axios.get(`${baseUrl}/_nuxt/content/blog/_all.json`).then(res => {
+        return res.data.map(post => post.permalink)
+      })
+    }
   },
-
   /*
    ** Build configuration
    */
