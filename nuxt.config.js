@@ -157,7 +157,7 @@ module.exports = {
    */
   sitemap: {
     path: '/sitemap.xml',
-    hostname: `config.siteUrl`,
+    hostname: config.siteUrl,
     cacheTime: 1000 * 60 * 150,
     generate: true,
     interval: 1000,
