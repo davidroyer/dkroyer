@@ -4,7 +4,7 @@ const glob = require('glob-all')
 const config = require('./website.config')
 const axios = require('axios')
 const isProduction = process.env.NODE_ENV === 'production'
-const baseUrl = config.siteUrl
+const baseUrl = isProduction ? config.siteUrl : 'http://localhost:3000'
 
 class TailwindExtractor {
   static extract(content) {
@@ -155,21 +155,28 @@ module.exports = {
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
    */
-  // sitemap: {
-  //   hostname: config.siteUrl,
-  //   generate: true,
-  //   routes() {
-  //     return axios.get('/content-api/blog').then(res => res.data.map(post => '/blog/' + post.permalink))
-  //   }
-  // },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: `${baseUrl}`,
+    hostname: `config.siteUrl`,
     cacheTime: 1000 * 60 * 150,
     generate: true,
+    interval: 1000,
     routes() {
-      return axios.get(`${baseUrl}/_nuxt/content/blog/_all.json`).then(res => {
-        return res.data.map(post => post.permalink)
+      return Promise.all([
+        axios.get(`${config.siteUrl}/_nuxt/content/blog/_all.json`),
+        axios.get(`${config.siteUrl}/_nuxt/content/projects/_all.json`)
+      ]).then(data => {
+        const posts = data[0]
+        const projects = data[1]
+        return posts.data
+          .map(post => {
+            return post.permalink
+          })
+          .concat(
+            projects.data.map(project => {
+              return project.permalink
+            })
+          )
       })
     }
   },
@@ -226,5 +233,30 @@ module.exports = {
 
   generate: {
     fallback: true
+    // interval: 1000,
+    // routes() {
+    //   return Promise.all([
+    //     axios.get(`${baseUrl}/_nuxt/content/blog/_all.json`),
+    //     axios.get(`${baseUrl}/_nuxt/content/projects/_all.json`)
+    //   ]).then(data => {
+    //     const posts = data[0]
+    //     const projects = data[1]
+    //     return posts.data
+    //       .map(post => {
+    //         return {
+    //           route: '/post/' + post.permalink,
+    //           payload: post
+    //         }
+    //       })
+    //       .concat(
+    //         projects.data.map(page => {
+    //           return {
+    //             route: project.permalink,
+    //             payload: project
+    //           }
+    //         })
+    //       )
+    //   })
+    // }
   }
 }
