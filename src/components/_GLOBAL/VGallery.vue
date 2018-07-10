@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'VGallery',
   props: {
     items: {
       type: [Array, Number],

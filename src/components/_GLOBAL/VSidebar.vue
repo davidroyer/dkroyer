@@ -1,5 +1,5 @@
-<template lang="html">
-  <div class="sidebar">
+<template>
+  <div class="sidebar w-4/5 max-w-sm fixed pin-r pin-t pin-b">
     <slot></slot>
   </div>
 </template>
@@ -10,13 +10,6 @@ export default {}
 
 <style lang="scss">
 .sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  min-width: 250px;
-  max-width: 400px;
-  width: 100%;
-  padding: 3.5em 1em 1em;
+  z-index: 999999999;
 }
 </style>

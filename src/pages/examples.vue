@@ -7,6 +7,15 @@
     </v-hero>
     <v-wrapper>
 
+      <section class="border-b-2 my-8 py-8 vsidebar">
+        <h2 class="mb-4">Sidebar</h2>
+        <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
+        <transition-slide-in :duration="300">
+          <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
+            <v-button class="my-4 mx-4 border-white text-white" @click="$store.commit('toggleSidebar')">Close</v-button>
+          </v-sidebar>
+        </transition-slide-in>
+      </section>
       <v-test class="blue"></v-test>
       <v-card>
         <h2 slot="header">Card Header</h2>
@@ -35,13 +44,79 @@
         <p>Porro, asperiores quas fugit! Distinctio suscipit officia ex porro fugit ratione, quaerat asperiores vitae dolores natus molestiae inventore, sunt velit esse facilis. Sunt quia nemo vitae autem officiis soluta eum quae iste quasi odit voluptatum harum dolores, illum fugiat quod ipsum inventore reiciendis officia quos eaque dolorum tempore, consequatur laboriosam.</p>
       </div>
 
+
+      <section class="border-b-2 my-8 py-8 example-transition">
+        <h2 class="mb-4">Transitions</h2>
+        <div class="text-center">
+          <button @click="toggle" class="px-4 py-2 bg-indigo text-white rounded">Toggle</button>
+        </div>
+        <transition-slide-up :duration="300">
+          <div v-show="showFooter" class="z-10 fixed pin-b pin-x bg-indigo p-6 text-white text-center">
+            Boo!
+          </div>
+        </transition-slide-up>
+
+
+        <div>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+          sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+        </div>
+        <transition-expand>
+          <div v-if="expanded">
+            Magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita.
+          </div>
+        </transition-expand>
+        <button @click="expanded = !expanded">
+          {{ expanded ? `Shrink` : `Expand` }}
+        </button>
+      </section>
+
       <section class="border-b-2 my-8 py-8 promiseTest">
         <h2 class="mb-4">Promise Test - Without babel-ie-preset</h2>
         <div>{{$store.state.testValue}}</div>
         <v-button @click="$store.dispatch('promiseTest')">Run</v-button>
       </section>
 
+      <section class="border-b-2 my-8 py-8 example-accordion">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4">Accordion</h2>
+          <span class="block -mt-6"><code>v-accordion-item</code>, <code>v-accordion-item</code></span>
+        </div>
+          <v-accordion-list>
+            <v-accordion-item :item-id="1">
+              <template slot="header">
+                Item A
+              </template>
+              <template slot="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus auctor massa, vitae posuere sem tincidunt eget. Duis non vestibulum diam. Pellentesque eleifend interdum mollis. Donec porttitor dui enim. Maecenas a semper sem. Nunc molestie turpis vitae sem auctor, non venenatis velit ultricies.
+              </template>
+            </v-accordion-item>
+            <v-accordion-item :item-id="2">
+              <template slot="header">
+                Item B
+              </template>
+              <template slot="content">
+                Vestibulum nec urna non nisi viverra vehicula ut sed metus. Cras scelerisque condimentum nunc ut mattis. Curabitur euismod sagittis efficitur. Cras vel orci consectetur, ullamcorper magna vitae, sodales mauris. Aliquam tempus volutpat mi. Nunc vitae molestie ante. In sed varius tortor.
+              </template>
+            </v-accordion-item>
+            <v-accordion-item :item-id="3">
+              <template slot="header">
+                Item C
+              </template>
+              <template slot="content">
+                Sed porttitor mattis egestas. Duis nec rhoncus ligula. Etiam pellentesque mattis mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel dapibus nulla. Phasellus lobortis nibh et faucibus tincidunt. Phasellus non iaculis turpis, vitae gravida lacus.
+              </template>
+            </v-accordion-item>
+          </v-accordion-list>
+      </section>
+
+
       <section class="border-b-2 my-8 py-8 example-gallery">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4">Grid Gallery</h2>
+          <span class="block -mt-6"><code>v-gallery</code></span>
+        </div>
         <v-gallery>
           <v-gallery-item v-for="(item, index) in 6" :key="index">
             <a href="https://unsplash.com/photos/YTmgx_ru39U" target="_blank" class=" bg-white rounded h-full text-grey-darkest no-underline shadow-md">
@@ -59,6 +134,7 @@
         <fa-icon icon="star"></fa-icon>
         <hr class="examples-hr">
         <fa-icon style="font-size: 40px" icon="user"></fa-icon>
+        <fa-icon style="font-size: 40px" icon="edit"></fa-icon>
         <!-- <fa-icon style="font-size: 40px" :icon="['far', 'timesCircle']"></fa-icon> -->
         <fa-icon style="font-size: 40px" icon="star"></fa-icon>
       </section>
@@ -78,24 +154,14 @@
           <v-button class="mx-2" type="submit" value="Submit">Submit</v-button>
         </form>
       </section>
-
-      <section class="border-b-2 my-8 py-8 vsidebar">
-        <h2 class="mb-4">Sidebar</h2>
-        <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
-        <v-transition name="slide-x">
-          <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
-            <!-- <fa-icon @click="$store.commit('toggleSidebar')" style="font-size: 32px" icon="user"></fa-icon> -->
-            <v-button @click="$store.commit('toggleSidebar')">Close</v-button>
-          </v-sidebar>
-        </v-transition>
-      </section>
-
-
     </v-wrapper>
   </div>
 </template>
 
 <script>
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+library.add(faEdit)
 const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 
@@ -117,14 +183,29 @@ export default {
       ]
     }
   },
+
+  data: () => ({
+    showFooter: false,
+    expanded: false
+  }),
+
   methods: {
     handleClick() {
       alert('You did something.')
+    },
+
+    toggle() {
+      this.showFooter = !this.showFooter
     }
   }
 }
 </script>
 
+<style>
+main {
+  z-index: initial !important;
+}
+</style>
 <style lang="scss" scoped>
 section {
   display: flex;
@@ -142,6 +223,13 @@ section {
 
   &.example-gallery {
     display: block;
+  }
+
+  &.example {
+    &-transition,
+    &-accordion {
+      flex-direction: column;
+    }
   }
 }
 

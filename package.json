@@ -23,6 +23,7 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
     "@nuxtjs/sitemap": "^0.1.1",
+    "animejs": "^2.2.0",
     "autoprefixer": "^8.0.0",
     "babel-polyfill": "^6.26.0",
     "case": "^1.5.5",
