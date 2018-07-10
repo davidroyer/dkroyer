@@ -12,7 +12,7 @@
 
         <div class="card-wrapper px-2 my-4" v-for="(post, index) in posts" :key="index">
           <v-card>
-            <div slot="header" class="leading-tight font-bold text-xl">
+            <div slot="header" class="font-bold text-xl">
               <nuxt-link class="card-header-link no-underline hover:underline" :to="post.permalink">{{post.title}}</nuxt-link>
             </div>
 

@@ -185,6 +185,10 @@ module.exports = {
    */
   build: {
     // analyze: true,
+
+    // babel: {
+    //   plugins: ['babel-plugin-tailwind']
+    // },
     extractCSS: true,
 
     extend(config, { isDev, isClient }) {

@@ -6,6 +6,12 @@
       </v-headline>
     </v-hero>
     <v-wrapper>
+
+      <v-test class="blue"></v-test>
+      <v-card>
+        <h2 slot="header">Card Header</h2>
+        <p slot="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur culpa quibusdam laudantium fugiat autem cumque voluptate. Numquam in repellat, delectus.</p>
+      </v-card>
       <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat aut accusantium, ducimus eos. Aperiam fugit rerum esse at quis ducimus ipsum perspiciatis inventore doloribus provident quidem reiciendis, laudantium ad iure nam quod, repudiandae eveniet, sed soluta eaque! Sapiente possimus impedit ullam, dolor voluptatibus. Magni repellat aperiam dolores ipsam provident!</p>
         <blockquote>
@@ -35,8 +41,15 @@
         <v-button @click="$store.dispatch('promiseTest')">Run</v-button>
       </section>
 
-      <section class="border-b-2 my-8 py-8 gallery">
-        <v-gallery></v-gallery>
+      <section class="border-b-2 my-8 py-8 example-gallery">
+        <v-gallery>
+          <v-gallery-item v-for="(item, index) in 6" :key="index">
+            <a href="https://unsplash.com/photos/YTmgx_ru39U" target="_blank" class=" bg-white rounded h-full text-grey-darkest no-underline shadow-md">
+                <h1 class="text-3xl py-1 px-2 my-0">Fox. {{index}}</h1>
+                <img class="w-full block rounded-b" src="https://images.unsplash.com/photo-1505783495551-523774fe88b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f65a6b38ef380b2d8f0c6ff5f6f7c403&auto=format&fit=crop&w=334&q=80" alt="A photo of a fox">
+            </a>
+          </v-gallery-item>
+        </v-gallery>
       </section>
 
       <section class="border-b-2 my-8 py-8 vicons">
@@ -125,6 +138,10 @@ section {
     font-style: italic;
     font-weight: 300;
     font-size: 2.5rem;
+  }
+
+  &.example-gallery {
+    display: block;
   }
 }
 

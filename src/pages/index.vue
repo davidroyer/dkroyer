@@ -19,18 +19,20 @@
 
       <section class="featured text-center my-8 border-b-2">
         <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
-        <div class="grid">
-          <v-card v-for="(item, index) in popularRepos" :key="index" class="shadow-md w-full py-2">
-            <div slot="header" class="-mt-4">
-              <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
-              <p class="subtitle mt-0 font-semibold text-lg">
-                <fa-icon icon="star" style="font-size: 17px"></fa-icon>
-                {{item.stargazers_count}}
-              </p>
-            </div>
-            <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
-          </v-card>
-        </div>
+        <v-gallery min-col-w="300px">
+          <v-gallery-item v-for="(item, index) in popularRepos" :key="index">
+            <v-card class="shadow-md w-full py-2">
+              <div slot="header" class="-mt-4">
+                <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
+                <p class="subtitle mt-0 font-semibold text-lg">
+                  <fa-icon icon="star" style="font-size: 17px"></fa-icon>
+                  {{item.stargazers_count}}
+                </p>
+              </div>
+              <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </v-card>
+          </v-gallery-item>
+        </v-gallery>
       </section>
 
       <section class="new-noteworthy text-center my-8 border-b-2">
@@ -55,8 +57,7 @@
 
 <script>
 const noteworthyRepoUrl = 'https://api.github.com/repos/davidroyer/nuxt2-ssr-firebase'
-const popularReposUrl =
-  'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
+const popularReposUrl = 'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
 
 export default {
   head() {
@@ -170,11 +171,7 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(
-        to bottom right,
-        rgba(32, 35, 58, 0.75),
-        rgba(34, 41, 47, 0.75)
-      );
+      background-image: linear-gradient(to bottom right, rgba(32, 35, 58, 0.75), rgba(34, 41, 47, 0.75));
       opacity: 0.7;
     }
   }
