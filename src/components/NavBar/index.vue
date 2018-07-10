@@ -9,19 +9,13 @@
         :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
         aria-controls="nav-mobile">
       </v-menu-button>
-      <!-- <button
-        @click="$store.commit('toggleMenuState')"
-        v-text="navButtonText"
-        class="nav-btn"
-        :class="{'text-white font-bold': mobileMenuIsActive}"
-        aria-controls="nav-mobile"
-        :aria-expanded="mobileMenuIsActive ? 'true' : 'false'">
-      </button> -->
-
       <template v-if="isMobile">
-        <transition name="scale">
+        <transition-menu :duration="500">
           <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
-        </transition>
+        </transition-menu>
+        <!-- <transition name="scale">
+          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
+        </transition> -->
       </template>
       <nav-links v-if="!isMobile" :links="navLinksArray"></nav-links>
     </div>

@@ -19,22 +19,26 @@ import anime from 'animejs'
 export default {
   props: ['duration'],
   methods: {
-    beforeEnter(el) {
-      el.style.transform = 'translateX(100%)'
+    beforeEnter: function(el) {
+      el.style.opacity = 0.3
+      el.style.transform = 'scale(0)'
+      el.style.width = '0px'
+      el.style.height = '0px'
     },
-
-    enter(el, done) {
+    enter: function(el, done) {
       anime({
         targets: el,
-        translateX: 0,
+        scale: 1,
+        opacity: 1,
+        height: '100%',
+        width: '100%',
+        top: 0,
+        right: 0,
         duration: this.duration,
         easing: 'easeOutQuad',
-        complete: () => {
-          done()
-        }
+        complete: done
       })
     },
-
     afterEnter() {
       let body = document.getElementsByTagName('body')[0]
       body.classList.add('has-overlay')
@@ -42,10 +46,13 @@ export default {
 
     beforeLeave() {},
 
-    leave(el, done) {
+    leave: function(el, done) {
       anime({
         targets: el,
-        translateX: '100%',
+        scale: 0,
+        opacity: 0,
+        height: 0,
+        width: 0,
         duration: this.duration,
         easing: 'easeInQuad',
         complete: done

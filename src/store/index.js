@@ -5,7 +5,8 @@ export const state = () => ({
   sidebarOpen: false,
   testValue: 'Initial',
   navLinks: site.navLinks,
-  post: {}
+  post: {},
+  examplePageAdded: false
 })
 
 export const mutations = {
@@ -27,6 +28,17 @@ export const mutations = {
 
   setTestValue(state, payload) {
     state.testValue = payload
+  },
+
+  setDev(state, payload) {
+    state.isDev = payload
+  },
+
+  addExamplePageToMenu(state) {
+    if (!state.examplePageAdded) {
+      state.navLinks.push({ name: 'Examples', path: '/examples' })
+      state.examplePageAdded = true
+    }
   }
 }
 

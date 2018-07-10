@@ -39,15 +39,21 @@
   @media (max-width: 767px) {
     position: fixed;
     top: 0;
-    left: 0;
+    // left: 0;
     right: 0;
-    bottom: 0;
+    // bottom: 0;
+    transform: scale(0);
+    width: 0px;
+    height: 0px;
     z-index: 99;
-    padding-top: 100px;
     overflow-y: scroll;
-    padding-bottom: 2em;
+    overflow: hidden;
     @apply .bg-black;
 
+    &-list {
+      padding-bottom: 2em;
+      padding-top: 100px;
+    }
     &-item {
       margin: 0.5rem 0;
       @apply .block .px-4;

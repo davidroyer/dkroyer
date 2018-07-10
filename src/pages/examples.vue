@@ -10,7 +10,7 @@
       <section class="border-b-2 my-8 py-8 vsidebar">
         <h2 class="mb-4">Sidebar</h2>
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
-        <transition-slide-in :duration="300">
+        <transition-slide-in :duration="500">
           <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
             <v-button class="my-4 mx-4 border-white text-white" @click="$store.commit('toggleSidebar')">Close</v-button>
           </v-sidebar>
@@ -134,6 +134,8 @@
         <fa-icon icon="star"></fa-icon>
         <hr class="examples-hr">
         <fa-icon style="font-size: 40px" icon="user"></fa-icon>
+          <!-- <fa-icon :icon="['fas', 'chevron-right']"></fa-icon> -->
+        <fa-icon style="font-size: 40px" icon="chevron-right"></fa-icon>
         <fa-icon style="font-size: 40px" icon="edit"></fa-icon>
         <!-- <fa-icon style="font-size: 40px" :icon="['far', 'timesCircle']"></fa-icon> -->
         <fa-icon style="font-size: 40px" icon="star"></fa-icon>
@@ -160,12 +162,18 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
-library.add(faEdit)
+import { faEdit, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+library.add(faEdit, faChevronRight)
 const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 
 export default {
+  fetch({ isDev, store }) {
+    let addedAlready = store.state.examplePageAdded
+    if (isDev) {
+      store.commit('addExamplePageToMenu')
+    }
+  },
   head() {
     return {
       title: 'Examples',

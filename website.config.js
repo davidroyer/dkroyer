@@ -27,6 +27,6 @@ module.exports = {
   fontAwesomeIcons: {
     brands: ['faTwitter', 'faGithub', 'faLinkedinIn'],
     regular: ['faTimesCircle'],
-    solid: ['faAdjust', 'faSync', 'faUser', 'faStar', 'faTag']
+    solid: ['faChevronRight, faAdjust', 'faSync', 'faUser', 'faStar', 'faTag']
   }
 }

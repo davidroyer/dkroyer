@@ -43,7 +43,7 @@ export default {
 <style lang='scss'>
 /* @import "_variables.css"; */
 $menu-button-color: #666;
-button.v-menu-button {
+.v-menu-button {
   position: relative;
   border: none;
   background-color: transparent;
@@ -54,10 +54,14 @@ button.v-menu-button {
   line-height: 1;
   -webkit-tap-highlight-color: transparent;
   z-index: 99999;
+
+  // &[aria-expanded='true'] {
+  //   background: white;
+  // }
 }
-button.v-menu-button > span,
-button.v-menu-button:after,
-button.v-menu-button:before {
+.v-menu-button > span,
+.v-menu-button:after,
+.v-menu-button:before {
   position: absolute;
   left: 0;
   width: 100%;
@@ -65,34 +69,44 @@ button.v-menu-button:before {
   padding: 0;
   margin: 0;
   background: $menu-button-color;
+  transition: all 0.25s;
+  transition-delay: 250ms;
 }
-button.v-menu-button:after,
-button.v-menu-button:before {
+.v-menu-button:after,
+.v-menu-button:before {
   top: 50%;
   content: '';
   pointer-events: none;
-  transition: transform 0.25s;
+  // transition: all 0.25s;
+  // transition-delay: 500ms;
   transform-origin: 50% 50%;
 }
-button.v-menu-button:before {
+.v-menu-button:before {
   transform: translate3d(0, -10px, 0);
 }
-button.v-menu-button:after {
+.v-menu-button:after {
   transform: translate3d(0, 10px, 0);
 }
-button.v-menu-button > span {
+.v-menu-button > span {
   overflow: hidden;
   text-indent: 200%;
   color: rgba(0, 0, 0, 0);
-  transition: opacity 0.25s;
+  // transition: opacity 0.25s;
 }
-button.v-menu-button--checked:before {
+.v-menu-button--checked:before {
   transform: rotate3d(0, 0, 1, 45deg);
+  background: white;
 }
-button.v-menu-button--checked:after {
+.v-menu-button--checked:after {
   transform: rotate3d(0, 0, 1, -45deg);
+  background: white;
 }
-button.v-menu-button--checked > span {
+.v-menu-button--checked > span {
   opacity: 0;
+}
+
+.v-menu-button--checked > span,
+.v-menu-button--checked:after,
+.v-menu-button--checked:before {
 }
 </style>
