@@ -10,9 +10,9 @@
         aria-controls="nav-mobile">
       </v-menu-button>
       <template v-if="isMobile">
-        <transition-menu :duration="500">
+        <transition-zoom-center :duration="400">
           <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
-        </transition-menu>
+        </transition-zoom-center>
         <!-- <transition name="scale">
           <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
         </transition> -->
