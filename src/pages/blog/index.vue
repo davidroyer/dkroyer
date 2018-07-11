@@ -12,12 +12,12 @@
 
         <div class="card-wrapper px-2 my-4" v-for="(post, index) in posts" :key="index">
           <v-card>
-            <div slot="header" class="font-bold text-xl">
+            <v-card-header>
               <nuxt-link class="card-header-link no-underline hover:underline" :to="post.permalink">{{post.title}}</nuxt-link>
-            </div>
-
-            <p slot="body" class="text-grey-darker" v-text="post.description"></p>
-
+            </v-card-header>
+            <v-card-body>
+              <p class="text-grey-darker" v-text="post.description"></p>
+            </v-card-body>
             <template slot="footer">
               <nuxt-link v-for="(postTag, index) in post.tags" :key="index" class="no-underline inline-block bg-grey-lighter rounded-full px-3 pt-1 mt-1 mb-2 text-sm font-semibold text-grey-darker mr-2" :to="'/tags/' + postTag | slugify">
                 #{{postTag}}

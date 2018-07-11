@@ -1,16 +1,16 @@
 <template>
-  <div class="v-card">
+  <div class="v-card py-4 px-6 shadow-md w-full max-w-sm">
     <div class="v-card-image" v-if="$slots.image">
-      <slot name="image"></slot>
+      <!-- Use this slot for a card image -->
+      <slot name="image"/>
     </div>
-    <div class="v-card-header">
-      <slot name="header"></slot>
-    </div>
-    <div class="v-card-body">
-      <slot name="body"></slot>
-    </div>
+
+    <!-- This slot is where `v-card-header` and `v-card-body` go -->
+    <slot/>
+
     <div class="v-card-footer" v-if="$slots.footer">
-      <slot name="footer"></slot>
+      <!-- Use this slot to for the card footer -->
+      <slot name="footer"/>
     </div>
   </div>
 </template>
@@ -21,27 +21,33 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .v-card {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  max-width: 600px;
-  // box-shadow: config('shadows.md');
+  padding: 0.75rem 1.25rem;
 
   &-header {
     flex: 1;
-    font-weight: config('fontWeights.semibold');
-    line-height: config('leading.tight');
-    & > * {
-      margin-top: 0;
-    }
   }
   &-body {
     flex: 1;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    & > * {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &-footer {
+    flex: 1;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 </style>

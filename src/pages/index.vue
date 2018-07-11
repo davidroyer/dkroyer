@@ -21,14 +21,16 @@
         <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
         <v-gallery min-col-w="300px">
           <v-gallery-item v-for="(item, index) in popularRepos" :key="index">
-            <v-card class="shadow-md w-full py-2">
-              <div slot="header" class="-mt-4">
-                <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{item.name}}</h3>
+            <v-card class="w-full py-2">
+              <v-card-header>
+                <v-heading class="text-xl" v-text="item.name"/>
+              </v-card-header>
+              <v-card-body>
                 <p class="subtitle mt-0 font-semibold text-lg">
                   <fa-icon icon="star" style="font-size: 17px"></fa-icon>
                   {{item.stargazers_count}}
                 </p>
-              </div>
+              </v-card-body>
               <a slot="footer" class="mt-0 block" :href="item.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
             </v-card>
           </v-gallery-item>
@@ -38,14 +40,16 @@
       <section class="new-noteworthy text-center my-8 border-b-2">
         <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
         <div class="grid">
-          <v-card class="shadow-md w-full max-w-sm mx-auto py-2">
-            <div slot="header" class="-mt-4">
-              <h3 class="leading-tight font-bold text-xl mt-2 mb-1">{{noteworthyRepo.name}}</h3>
+          <v-card class="mx-auto py-2">
+            <v-card-header>
+              <v-heading class="text-xl" v-text="noteworthyRepo.name"/>
+            </v-card-header>
+            <v-card-body>
               <p class="subtitle mt-0 font-semibold text-lg">
                 <fa-icon icon="star" style="font-size: 17px"></fa-icon>
                 {{noteworthyRepo.stargazers_count}}
               </p>
-            </div>
+            </v-card-body>
             <a slot="footer" class="mt-0 block" :href="noteworthyRepo.html_url" target="_blank" rel="noopener noreferrer">View Repo</a>
           </v-card>
         </div>
