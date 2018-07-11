@@ -7,6 +7,10 @@
     </v-hero>
     <v-wrapper>
 
+      <section class="border-b-2 my-8 py-8">
+        <StyledButton @click="handleClick">Normal</StyledButton>
+        <StyledButton @click="handleClick" primary>Primary</StyledButton>
+      </section>
       <section class="border-b-2 my-8 py-8 vsidebar">
         <h2 class="mb-4">Sidebar</h2>
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
@@ -168,6 +172,7 @@
 </template>
 
 <script>
+import StyledButton from '@/components/StyledButton.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEdit, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 library.add(faEdit, faChevronRight)
@@ -180,6 +185,9 @@ export default {
     if (isDev) {
       store.commit('addExamplePageToMenu')
     }
+  },
+  components: {
+    StyledButton
   },
   head() {
     return {
