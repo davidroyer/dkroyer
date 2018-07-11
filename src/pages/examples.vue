@@ -17,6 +17,7 @@
         </transition-slide-in>
       </section>
       <v-test class="blue"></v-test>
+
       <v-card>
         <v-card-header>
           <v-heading>Card Header</v-heading>
@@ -25,6 +26,8 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur culpa quibusdam laudantium fugiat autem cumque voluptate. Numquam in repellat, delectus.</p>
         </v-card-body>
       </v-card>
+
+
       <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat aut accusantium, ducimus eos. Aperiam fugit rerum esse at quis ducimus ipsum perspiciatis inventore doloribus provident quidem reiciendis, laudantium ad iure nam quod, repudiandae eveniet, sed soluta eaque! Sapiente possimus impedit ullam, dolor voluptatibus. Magni repellat aperiam dolores ipsam provident!</p>
         <blockquote>
