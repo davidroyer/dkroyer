@@ -20,6 +20,9 @@ main {
   overflow-x: hidden;
 }
 
+.has-overlay .app-wrapper {
+  overflow: hidden;
+}
 body {
   @apply .font-sans .text-base .bg-grey-lightest .text-black;
   overflow-x: hidden;

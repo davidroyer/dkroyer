@@ -1,6 +1,6 @@
 import styled from 'vue-styled-components'
 
-const btnProps = { primary: Boolean }
+const btnProps = { primary: Boolean, color: String, hollow: Boolean }
 
 const StyledButton = styled('button', btnProps)`
   font-size: 1em;
@@ -12,4 +12,38 @@ const StyledButton = styled('button', btnProps)`
   color: ${props => (props.primary ? 'white' : 'palevioletred')};
 `
 
-export default StyledButton
+export default {
+  name: 'VStyledButton',
+  // nativeOn: {
+  //   click: this.nativeClickHandler,
+  //   focus: this.nativeFocusHandler,
+  //   mouseover: this.nativeMouseoverHandler
+  // },
+  // props: {
+  //   primary: {
+  //     type: Boolean
+  //   },
+  //   color: {
+  //     type: String
+  //   },
+  //   hollow: {
+  //     type: Boolean,
+  //     default: false
+  //   }
+  // },
+  // render() {
+  //   return <StyledButton />
+  // }
+  render: function(createElement) {
+    return createElement(
+      StyledButton,
+      {
+        attrs: this.$attrs,
+        // on: this.$listeners,
+        class: this.classNames
+      },
+      this.$slots.default
+    )
+  }
+}
+// export default StyledButton

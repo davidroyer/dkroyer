@@ -97,7 +97,7 @@ module.exports = {
    * Custom Nuxt plugins
    * @see https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/global-components', '~/plugins/filters'],
+  plugins: ['~/plugins/global-components', '~/plugins/filters', { src: '~/plugins/directives', ssr: false }],
 
   /**
    * Custom Nuxt modules

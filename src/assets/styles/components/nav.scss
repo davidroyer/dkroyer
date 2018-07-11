@@ -47,7 +47,7 @@
     // height: 0px;
     z-index: 99;
     overflow-y: scroll;
-    overflow: hidden;
+    overflow-x: hidden;
     @apply .bg-black;
 
     &-list {

@@ -1,12 +1,14 @@
-import site from '@/data'
-
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
   testValue: 'Initial',
-  navLinks: site.navLinks,
-  post: {},
-  examplePageAdded: false
+  navLinks: [
+    { name: 'Home', path: '/' },
+    { name: 'Site Info', path: '/site-info' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' }
+  ],
+  examplesPage: { name: 'Examples', path: '/examples' }
 })
 
 export const mutations = {
@@ -18,12 +20,12 @@ export const mutations = {
     state.sidebarOpen = !state.sidebarOpen
   },
 
-  setMenuState(state, payload) {
-    state.menuIsActive = !state.menuIsActive
+  closeSidebar(state) {
+    state.sidebarOpen = false
   },
 
-  setCurrentPost(state, post) {
-    state.post = post
+  setMenuState(state, payload) {
+    state.menuIsActive = !state.menuIsActive
   },
 
   setTestValue(state, payload) {
@@ -35,10 +37,7 @@ export const mutations = {
   },
 
   addExamplePageToMenu(state) {
-    if (!state.examplePageAdded) {
-      state.navLinks.push({ name: 'Examples', path: '/examples' })
-      state.examplePageAdded = true
-    }
+    state.navLinks.push(state.examplesPage)
   }
 }
 
@@ -46,11 +45,13 @@ export const actions = {
   async promiseTest({ commit }, payload) {
     await delay(1200)
     commit('setTestValue', 'New Value')
+  },
+
+  nuxtServerInit({ commit, state }, { isDev }) {
+    if (isDev) commit('addExamplePageToMenu')
   }
 }
 
-export const getters = {
-  currentPost: state => state.post
-}
+export const getters = {}
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))

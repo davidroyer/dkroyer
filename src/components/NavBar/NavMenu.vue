@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import NavLink from "./NavLink.vue";
+import NavLink from './NavLink.vue'
 export default {
-  name: "NavLinks",
+  name: 'NavMenu',
   components: {
     NavLink
   },
-  props: ["links"]
-};
+  props: ['links']
+}
 </script>

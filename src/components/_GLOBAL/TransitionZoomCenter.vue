@@ -21,7 +21,7 @@ export default {
   methods: {
     beforeEnter(el) {
       el.style.transform = 'scale3d(.3, .3, .3)'
-      el.style.transition = 'transform .3s'
+      el.style.transition = 'transform .3s ease'
       el.style.opacity = 0.3
     },
 
@@ -33,19 +33,21 @@ export default {
         scaleZ: 1,
         opacity: 1,
         duration: this.duration,
-        easing: 'easeOutQuad',
+        easing: 'easeOutCubic',
         complete: () => {
           done()
         }
       })
     },
 
-    afterEnter() {
+    afterEnter(el, done) {
       let body = document.getElementsByTagName('body')[0]
       body.classList.add('has-overlay')
     },
 
-    beforeLeave() {},
+    beforeLeave(el, done) {
+      el.style.transition = 'transform .3s ease'
+    },
 
     leave(el, done) {
       anime({
@@ -54,8 +56,9 @@ export default {
         scaleY: 0,
         scaleZ: 0,
         opacity: 0,
+        delay: 75,
         duration: this.duration,
-        easing: 'easeInQuad',
+        easing: 'easeInCubic',
         complete: done
       })
     },

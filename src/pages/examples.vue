@@ -8,14 +8,21 @@
     <v-wrapper>
 
       <section class="border-b-2 my-8 py-8">
-        <StyledButton @click="handleClick">Normal</StyledButton>
-        <StyledButton @click="handleClick" primary>Primary</StyledButton>
+        <StyledButton @click.native="handleClick" @mouseover="handleMouseOver" @focus.native="handleFocus">Normal</StyledButton>
+        <StyledButton
+          @click.native="handleClick"
+          @mouseover.native="handleMouseOver"
+          @focus.native="handleFocus"
+          primary
+        >
+          Primary
+        </StyledButton>
       </section>
       <section class="border-b-2 my-8 py-8 vsidebar">
         <h2 class="mb-4">Sidebar</h2>
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
-        <transition-slide-in :duration="500">
-          <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
+        <transition-slide-in :duration="400">
+          <v-sidebar v-clicked-outside="handleClickOutside" class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
             <v-button class="my-4 mx-4 border-white text-white" @click="$store.commit('toggleSidebar')">Close</v-button>
           </v-sidebar>
         </transition-slide-in>
@@ -180,12 +187,6 @@ const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 
 export default {
-  fetch({ isDev, store }) {
-    let addedAlready = store.state.examplePageAdded
-    if (isDev) {
-      store.commit('addExamplePageToMenu')
-    }
-  },
   components: {
     StyledButton
   },
@@ -213,10 +214,18 @@ export default {
   }),
 
   methods: {
+    handleClickOutside() {
+      this.$store.commit('closeSidebar')
+    },
     handleClick() {
       alert('You did something.')
     },
-
+    handleFocus() {
+      console.log('Focused!')
+    },
+    handleMouseOver() {
+      console.log('mouseover')
+    },
     toggle() {
       this.showFooter = !this.showFooter
     }

@@ -11,24 +11,24 @@
       </v-menu-button>
       <template v-if="isMobile">
         <transition-zoom-center :duration="400">
-          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
+          <nav-menu id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-menu>
         </transition-zoom-center>
         <!-- <transition name="scale">
           <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
         </transition> -->
       </template>
-      <nav-links v-if="!isMobile" :links="navLinksArray"></nav-links>
+      <nav-menu v-if="!isMobile" :links="navLinksArray"></nav-menu>
     </div>
 </template>
 
 <script>
-import NavLinks from './NavLinks'
+import NavMenu from './NavMenu'
 import Logo from './Logo'
 
 export default {
   name: 'NavBar',
   components: {
-    NavLinks,
+    NavMenu,
     Logo
   },
 
@@ -59,7 +59,6 @@ export default {
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('resize', this.getWindowHeight)
-
       //Init
       this.getWindowWidth()
       this.getWindowHeight()
@@ -76,7 +75,7 @@ export default {
     }
   },
 
-  beforeDestroy() {
+  destroyed() {
     window.removeEventListener('resize', this.getWindowWidth)
     window.removeEventListener('resize', this.getWindowHeight)
   }

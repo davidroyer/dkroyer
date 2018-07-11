@@ -28,7 +28,7 @@ export default {
         targets: el,
         translateX: 0,
         duration: this.duration,
-        easing: 'easeOutQuad',
+        easing: 'easeOutCubic',
         complete: () => {
           done()
         }
@@ -47,7 +47,7 @@ export default {
         targets: el,
         translateX: '100%',
         duration: this.duration,
-        easing: 'easeInQuad',
+        easing: 'easeInCubic',
         complete: done
       })
     },
