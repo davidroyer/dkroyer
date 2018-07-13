@@ -11,39 +11,41 @@ const StyledButton = styled('button', btnProps)`
   background: ${props => (props.primary ? 'palevioletred' : 'white')};
   color: ${props => (props.primary ? 'white' : 'palevioletred')};
 `
-
-export default {
-  name: 'VStyledButton',
-  // nativeOn: {
-  //   click: this.nativeClickHandler,
-  //   focus: this.nativeFocusHandler,
-  //   mouseover: this.nativeMouseoverHandler
-  // },
-  // props: {
-  //   primary: {
-  //     type: Boolean
-  //   },
-  //   color: {
-  //     type: String
-  //   },
-  //   hollow: {
-  //     type: Boolean,
-  //     default: false
-  //   }
-  // },
-  // render() {
-  //   return <StyledButton />
-  // }
-  render: function(createElement) {
-    return createElement(
-      StyledButton,
-      {
-        attrs: this.$attrs,
-        // on: this.$listeners,
-        class: this.classNames
-      },
-      this.$slots.default
-    )
-  }
-}
-// export default StyledButton
+console.log(StyledButton)
+// export default {
+//   name: 'VStyledButton',
+//   functional: true,
+//   nativeOn: {
+//     click: this.nativeClickHandler,
+//     focus: this.nativeFocusHandler,
+//     mouseover: this.nativeMouseoverHandler
+//   },
+//   props: {
+//     primary: {
+//       type: Boolean
+//     },
+//     color: {
+//       type: String
+//     },
+//     hollow: {
+//       type: Boolean,
+//       default: false
+//     }
+//   },
+//   render() {
+//     return <StyledButton />
+//   }
+//
+//   render: function(createElement) {
+//     return createElement(
+//       StyledButton,
+//       {
+//         attrs: this.$attrs,
+//         // on: this.$listeners,
+//         class: this.classNames
+//       },
+//       this.$slots.default
+//     )
+//   }
+// }
+export default StyledButton

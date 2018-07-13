@@ -8,7 +8,8 @@
     <v-wrapper>
 
       <section class="border-b-2 my-8 py-8">
-        <StyledButton @click.native="handleClick" @mouseover="handleMouseOver" @focus.native="handleFocus">Normal</StyledButton>
+
+        <StyledButton @click="handleClick" @mouseover="handleMouseOver" @focus.native="handleFocus">Normal</StyledButton>
         <StyledButton
           @click.native="handleClick"
           @mouseover.native="handleMouseOver"
@@ -180,6 +181,7 @@
 
 <script>
 import StyledButton from '@/components/StyledButton.js'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEdit, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 library.add(faEdit, faChevronRight)
