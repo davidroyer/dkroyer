@@ -11,7 +11,7 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:/]+/g) || []
   }
 }
-const purgecssWhitelistPatterns = [/^__/, /^fa/, /^page-/, /^nuxt/, /^scale/, /^slide/, /^enter/, /^leave/]
+const purgecssWhitelistPatterns = [/^__/, /^fa/, /^v-/, /^page-/, /^nuxt/, /^scale/, /^slide/, /^enter/, /^leave/]
 
 module.exports = {
   /**
