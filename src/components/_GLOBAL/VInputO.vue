@@ -1,18 +1,14 @@
 <template>
   <div class="v-input max-w-sm mx-auto my-6">
-    <label
-      v-text="label"
-      :for="id"
-      :class="labelClasses"
-      class="v-input-label font-bold block uppercase tracking-wide text-sm mb-2"></label>
+    <label v-text="label" :for="id" class="block uppercase tracking-wide text-grey-darker text-sm font-bold mb-2"></label>
     <input
       ref="input"
       :type="type"
       :value="value"
       :id="id"
       :name="$attrs.name || id"
-      :class="inputClasses"
-      class="appearance-none block w-full border border-grey-light rounded py-3 px-4 leading-tight"
+      class="appearance-none block w-full text-grey-darker rounded py-3 px-4 leading-tight"
+      :class="$style.input"
       v-on="inputListeners"
       v-bind="$attrs"
     >
@@ -39,20 +35,9 @@ export default {
     label: {
       type: String,
       default: ''
-    },
-    color: {
-      type: String,
-      default: 'black'
     }
   },
   computed: {
-    labelClasses() {
-      return [`text-${this.color}`]
-    },
-
-    inputClasses() {
-      return [`v-input-${this.type}`]
-    },
     inputListeners() {
       return {
         ...this.$listeners,
@@ -68,3 +53,9 @@ export default {
   }
 }
 </script>
+
+<style lang='postcss' module>
+.input {
+  composes: border border-grey-light from global;
+}
+</style>

@@ -10,10 +10,10 @@
     <div class="w-full max-w-md mx-auto">
       <form class="form bg-white shadow-md rounded-md px-4 pb-8 my-6">
         <div class="my-6">
-          <v-input required v-model="form.firstName" id="firstName" label="Your First Name"></v-input>
+          <v-input color="grey-darker" required v-model="form.firstName" id="firstName" label="Your First Name"></v-input>
         </div>
         <div class="my-6">
-          <v-input required v-model="form.email" id="email" type="email" label="Your Email"></v-input>
+          <v-input color="grey-darker" required v-model="form.email" id="email" type="email" label="Your Email"></v-input>
         </div>
         <div class="mb-8 max-w-sm mx-auto">
           <v-text required id="message" v-model="form.message" label="Message"></v-text>
@@ -55,11 +55,7 @@ export default {
       const emailField = document.getElementById('email')
       const messageField = document.getElementById('message')
 
-      if (
-        firstNameField.validity.valid &&
-        emailField.validity.valid &&
-        messageField.validity.valid
-      ) {
+      if (firstNameField.validity.valid && emailField.validity.valid && messageField.validity.valid) {
         fetch('/', {
           method: 'POST',
           headers: {

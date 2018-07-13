@@ -24,7 +24,9 @@
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
         <transition-slide-in :duration="400">
           <v-sidebar v-clicked-outside="handleClickOutside" class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
-            <v-button class="my-4 mx-4 border-white text-white" @click="$store.commit('toggleSidebar')">Close</v-button>
+            <v-button class="pin-r absolute mr-4 mt-4 py-1 px-1 text-white" @click="$store.commit('toggleSidebar')">
+              <fa-icon style="font-size: 30px" icon="times-circle"></fa-icon>
+            </v-button>
           </v-sidebar>
         </transition-slide-in>
       </section>
@@ -152,17 +154,19 @@
         <!-- <fa-icon icon="xCircle"></fa-icon> -->
         <fa-icon icon="star"></fa-icon>
         <hr class="examples-hr">
-        <fa-icon style="font-size: 40px" icon="user"></fa-icon>
+        <fa-icon style="font-size: 30px" icon="user"></fa-icon>
           <!-- <fa-icon :icon="['fas', 'chevron-right']"></fa-icon> -->
-        <fa-icon style="font-size: 40px" icon="chevron-right"></fa-icon>
-        <fa-icon style="font-size: 40px" icon="edit"></fa-icon>
-        <!-- <fa-icon style="font-size: 40px" :icon="['far', 'timesCircle']"></fa-icon> -->
-        <fa-icon style="font-size: 40px" icon="star"></fa-icon>
+        <fa-icon style="font-size: 30px" icon="chevron-right"></fa-icon>
+        <fa-icon style="font-size: 30px" icon="edit"></fa-icon>
+        <fa-icon style="font-size: 30px" icon="times-circle"></fa-icon>
+        <!-- <fa-icon style="font-size: 30px" :icon="['far', 'timesCircle']"></fa-icon> -->
+        <fa-icon style="font-size: 30px" icon="star"></fa-icon>
       </section>
 
       <section class="border-b-2 my-8 py-8 vinputs">
         <h2 class="mb-4">Inputs</h2>
-        <v-input id="name" label="Your Name"></v-input>
+        <v-button @click="$refs.nameInput.setFocus()">Set Focus</v-button>
+        <v-input color="grey-darker" ref="nameInput" id="firstName" label="Your Name"></v-input>
       </section>
 
       <section class="border-b-2 my-8 py-8 vbuttons">
@@ -183,8 +187,8 @@
 import StyledButton from '@/components/StyledButton.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEdit, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-library.add(faEdit, faChevronRight)
+import { faEdit, faChevronRight, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+library.add(faEdit, faChevronRight, faTimesCircle)
 const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 

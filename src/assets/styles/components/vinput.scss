@@ -1,0 +1,25 @@
+.v-input {
+  &-text {
+    @apply .border .border-grey-light .appearance-none .block .w-full .text-grey-darker .rounded .py-3 .px-4 .leading-tight;
+  }
+
+  &-label {
+    @apply .block .uppercase .tracking-wide .text-grey-darker .text-sm .font-bold .mb-2;
+  }
+}
+
+// .v-input-text {
+//   @apply .border .border-grey-light .appearance-none .block .w-full .text-grey-darker .rounded .py-3 .px-4 .leading-tight;
+// }
+//
+// .v-text-label {
+//   @apply .block .uppercase .tracking-wide .text-grey-darker .text-sm .font-bold .mb-2;
+// }
+// .input {
+//   &-text {
+//     @apply .border .border-grey-light .appearance-none .block .w-full .text-grey-darker .rounded .py-3 .px-4 .leading-tight;
+//   }
+//   &-label {
+//     @apply .block .uppercase .tracking-wide .text-grey-darker .text-sm .font-bold .mb-2;
+//   }
+// }
