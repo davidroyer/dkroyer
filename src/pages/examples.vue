@@ -7,8 +7,14 @@
     </v-hero>
     <v-wrapper>
 
-      <section class="border-b-2 my-8 py-8">
+      <section class="border-b-2 my-8 py-8 vinputs">
+        <h2 class="mb-4">Inputs</h2>
+        <v-button @click="$refs.nameInput.setFocus()">Set Focus</v-button>
+        <v-input color="grey-darker" ref="nameInput" id="firstName" label="Your Name"></v-input>
+      </section>
 
+
+      <section class="border-b-2 my-8 py-8">
         <StyledButton @click="handleClick" @mouseover="handleMouseOver" @focus.native="handleFocus">Normal</StyledButton>
         <StyledButton
           @click.native="handleClick"
@@ -161,12 +167,6 @@
         <fa-icon style="font-size: 30px" icon="times-circle"></fa-icon>
         <!-- <fa-icon style="font-size: 30px" :icon="['far', 'timesCircle']"></fa-icon> -->
         <fa-icon style="font-size: 30px" icon="star"></fa-icon>
-      </section>
-
-      <section class="border-b-2 my-8 py-8 vinputs">
-        <h2 class="mb-4">Inputs</h2>
-        <v-button @click="$refs.nameInput.setFocus()">Set Focus</v-button>
-        <v-input color="grey-darker" ref="nameInput" id="firstName" label="Your Name"></v-input>
       </section>
 
       <section class="border-b-2 my-8 py-8 vbuttons">

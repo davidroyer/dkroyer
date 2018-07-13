@@ -1,10 +1,11 @@
 <template>
-  <div class="v-input max-w-sm mx-auto my-6">
+  <div class="v-input">
     <label
       v-text="label"
       :for="id"
       :class="labelClasses"
-      class="v-input-label font-bold block uppercase tracking-wide text-sm mb-2"></label>
+      class="v-input-label">
+    </label>
     <input
       ref="input"
       :type="type"
@@ -12,7 +13,7 @@
       :id="id"
       :name="$attrs.name || id"
       :class="inputClasses"
-      class="appearance-none block w-full border border-grey-light rounded py-3 px-4 leading-tight"
+      class=""
       v-on="inputListeners"
       v-bind="$attrs"
     >
@@ -68,3 +69,21 @@ export default {
   }
 }
 </script>
+
+<style lang='scss'>
+.v-input {
+  @apply .max-w-sm .mx-auto .my-6;
+
+  &-text {
+    @apply .border .border-grey-light .appearance-none .block .w-full .text-grey-darker .rounded .py-3 .px-4 .leading-tight;
+
+    &:focus {
+      @apply .bg-blue-lightest;
+    }
+  }
+
+  &-label {
+    @apply .block .uppercase .tracking-wide .text-sm .font-bold .mb-2;
+  }
+}
+</style>

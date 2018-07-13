@@ -81,3 +81,90 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.navbar {
+  height: 80px;
+  @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;
+}
+.nav {
+  &-list {
+    @apply .flex .flex-col .justify-start .list-reset;
+  }
+
+  &-btn {
+    z-index: 999;
+    @apply .text-indigo-darker .font-bold;
+  }
+
+  &-item {
+    position: relative;
+  }
+
+  a {
+    position: relative;
+    @apply .font-bold .uppercase .py-2 .tracking-wide .text-sm .no-underline .border-transparent;
+
+    .nav-link-text {
+    }
+
+    &.nuxt-link-exact-active .nav-link-text,
+    &.nuxt-link-exact-active:hover .nav-link-text {
+      @apply .font-medium .border-b-3 .border-white;
+    }
+  }
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // transform: scale(0);
+    // width: 0px;
+    // height: 0px;
+    z-index: 99;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @apply .bg-black;
+
+    &-list {
+      padding-bottom: 2em;
+      padding-top: 100px;
+    }
+    &-item {
+      margin: 0.5rem 0;
+      @apply .block .px-4;
+    }
+
+    a {
+      @apply .text-white .block .font-thin .text-lg .text-center;
+      font-size: 1.5rem;
+      font-weight: 200;
+    }
+  }
+}
+@screen md {
+  .nav {
+    &-list {
+      @apply .flex-row .justify-end .bg-transparent;
+    }
+
+    &-btn {
+      @apply .hidden;
+    }
+
+    &-item {
+      @apply .block .px-4;
+    }
+
+    a {
+      @apply .text-grey-darkest;
+
+      &.nuxt-link-exact-active .nav-link-text,
+      &.nuxt-link-exact-active:hover .nav-link-text {
+        @apply .border-indigo-dark;
+      }
+    }
+  }
+}
+</style>
