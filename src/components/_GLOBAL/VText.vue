@@ -14,9 +14,9 @@
       :data-vv-as="label"
       >
     </textarea>
-    <transition-expand name="slide">
+    <transition name="slide">
       <p v-show="errorMessage" class="v-input-message">{{ errorMessage }}</p>
-    </transition-expand>
+    </transition>
   </div>
 </template>
 
