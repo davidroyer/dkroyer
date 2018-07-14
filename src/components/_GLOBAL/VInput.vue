@@ -20,7 +20,7 @@
       :data-vv-name="id"
     />
     <transition name="slide">
-      <p v-show="validation ** errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
+      <p v-show="validation && errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
     </transition>
   </div>
 </template>
