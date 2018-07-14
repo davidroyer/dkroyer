@@ -19,7 +19,7 @@
           <v-text required id="message" v-model="form.message" label="Message"></v-text>
         </div>
         <div class="flex items-center justify-between max-w-sm mx-auto">
-          <v-button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-black hover:bg-white hover:text-black hover:border-black hover:border-2 text-white font-bold py-2 px-4 rounded">Send</v-button>
+          <v-button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 text-white font-bold py-2 px-4 rounded">Send</v-button>
         </div>
       </form>
     </div>
