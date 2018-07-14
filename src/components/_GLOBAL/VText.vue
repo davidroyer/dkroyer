@@ -11,27 +11,25 @@
       :classes="`text-${color}`"
       v-bind="attrs"
       :name="attrs.name || id"
+      v-validate="validation"
       :data-vv-as="label"
+      :data-vv-name="id"
+      data-vv-delay="500"
       >
     </textarea>
     <transition name="slide">
-      <p v-show="errorMessage" class="v-input-message">{{ errorMessage }}</p>
+      <p v-show="errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
     </transition>
   </div>
 </template>
 
 <script>
+import validationMixin from './mixins/validation-mixin'
+
 export default {
-  inheritAttrs: false,
   name: 'VText',
-  $_veeValidate: {
-    name() {
-      return this.id
-    },
-    value() {
-      return this.value
-    }
-  },
+  inheritAttrs: false,
+  mixins: [validationMixin],
   props: {
     value: {
       type: String
@@ -47,8 +45,7 @@ export default {
     color: {
       type: String,
       default: 'grey-darkest'
-    },
-    errorMessage: String
+    }
   },
   computed: {
     inputListeners() {

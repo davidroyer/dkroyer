@@ -110,7 +110,6 @@ module.exports = {
   plugins: [
     '~/plugins/global-components',
     '~/plugins/filters',
-    // { src: '~/plugins/vee-validate', ssr: false },
     { src: '~/plugins/directives', ssr: false }
   ],
 

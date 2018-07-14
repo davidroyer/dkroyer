@@ -15,26 +15,23 @@
       :class="inputClasses"
       v-on="inputListeners"
       v-bind="$attrs"
+      v-validate="validation"
       :data-vv-as="label"
+      :data-vv-name="id"
     />
     <transition name="slide">
-      <p v-show="errorMessage" class="v-input-message">{{ errorMessage }}</p>
+      <p v-show="errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
     </transition>
   </div>
 </template>
 
 <script>
+import validationMixin from './mixins/validation-mixin'
+
 export default {
-  inheritAttrs: false,
   name: 'VInput',
-  $_veeValidate: {
-    name() {
-      return this.id
-    },
-    value() {
-      return this.value
-    }
-  },
+  inheritAttrs: false,
+  mixins: [validationMixin],
   props: {
     type: {
       type: String,
@@ -55,8 +52,7 @@ export default {
     color: {
       type: String,
       default: 'grey-darkest'
-    },
-    errorMessage: String
+    }
   },
   computed: {
     labelClasses() {
