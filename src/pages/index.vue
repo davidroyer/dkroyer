@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-hero>
-      <v-headline class="relative px-4 text-5xl md:text-6xl lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
+      <v-headline class="relative px-4 text-5xl md:text-6xl lg:px-8 lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
     </v-hero>
     <v-wrapper>
       <section class="about mt-0 mb-8 border-b-2">
@@ -18,7 +18,7 @@
       </section>
 
       <section class="featured text-center my-8 border-b-2">
-        <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
+        <h2 class="font-medium text-indigo-darker text-4xl pt-6 mb-0">My Featured Projects</h2>
         <v-gallery min-col-w="300px">
           <v-gallery-item v-for="(item, index) in popularRepos" :key="index">
             <v-card class="w-full py-2">
@@ -38,7 +38,7 @@
       </section>
 
       <section class="new-noteworthy text-center my-8 border-b-2">
-        <h2 class="font-semibold text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
+        <h2 class="font-medium text-indigo-darker text-4xl pt-6 mb-0">My New & Noteworthy Project</h2>
         <div class="grid">
           <v-card class="mx-auto py-2">
             <v-card-header>
@@ -60,8 +60,10 @@
 </template>
 
 <script>
-const noteworthyRepoUrl = 'https://api.github.com/repos/davidroyer/nuxt2-ssr-firebase'
-const popularReposUrl = 'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
+const noteworthyRepoUrl =
+  'https://api.github.com/repos/davidroyer/nuxt2-ssr-firebase'
+const popularReposUrl =
+  'https://api.github.com/search/repositories?q=user:davidroyer&sort=stargazers_count&order=desc&per_page=6'
 
 export default {
   head() {
@@ -175,8 +177,25 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(to bottom right, rgba(32, 35, 58, 0.75), rgba(34, 41, 47, 0.75));
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(32, 35, 58, 0.75),
+        rgba(34, 41, 47, 0.75)
+      );
       opacity: 0.7;
+    }
+
+    .headline {
+      line-height: 0.975;
+      font-size: 3.5rem;
+      font-weight: 300;
+      @screen md {
+        font-size: 4.5rem;
+      }
+
+      @screen lg {
+        font-size: 5.5rem;
+      }
     }
   }
 }
