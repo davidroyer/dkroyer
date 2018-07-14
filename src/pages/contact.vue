@@ -31,6 +31,7 @@
 
 <script>
 import '@/plugins/vee-validate'
+
 export default {
   head() {
     return {
