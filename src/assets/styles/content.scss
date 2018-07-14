@@ -1,7 +1,3 @@
-// p {
-//   @apply .my-2 .leading-normal;
-// }
-
 pre {
   margin-top: 1em !important;
   margin-bottom: 2em !important;
@@ -15,6 +11,16 @@ pre {
   h5,
   h6 {
     @apply .leading-tight .mb-2;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-weight: 400;
+
+    &:last-of-type {
+      margin-bottom: 1.5rem;
+    }
   }
 }
 

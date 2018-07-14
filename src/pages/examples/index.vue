@@ -10,7 +10,8 @@
       <section class="border-b-2 my-8 py-8 vinputs">
         <h2 class="mb-4">Inputs</h2>
         <v-button @click="$refs.nameInput.setFocus()">Set Focus</v-button>
-        <v-input color="grey-darker" ref="nameInput" id="firstName" label="Your Name"></v-input>
+        <v-input color="indigo-dark" ref="nameInput" id="firstName" label="Your Name"></v-input>
+        <v-input ref="nameInput" id="regularInput" label="Regular Input"></v-input>
       </section>
 
 
@@ -30,13 +31,10 @@
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
         <transition-slide-in :duration="400">
           <v-sidebar v-clicked-outside="handleClickOutside" class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
-            <!-- <v-button > -->
               <fa-icon style="font-size: 2.5rem; transition: .2s ease" class="pin-r cursor-pointer absolute mr-4 mt-4 py-1 px-1 text-white hover:text-indigo-light" @click="$store.commit('toggleSidebar')" icon="times-circle"></fa-icon>
-            <!-- </v-button> -->
           </v-sidebar>
         </transition-slide-in>
       </section>
-      <v-test class="blue"></v-test>
 
       <v-card>
         <v-card-header>

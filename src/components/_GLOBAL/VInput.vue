@@ -13,10 +13,13 @@
       :id="id"
       :name="$attrs.name || id"
       :class="inputClasses"
-      class=""
       v-on="inputListeners"
       v-bind="$attrs"
+      :data-vv-as="label"
     />
+    <transition name="slide">
+      <p v-show="errorMessage" class="v-input-message">{{ errorMessage }}</p>
+    </transition>
   </div>
 </template>
 
@@ -24,6 +27,14 @@
 export default {
   inheritAttrs: false,
   name: 'VInput',
+  $_veeValidate: {
+    name() {
+      return this.id
+    },
+    value() {
+      return this.value
+    }
+  },
   props: {
     type: {
       type: String,
@@ -43,8 +54,9 @@ export default {
     },
     color: {
       type: String,
-      default: 'black'
-    }
+      default: 'grey-darkest'
+    },
+    errorMessage: String
   },
   computed: {
     labelClasses() {
@@ -52,7 +64,7 @@ export default {
     },
 
     inputClasses() {
-      return [`v-input-${this.type}`]
+      return [`v-input-${this.type}`, `text-${this.color}`]
     },
     inputListeners() {
       return {
@@ -70,6 +82,21 @@ export default {
 }
 </script>
 
-<style src="@/assets/styles/components/VInput.scss" lang="scss">
+<style lang="scss" scoped>
+.v-input {
+  @apply .max-w-sm .mx-auto .my-6;
 
+  input[class^='v-input-'] {
+    @apply .border-grey-light .appearance-none .block .w-full .rounded .py-3 .px-4 .leading-tight font-medium border-2;
+    transition: all 0.2s ease;
+
+    &:focus {
+      @apply .bg-grey-lighter border-grey-darkest;
+    }
+  }
+
+  &-label {
+    @apply .block .uppercase .tracking-wide .text-sm .font-bold .mb-2;
+  }
+}
 </style>

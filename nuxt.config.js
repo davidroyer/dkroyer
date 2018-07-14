@@ -110,6 +110,7 @@ module.exports = {
   plugins: [
     '~/plugins/global-components',
     '~/plugins/filters',
+    { src: '~/plugins/vee-validate', ssr: false },
     { src: '~/plugins/directives', ssr: false }
   ],
 
@@ -257,30 +258,5 @@ module.exports = {
 
   generate: {
     fallback: true
-    // interval: 1000,
-    // routes() {
-    //   return Promise.all([
-    //     axios.get(`${baseUrl}/_nuxt/content/blog/_all.json`),
-    //     axios.get(`${baseUrl}/_nuxt/content/projects/_all.json`)
-    //   ]).then(data => {
-    //     const posts = data[0]
-    //     const projects = data[1]
-    //     return posts.data
-    //       .map(post => {
-    //         return {
-    //           route: '/post/' + post.permalink,
-    //           payload: post
-    //         }
-    //       })
-    //       .concat(
-    //         projects.data.map(page => {
-    //           return {
-    //             route: project.permalink,
-    //             payload: project
-    //           }
-    //         })
-    //       )
-    //   })
-    // }
   }
 }

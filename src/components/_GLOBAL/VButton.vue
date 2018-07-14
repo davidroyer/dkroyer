@@ -1,6 +1,7 @@
 <template>
   <button
     class="v-button"
+    :class="[`text-${color}`, ...buttonClasses]"
     v-on="$listeners"
   >
     <slot/>
@@ -10,15 +11,21 @@
 <script>
 export default {
   name: 'VButton',
-  props: ['tag', 'text']
+  props: {
+    color: {
+      type: String,
+      default: 'black'
+    },
+    buttonClasses: Array
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-button {
   transition: all 0.2s ease;
   cursor: pointer;
-  @apply .font-bold .py-2 .px-4 .rounded .border-2 .border-black .text-black;
+  @apply .font-bold .py-2 .px-4 .rounded .border-2 .border-black;
 
   &:disabled {
     cursor: not-allowed;

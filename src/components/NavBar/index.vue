@@ -9,14 +9,13 @@
         :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
         aria-controls="nav-mobile">
       </v-menu-button>
+
       <template v-if="isMobile">
         <transition-zoom-center :duration="400">
           <nav-menu id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-menu>
         </transition-zoom-center>
-        <!-- <transition name="scale">
-          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
-        </transition> -->
       </template>
+
       <nav-menu v-if="!isMobile" :links="navLinksArray"></nav-menu>
     </div>
 </template>
@@ -146,7 +145,7 @@ export default {
 @screen md {
   .nav {
     &-list {
-      @apply .flex-row .justify-end .bg-transparent;
+      @apply .flex-row .justify-end .items-center .bg-transparent;
     }
 
     &-btn {

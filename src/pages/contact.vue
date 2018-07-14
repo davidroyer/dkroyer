@@ -8,18 +8,20 @@
 
   <v-wrapper>
     <div class="w-full max-w-md mx-auto">
-      <form class="form bg-white shadow-md rounded-md px-4 pb-8 my-6">
+      <form @submit.prevent="validateBeforeSubmit" class="form bg-white shadow-md rounded-md px-4 pb-8 my-6">
         <div class="my-6">
-          <v-input color="grey-darker" required v-model="form.firstName" id="firstName" label="Your First Name"></v-input>
+          <v-input id="firstName" ref="firstName" v-model="form.firstName" label="Your First Name" v-validate="'required'" :error-message="errors.first('firstName')"></v-input>
         </div>
+
         <div class="my-6">
-          <v-input color="grey-darker" required v-model="form.email" id="email" type="email" label="Your Email"></v-input>
+          <v-input id="email" ref="email" v-model="form.email" label="Your Email" type="email" v-validate="'required|email'" :error-message="errors.first('email')"></v-input>
         </div>
+
         <div class="mb-8 max-w-sm mx-auto">
-          <v-text required id="message" v-model="form.message" label="Message"></v-text>
+          <v-text id="message" ref="message" v-model="form.message" label="Message" v-validate="'required'" :error-message="errors.first('message')"></v-text>
         </div>
-        <div class="flex items-center justify-between max-w-sm mx-auto">
-          <v-button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 text-white font-bold py-2 px-4 rounded">Send</v-button>
+        <div class="mt-6 flex items-center justify-between max-w-sm mx-auto">
+          <v-button type="submit" @click.prevent="validateBeforeSubmit" color="white" class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 font-bold py-2 px-4 rounded">Send</v-button>
         </div>
       </form>
     </div>
@@ -28,6 +30,7 @@
 </template>
 
 <script>
+import '@/plugins/vee-validate'
 export default {
   head() {
     return {
@@ -47,35 +50,64 @@ export default {
   methods: {
     encode(data) {
       return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
         .join('&')
     },
-    handleSubmit() {
-      const firstNameField = document.getElementById('firstName')
-      const emailField = document.getElementById('email')
-      const messageField = document.getElementById('message')
+    validateBeforeSubmit() {
+      this.$validator.validateAll().then(result => {
+        if (result) this.handleSubmit()
 
-      if (firstNameField.validity.valid && emailField.validity.valid && messageField.validity.valid) {
-        fetch('/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: this.encode({
-            'form-name': 'contact',
-            ...this.form
-          })
+        this.$nextTick(() => {
+          let firstErrorInput = this.errors.items[0].field
+          this.$refs[firstErrorInput].setFocus()
         })
-          .then(() => {
-            alert('Success!')
-            this.form.firstName = ''
-            this.form.email = ''
-            this.form.message = ''
-          })
-          .catch(error => alert(error))
-      } else {
-        alert('You have invalid fields')
-      }
+      })
+    },
+    handleSubmit() {
+      fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: this.encode({
+          'form-name': 'contact',
+          ...this.form
+        })
+      })
+        .then(() => {
+          alert('Success!')
+          this.form.firstName = ''
+          this.form.email = ''
+          this.form.message = ''
+        })
+        .catch(error => alert(error))
+      // if (
+      //   firstNameField.validity.valid &&
+      //   emailField.validity.valid &&
+      //   messageField.validity.valid
+      // ) {
+      //   fetch('/', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/x-www-form-urlencoded'
+      //     },
+      //     body: this.encode({
+      //       'form-name': 'contact',
+      //       ...this.form
+      //     })
+      //   })
+      //     .then(() => {
+      //       alert('Success!')
+      //       this.form.firstName = ''
+      //       this.form.email = ''
+      //       this.form.message = ''
+      //     })
+      //     .catch(error => alert(error))
+      // } else {
+      //   alert('You have invalid fields')
+      // }
     }
   }
 }
