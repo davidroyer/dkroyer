@@ -42,7 +42,8 @@ export default {
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
+          href:
+            'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
         }
       ]
     }

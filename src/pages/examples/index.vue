@@ -184,18 +184,23 @@
 
 <script>
 import StyledButton from '@/components/StyledButton.js'
-
+import '@/plugins/vee-validate'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faEdit,
   faChevronRight,
   faTimesCircle
 } from '@fortawesome/free-solid-svg-icons'
+
 library.add(faEdit, faChevronRight, faTimesCircle)
+
 const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 
 export default {
+  $_veeValidate: {
+    validator: 'new'
+  },
   components: {
     StyledButton
   },
@@ -248,6 +253,11 @@ main {
 }
 </style>
 <style lang="scss" scoped>
+.examples {
+  .container {
+    @apply max-w-xl;
+  }
+}
 section {
   display: flex;
   flex-flow: row wrap;

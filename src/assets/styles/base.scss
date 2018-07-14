@@ -11,8 +11,6 @@ body {
 }
 
 html {
-  font-size: responsive 16px 20px;
-  font-range: config('screens.sm') config('screens.xl');
   -webkit-overflow-scrolling: touch;
 }
 
@@ -28,8 +26,6 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  line-height: responsive 1.6rem 2rem;
-  line-height-range: config('screens.sm') config('screens.xl');
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;

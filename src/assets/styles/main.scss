@@ -12,3 +12,9 @@
 @import 'utilities/transitions';
 @import 'content';
 // @import 'typography';
+
+html {
+  font-size: responsive 16px 17px;
+  line-height: responsive 1.2px 1.8px;
+  line-height-range: 420px 1280px;
+}
