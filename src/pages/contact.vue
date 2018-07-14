@@ -10,11 +10,11 @@
     <div class="w-full max-w-md mx-auto">
       <form @submit.prevent="validateBeforeSubmit" class="form bg-white shadow-md rounded-md px-4 pb-8 my-6">
         <div class="my-6">
-          <v-input id="firstName" ref="firstName" v-model="form.firstName" label="Your First Name" validation="required"></v-input>
+          <v-input id="firstName" ref="firstName" v-model="form.firstName" label="First Name" validation="required"></v-input>
         </div>
 
         <div class="my-6">
-          <v-input id="email" ref="email" v-model="form.email" label="Your Email" type="email" validation="required|email" ></v-input>
+          <v-input id="email" ref="email" v-model="form.email" label="Email" type="email" validation="required|email" ></v-input>
         </div>
 
         <div class="mb-8 max-w-sm mx-auto">
