@@ -70,23 +70,6 @@ export default {
 }
 </script>
 
-<style src="@/assets/styles/components/v-input.scss" lang="scss">
+<style src="@/assets/styles/components/VInput.scss" lang="scss">
 
-</style>
-<style lang="scss">
-// .v-input {
-//   @apply .max-w-sm .mx-auto .my-6;
-//
-//   &-text {
-//     @apply .border .border-grey-light .appearance-none .block .w-full .text-grey-darker .rounded .py-3 .px-4 .leading-tight;
-//
-//     &:focus {
-//       @apply .bg-blue-lightest;
-//     }
-//   }
-//
-//   &-label {
-//     @apply .block .uppercase .tracking-wide .text-sm .font-bold .mb-2;
-//   }
-// }
 </style>

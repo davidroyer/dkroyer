@@ -1,9 +1,7 @@
-button {
+.v-button {
   transition: all 0.2s ease;
-}
-
-.vbutton {
-  @apply .font-bold .py-2 .px-4 .rounded;
+  cursor: pointer;
+  @apply .font-bold .py-2 .px-4 .rounded .border-2 .border-black .text-black;
 
   &:disabled {
     cursor: not-allowed;
@@ -14,12 +12,3 @@ button {
     @apply .bg-black .text-white;
   }
 }
-
-// @variants hover, focus {
-//   .vbutton {
-//     color: yellow;
-//   }
-//   .chocolate {
-//     color: brown;
-//   }
-// }
