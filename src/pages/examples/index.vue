@@ -30,9 +30,9 @@
         <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
         <transition-slide-in :duration="400">
           <v-sidebar v-clicked-outside="handleClickOutside" class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
-            <v-button class="pin-r absolute mr-4 mt-4 py-1 px-1 text-white" @click="$store.commit('toggleSidebar')">
-              <fa-icon style="font-size: 30px" icon="times-circle"></fa-icon>
-            </v-button>
+            <!-- <v-button > -->
+              <fa-icon style="font-size: 2.5rem; transition: .2s ease" class="pin-r cursor-pointer absolute mr-4 mt-4 py-1 px-1 text-white hover:text-indigo-light" @click="$store.commit('toggleSidebar')" icon="times-circle"></fa-icon>
+            <!-- </v-button> -->
           </v-sidebar>
         </transition-slide-in>
       </section>
@@ -187,7 +187,11 @@
 import StyledButton from '@/components/StyledButton.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEdit, faChevronRight, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import {
+  faEdit,
+  faChevronRight,
+  faTimesCircle
+} from '@fortawesome/free-solid-svg-icons'
 library.add(faEdit, faChevronRight, faTimesCircle)
 const metaDescription =
   'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'

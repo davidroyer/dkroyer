@@ -9,23 +9,13 @@ import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
 // Register all Vue components in the sub folder `global`
-const requireComponent = require.context(
-  // The relative path of the components folder
-  '../components/_GLOBAL/',
-  // Whether or not to look in subfolders
-  true,
-  // The regular expression used to match base component filenames
-  /[A-Z]\w+\.(vue|js)$/
-)
+const requireComponent = require.context('../components/_GLOBAL', true, /.vue$/)
+
 // Require each matching file name
 requireComponent.keys().forEach(fileName => {
   const componentConfig = requireComponent(fileName)
   // PascalCase name without file extension
-  // console.log(componentConfig)
-  const componentName = componentConfig.default.name
-    ? componentConfig.default.name
-    : upperFirst(camelCase(fileName.replace(/\.\w+$/, '')))
-
+  const componentName = upperFirst(camelCase(fileName.replace(/\.\w+$/, '')))
   // Globally register the component
   Vue.component(componentName, componentConfig.default || componentConfig)
 })

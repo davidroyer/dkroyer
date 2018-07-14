@@ -1,5 +1,5 @@
 <template>
-  <div class="v-card-header font-semibold leading-tight text-2xl">
+  <div class="v-card-header">
     <slot/>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
 <style lang="scss">
 .v-card-header {
   padding-top: 0.5rem;
+  @apply font-semibold leading-tight text-2xl;
 
   > * {
     margin-top: 0 !important;

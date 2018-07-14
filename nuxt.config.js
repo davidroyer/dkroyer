@@ -11,7 +11,17 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:/]+/g) || []
   }
 }
-const purgecssWhitelistPatterns = [/^__/, /^fa/, /^v-/, /^page-/, /^nuxt/, /^scale/, /^slide/, /^enter/, /^leave/]
+const purgecssWhitelistPatterns = [
+  /^__/,
+  /^fa/,
+  /^v-/,
+  /^page-/,
+  /^nuxt/,
+  /^scale/,
+  /^slide/,
+  /^enter/,
+  /^leave/
+]
 
 module.exports = {
   /**
@@ -97,13 +107,23 @@ module.exports = {
    * Custom Nuxt plugins
    * @see https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/global-components', '~/plugins/filters', { src: '~/plugins/directives', ssr: false }],
+  plugins: [
+    '~/plugins/global-components',
+    '~/plugins/filters',
+    { src: '~/plugins/directives', ssr: false }
+  ],
 
   /**
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
    */
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/google-analytics', '@nuxtjs/pwa', 'nuxtent', 'nuxt-fontawesome'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa',
+    'nuxtent',
+    'nuxt-fontawesome'
+  ],
 
   /**
    * Nuxt fontawesome module

@@ -1,5 +1,5 @@
 <template>
-  <div class="v-card py-4 px-6 shadow-md w-full max-w-sm">
+  <div class="v-card">
     <div class="v-card-image" v-if="$slots.image">
       <!-- Use this slot for a card image -->
       <slot name="image"/>
@@ -21,12 +21,14 @@ export default {
 }
 </script>
 
+
 <style lang="scss">
 .v-card {
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 0.75rem 1.25rem;
+  @apply py-4 px-6 shadow-md w-full max-w-sm;
 
   &-header {
     flex: 1;

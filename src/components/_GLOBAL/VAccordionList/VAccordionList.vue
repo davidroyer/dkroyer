@@ -6,17 +6,16 @@
 
 <script>
 export default {
+  name: 'VAccordionList',
   provide() {
     return {
       accordionListState: this.sharedState
     }
   },
-  data() {
-    return {
-      sharedState: {
-        activeItem: null
-      }
+  data: () => ({
+    sharedState: {
+      activeItem: null
     }
-  }
+  })
 }
 </script>

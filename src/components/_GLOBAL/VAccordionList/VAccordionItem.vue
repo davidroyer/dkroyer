@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: 'VAccordionItem',
   inject: ['accordionListState'],
   props: ['itemId'],
   computed: {
