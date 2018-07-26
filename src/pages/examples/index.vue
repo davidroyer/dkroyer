@@ -15,6 +15,27 @@
         <v-input ref="regularInput" id="regularInput" label="Regular Input"></v-input>
       </section>
 
+      <section class="border-b-2 my-8 py-8 vmodal">
+        <h2 class="mb-4">VModal</h2>
+        <v-button id="show-modal" @click="showBasicModal = true">Show Basic Modal</v-button>
+        <v-modal v-if="showBasicModal" @close="showBasicModal = false">
+          <h3 slot="header">Basic Modal</h3>
+        </v-modal>
+
+        <hr>
+
+        <v-button id="show-modal" @click="showScrollingModal = true">Show Scrolling Modal</v-button>
+        <v-modal v-if="showScrollingModal" @close="showScrollingModal = false">
+          <h3 slot="header">Scrolling Modal</h3>
+          <div slot="body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cupiditate expedita asperiores, unde inventore, voluptatum reiciendis ratione accusantium nobis minus, quod dolor adipisci delectus recusandae omnis quidem nostrum doloribus quibusdam.</p>
+            <p>Animi officiis magni quam inventore! Eligendi excepturi, pariatur vero ipsa nostrum laboriosam. Eum est, dicta enim id quisquam consequatur atque excepturi vel nobis nisi magni delectus voluptatum error voluptatibus omnis.</p>
+            <p>Amet nihil provident ea, ipsum incidunt laborum libero enim illo error nostrum. In quam tempora eaque hic provident exercitationem ad nostrum, rem quae voluptas quaerat culpa animi, aperiam maiores soluta!</p>
+          </div>
+        </v-modal>
+
+      </section>
+
 
       <section class="border-b-2 my-8 py-8">
         <StyledButton @click="handleClick" @mouseover="handleMouseOver" @focus.native="handleFocus">Normal</StyledButton>
@@ -224,9 +245,20 @@ export default {
 
   data: () => ({
     showFooter: false,
+    showBasicModal: false,
+    showScrollingModal: false,
     expanded: false
   }),
 
+  watch: {
+    showScrollingModal: function(newState, oldState) {
+      let body = document.getElementsByTagName('body')[0]
+      body.classList.toggle('has-overlay')
+
+      // if (newState === true) {
+      // }
+    }
+  },
   methods: {
     handleClickOutside() {
       this.$store.commit('closeSidebar')
@@ -292,5 +324,13 @@ section {
 .examples-hr {
   flex-basis: 100%;
   margin: 2em 0;
+}
+
+.hr {
+  display: block;
+  flex-basis: 100%;
+  height: 1px;
+  background: #4b4b4b45;
+  margin: 2rem 5rem;
 }
 </style>
