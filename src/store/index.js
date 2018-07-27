@@ -49,7 +49,16 @@ export const actions = {
 
   nuxtServerInit({ commit, state }, { isDev }) {
     if (isDev) commit('addExamplePageToMenu')
-  }
+  },
+
+  /**
+   * This can be used in combination with @/plugins/nuxt-client-init
+   * to handle anything that needs to happen before client side initialization
+   * @param  {[type]}  commit [description]
+   * @param  {[type]}  req    [description]
+   * @return {Promise}        [description]
+   */
+  async nuxtClientInit({ commit }, { req }) {}
 }
 
 export const getters = {}

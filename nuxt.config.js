@@ -111,6 +111,7 @@ module.exports = {
     '~/plugins/global-components',
     '~/plugins/filters',
     { src: '~/plugins/directives', ssr: false }
+    // { src: '~/plugins/nuxt-client-init.js', ssr: false } // Use this when needing SSR
   ],
 
   /**
