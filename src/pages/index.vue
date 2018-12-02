@@ -11,9 +11,9 @@
         <p class="about-introtext">I currently work at The Learning House in Lousville, KY with the role of Marketing Operations Developer. The Learning House partners with companies, and instituions of higher learning for online education.</p>
         <p class="text-center"><strong class="list-header text-xl">Some recent projects and accomplishments consist of...</strong></p>
         <ul>
-          <li>In change of handling all front-end aspects of building, testing, documenting, and integrating a new form system using Vue.js in prepartion of use for our 20+ marketing sites.</li>
+          <li>In charge of handling all front-end aspects of building, testing, documenting, and integrating a new form system using Vue.js in prepartion of use for our 20+ marketing sites.</li>
           <li>Built a custom Vue.js Filtering Plugin so our site users can quickly and easily find the degree they are lookging for.</li>
-          <li>Did a major overhaul to our wordpress theme that is used as a starting point for our marketing sites. The overhaul inlcuded switching from Gulp to using Webpack via Laravel Mix</li>
+          <li>Did a major overhaul to our WordPress theme that is used as a starting point for our marketing sites. The overhaul inlcuded switching from Gulp to using Webpack via Laravel Mix.</li>
         </ul>
       </section>
 
