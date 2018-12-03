@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-hero>
-      <v-headline class="relative px-4 text-5xl md:text-6xl lg:px-8 lg:text-7xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
+      <v-headline class="relative px-4 text-5xl md:text-6xl lg:px-8 lg:text-7xl font-light text-center text-white" :tag="1">Full Stack Developer</v-headline>
     </v-hero>
     <v-wrapper>
       <section class="about mt-0 mb-8 border-b-2">
