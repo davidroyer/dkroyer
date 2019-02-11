@@ -10,9 +10,9 @@ export const getPostsFromTag = (posts, tag) =>
 
 export const tagRoutes = posts => {
   let tagsArray = [];
-  for (var i = 0; i < this.posts.length; i++) {
-    for (var n = 0; n < this.posts[i].tags.length; n++) {
-      tagsArray.push(this.posts[i].tags[n]);
+  for (var i = 0; i < posts.length; i++) {
+    for (var n = 0; n < posts[i].tags.length; n++) {
+      tagsArray.push(posts[i].tags[n]);
     }
   }
   return uniqueArray(tagsArray);
