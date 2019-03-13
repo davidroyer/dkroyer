@@ -42,10 +42,23 @@ module.exports = {
       }
     },
     plugins: [
-      createContainer('tip', 'TIP'),
-      createContainer('warning', 'WARNING'),
-      createContainer('danger', 'DANGER'),
-      [externalLinks, { target: '_blank', rel: 'noopener' }]
+      [externalLinks, {
+        attrs: {
+          target: '_blank',
+          rel: 'noopener'
+        }
+      }]   
+      // [externalLinks, { target: '_blank', rel: 'noopener' }]
+
+      // createContainer('tip', 'TIP'),
+      // createContainer('warning', 'WARNING'),
+      // createContainer('danger', 'DANGER'),
+      // [externalLinks, {
+      //   attrs: {
+      //     target: '_blank',
+      //     rel: 'noopener'
+      //   }
+      // }]   
     ]
   },
 

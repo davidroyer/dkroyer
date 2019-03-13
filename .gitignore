@@ -1,6 +1,7 @@
 # dependencies
 node_modules
 
+.DS_STORE
 # logs
 npm-debug.log
 yarn-error.log
