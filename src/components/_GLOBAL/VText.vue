@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="v-text max-w-sm mx-auto my-6">
     <label v-text="label" :for="attrs.id" class="v-text-label"></label>
     <textarea

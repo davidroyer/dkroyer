@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="hero">
     <slot>
       <headline :tag="tag">{{text}}</headline>

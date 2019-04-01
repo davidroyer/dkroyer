@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition name="modal">
 
     <div class="modal-mask">

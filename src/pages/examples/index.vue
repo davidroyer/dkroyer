@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="examples">
     <v-hero class="page-heading">
       <v-headline class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white" :tag="1">

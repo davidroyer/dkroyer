@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="container px-4 mx-auto max-w-xl">
       <h1 class="text-center">Tags Page</h1>
       <h2 class="text-center">
