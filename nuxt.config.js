@@ -119,6 +119,7 @@ module.exports = {
    * @see https://nuxtjs.org/guide/modules/
    */
   modules: [
+    // '@droyer/nuxtcms',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',

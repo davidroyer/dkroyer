@@ -8,7 +8,7 @@
     "> 1%",
     "not ie <= 9",
     "not op_mini all"
-  ],  
+  ],
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -19,6 +19,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@droyer/nuxtcms": "^0.2.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-brands-svg-icons": "^5.1.0",
     "@fortawesome/free-regular-svg-icons": "^5.1.0",
