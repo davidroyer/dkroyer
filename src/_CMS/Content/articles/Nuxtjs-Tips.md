@@ -1,5 +1,6 @@
 ---
 title: Tips After Building a Site with Nuxt.js
+data: 2017-09-18
 description: A few simple tips for anyone using Nuxt.js. This includes covering how to handle mobile menu state once a link is choosen from the menu and making sure to close the menu when appropriate.
 tags:
   - vue

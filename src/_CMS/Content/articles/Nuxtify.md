@@ -1,5 +1,6 @@
 ---
 title: My Quest For the Ultimate Nuxt.js Wesbite Template
+date: 2019-02-10
 description: Nuxtify, a Nuxt.js Website Boilerplate with Vuetify is introduced. It aims to be reusable, reliable, and scalable
 tags:
   - nuxt
