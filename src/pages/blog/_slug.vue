@@ -51,10 +51,15 @@ export default {
       ]
     }
   },
-  async asyncData({ app, route, payload }) {
-    const post = payload || (await app.$content('/blog').get(route.path))
+  asyncData({ $cmsApi, params }) {
+    const post = $cmsApi.get('articles', params.slug)
     return { post }
   }
+
+  // async asyncData({ app, route, payload }) {
+  //   const post = payload || (await app.$content('/blog').get(route.path))
+  //   return { post }
+  // }
 }
 </script>
 

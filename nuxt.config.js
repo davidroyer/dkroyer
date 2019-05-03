@@ -119,11 +119,11 @@ module.exports = {
    * @see https://nuxtjs.org/guide/modules/
    */
   modules: [
-    // '@droyer/nuxtcms',
+    '@droyer/nuxtcms',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
-    'nuxtent',
+    // 'nuxtent',
     'nuxt-fontawesome'
   ],
 
@@ -177,31 +177,31 @@ module.exports = {
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
    */
-  sitemap: {
-    path: '/sitemap.xml',
-    hostname: config.siteUrl,
-    cacheTime: 1000 * 60 * 150,
-    generate: true,
-    interval: 1000,
-    routes() {
-      return Promise.all([
-        axios.get(`${config.siteUrl}/_nuxt/content/blog/_all.json`),
-        axios.get(`${config.siteUrl}/_nuxt/content/projects/_all.json`)
-      ]).then(data => {
-        const posts = data[0]
-        const projects = data[1]
-        return posts.data
-          .map(post => {
-            return post.permalink
-          })
-          .concat(
-            projects.data.map(project => {
-              return project.permalink
-            })
-          )
-      })
-    }
-  },
+  // sitemap: {
+  //   path: '/sitemap.xml',
+  //   hostname: config.siteUrl,
+  //   cacheTime: 1000 * 60 * 150,
+  //   generate: true,
+  //   interval: 1000,
+  //   routes() {
+  //     return Promise.all([
+  //       axios.get(`${config.siteUrl}/_nuxt/content/blog/_all.json`),
+  //       axios.get(`${config.siteUrl}/_nuxt/content/projects/_all.json`)
+  //     ]).then(data => {
+  //       const posts = data[0]
+  //       const projects = data[1]
+  //       return posts.data
+  //         .map(post => {
+  //           return post.permalink
+  //         })
+  //         .concat(
+  //           projects.data.map(project => {
+  //             return project.permalink
+  //           })
+  //         )
+  //     })
+  //   }
+  // },
   /*
    ** Build configuration
    */

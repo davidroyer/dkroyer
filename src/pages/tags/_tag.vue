@@ -35,12 +35,11 @@
 import { getPostsFromTag } from '@/utilities/helpers.js'
 
 export default {
-  async asyncData({ app }) {
-    const allPosts = await app.$content('/blog').getAll()
-    const { tag } = app.context.route.params
+  async asyncData({ $cmsApi, params }) {
+    const allPosts = await $cmsApi.get('articles')
 
     return {
-      taggedPosts: getPostsFromTag(allPosts, tag)
+      taggedPosts: getPostsFromTag(allPosts, params.tag)
     }
   }
 }

@@ -30,8 +30,8 @@
               </v-card-body>
               <template slot="footer">
                 <nuxt-link
-                  v-for="(postTag, index) in post.tags"
-                  :key="index"
+                  v-for="(postTag, tagIndex) in post.tags"
+                  :key="tagIndex"
                   class="no-underline inline-block bg-grey-lighter rounded-full px-3 pt-1 mt-1 mb-2 text-sm font-semibold text-grey-darker mr-2"
                   :to="('/tags/' + postTag) | slugify"
                 >
@@ -50,12 +50,17 @@
 const metaDescription = 'Blog Articles on Web Development'
 
 export default {
-  async asyncData({ app, route }) {
-    const posts = await app.$content('/blog').getAll()
-    return {
-      posts
-    }
+  asyncData({ $cmsApi }) {
+    const posts = $cmsApi.get('articles')
+    return { posts }
   },
+
+  // async asyncData({ app, route }) {
+  //   const posts = await app.$content('/blog').getAll()
+  //   return {
+  //     posts
+  //   }
+  // },
   head() {
     return {
       title: 'Blog',
