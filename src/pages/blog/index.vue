@@ -21,7 +21,7 @@
               <v-card-header>
                 <nuxt-link
                   class="card-header-link no-underline hover:underline"
-                  :to="post.permalink"
+                  :to="`/blog/${post.slug}`"
                   >{{ post.title }}</nuxt-link
                 >
               </v-card-header>
