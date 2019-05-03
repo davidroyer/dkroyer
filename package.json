@@ -19,7 +19,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@droyer/nuxtcms": "^0.2.7",
+    "@droyer/nuxtcms": "^0.8.12",
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-brands-svg-icons": "^5.1.0",
     "@fortawesome/free-regular-svg-icons": "^5.1.0",
@@ -46,12 +46,16 @@
     "vue-styled-components": "^1.2.3"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-common-types": "^0.2.0",
     "@nuxtjs/eslint-config": "^0.0.1",
     "autoprefixer": "^8.6.4",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-tailwind": "^0.1.10",
+    "babel-preset-es2015-ie": "^6.7.0",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": ">=12.0.0",
+    "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": ">=2.16.0",
     "eslint-plugin-jest": ">=22.3.0",
@@ -60,11 +64,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",    
-    "@fortawesome/fontawesome-common-types": "^0.2.0",
-    "babel-plugin-tailwind": "^0.1.10",
-    "babel-preset-es2015-ie": "^6.7.0",
-    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-vue": "^5.2.2",
     "glob-all": "^3.1.0",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",
