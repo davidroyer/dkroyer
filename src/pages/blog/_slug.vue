@@ -13,14 +13,12 @@
         <nuxt-link to="/">Home</nuxt-link> /
         <nuxt-link to="/blog">Blog</nuxt-link> /
       </div>
-      <nuxtent-body class="content" :body="post.body" />
+      <article v-html="post.html" />
     </v-wrapper>
   </div>
 </template>
 
 <script>
-const metaDescription = 'Get description from blog post'
-
 export default {
   head() {
     return {

@@ -1,4 +1,4 @@
-let siteData = {
+const siteData = {
   navLinks: [
     { name: 'Home', path: '/' },
     { name: 'Site Info', path: '/site-info' },

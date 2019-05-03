@@ -13,8 +13,8 @@
         }}</nuxt-link>
         <div class="tags flex">
           <div
-            v-for="(postTag, index) in post.tags"
-            :key="index"
+            v-for="(postTag, tagIndex) in post.tags"
+            :key="tagIndex"
             class="tag text-sm mr-4"
           >
             <nuxt-link
@@ -37,7 +37,7 @@ import { getPostsFromTag } from '@/utilities/helpers.js'
 export default {
   async asyncData({ $cmsApi, params }) {
     const allPosts = await $cmsApi.get('articles')
-
+    // const tag
     return {
       taggedPosts: getPostsFromTag(allPosts, params.tag)
     }
