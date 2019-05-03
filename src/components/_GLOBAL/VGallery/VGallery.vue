@@ -1,6 +1,6 @@
 <template>
   <div class="gallery" :style="styleObject">
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -24,7 +24,9 @@ export default {
   computed: {
     styleObject() {
       return {
-        gridTemplateColumns: `repeat(auto-fill, minmax(${this.minColW}, ${this.maxColW}))`
+        gridTemplateColumns: `repeat(auto-fill, minmax(${this.minColW}, ${
+          this.maxColW
+        }))`
       }
     }
   }

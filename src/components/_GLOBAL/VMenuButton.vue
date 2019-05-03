@@ -1,8 +1,9 @@
 <template>
   <button
     class="v-menu-button"
-    :class="{'v-menu-button--checked':menuIsActive}"
-    v-on="$listeners">
+    :class="{ 'v-menu-button--checked': menuIsActive }"
+    v-on="$listeners"
+  >
     <span><slot>Menu</slot></span>
   </button>
 </template>
@@ -23,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 /* @import "_variables.css"; */
 $menu-button-color: #666;
 .v-menu-button {

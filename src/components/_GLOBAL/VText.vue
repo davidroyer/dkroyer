@@ -1,24 +1,26 @@
-<template lang="html">
+<template>
   <div class="v-text max-w-sm mx-auto my-6">
-    <label v-text="label" :for="attrs.id" class="v-text-label"></label>
+    <label :for="attrs.id" class="v-text-label" v-text="label"></label>
     <textarea
-      :value="value"
       :id="id"
       ref="input"
-      v-on="inputListeners"
+      v-validate="validation"
+      :value="value"
       :rows="rows"
       class="v-text-textarea"
       :classes="`text-${color}`"
       v-bind="attrs"
       :name="attrs.name || id"
-      v-validate="validation"
       :data-vv-as="label"
       :data-vv-name="id"
       data-vv-delay="500"
-      >
+      v-on="inputListeners"
+    >
     </textarea>
     <transition name="slide">
-      <p v-show="validation && errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
+      <p v-show="validation && errors.has(id)" class="v-input-message">
+        {{ errors.first(id) }}
+      </p>
     </transition>
   </div>
 </template>
@@ -28,8 +30,8 @@ import validationMixin from './mixins/validation-mixin'
 
 export default {
   name: 'VText',
-  inheritAttrs: false,
   mixins: [validationMixin],
+  inheritAttrs: false,
   props: {
     value: {
       type: String

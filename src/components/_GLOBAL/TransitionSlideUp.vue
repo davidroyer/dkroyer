@@ -1,9 +1,9 @@
 <template>
   <transition
+    :css="false"
     @before-enter="beforeEnter"
     @enter="enter"
     @leave="leave"
-    :css="false"
   >
     <slot></slot>
   </transition>

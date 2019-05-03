@@ -1,7 +1,7 @@
-<template lang="html">
+<template>
   <div class="hero">
     <slot>
-      <headline :tag="tag">{{text}}</headline>
+      <headline :tag="tag">{{ text }}</headline>
     </slot>
   </div>
 </template>

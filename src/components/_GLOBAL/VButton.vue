@@ -4,7 +4,7 @@
     :class="[`text-${color}`, ...buttonClasses]"
     v-on="$listeners"
   >
-    <slot/>
+    <slot />
   </button>
 </template>
 

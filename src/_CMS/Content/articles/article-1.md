@@ -20,7 +20,7 @@ ARTICLE 1
 
 [I'm an inline-style link](https://www.google.com)
 <!-- 
-![Image Test](~/assets/hero1.png) -->
+![Image Test](@/assets/hero1.png) -->
 
 # heading 1as
 

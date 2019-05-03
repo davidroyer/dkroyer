@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="link">
     <slot></slot>
   </div>
@@ -8,6 +8,4 @@
 export default {}
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

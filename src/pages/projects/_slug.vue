@@ -3,7 +3,7 @@
     <nuxt-link to="/">Home</nuxt-link> /
     <nuxt-link to="/projects">Projects</nuxt-link> /
     <!-- {{ project.linktitle }} -->
-    <h1 class="post-title project-title">{{ project.title }} </h1>
+    <h1 class="post-title project-title">{{ project.title }}</h1>
     <nuxtent-body class="content" :body="project.body" />
   </v-wrapper>
 </template>
@@ -14,7 +14,8 @@ export default {
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
       }
     ]
   },

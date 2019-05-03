@@ -1,8 +1,8 @@
 const path = require('path')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
-const config = require('./website.config')
 const axios = require('axios')
+const config = require('./website.config')
 const isProduction = process.env.NODE_ENV === 'production'
 const baseUrl = isProduction ? config.siteUrl : 'http://localhost:3000'
 
@@ -241,17 +241,20 @@ module.exports = {
           })
         )
       }
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+      // if (isDev && isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/,
+      //     options: {
+      //       fix: true
+      //     }
+      //   })
+      // }
     }
   },
-  css: ['~/assets/styles/main.scss'],
+  css: ['@/assets/styles/main.scss'],
 
   router: {
     middleware: ['menu']

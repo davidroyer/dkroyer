@@ -1,6 +1,6 @@
 <template>
   <div class="v-card-header">
-    <slot/>
+    <slot />
   </div>
 </template>
 
