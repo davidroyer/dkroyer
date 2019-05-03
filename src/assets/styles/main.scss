@@ -1,6 +1,8 @@
 @tailwind preflight;
 @tailwind components;
 
+/* autoprefixer: off */
+@tailwind utilities;
 /* Custom Components */
 @import 'base';
 @import 'components/hero';

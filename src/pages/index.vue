@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <pre>{{ articles }}</pre> -->
     <v-hero>
       <v-headline
         class="relative px-4 text-5xl md:text-6xl lg:px-8 lg:text-7xl font-light text-center text-white"
@@ -116,10 +117,15 @@ export default {
       title: 'Home'
     }
   },
+
   data: () => ({
     popularRepos: [],
     noteworthyRepo: {}
   }),
+  // asyncData({ $cmsApi }) {
+  //   const articles = $cmsApi.get('articles')
+  //   return { articles }
+  // },
 
   mounted() {
     const apiRequest1 = fetch(noteworthyRepoUrl).then(response => {
