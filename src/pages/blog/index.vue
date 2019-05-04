@@ -30,12 +30,12 @@
               </v-card-body>
               <template slot="footer">
                 <nuxt-link
-                  v-for="(postTag, tagIndex) in post.tags"
-                  :key="tagIndex"
+                  v-for="(postTag, key) in post.tags"
+                  :key="key"
                   class="no-underline inline-block bg-grey-lighter rounded-full px-3 pt-1 mt-1 mb-2 text-sm font-semibold text-grey-darker mr-2"
-                  :to="('/tags/' + postTag) | slugify"
+                  :to="('/tags/' + postTag.slug) | slugify"
                 >
-                  #{{ postTag }}
+                  #{{ postTag.name }}
                 </nuxt-link>
               </template>
             </v-card>
