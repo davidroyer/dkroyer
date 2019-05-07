@@ -707,9 +707,9 @@
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
 "@droyer/nuxtcms@^0.8.12":
-  version "0.8.13"
-  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.8.13.tgz#457f747d049dd6e229d9fe636dc7a21a6bea027c"
-  integrity sha512-m/bxvT1F3RGjpeV1h+OD/b6IBDbbbFowXEstkuy+PafPF6mzGFMIIDS+/VjFQuJExav+1+pQaJXK3gjwuYGpxQ==
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.8.14.tgz#bf9a0ab8b489b7c04038b315cf5112fe12df7deb"
+  integrity sha512-n2pF3MY1ue8dY6bT16woNMdfMuSW9fRZUvu9GiIEMcYUs2tirJasOWfFG6FAPmt/9A6ued3WNh/jI30kFOm5uw==
   dependencies:
     front-matter "^3.0.1"
     fs-jetpack "^2.2.1"
