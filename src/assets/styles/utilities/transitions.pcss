@@ -1,18 +1,8 @@
-// .page-enter-active,
-// .page-leave-active {
-//   transition: opacity 0.5s;
-// }
-// .page-enter,
-// .page-leave-active {
-//   opacity: 0;
-// }
 
 .page-enter-active,
 .page-leave-active {
-  // transition: all .45s ease-in-out;
   transition: all 0.45s cubic-bezier(0.55, 0, 0.1, 1);
 
-  // transform: translate(30px, 0);
 }
 .page-enter,
 .page-leave-active {
@@ -41,7 +31,6 @@
 }
 .mobile-nav-leave-active {
   transition: all 250ms ease-out;
-  // transition-delay: .25s;
 }
 
 .mobile-nav-enter,
@@ -72,7 +61,6 @@
   opacity: 0;
 }
 
-// ANIMATIONS
 
 .scale-in-hor-center {
   animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -117,7 +105,6 @@
 @keyframes slide-in-right {
   0% {
     transform: translateX(1000px);
-    // opacity: 0;
   }
   100% {
     transform: translateX(0);
@@ -137,7 +124,6 @@
   }
   100% {
     transform: translateX(1000px);
-    // opacity: 0;
   }
 }
 
@@ -160,6 +146,5 @@
 
 .scale-enter,
 .scale-leave-to {
-  // opacity: 0;
 }
 /* purgecss end ignore */
