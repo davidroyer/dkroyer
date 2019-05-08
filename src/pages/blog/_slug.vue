@@ -39,14 +39,14 @@ export default {
           property: 'og:type',
           content: 'article'
         }
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href:
+            'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
+        }
       ]
-      // link: [
-      //   {
-      //     rel: 'stylesheet',
-      //     href:
-      //       'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
-      //   }
-      // ]
     }
   },
   asyncData({ $cmsApi, params }) {

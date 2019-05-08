@@ -30,16 +30,12 @@
       </li>
     </ul>
   </div>
-  <!-- <div>
-    <h1 v-text="tag.title" />
-    <pre>{{ tag }}</pre>
-  </div>-->
 </template>
 
 <script>
 export default {
   asyncData({ $cmsApi, params }) {
-    const tag = $cmsApi.get('articles/tags', params.slug)
+    const tag = $cmsApi.get('blog/tags', params.slug)
     const posts = tag.posts
     return { tag, posts }
   },
