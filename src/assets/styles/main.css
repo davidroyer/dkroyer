@@ -7,10 +7,8 @@
 @import 'components/card.pcss';
 @import 'components/accordion.pcss';
 
-
 /* autoprefixer: off */
 @import './lib/tw-utilities';
-
 
 @import 'utilities/transitions.pcss';
 @import 'content.pcss';
