@@ -126,7 +126,11 @@ module.exports = {
     // 'nuxtent',
     'nuxt-fontawesome'
   ],
-
+  sitemap: {
+    // path: '/sitemap.xml',
+    hostname: 'https://nuxtcms--dkroyer.netlify.com/'
+    // hostname: config.siteUrl
+  },
   /**
    * Nuxt fontawesome module
    * @type {Object}
