@@ -1,5 +1,6 @@
 import { resolve, join } from 'path'
 import PurgecssPlugin from 'purgecss-webpack-plugin'
+import { sync } from 'glob-all'
 import {
   siteTitle,
   siteDescription,
