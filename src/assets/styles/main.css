@@ -1,19 +1,16 @@
-/* @tailwind preflight; */
-@import "tailwindcss/preflight.css";
-@import "tailwindcss/components.css";
-/* @tailwind components; */
-
-/* autoprefixer: off */
-/* @tailwind utilities; */
-@import "tailwindcss/utilities.css";
+@import './lib/tw-preflight';
+@import './lib/tw-components';
 
 /* Custom Components */
 @import 'base.pcss';
 @import 'components/hero.pcss';
-/* @import 'components/card.pcss'; */
+@import 'components/card.pcss';
 @import 'components/accordion.pcss';
 
-/* @tailwind utilities; */
+
+/* autoprefixer: off */
+@import './lib/tw-utilities';
+
 
 @import 'utilities/transitions.pcss';
 @import 'content.pcss';
