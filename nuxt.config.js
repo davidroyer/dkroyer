@@ -313,8 +313,8 @@ export default {
       // }
     }
   },
-  css: ['@/assets/styles/main.css'],
-  // css: ['@/assets/styles/main.scss'],
+
+  css: ['@/assets/styles/main.scss'],
 
   router: {
     middleware: ['menu']
