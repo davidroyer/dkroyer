@@ -31,7 +31,12 @@
 export default {
   name: 'VAccordionItem',
   inject: ['accordionListState'],
-  props: ['itemId'],
+  props: {
+    itemId: {
+      type: Number,
+      default: null
+    }
+  },
   computed: {
     active() {
       return this.accordionListState.activeItem === this.itemId

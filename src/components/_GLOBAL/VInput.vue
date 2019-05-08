@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .v-input {
   @apply .max-w-sm .mx-auto .my-6;
 

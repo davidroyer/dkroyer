@@ -233,37 +233,15 @@ export default {
     extractCSS: true,
 
     postcss: {
-      // Add plugin names as key and arguments as value
-      // Install them before as dependencies with npm or yarn
-      // plugins: {
-      //   // Disable a plugin by passing false as value
-      //   'postcss-import': {},
-      //   'postcss-url': {},
-      //   tailwindcss: resolve(__dirname, './tailwind.config.js'),
-      //   'postcss-nested': {},
-      //   'postcss-custom-properties': {},
-      //   autoprefixer: {},
-      //   'postcss-flexbugs-fixes': {},
-      //   'postcss-responsive-type': {}
-      // },
       plugins: [
         require('postcss-import'),
         require('postcss-url'),
         require('tailwindcss')('./tailwind.config.js'),
         require('postcss-nested'),
-        // require('autoprefixer')({ grid: true }),
         require('autoprefixer'),
-        // require('postcss-preset-env')({
-        //   stage: 0,
-        //   autoprefixer: {
-        //     cascade: false,
-        //     grid: true
-        //   }
-        // }),
         require('postcss-flexbugs-fixes'),
         require('postcss-responsive-type')()
       ],
-      // Change the postcss-preset-env settings
       preset: {
         stage: 0,
         autoprefixer: {
@@ -315,7 +293,7 @@ export default {
     }
   },
 
-  css: ['@/assets/styles/main.scss'],
+  css: ['@/assets/styles/main.css'],
 
   router: {
     middleware: ['menu']

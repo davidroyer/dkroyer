@@ -1,5 +1,8 @@
 <template>
-  <h2 class="logo cursor-pointer text-grey-darkest" @click="$router.push('/')">
+  <h2
+    class="logo cursor-pointer text-grey-darkest mt-4 mb-2"
+    @click="$router.push('/')"
+  >
     David<span class="logo-last-name ml-1">Royer</span>
   </h2>
 </template>

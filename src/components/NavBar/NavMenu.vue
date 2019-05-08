@@ -18,6 +18,11 @@ export default {
   components: {
     NavLink
   },
-  props: ['links']
+  props: {
+    links: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>

@@ -1,0 +1,25 @@
+/* @tailwind preflight; */
+@import "tailwindcss/preflight.css";
+@import "tailwindcss/components.css";
+/* @tailwind components; */
+
+/* autoprefixer: off */
+/* @tailwind utilities; */
+@import "tailwindcss/utilities.css";
+
+/* Custom Components */
+@import 'base.pcss';
+@import 'components/hero.pcss';
+/* @import 'components/card.pcss'; */
+@import 'components/accordion.pcss';
+
+/* @tailwind utilities; */
+
+@import 'utilities/transitions.pcss';
+@import 'content.pcss';
+
+html {
+  font-size: responsive 16px 17px;
+  line-height: responsive 1.2px 1.8px;
+  /* line-height-range: 420px 1280px; */
+}

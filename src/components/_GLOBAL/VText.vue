@@ -26,6 +26,8 @@
 </template>
 
 <script>
+/* eslint-disable vue/require-default-prop */
+
 import validationMixin from './mixins/validation-mixin'
 
 export default {
@@ -73,7 +75,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .v-text {
   &-label {
     @apply block uppercase tracking-wide text-grey-darkest text-sm font-bold mb-2;

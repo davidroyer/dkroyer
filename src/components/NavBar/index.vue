@@ -8,8 +8,7 @@
       :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
       aria-controls="nav-mobile"
       @click="$store.commit('toggleMenuState')"
-    >
-    </v-menu-button>
+    ></v-menu-button>
 
     <template v-if="isMobile">
       <transition-zoom-center :duration="400">
@@ -86,7 +85,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .navbar {
   height: 80px;
   @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;

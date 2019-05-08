@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .v-button {
   transition: all 0.2s ease;
   cursor: pointer;
