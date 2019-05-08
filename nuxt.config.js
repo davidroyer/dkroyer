@@ -1,7 +1,5 @@
 import { resolve, join } from 'path'
 import PurgecssPlugin from 'purgecss-webpack-plugin'
-import { sync } from 'glob-all'
-// const axios = require('axios')
 import {
   siteTitle,
   siteDescription,
@@ -144,7 +142,7 @@ export default {
   ],
 
   sitemap: {
-    hostname: 'https://nuxtcms--dkroyer.netlify.com/'
+    hostname: siteUrl
   },
   /**
    * Nuxt fontawesome module
