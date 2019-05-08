@@ -5,7 +5,7 @@
       <fa-icon icon="tag" style="font-size: 17px"></fa-icon>Tag:
       <span class="font-light" v-text="$route.params.tag"></span>
     </h2>
-    <!-- <pre>{{posts}}</pre> -->
+
     <hr />
     <ul class="my-6 py-4 post-list flex flex-wrap justify-between">
       <li v-for="(post, index) in posts" :key="index" class="mx-4 my-4">

@@ -55,12 +55,6 @@ export default {
     return { posts }
   },
 
-  // async asyncData({ app, route }) {
-  //   const posts = await app.$content('/blog').getAll()
-  //   return {
-  //     posts
-  //   }
-  // },
   head() {
     return {
       title: 'Blog',

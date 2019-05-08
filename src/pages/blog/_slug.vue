@@ -53,11 +53,6 @@ export default {
     const post = $cmsApi.get('blog', params.slug)
     return { post }
   }
-
-  // async asyncData({ app, route, payload }) {
-  //   const post = payload || (await app.$content('/blog').get(route.path))
-  //   return { post }
-  // }
 }
 </script>
 
