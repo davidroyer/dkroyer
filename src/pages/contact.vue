@@ -4,25 +4,16 @@
       <v-headline
         class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white"
         :tag="1"
-<<<<<<< HEAD
-      >Get In Touch</v-headline>
-=======
       >
         Get In Touch
       </v-headline>
->>>>>>> nuxtcms
     </v-hero>
 
     <v-wrapper>
       <div class="w-full max-w-md mx-auto">
         <form
-<<<<<<< HEAD
-          @submit.prevent="validateBeforeSubmit"
-          class="form bg-white shadow-md rounded-md px-4 pb-8 my-6"
-=======
           class="form bg-white shadow-md rounded-md px-4 pb-8 my-6"
           @submit.prevent="validateBeforeSubmit"
->>>>>>> nuxtcms
         >
           <div class="my-6">
             <v-input
@@ -57,18 +48,12 @@
           <div class="mt-6 flex items-center justify-between max-w-sm mx-auto">
             <v-button
               type="submit"
-<<<<<<< HEAD
-              @click.prevent="validateBeforeSubmit"
-              color="white"
-              class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 font-bold py-2 px-4 rounded"
-            >Send</v-button>
-=======
               color="white"
               class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 font-bold py-2 px-4 rounded"
               @click.prevent="validateBeforeSubmit"
-              >Send</v-button
             >
->>>>>>> nuxtcms
+              Send
+            </v-button>
           </div>
         </form>
       </div>
@@ -80,7 +65,7 @@
 import '@/plugins/vee-validate'
 
 export default {
-  head () {
+  head() {
     return {
       title: 'Contact Me'
     }
@@ -88,7 +73,7 @@ export default {
   $_veeValidate: {
     validator: 'new'
   },
-  data () {
+  data() {
     return {
       form: {
         firstName: '',
@@ -98,14 +83,14 @@ export default {
     }
   },
   methods: {
-    encode (data) {
+    encode(data) {
       return Object.keys(data)
         .map(
           key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join('&')
     },
-    validateBeforeSubmit () {
+    validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {
         if (result) {
           this.handleSubmit()
@@ -118,7 +103,7 @@ export default {
         }
       })
     },
-    handleSubmit () {
+    handleSubmit() {
       fetch('/', {
         method: 'POST',
         headers: {
