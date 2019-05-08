@@ -252,13 +252,14 @@ export default {
         require('tailwindcss')('./tailwind.config.js'),
         require('postcss-nested'),
         // require('autoprefixer')({ grid: true }),
-        require('autoprefixer')({
-          grid: true,
-          browsers: ['>1%', 'ie > 10', 'last 2 versions']
-        }),
-        require('postcss-preset-env')({
-          stage: 0
-        }),
+        require('autoprefixer'),
+        // require('postcss-preset-env')({
+        //   stage: 0,
+        //   autoprefixer: {
+        //     cascade: false,
+        //     grid: true
+        //   }
+        // }),
         require('postcss-flexbugs-fixes'),
         require('postcss-responsive-type')()
       ],
