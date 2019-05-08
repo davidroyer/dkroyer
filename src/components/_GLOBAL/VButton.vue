@@ -16,7 +16,12 @@ export default {
       type: String,
       default: 'grey-darkest'
     },
-    buttonClasses: Array
+    buttonClasses: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    }
   }
 }
 </script>

@@ -1,8 +1,11 @@
-@tailwind preflight;
-@tailwind components;
+// @tailwind preflight;
+@import "tailwindcss/preflight.css";
+@import "tailwindcss/components.css";
+// @tailwind components;
 
 /* autoprefixer: off */
-@tailwind utilities;
+// @tailwind utilities;
+@import "tailwindcss/utilities.css";
 
 /* Custom Components */
 @import 'base';
@@ -18,5 +21,6 @@
 html {
   font-size: responsive 16px 17px;
   line-height: responsive 1.2px 1.8px;
+  background: blue;
   // line-height-range: 420px 1280px;
 }

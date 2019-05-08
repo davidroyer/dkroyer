@@ -53,8 +53,8 @@ export default {
 }
 
 .modal-wrapper {
-  // display: table-cell;
-  // vertical-align: middle;
+  /* display: table-cell; */
+  /* vertical-align: middle; */
 }
 
 .modal-wrapper {

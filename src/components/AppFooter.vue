@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
 .footer {
-  // background-color: hsla(208, 16%, 16%, 0.85);
+  /* background-color: hsla(208, 16%, 16%, 0.85); */
   background-color: rgba(34, 41, 47, 0.9);
 }
 .svg-inline--fa {

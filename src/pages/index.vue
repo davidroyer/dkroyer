@@ -123,8 +123,8 @@ export default {
     noteworthyRepo: {}
   }),
   // asyncData({ $cmsApi }) {
-  //   const articles = $cmsApi.get('articles')
-  //   return { articles }
+  // const articles = $cmsApi.get('articles')
+  // return { articles }
   // },
 
   mounted() {
@@ -213,11 +213,11 @@ export default {
     }
   }
 
-  // .repo {
-  //   flex: 0 1 250px;
-  //   margin: 2em 1em !important;
-  //   position: relative;
-  // }
+  /* .repo { */
+  /* flex: 0 1 250px; */
+  /* margin: 2em 1em !important; */
+  /* position: relative; */
+  /* } */
   .hero {
     background-attachment: fixed;
     background-image: url('~assets/images/blog-me.jpeg');

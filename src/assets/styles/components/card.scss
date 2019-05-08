@@ -2,7 +2,7 @@
   // @apply .shadow-lg;
 
   &-wrapper {
-    max-width: 400px;
+    max-width: 50px;
     flex: 0 1 380px;
     &-github {
       width: 280px;
@@ -25,3 +25,4 @@
 a.card-header-link {
   @apply .text-indigo-darker;
 }
+

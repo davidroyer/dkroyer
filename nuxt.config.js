@@ -1,10 +1,23 @@
-const path = require('path')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
-const glob = require('glob-all')
-const axios = require('axios')
-const config = require('./website.config')
-const isProduction = process.env.NODE_ENV === 'production'
-const baseUrl = isProduction ? config.siteUrl : 'http://localhost:3000'
+import { resolve, join } from 'path'
+import PurgecssPlugin from 'purgecss-webpack-plugin'
+import { sync } from 'glob-all'
+// const axios = require('axios')
+import {
+  siteTitle,
+  siteDescription,
+  twitterUsername,
+  ogTitle,
+  ogType,
+  siteUrl,
+  ogImage,
+  fontAwesomeIcons,
+  shortName,
+  themeColor,
+  analyticsID
+} from './website.config'
+
+// const isProduction = process.env.NODE_ENV === 'production'
+// const baseUrl = isProduction ? config.siteUrl : 'http://localhost:3000'
 
 class TailwindExtractor {
   static extract(content) {
@@ -23,7 +36,7 @@ const purgecssWhitelistPatterns = [
   /^leave/
 ]
 
-module.exports = {
+export default {
   /**
    * Custom source and build directories
    * @see https://nuxtjs.org/api/configuration-srcdir
@@ -36,7 +49,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: `%s - ${config.siteTitle}`,
+    titleTemplate: `%s - ${siteTitle}`,
     meta: [
       {
         charset: 'utf-8'
@@ -48,35 +61,35 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: config.siteDescription
+        content: siteDescription
       },
       {
         property: 'twitter:site',
-        content: config.twitterUsername
+        content: twitterUsername
       },
       {
         property: 'twitter:creator',
-        content: config.twitterUsername
+        content: twitterUsername
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: config.ogTitle
+        content: ogTitle
       },
       {
         hid: 'og:type',
         property: 'og:type',
-        content: config.ogType
+        content: ogType
       },
       {
         hid: 'og:host',
         property: 'og:host',
-        content: config.siteUrl
+        content: siteUrl
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${config.siteUrl}/${config.ogImage}`
+        content: `${siteUrl}/${ogImage}`
       },
       {
         hid: 'twitter:card',
@@ -110,7 +123,10 @@ module.exports = {
   plugins: [
     '~/plugins/global-components',
     '~/plugins/filters',
-    { src: '~/plugins/directives', ssr: false }
+    {
+      src: '~/plugins/directives',
+      ssr: false
+    }
     // { src: '~/plugins/nuxt-client-init.js', ssr: false } // Use this when needing SSR
   ],
 
@@ -126,10 +142,9 @@ module.exports = {
     // 'nuxtent',
     'nuxt-fontawesome'
   ],
+
   sitemap: {
-    // path: '/sitemap.xml',
     hostname: 'https://nuxtcms--dkroyer.netlify.com/'
-    // hostname: config.siteUrl
   },
   /**
    * Nuxt fontawesome module
@@ -140,15 +155,15 @@ module.exports = {
     imports: [
       {
         set: '@fortawesome/free-brands-svg-icons',
-        icons: config.fontAwesomeIcons.brands
+        icons: fontAwesomeIcons.brands
       },
       {
         set: '@fortawesome/free-regular-svg-icons',
-        icons: config.fontAwesomeIcons.regular
+        icons: fontAwesomeIcons.regular
       },
       {
         set: '@fortawesome/free-solid-svg-icons',
-        icons: config.fontAwesomeIcons.solid
+        icons: fontAwesomeIcons.solid
       }
     ]
   },
@@ -157,10 +172,10 @@ module.exports = {
    * @see http://nuxt-pwa/manifest
    */
   manifest: {
-    name: config.ogTitle,
-    short_name: config.shortName,
-    description: config.siteDescription,
-    theme_color: config.themeColor
+    name: ogTitle,
+    short_name: shortName,
+    description: siteDescription,
+    theme_color: themeColor
   },
 
   /**
@@ -174,7 +189,7 @@ module.exports = {
    * @see https://github.com/nuxt-community/analytics-module
    */
   'google-analytics': {
-    id: config.analyticsID
+    id: analyticsID
   },
 
   /**
@@ -217,6 +232,28 @@ module.exports = {
     // },
     extractCSS: true,
 
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+        'postcss-import': {},
+        tailwindcss: resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {},
+        'postcss-custom-properties': {},
+        autoprefixer: {},
+        'postcss-flexbugs-fixes': {},
+        'postcss-responsive-type': {}
+      },
+      // Change the postcss-preset-env settings
+      preset: {
+        stage: 0,
+        autoprefixer: {
+          cascade: false,
+          grid: true
+        }
+      }
+    },
     extend(config, { isDev, isClient }) {
       /**
        * Use purgecss when building for production
@@ -228,11 +265,12 @@ module.exports = {
            * @see https://github.com/FullHuman/purgecss
            */
           new PurgecssPlugin({
+            mode: 'postcss',
             keyframes: false,
-            paths: glob.sync([
-              path.join(__dirname, './src/pages/**/*.vue'),
-              path.join(__dirname, './src/layouts/**/*.vue'),
-              path.join(__dirname, './src/components/**/*.vue')
+            paths: sync([
+              join(__dirname, './src/pages/**/*.vue'),
+              join(__dirname, './src/layouts/**/*.vue'),
+              join(__dirname, './src/components/**/*.vue')
             ]),
             extractors: [
               {

@@ -19,7 +19,7 @@ module.exports = {
 
   // Manifest and Progress color
   themeColor: colors['grey-darkest'],
-  backgroundColor: colors['indigo'],
+  backgroundColor: colors.indigo,
 
   /**
    * Icons To Load

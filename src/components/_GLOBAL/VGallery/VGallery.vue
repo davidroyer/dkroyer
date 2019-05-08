@@ -41,7 +41,7 @@ export default {
 
   /* Supports Grid */
   display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
   grid-auto-rows: minmax(150px, auto);
   grid-gap: 1em;
 }

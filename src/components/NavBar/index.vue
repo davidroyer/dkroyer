@@ -123,9 +123,9 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    // transform: scale(0);
-    // width: 0px;
-    // height: 0px;
+    /* transform: scale(0); */
+    /* width: 0px; */
+    /* height: 0px; */
     z-index: 99;
     overflow-y: scroll;
     overflow-x: hidden;
