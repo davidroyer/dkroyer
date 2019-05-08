@@ -19,7 +19,9 @@ directive.onEvent = function(event) {
 directive.bind = function(el, binding) {
   directive.instances.push({ el, fn: binding.value, mod: binding.modifiers })
   if (directive.instances.length === 1) {
-    directive.events.forEach(e => document.addEventListener(e, directive.onEvent))
+    directive.events.forEach(e =>
+      document.addEventListener(e, directive.onEvent)
+    )
   }
 }
 
@@ -37,7 +39,9 @@ directive.unbind = function(el) {
     directive.instances.splice(instanceIndex, 1)
   }
   if (directive.instances.length === 0) {
-    directive.events.forEach(e => document.removeEventListener(e, directive.onEvent))
+    directive.events.forEach(e =>
+      document.removeEventListener(e, directive.onEvent)
+    )
   }
 }
 

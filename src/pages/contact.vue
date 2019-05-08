@@ -4,14 +4,25 @@
       <v-headline
         class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white"
         :tag="1"
+<<<<<<< HEAD
       >Get In Touch</v-headline>
+=======
+      >
+        Get In Touch
+      </v-headline>
+>>>>>>> nuxtcms
     </v-hero>
 
     <v-wrapper>
       <div class="w-full max-w-md mx-auto">
         <form
+<<<<<<< HEAD
           @submit.prevent="validateBeforeSubmit"
           class="form bg-white shadow-md rounded-md px-4 pb-8 my-6"
+=======
+          class="form bg-white shadow-md rounded-md px-4 pb-8 my-6"
+          @submit.prevent="validateBeforeSubmit"
+>>>>>>> nuxtcms
         >
           <div class="my-6">
             <v-input
@@ -46,10 +57,18 @@
           <div class="mt-6 flex items-center justify-between max-w-sm mx-auto">
             <v-button
               type="submit"
+<<<<<<< HEAD
               @click.prevent="validateBeforeSubmit"
               color="white"
               class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 font-bold py-2 px-4 rounded"
             >Send</v-button>
+=======
+              color="white"
+              class="ml-auto bg-grey-darkest hover:bg-white hover:text-grey-darkest hover:border-grey-darkest hover:border-2 font-bold py-2 px-4 rounded"
+              @click.prevent="validateBeforeSubmit"
+              >Send</v-button
+            >
+>>>>>>> nuxtcms
           </div>
         </form>
       </div>
@@ -92,7 +111,7 @@ export default {
           this.handleSubmit()
         } else {
           this.$nextTick(() => {
-            let firstErrorInput = this.errors.items[0].field
+            const firstErrorInput = this.errors.items[0].field
             console.log(firstErrorInput)
             this.$refs[firstErrorInput].setFocus()
           })

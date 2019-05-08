@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "NavLink",
-  props: ["to", "name"]
-};
+  name: 'NavLink',
+  props: ['to', 'name']
+}
 </script>

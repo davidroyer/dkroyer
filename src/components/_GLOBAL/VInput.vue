@@ -1,26 +1,24 @@
 <template>
   <div class="v-input">
-    <label
-      v-text="label"
-      :for="id"
-      :class="labelClasses"
-      class="v-input-label">
+    <label :for="id" :class="labelClasses" class="v-input-label" v-text="label">
     </label>
     <input
+      :id="id"
       ref="input"
+      v-validate="validation"
       :type="type"
       :value="value"
-      :id="id"
       :name="$attrs.name || id"
       :class="inputClasses"
-      v-on="inputListeners"
       v-bind="$attrs"
-      v-validate="validation"
       :data-vv-as="label"
       :data-vv-name="id"
+      v-on="inputListeners"
     />
     <transition name="slide">
-      <p v-show="validation && errors.has(id)" class="v-input-message">{{ errors.first(id) }}</p>
+      <p v-show="validation && errors.has(id)" class="v-input-message">
+        {{ errors.first(id) }}
+      </p>
     </transition>
   </div>
 </template>
@@ -30,8 +28,8 @@ import validationMixin from './mixins/validation-mixin'
 
 export default {
   name: 'VInput',
-  inheritAttrs: false,
   mixins: [validationMixin],
+  inheritAttrs: false,
   props: {
     type: {
       type: String,
@@ -78,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .v-input {
   @apply .max-w-sm .mx-auto .my-6;
 

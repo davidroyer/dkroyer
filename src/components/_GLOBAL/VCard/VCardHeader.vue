@@ -1,6 +1,6 @@
 <template>
   <div class="v-card-header">
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -9,7 +9,8 @@ export default {
   name: 'VCardHeader',
   props: {
     heading: {
-      type: String
+      type: String,
+      default: '1'
     },
     headingTag: {
       type: String,

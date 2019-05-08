@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="<style lang="scss">">
 .v-icon {
   .button {
     cursor: pointer;

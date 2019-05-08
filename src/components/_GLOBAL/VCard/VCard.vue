@@ -1,16 +1,16 @@
 <template>
   <div class="v-card">
-    <div class="v-card-image" v-if="$slots.image">
+    <div v-if="$slots.image" class="v-card-image">
       <!-- Use this slot for a card image -->
-      <slot name="image"/>
+      <slot name="image" />
     </div>
 
     <!-- This slot is where `v-card-header` and `v-card-body` go -->
-    <slot/>
+    <slot />
 
-    <div class="v-card-footer" v-if="$slots.footer">
+    <div v-if="$slots.footer" class="v-card-footer">
       <!-- Use this slot to for the card footer -->
-      <slot name="footer"/>
+      <slot name="footer" />
     </div>
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
   name: 'VCard'
 }
 </script>
-
 
 <style lang="scss">
 .v-card {

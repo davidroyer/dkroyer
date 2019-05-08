@@ -1,11 +1,11 @@
 <template>
   <transition
+    :css="true"
+    name="expand"
     @before-enter="beforeEnter"
     @enter="enter"
     @before-leave="beforeLeave"
     @leave="leave"
-    :css="true"
-    name="expand"
   >
     <slot></slot>
   </transition>

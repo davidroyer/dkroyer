@@ -11,7 +11,7 @@ const StyledButton = styled('button', btnProps)`
   background: ${props => (props.primary ? 'palevioletred' : 'white')};
   color: ${props => (props.primary ? 'white' : 'palevioletred')};
 `
-console.log(StyledButton)
+// console.log(StyledButton)
 // export default {
 //   name: 'VStyledButton',
 //   functional: true,

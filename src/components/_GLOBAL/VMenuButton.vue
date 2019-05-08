@@ -1,8 +1,9 @@
 <template>
   <button
     class="v-menu-button"
-    :class="{'v-menu-button--checked':menuIsActive}"
-    v-on="$listeners">
+    :class="{ 'v-menu-button--checked': menuIsActive }"
+    v-on="$listeners"
+  >
     <span><slot>Menu</slot></span>
   </button>
 </template>
@@ -23,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 /* @import "_variables.css"; */
 $menu-button-color: #666;
 .v-menu-button {
@@ -38,9 +39,9 @@ $menu-button-color: #666;
   -webkit-tap-highlight-color: transparent;
   z-index: 99999;
 
-  // &[aria-expanded='true'] {
-  //   background: white;
-  // }
+  /* &[aria-expanded='true'] { */
+  /* background: white; */
+  /* } */
 }
 .v-menu-button > span,
 .v-menu-button:after,
@@ -60,8 +61,8 @@ $menu-button-color: #666;
   top: 50%;
   content: '';
   pointer-events: none;
-  // transition: all 0.25s;
-  // transition-delay: 500ms;
+  /* transition: all 0.25s; */
+  /* transition-delay: 500ms; */
   transform-origin: 50% 50%;
 }
 .v-menu-button:before {
@@ -74,7 +75,7 @@ $menu-button-color: #666;
   overflow: hidden;
   text-indent: 200%;
   color: rgba(0, 0, 0, 0);
-  // transition: opacity 0.25s;
+  /* transition: opacity 0.25s; */
 }
 .v-menu-button--checked:before {
   transform: rotate3d(0, 0, 1, 45deg);

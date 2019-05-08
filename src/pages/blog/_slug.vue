@@ -1,7 +1,10 @@
 <template>
   <div class="post">
     <v-hero class="page-heading">
-      <v-headline class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white" :tag="1">
+      <v-headline
+        class="relative px-4 text-3xl sm:text-4xl md:text-5xl font-light text-center text-white"
+        :tag="1"
+      >
         {{ post.title }}
       </v-headline>
     </v-hero>
@@ -10,14 +13,12 @@
         <nuxt-link to="/">Home</nuxt-link> /
         <nuxt-link to="/blog">Blog</nuxt-link> /
       </div>
-      <nuxtent-body class="content" :body="post.body" />
+      <article v-html="post.html" />
     </v-wrapper>
   </div>
 </template>
 
 <script>
-const metaDescription = 'Get description from blog post'
-
 export default {
   head() {
     return {
@@ -48,8 +49,8 @@ export default {
       ]
     }
   },
-  async asyncData({ app, route, payload }) {
-    const post = payload || (await app.$content('/blog').get(route.path))
+  asyncData({ $cmsApi, params }) {
+    const post = $cmsApi.get('blog', params.slug)
     return { post }
   }
 }
@@ -120,3 +121,5 @@ pre[class*='language-'] {
   background: #282c34 !important;
 }
 </style>
+<style src="@droyer/nuxtcms/lib/assets/blog-styles.css"></style>
+<style src="@@/node_modules/prismjs/themes/prism-tomorrow.css"></style>

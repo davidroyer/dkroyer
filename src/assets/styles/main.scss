@@ -1,5 +1,11 @@
-@tailwind preflight;
-@tailwind components;
+// @tailwind preflight;
+@import "tailwindcss/preflight.css";
+@import "tailwindcss/components.css";
+// @tailwind components;
+
+/* autoprefixer: off */
+// @tailwind utilities;
+@import "tailwindcss/utilities.css";
 
 /* autoprefixer: off */
 @tailwind utilities;
@@ -10,6 +16,10 @@
 @import 'components/card';
 @import 'components/accordion';
 
+<<<<<<< HEAD
+=======
+// @tailwind utilities;
+>>>>>>> nuxtcms
 
 @import 'utilities/transitions';
 @import 'content';

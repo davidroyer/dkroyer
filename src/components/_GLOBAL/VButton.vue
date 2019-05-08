@@ -4,7 +4,7 @@
     :class="[`text-${color}`, ...buttonClasses]"
     v-on="$listeners"
   >
-    <slot/>
+    <slot />
   </button>
 </template>
 
@@ -16,12 +16,17 @@ export default {
       type: String,
       default: 'grey-darkest'
     },
-    buttonClasses: Array
+    buttonClasses: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .v-button {
   transition: all 0.2s ease;
   cursor: pointer;

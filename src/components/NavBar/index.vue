@@ -1,23 +1,27 @@
 <template>
-    <div class="navbar">
-      <logo></logo>
-      <v-menu-button
-        @click="$store.commit('toggleMenuState')"
-        :checked="mobileMenuIsActive"
-        :class="[ 'nav-btn', {'text-white font-bold': mobileMenuIsActive}]"
-        :aria-label="navButtonText"
-        :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
-        aria-controls="nav-mobile">
-      </v-menu-button>
+  <div class="navbar">
+    <logo></logo>
+    <v-menu-button
+      :checked="mobileMenuIsActive"
+      :class="['nav-btn', { 'text-white font-bold': mobileMenuIsActive }]"
+      :aria-label="navButtonText"
+      :aria-expanded="mobileMenuIsActive ? 'true' : 'false'"
+      aria-controls="nav-mobile"
+      @click="$store.commit('toggleMenuState')"
+    ></v-menu-button>
 
-      <template v-if="isMobile">
-        <transition-zoom-center :duration="400">
-          <nav-menu id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-menu>
-        </transition-zoom-center>
-      </template>
+    <template v-if="isMobile">
+      <transition-zoom-center :duration="400">
+        <nav-menu
+          v-show="mobileMenuIsActive"
+          id="nav-mobile"
+          :links="navLinksArray"
+        ></nav-menu>
+      </transition-zoom-center>
+    </template>
 
-      <nav-menu v-if="!isMobile" :links="navLinksArray"></nav-menu>
-    </div>
+    <nav-menu v-if="!isMobile" :links="navLinksArray"></nav-menu>
+  </div>
 </template>
 
 <script>
@@ -58,10 +62,15 @@ export default {
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('resize', this.getWindowHeight)
-      //Init
+      // Init
       this.getWindowWidth()
       this.getWindowHeight()
     })
+  },
+
+  destroyed() {
+    window.removeEventListener('resize', this.getWindowWidth)
+    window.removeEventListener('resize', this.getWindowHeight)
   },
 
   methods: {
@@ -72,16 +81,11 @@ export default {
     getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight
     }
-  },
-
-  destroyed() {
-    window.removeEventListener('resize', this.getWindowWidth)
-    window.removeEventListener('resize', this.getWindowHeight)
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .navbar {
   height: 80px;
   @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;
@@ -118,9 +122,9 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    // transform: scale(0);
-    // width: 0px;
-    // height: 0px;
+    /* transform: scale(0); */
+    /* width: 0px; */
+    /* height: 0px; */
     z-index: 99;
     overflow-y: scroll;
     overflow-x: hidden;

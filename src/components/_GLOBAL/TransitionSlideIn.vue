@@ -1,13 +1,12 @@
 <template>
   <transition
+    :css="false"
     @enter="enter"
     @before-enter="beforeEnter"
     @after-enter="afterEnter"
-
     @leave="leave"
     @before-leave="beforeLeave"
     @after-leave="afterLeave"
-    :css="false"
   >
     <slot></slot>
   </transition>
@@ -36,7 +35,7 @@ export default {
     },
 
     afterEnter() {
-      let body = document.getElementsByTagName('body')[0]
+      const body = document.getElementsByTagName('body')[0]
       body.classList.add('has-overlay')
     },
 
@@ -53,7 +52,7 @@ export default {
     },
 
     afterLeave() {
-      let body = document.getElementsByTagName('body')[0]
+      const body = document.getElementsByTagName('body')[0]
       body.classList.remove('has-overlay')
     }
   }

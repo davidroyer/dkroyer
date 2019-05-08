@@ -42,7 +42,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-let colors = {
+const colors = {
   transparent: 'transparent',
 
   black: '#22292f',
@@ -216,7 +216,14 @@ module.exports = {
       'Georgia',
       'serif'
     ],
-    mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
+    mono: [
+      'Menlo',
+      'Monaco',
+      'Consolas',
+      'Liberation Mono',
+      'Courier New',
+      'monospace'
+    ]
   },
 
   /*
