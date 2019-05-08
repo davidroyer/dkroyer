@@ -126,3 +126,5 @@ pre[class*='language-'] {
   background: #282c34 !important;
 }
 </style>
+<style src="@droyer/nuxtcms/lib/assets/blog-styles.css"></style>
+<style src="@@/node_modules/prismjs/themes/prism-tomorrow.css"></style>
