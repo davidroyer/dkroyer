@@ -1,6 +1,6 @@
 {
-    "files.associations": {
-        "*.css": "postcss"
-    },
+    // "files.associations": {
+    //     "*.css": "postcss"
+    // },
     "eslint.autoFixOnSave": true
 }
