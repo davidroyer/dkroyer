@@ -235,16 +235,33 @@ export default {
     postcss: {
       // Add plugin names as key and arguments as value
       // Install them before as dependencies with npm or yarn
-      plugins: {
-        // Disable a plugin by passing false as value
-        'postcss-import': {},
-        tailwindcss: resolve(__dirname, './tailwind.config.js'),
-        'postcss-nested': {},
-        'postcss-custom-properties': {},
-        autoprefixer: {},
-        'postcss-flexbugs-fixes': {},
-        'postcss-responsive-type': {}
-      },
+      // plugins: {
+      //   // Disable a plugin by passing false as value
+      //   'postcss-import': {},
+      //   'postcss-url': {},
+      //   tailwindcss: resolve(__dirname, './tailwind.config.js'),
+      //   'postcss-nested': {},
+      //   'postcss-custom-properties': {},
+      //   autoprefixer: {},
+      //   'postcss-flexbugs-fixes': {},
+      //   'postcss-responsive-type': {}
+      // },
+      plugins: [
+        require('postcss-import'),
+        require('postcss-url'),
+        require('tailwindcss')('./tailwind.config.js'),
+        require('postcss-nested'),
+        // require('autoprefixer')({ grid: true }),
+        require('autoprefixer')({
+          grid: true,
+          browsers: ['>1%', 'ie > 10', 'last 2 versions']
+        }),
+        require('postcss-preset-env')({
+          stage: 0
+        }),
+        require('postcss-flexbugs-fixes'),
+        require('postcss-responsive-type')()
+      ],
       // Change the postcss-preset-env settings
       preset: {
         stage: 0,
@@ -296,7 +313,8 @@ export default {
       // }
     }
   },
-  css: ['@/assets/styles/main.scss'],
+  css: ['@/assets/styles/main.css'],
+  // css: ['@/assets/styles/main.scss'],
 
   router: {
     middleware: ['menu']
