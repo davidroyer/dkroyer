@@ -123,7 +123,7 @@ export default {
     noteworthyRepo: {}
   }),
   // asyncData({ $cmsApi }) {
-  // const articles = $cmsApi.get('articles')
+  // const articles = $cmsApi.get('blog')
   // return { articles }
   // },
 

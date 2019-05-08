@@ -50,7 +50,7 @@ export default {
     }
   },
   asyncData({ $cmsApi, params }) {
-    const post = $cmsApi.get('articles', params.slug)
+    const post = $cmsApi.get('blog', params.slug)
     return { post }
   }
 

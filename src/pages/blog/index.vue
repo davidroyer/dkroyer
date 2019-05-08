@@ -51,7 +51,7 @@ const metaDescription = 'Blog Articles on Web Development'
 
 export default {
   asyncData({ $cmsApi }) {
-    const posts = $cmsApi.get('articles')
+    const posts = $cmsApi.get('blog')
     return { posts }
   },
 
