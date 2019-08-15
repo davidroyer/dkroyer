@@ -2,26 +2,26 @@
 
 ## ToDo
 
-* [x] Get `.prettier` to work
-* [ ] Check on async loading of some external components
-* [ ] Choose whether going to use .postcss file or set it in `nuxt.config`
+- [x] Get `.prettier` to work
+- [ ] Check on async loading of some external components
+- [ ] Choose whether going to use .postcss file or set it in `nuxt.config`
 
 ## Overview
 
 **_Includes_**
 
-* Fine Tuning for SEO by proper use of `hid` in meta tags
-* Use of social media meta tags so each page can have its own metaDescription
-* Focus on accessiblity
-* Component Library
-* PurgeCSS to remove unused css
-* TailwindCSS
-* Special config file to be the primary file that will need to be updated on a project by project basic
-* `website.config.js`
-* Use of `prettier`
-* Google analytics via `@nuxtjs/google-analytics`
-* PWA `@nuxtjs/pwa`
-* Sitemap for SEO via `@nuxtjs/sitemap`
+- Fine Tuning for SEO by proper use of `hid` in meta tags
+- Use of social media meta tags so each page can have its own metaDescription
+- Focus on accessiblity
+- Component Library
+- PurgeCSS to remove unused css
+- TailwindCSS
+- Special config file to be the primary file that will need to be updated on a project by project basic
+- `website.config.js`
+- Use of `prettier`
+- Google analytics via `@nuxtjs/google-analytics`
+- PWA `@nuxtjs/pwa`
+- Sitemap for SEO via `@nuxtjs/sitemap`
 
 ### Miscellaneous
 
@@ -40,9 +40,9 @@ They are registered via `global.js` inside `plugins`
 
 ## Modules
 
-* sitemap
-* google analytics
-* fontawesome
+- sitemap
+- google analytics
+- fontawesome
 
 - Create JPEG image sized at ??? and add it to static folder
 - Netlify form

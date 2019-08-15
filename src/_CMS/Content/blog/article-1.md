@@ -20,6 +20,7 @@ ARTICLE 1
 [I'm an inline-style link](https://www.google.com)
 
 ## Heading level 2
+
 <!--
 ![Image Test](@/assets/hero1.png) -->
 
