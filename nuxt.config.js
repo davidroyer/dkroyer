@@ -32,7 +32,9 @@ const purgecssWhitelistPatterns = [
   /^scale/,
   /^slide/,
   /^enter/,
-  /^leave/
+  /^leave/,
+  /^custom-block/,
+  /^custom-block-/
 ]
 
 export default {
@@ -273,7 +275,7 @@ export default {
                 extensions: ['html', 'js', 'vue', 'css', 'scss']
               }
             ],
-            whitelist: ['html', 'body'],
+            whitelist: ['html', 'body', 'ol', 'tip', 'warning', 'danger'],
             whitelistPatterns: purgecssWhitelistPatterns
           })
         )
