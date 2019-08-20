@@ -1,10 +1,10 @@
 ---
-title: Optimized Async/Await When Multiple Requests Are Needed
+title: Optimizing Multiple API Request With Async/Await
 ---
 
 ## The Scenario
 
-We need to make multiple request to an API to get some data. We have an array of all the content types we need to make a request to. This means we need to loop through this array, make the request to the approapriate content type API endpoint and then handle the response. Additionally and most importantly, **we want these request to happen at the same time instead of sequentially (one after another).**
+<!-- We need to make multiple request to an API to get some data. We have an array of all the content types we need to make a request to. This means we need to loop through this array, make the request to the approapriate content type API endpoint and then handle the response. Additionally and most importantly, **we want these request to happen at the same time instead of sequentially (one after another).**
 
 This situation arose when working on a Wordpress Admin Plugin.
 
@@ -29,11 +29,13 @@ const getContent = async(contentTypesArray) => ({
 const contentTypes = getContentTypes()
 
 
-```
+``` -->
 
 Image the following scenario:
 
-You are working on some functionality for an admin
+You want to get data from several API endpoints and use that data on your site or page. We want to take advantage of JavaScript's async ability by requesting these resources simultanesouly.
+
+So if we had an array of endpoints we knew we needed to hit and used a `forEach` loop to make this functionality, it would cause these requests to happen sycronously (one right after another). However, by .useing `.map()` and `Promise.all()`, we can keep it async **and** write the code in a clean, consise manner.
 
 When You have an multiple endpoints you need to make requests to from an API and the order of execution does not matter, you can use async await as follows:
 
@@ -44,53 +46,64 @@ import axios from 'axios'
 
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
-const apiData = {}
-const apiEndpoints = ['posts', 'users', 'todos']
+const dataStore = {}
+const resourceTypes = ['posts', 'users', 'todos']
 
-async function getEndpoints() {
-  const DataPromises = apiEndpoints.map(async endpoint => {
-    const { data } = await axios.get(endpoint)
-    apiData[endpoint] = data
-  })
+async function getResource(type) {
+  const { data } = await axios.get(type)
+  dataStore[type] = data
+}
 
+async function getAllResources() {
+  const DataPromises = resourceTypes.map(getResource(resourceType))
   await Promise.all(DataPromises)
 }
 
-getEndpoints()
+getAllResources()
 ```
 
 <!-- <br> -->
 
 ## The Breakdown
 
-1. Create an array of these endpoints
+1. Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
 
    ```js
-   const apiEndpoints = ['posts', 'users', 'todos']
+   const dataStore = {}
+   const resourceTypes = ['posts', 'users', 'todos']
    ```
 
-2. Use `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
+2. Create a function that is responsible for requesting and returning the data for a specific API endpoint
 
    ```js
-   const DataPromises = apiEndpoints.map(async endpoint => {
-     const { data } = await axios.get(endpoint)
-     apiData[endpoint] = data
-   })
+   async function getResource(type) {
+     const { data } = await axios.get(type)
+     dataStore[type] = data
+   }
    ```
 
-3. Await the complete response by using `Promise.all()`
+3. Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
+
+   ```js
+   async function getAllResources() {
+     const DataPromises = resourceTypes.map(getResource(resourceType))
+     await Promise.all(DataPromises)
+   }
+   ```
+
+4. Await the complete response by using `Promise.all()`
 
    ```js
    await Promise.all(DataPromises)
    ```
 
-4. All of this functionality needs to be wrapped within an `async` function
+5. All of this functionality needs to be wrapped within an `async` function
 
    ```js
-   async function getEndpoints() {
-     const DataPromises = apiEndpoints.map(async endpoint => {
+   async function getAllResources() {
+     const DataPromises = contentTypes.map(async endpoint => {
        const { data } = await axios.get(endpoint)
-       apiData[endpoint] = data
+       content[endpoint] = data
      })
 
      await Promise.all(DataPromises)
