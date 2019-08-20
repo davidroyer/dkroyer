@@ -31,13 +31,13 @@ const contentTypes = getContentTypes()
 
 ``` -->
 
-Image the following scenario:
+Imagine the following scenario:
 
-You want to get data from several API endpoints and use that data on your site or page. We want to take advantage of JavaScript's async ability by requesting these resources simultanesouly.
+You want to get data from several API endpoints and use that data on your site or page. We want to take advantage of JavaScript's async ability by requesting these resources simultaneously.
 
 So if we had an array of endpoints we knew we needed to hit and used a `forEach` loop to make this functionality, it would cause these requests to happen synchronously (one right after another).
 
-However, by using `.map()` and `Promise.all()`, we can keep it async **and** write the code in a clean, consise manner.
+However, by using `.map()` and `Promise.all()`, we can keep it async **and** write the code in a clean, concise manner.
 
 When You have an multiple endpoints you need to make requests to from an API and the order of execution does not matter, you can use async await as follows:
 
