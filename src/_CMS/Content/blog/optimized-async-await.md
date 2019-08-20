@@ -66,46 +66,52 @@ getAllResources()
 
 ## The Breakdown
 
-1. Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
+### Step 1: Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
 
-   ```js
-   const dataStore = {}
-   const resourceTypes = ['posts', 'users', 'todos']
-   ```
+```js
+const dataStore = {}
+const resourceTypes = ['posts', 'users', 'todos']
+```
 
-2. Create a function that is responsible for requesting and returning the data for a specific API endpoint
+### Step 2: Create a function that is responsible for requesting and returning the data for a specific API endpoint
 
-   ```js
-   async function getResource(type) {
-     const { data } = await axios.get(type)
-     dataStore[type] = data
-   }
-   ```
+```js
+async function getResource(type) {
+  const { data } = await axios.get(type)
+  dataStore[type] = data
+}
+```
 
-3. Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
+### Step 3: Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
 
-   ```js
-   async function getAllResources() {
-     const DataPromises = resourceTypes.map(getResource(resourceType))
-     await Promise.all(DataPromises)
-   }
-   ```
+```js
+async function getAllResources() {
+  const DataPromises = resourceTypes.map(getResource(resourceType))
+  await Promise.all(DataPromises)
+}
+```
 
-4. Await the complete response by using `Promise.all()`
+Await the complete response by using `Promise.all()`
 
-   ```js
-   await Promise.all(DataPromises)
-   ```
+```js
+await Promise.all(DataPromises)
+```
 
-5. All of this functionality needs to be wrapped within an `async` function
+### Step 4: All of this functionality needs to be wrapped within an `async` function.
 
-   ```js
-   async function getAllResources() {
-     const DataPromises = contentTypes.map(async endpoint => {
-       const { data } = await axios.get(endpoint)
-       content[endpoint] = data
-     })
+```js
+async function getAllResources() {
+  const DataPromises = contentTypes.map(async endpoint => {
+    const { data } = await axios.get(endpoint)
+    content[endpoint] = data
+  })
 
-     await Promise.all(DataPromises)
-   }
-   ```
+  await Promise.all(DataPromises)
+}
+```
+
+### Step 5: Call the function
+
+```js
+getAllResources()
+```
