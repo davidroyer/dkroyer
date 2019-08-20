@@ -66,14 +66,18 @@ getAllResources()
 
 ## The Breakdown
 
-### Step 1: Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
+### Step 1
+
+Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
 
 ```js
 const dataStore = {}
 const resourceTypes = ['posts', 'users', 'todos']
 ```
 
-### Step 2: Create a function that is responsible for requesting and returning the data for a specific API endpoint
+### Step 2
+
+Create a function that is responsible for requesting and returning the data for a specific API endpoint
 
 ```js
 async function getResource(type) {
@@ -82,7 +86,9 @@ async function getResource(type) {
 }
 ```
 
-### Step 3: Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
+### Step 3
+
+Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
 
 ```js
 async function getAllResources() {
@@ -97,7 +103,9 @@ Await the complete response by using `Promise.all()`
 await Promise.all(DataPromises)
 ```
 
-### Step 4: All of this functionality needs to be wrapped within an `async` function.
+### Step 4
+
+All of this functionality needs to be wrapped within an `async` function.
 
 ```js
 async function getAllResources() {
@@ -110,7 +118,9 @@ async function getAllResources() {
 }
 ```
 
-### Step 5: Call the function
+### Step 5
+
+Call the function
 
 ```js
 getAllResources()
