@@ -13,18 +13,37 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
 const resourceTypes = ['posts', 'users', 'todos']
+const todosToUpdate = [
+  { id: 1, title: 'Todo 1', completed: true },
+  { id: 2, title: 'Todo 2', completed: true },
+  { id: 3, title: 'Todo 3', completed: true }
+]
 
-async function updateResource(type, updateObj) {
-  const { data } = await axios.patch(`/${type}`, updateObj)
-  dataStore[type] = data
+async function updateTodo(todo, updateData) {
+  const { id } = todo
+  const { data } = await axios.patch(`/todos/${id}`, updateData)
+  return data
 }
 
-async function udpateAllResources() {
-  const DataPromises = resourceTypes.map(getResource(resourceType))
-  await Promise.all(DataPromises)
+async function deleteTodo(todo) {
+  const { id } = todo
+  const { data } = await axios.delete(`/todos/${id}`)
+  return data
 }
 
-getAllResources()
+async function updateTodos() {
+  const updatePromises = todosToUpdate.map(
+    updateTodo(todo, { completed: true })
+  )
+  await Promise.all(updatePromises)
+}
+
+async function deleteTodos() {
+  const deletePromises = todosToUpdate.map(deleteTodo(todo))
+  await Promise.all(deletePromises)
+}
+
+deleteTodos()
 ```
 
 <!-- <br> -->
