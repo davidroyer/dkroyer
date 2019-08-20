@@ -1,6 +1,6 @@
 ---
 title: Optimizing Multiple API Request With Async/Await
-draft: true
+# draft: true
 ---
 
 ## The Scenario
@@ -14,10 +14,6 @@ You want to get data from several API endpoints and use that data on your site o
 So if we had an array of endpoints we knew we needed to hit and used a `forEach` loop to make this functionality, it would cause these requests to happen synchronously (one right after another).
 
 However, by using `.map()` and `Promise.all()`, we can keep it async **and** write the code in a clean, concise manner.
-
-::: tip
-Some time
-:::
 
 **Here is the complete example we will work through step-by-step:**
 
@@ -45,7 +41,9 @@ async function getAllResources() {
 getAllResources()
 ```
 
-<!-- <br> -->
+::: tip YOU SHOULD KNOW...
+:thumbsup: _In Part 2, we'll show how to use this approach to make batch updates_.
+:::
 
 ## The Breakdown
 
