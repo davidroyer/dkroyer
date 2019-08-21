@@ -17,11 +17,12 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
 const resourceTypes = ['posts', 'users', 'todos']
-const todosToUpdate = [
-  { id: 1, title: 'Todo 1', completed: true },
-  { id: 2, title: 'Todo 2', completed: true },
-  { id: 3, title: 'Todo 3', completed: true }
+const todos = [
+  { id: 1, title: 'Todo 1', completed: false },
+  { id: 2, title: 'Todo 2', completed: false },
+  { id: 3, title: 'Todo 3', completed: false }
 ]
+const todosToUpdate = [1, 3]
 
 async function updateTodo(todo, updateData) {
   const { id } = todo
@@ -29,8 +30,7 @@ async function updateTodo(todo, updateData) {
   return data
 }
 
-async function deleteTodo(todo) {
-  const { id } = todo
+async function deleteTodo(id) {
   const { data } = await axios.delete(`/todos/${id}`)
   return data
 }
@@ -43,7 +43,7 @@ async function updateTodos() {
 }
 
 async function deleteTodos() {
-  const deletePromises = todosToUpdate.map(deleteTodo(todo))
+  const deletePromises = todosToUpdate.map(deleteTodo)
   await Promise.all(deletePromises)
 }
 

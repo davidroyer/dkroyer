@@ -28,14 +28,14 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 const dataStore = {}
 const resourceTypes = ['posts', 'users', 'todos']
 
-async function getResource(type) {
-  const { data } = await axios.get(type)
-  dataStore[type] = data
+async function getResource(resourceType) {
+  const { data } = await axios.get(resourceType)
+  dataStore[resourceType] = data
 }
 
 async function getAllResources() {
-  const DataPromises = resourceTypes.map(getResource(resourceType))
-  await Promise.all(DataPromises)
+  const apiPromises = resourceTypes.map(getResource)
+  await Promise.all(apiPromises)
 }
 
 getAllResources()
