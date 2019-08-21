@@ -68,9 +68,9 @@ const resourceTypes = ['posts', 'users', 'todos']
 We're creating a function that is responsible for requesting and returning the data for a specific API endpoint
 
 ```js
-async function getResource(type) {
-  const { data } = await axios.get(type)
-  dataStore[type] = data
+async function getResource(resourceType) {
+  const { data } = await axios.get(resourceType)
+  dataStore[resourceType] = data
 }
 ```
 
@@ -81,8 +81,8 @@ This creates an array of Promises.
 
 ```js
 async function getAllResources() {
-  const DataPromises = resourceTypes.map(getResource(resourceType))
-  await Promise.all(DataPromises)
+  const apiPromises = resourceTypes.map(getResource)
+  await Promise.all(apiPromises)
 }
 ```
 
