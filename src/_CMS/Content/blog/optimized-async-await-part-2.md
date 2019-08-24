@@ -20,14 +20,14 @@ const mockApiData = [
   { id: 2, title: 'Todo 2', completed: false },
   { id: 3, title: 'Todo 3', completed: false }
 ]
-const todosToUpdate = [1, 3]
+const todosToDelete = [1, 3]
 
 async function deleteTodo(id) {
   await axios.delete(`/todos/${id}`)
 }
 
 async function deleteTodos() {
-  const deletePromises = todosToUpdate.map(deleteTodo)
+  const deletePromises = todosToDelete.map(deleteTodo)
   await Promise.all(deletePromises)
 }
 
@@ -44,8 +44,9 @@ This is our initial setup. We are doing the following:
 
 1. Setting up `axios` to use to make our API request.
 2. Creating `dataStore` as an empty object to use as state or store.
+3. In a real application, `todosToDelete` would be determined by the user selection. However, as this is not the scope of this post, we can hardcode this value to more easily demonstrate the concepts that are within the scope of this post.
 
-Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
+<!-- SHOULD #3 above be a container note or something??? -->
 
 ```js
 import axios from 'axios'
@@ -57,7 +58,7 @@ const mockApiData = [
   { id: 2, title: 'Todo 2', completed: false },
   { id: 3, title: 'Todo 3', completed: false }
 ]
-const todosToUpdate = [1, 3]
+const todosToDelete = [1, 3]
 ```
 
 ### Step 2
@@ -76,8 +77,8 @@ Create a function that uses `Array.map()` to execute the async/await logic for e
 This creates an array of Promises.
 
 ```js
-async function deleteTodos() {
-  const deletePromises = todosToUpdate.map(deleteTodo)
+async function deleteTodos(todosToDelete) {
+  const deletePromises = todosToDelete.map(deleteTodo)
   await Promise.all(deletePromises)
 }
 ```
@@ -87,12 +88,12 @@ async function deleteTodos() {
 Call the function.
 
 ```js
-deleteTodos()s
+deleteTodos()
 ```
 
 <!-- ```js
 async function updateTodos() {
-  const updatePromises = todosToUpdate.map(
+  const updatePromises = todosToDelete.map(
     updateTodo(todo, { completed: true })
   )
   await Promise.all(updatePromises)
