@@ -373,5 +373,23 @@
         "slug": "nuxtjs-firebase-auth"
       }
     ]
+  },
+  "javascript": {
+    "name": "javascript",
+    "slug": "javascript",
+    "title": "Javascript",
+    "posts": [
+      {
+        "title": "Optimizing Multiple API Request With Async/Await",
+        "tags": {
+          "javascript": {
+            "name": "javascript",
+            "slug": "javascript",
+            "title": "Javascript"
+          }
+        },
+        "slug": "optimized-async-await"
+      }
+    ]
   }
 }
