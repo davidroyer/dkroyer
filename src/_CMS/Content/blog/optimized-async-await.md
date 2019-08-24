@@ -1,5 +1,7 @@
 ---
 title: Optimizing Multiple API Request With Async/Await
+tags:
+  - javascript
 # draft: true
 ---
 
@@ -26,7 +28,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
-const resourceTypes = ['posts', 'users', 'todos']
+const apiResources = ['posts', 'users', 'todos']
 
 async function getResource(resourceType) {
   const { data } = await axios.get(resourceType)
@@ -34,7 +36,7 @@ async function getResource(resourceType) {
 }
 
 async function getAllResources() {
-  const apiPromises = resourceTypes.map(getResource)
+  const apiPromises = apiResources.map(getResource)
   await Promise.all(apiPromises)
 }
 
@@ -51,21 +53,21 @@ getAllResources()
 
 This is our initial setup. We are:
 
-1. Setting up `axios` to use to make our API request
-2. Creating `dataStore` as an empty object to use as state or store
-3. Creating `resourceTypes` as an array of the endpoints we want to call
+1. Setting up `axios` to use to make our API request.
+2. Creating `dataStore` as an empty object to use as state or store.
+3. Creating `apiResources` as an array of the endpoints we want to call.
 
 ```js
 import axios from 'axios'
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
-const resourceTypes = ['posts', 'users', 'todos']
+const apiResources = ['posts', 'users', 'todos']
 ```
 
 ### Step 2
 
-We're creating a function that is responsible for requesting and returning the data for a specific API endpoint
+We're creating a function that is responsible for requesting and returning the data for a specific API endpoint.
 
 ```js
 async function getResource(resourceType) {
@@ -81,14 +83,14 @@ This creates an array of Promises.
 
 ```js
 async function getAllResources() {
-  const apiPromises = resourceTypes.map(getResource)
+  const apiPromises = apiResources.map(getResource)
   await Promise.all(apiPromises)
 }
 ```
 
 ### Step 4
 
-Call the function
+Call the function.
 
 ```js
 getAllResources()

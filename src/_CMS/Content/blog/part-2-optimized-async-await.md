@@ -16,7 +16,6 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
-const resourceTypes = ['posts', 'users', 'todos']
 const todos = [
   { id: 1, title: 'Todo 1', completed: false },
   { id: 2, title: 'Todo 2', completed: false },
@@ -24,22 +23,9 @@ const todos = [
 ]
 const todosToUpdate = [1, 3]
 
-async function updateTodo(todo, updateData) {
-  const { id } = todo
-  const { data } = await axios.patch(`/todos/${id}`, updateData)
-  return data
-}
-
 async function deleteTodo(id) {
   const { data } = await axios.delete(`/todos/${id}`)
   return data
-}
-
-async function updateTodos() {
-  const updatePromises = todosToUpdate.map(
-    updateTodo(todo, { completed: true })
-  )
-  await Promise.all(updatePromises)
 }
 
 async function deleteTodos() {
@@ -65,51 +51,36 @@ const resourceTypes = ['posts', 'users', 'todos']
 
 ### Step 2
 
-Create a function that is responsible for requesting and returning the data for a specific API endpoint
+Step 2 Description
 
 ```js
-async function getResource(type) {
-  const { data } = await axios.get(type)
-  dataStore[type] = data
-}
 ```
 
 ### Step 3
 
-Create a function that uses `Array.map()` to execute the async/await logic for each request. This creates an Array of Promises.
+Step 3 Description
 
 ```js
-async function getAllResources() {
-  const DataPromises = resourceTypes.map(getResource(resourceType))
-  await Promise.all(DataPromises)
-}
-```
-
-Await the complete response by using `Promise.all()`
-
-```js
-await Promise.all(DataPromises)
 ```
 
 ### Step 4
 
-All of this functionality needs to be wrapped within an `async` function.
+Step 4 Description
 
 ```js
-async function getAllResources() {
-  const DataPromises = contentTypes.map(async endpoint => {
-    const { data } = await axios.get(endpoint)
-    content[endpoint] = data
-  })
+```
 
-  await Promise.all(DataPromises)
+<!-- ```js
+async function updateTodos() {
+  const updatePromises = todosToUpdate.map(
+    updateTodo(todo, { completed: true })
+  )
+  await Promise.all(updatePromises)
 }
-```
 
-### Step 5
-
-Call the function
-
-```js
-getAllResources()
-```
+async function updateTodo(todo, updateData) {
+  const { id } = todo
+  const { data } = await axios.patch(`/todos/${id}`, updateData)
+  return data
+}
+``` -->
