@@ -7,8 +7,6 @@ tags:
 
 ## The Scenario
 
-<!-- We need to make multiple request to an API to get some data. We have an array of all the content types we need to make a request to. This means we need to loop through this array, make the request to the approapriate content type API endpoint and then handle the response. Additionally and most importantly, **we want these request to happen at the same time instead of sequentially (one after another).** -->
-
 Imagine the following scenario:
 
 You want to get data from several API endpoints and use that data on your site or page. We want to take advantage of JavaScript's async ability by requesting these resources simultaneously.
@@ -18,10 +16,6 @@ So if we had an array of endpoints we knew we needed to hit and used a `forEach`
 However, by using `.map()` and `Promise.all()`, we can keep it async **and** write the code in a clean, concise manner.
 
 **Here is the complete example we will work through step-by-step:**
-
-<!-- When You have an multiple endpoints you need to make requests to from an API and the order of execution does not matter, you can use async await as follows: -->
-
-<!-- _**We Will Work Through The Following Code Step-By-Step**_ -->
 
 ```js
 import axios from 'axios'

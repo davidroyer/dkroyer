@@ -28,8 +28,6 @@ async function deleteTodos(todos) {
 deleteTodos(todosDeleteList)
 ```
 
-<!-- <br> -->
-
 ## The Breakdown
 
 ### Step 1
@@ -37,10 +35,7 @@ deleteTodos(todosDeleteList)
 This is our initial setup. We are doing the following:
 
 1. Setting up `axios` to use to make our API request.
-   <!-- 2. Creating `dataStore` as an empty object to use as state or store. -->
 2. We are hardcoding the value of `todosDeleteList` to more easily demonstrate the concepts that are within the scope of this post. In a real application, this value would be determined by the user selection.
-
-<!-- SHOULD #3 above be a container note or something??? -->
 
 ```js
 import axios from 'axios'
