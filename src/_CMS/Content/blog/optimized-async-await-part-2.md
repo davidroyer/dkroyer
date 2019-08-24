@@ -20,18 +20,18 @@ const mockApiData = [
   { id: 2, title: 'Todo 2', completed: false },
   { id: 3, title: 'Todo 3', completed: false }
 ]
-const todosToDelete = [1, 3]
+const todosDeleteList = [1, 3]
 
 async function deleteTodo(id) {
   await axios.delete(`/todos/${id}`)
 }
 
-async function deleteTodos() {
-  const deletePromises = todosToDelete.map(deleteTodo)
+async function deleteTodos(todos) {
+  const deletePromises = todos.map(deleteTodo)
   await Promise.all(deletePromises)
 }
 
-deleteTodos()
+deleteTodos(todosDeleteList)
 ```
 
 <!-- <br> -->
@@ -44,7 +44,7 @@ This is our initial setup. We are doing the following:
 
 1. Setting up `axios` to use to make our API request.
 2. Creating `dataStore` as an empty object to use as state or store.
-3. In a real application, `todosToDelete` would be determined by the user selection. However, as this is not the scope of this post, we can hardcode this value to more easily demonstrate the concepts that are within the scope of this post.
+3. In a real application, `todosDeleteList` would be determined by the user selection. However, as this is not the scope of this post, we can hardcode this value to more easily demonstrate the concepts that are within the scope of this post.
 
 <!-- SHOULD #3 above be a container note or something??? -->
 
@@ -58,7 +58,7 @@ const mockApiData = [
   { id: 2, title: 'Todo 2', completed: false },
   { id: 3, title: 'Todo 3', completed: false }
 ]
-const todosToDelete = [1, 3]
+const todosDeleteList = [1, 3]
 ```
 
 ### Step 2
@@ -77,18 +77,18 @@ Create a function that uses `Array.map()` to execute the async/await logic for e
 This creates an array of Promises.
 
 ```js
-async function deleteTodos(todosToDelete) {
-  const deletePromises = todosToDelete.map(deleteTodo)
+async function deleteTodos(todos) {
+  const deletePromises = todos.map(deleteTodo)
   await Promise.all(deletePromises)
 }
 ```
 
 ### Step 4
 
-Call the function.
+Call the function passing our mock Array of todo ID's.
 
 ```js
-deleteTodos()
+deleteTodos(todosDeleteList)
 ```
 
 <!-- ```js
