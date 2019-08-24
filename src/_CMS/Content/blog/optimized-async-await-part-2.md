@@ -6,7 +6,7 @@ subtitle: Batch updates
 
 ## The Scenario
 
-Image we have a ToDo application and setting up the ability for the user to remove multiple todos.  
+Image we have a Todo application and setting up the ability for the user to remove multiple todos.  
 We'd keep track as we let them select each todo they'd like to remove.  
 Then, there would be a button available that would then delete all the todos selected.
 
