@@ -30,9 +30,9 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 const dataStore = {}
 const apiResources = ['posts', 'users', 'todos']
 
-async function getResource(resourceType) {
-  const { data } = await axios.get(resourceType)
-  dataStore[resourceType] = data
+async function getResource(resource) {
+  const { data } = await axios.get(resource)
+  dataStore[resource] = data
 }
 
 async function getAllResources() {
@@ -70,9 +70,9 @@ const apiResources = ['posts', 'users', 'todos']
 We're creating a function that is responsible for requesting and returning the data for a specific API endpoint.
 
 ```js
-async function getResource(resourceType) {
-  const { data } = await axios.get(resourceType)
-  dataStore[resourceType] = data
+async function getResource(resource) {
+  const { data } = await axios.get(resource)
+  dataStore[resource] = data
 }
 ```
 
