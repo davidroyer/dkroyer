@@ -68,23 +68,8 @@ async function deleteTodos(todos) {
 
 ### Step 4
 
-Call the function passing our mock Array of todo ID's.
+Call the function passing our hardcoded Array of todo ID's.
 
 ```js
 deleteTodos(todosDeleteList)
 ```
-
-<!-- ```js
-async function updateTodos() {
-  const updatePromises = todosToDelete.map(
-    updateTodo(todo, { completed: true })
-  )
-  await Promise.all(updatePromises)
-}
-
-async function updateTodo(todo, updateData) {
-  const { id } = todo
-  const { data } = await axios.patch(`/todos/${id}`, updateData)
-  return data
-}
-``` -->
