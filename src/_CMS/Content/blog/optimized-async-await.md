@@ -51,7 +51,7 @@ getAllResources()
 
 ### Step 1
 
-This is our initial setup. We are:
+This is our initial setup. We are doing the following:
 
 1. Setting up `axios` to use to make our API request.
 2. Creating `dataStore` as an empty object to use as state or store.

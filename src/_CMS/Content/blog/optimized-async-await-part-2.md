@@ -12,11 +12,10 @@ Then, there would be a button available that would then delete all the todos sel
 
 ```js
 import axios from 'axios'
-
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const dataStore = {}
-const todos = [
+const mockApiData = [
   { id: 1, title: 'Todo 1', completed: false },
   { id: 2, title: 'Todo 2', completed: false },
   { id: 3, title: 'Todo 3', completed: false }
@@ -24,8 +23,7 @@ const todos = [
 const todosToUpdate = [1, 3]
 
 async function deleteTodo(id) {
-  const { data } = await axios.delete(`/todos/${id}`)
-  return data
+  await axios.delete(`/todos/${id}`)
 }
 
 async function deleteTodos() {
@@ -42,32 +40,54 @@ deleteTodos()
 
 ### Step 1
 
+This is our initial setup. We are doing the following:
+
+1. Setting up `axios` to use to make our API request.
+2. Creating `dataStore` as an empty object to use as state or store.
+
 Create an empty object that we'll use as our sample **store** an array of the endpoints listed below.
 
 ```js
+import axios from 'axios'
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
+
 const dataStore = {}
-const resourceTypes = ['posts', 'users', 'todos']
+const mockApiData = [
+  { id: 1, title: 'Todo 1', completed: false },
+  { id: 2, title: 'Todo 2', completed: false },
+  { id: 3, title: 'Todo 3', completed: false }
+]
+const todosToUpdate = [1, 3]
 ```
 
 ### Step 2
 
-Step 2 Description
+We're creating an ansync function that is responsible for deleting a todo.
 
 ```js
+async function deleteTodo(id) {
+  await axios.delete(`/todos/${id}`)
+}
 ```
 
 ### Step 3
 
-Step 3 Description
+Create a function that uses `Array.map()` to execute the async/await logic for each request.  
+This creates an array of Promises.
 
 ```js
+async function deleteTodos() {
+  const deletePromises = todosToUpdate.map(deleteTodo)
+  await Promise.all(deletePromises)
+}
 ```
 
 ### Step 4
 
-Step 4 Description
+Call the function.
 
 ```js
+deleteTodos()s
 ```
 
 <!-- ```js
