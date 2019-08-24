@@ -14,12 +14,6 @@ Then, there would be a button available that would then delete all the todos sel
 import axios from 'axios'
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
-const dataStore = {}
-const mockApiData = [
-  { id: 1, title: 'Todo 1', completed: false },
-  { id: 2, title: 'Todo 2', completed: false },
-  { id: 3, title: 'Todo 3', completed: false }
-]
 const todosDeleteList = [1, 3]
 
 async function deleteTodo(id) {
@@ -63,7 +57,7 @@ const todosDeleteList = [1, 3]
 
 ### Step 2
 
-We're creating an ansync function that is responsible for deleting a todo.
+We're creating an an async function that is responsible for deleting a todo.
 
 ```js
 async function deleteTodo(id) {
