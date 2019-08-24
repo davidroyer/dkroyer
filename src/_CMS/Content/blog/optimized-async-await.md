@@ -43,9 +43,9 @@ async function getAllResources() {
 getAllResources()
 ```
 
-::: tip YOU SHOULD KNOW...
+<!-- ::: tip YOU SHOULD KNOW...
 :thumbsup: _In Part 2, we'll show how to use this approach to make batch updates_.
-:::
+::: -->
 
 ## The Breakdown
 
