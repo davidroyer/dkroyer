@@ -37,8 +37,8 @@ deleteTodos(todosDeleteList)
 This is our initial setup. We are doing the following:
 
 1. Setting up `axios` to use to make our API request.
-2. Creating `dataStore` as an empty object to use as state or store.
-3. In a real application, `todosDeleteList` would be determined by the user selection. However, as this is not the scope of this post, we can hardcode this value to more easily demonstrate the concepts that are within the scope of this post.
+   <!-- 2. Creating `dataStore` as an empty object to use as state or store. -->
+2. We are hardcoding the value of `todosDeleteList` to more easily demonstrate the concepts that are within the scope of this post. In a real application, this value would be determined by the user selection.
 
 <!-- SHOULD #3 above be a container note or something??? -->
 
@@ -46,12 +46,6 @@ This is our initial setup. We are doing the following:
 import axios from 'axios'
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
-const dataStore = {}
-const mockApiData = [
-  { id: 1, title: 'Todo 1', completed: false },
-  { id: 2, title: 'Todo 2', completed: false },
-  { id: 3, title: 'Todo 3', completed: false }
-]
 const todosDeleteList = [1, 3]
 ```
 
