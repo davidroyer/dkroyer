@@ -1,6 +1,6 @@
 ---
 title: Optimizing Multiple API Requests With Async/Await
-date: 2019-08-28
+date: 2019-08-27
 description: A short article providing a very effecient and beneficial way of making API request with `async/await`
 tags:
   - javascript
