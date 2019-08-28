@@ -1,7 +1,7 @@
 ---
 title: Part 2 - Optimizing Multiple API Request With Async/Await
 subtitle: Batch updates
-draft: true
+draft: false
 ---
 
 ## The Scenario
