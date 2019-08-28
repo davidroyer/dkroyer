@@ -1,5 +1,7 @@
 ---
-title: Optimizing Multiple API Request With Async/Await
+title: Optimizing Multiple API Requests With Async/Await
+date: 2019-08-28
+description: A short article providing a very effecient and beneficial way of making API request with `async/await`
 tags:
   - javascript
 # draft: true
@@ -73,7 +75,7 @@ async function getResource(resource) {
 ### Step 3
 
 Create a function that uses `Array.map()` to execute the async/await logic for each request.  
-This creates an array of Promises.
+This creates an array of promises.
 
 ```js
 async function getAllResources() {
