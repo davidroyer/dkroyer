@@ -2,8 +2,11 @@
     // "files.associations": {
     //     "*.css": "postcss"
     // },
-    "eslint.autoFixOnSave": true,
+    // "eslint.autoFixOnSave": true,
     "css.validate": false, // Disable css built-in lint
     // "stylelint.enable": true,
-    "prettier.stylelintIntegration": true, // Enable sytlelint    
+    "prettier.stylelintIntegration": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }, // Enable sytlelint
 }
