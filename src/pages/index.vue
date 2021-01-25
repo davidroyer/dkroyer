@@ -3,27 +3,26 @@
     <!-- <pre>{{ articles }}</pre> -->
     <v-hero>
       <v-headline
-        class="relative px-4 text-5xl md:text-6xl lg:px-8 lg:text-7xl font-light text-center text-white"
+        class="relative px-4 text-5xl font-light text-center text-white md:text-6xl lg:px-8 lg:text-7xl"
         :tag="1"
-        >Full Stack Developer</v-headline
       >
+        Full Stack Developer
+      </v-headline>
     </v-hero>
     <v-wrapper>
-      <section class="about mt-0 mb-8 border-b-2">
+      <section class="mt-0 mb-8 border-b-2 about">
         <v-headline
           :tag="2"
           headline-classes="mt-0 text-center text-indigo-darker text-5xl"
         >
           About Me
         </v-headline>
+        <no-ssr>
+          <codersrank-summary branding="false" username="davidroyer" />
+        </no-ssr>
 
-        <p class="about-introtext">
-          I currently work at The Learning House in Lousville, KY with the role
-          of Marketing Operations Developer. The Learning House partners with
-          companies and instituions of higher learning for online education.
-        </p>
         <p class="text-center">
-          <strong class="list-header text-xl"
+          <strong class="text-xl list-header"
             >Recent projects and accomplishments</strong
           >
         </p>
@@ -46,8 +45,8 @@
         </ul>
       </section>
 
-      <section class="featured text-center my-8 border-b-2">
-        <h2 class="font-medium text-indigo-darker text-4xl pt-6 mb-0">
+      <section class="my-8 text-center border-b-2 featured">
+        <h2 class="pt-6 mb-0 text-4xl font-medium text-indigo-darker">
           My Featured Projects
         </h2>
         <v-gallery min-col-w="300px">
@@ -57,14 +56,14 @@
                 <v-heading class="text-xl" v-text="item.name" />
               </v-card-header>
               <v-card-body>
-                <p class="subtitle mt-0 font-semibold text-lg">
+                <p class="mt-0 text-lg font-semibold subtitle">
                   <fa-icon icon="star" style="font-size: 17px"></fa-icon>
                   {{ item.stargazers_count }}
                 </p>
               </v-card-body>
               <a
                 slot="footer"
-                class="mt-0 block"
+                class="block mt-0"
                 :href="item.html_url"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -75,24 +74,24 @@
         </v-gallery>
       </section>
 
-      <section class="new-noteworthy text-center my-8 border-b-2">
-        <h2 class="font-medium text-indigo-darker text-4xl pt-6 mb-0">
+      <section class="my-8 text-center border-b-2 new-noteworthy">
+        <h2 class="pt-6 mb-0 text-4xl font-medium text-indigo-darker">
           My New & Noteworthy Project
         </h2>
         <div class="grid">
-          <v-card class="mx-auto py-2">
+          <v-card class="py-2 mx-auto">
             <v-card-header>
               <v-heading class="text-xl" v-text="noteworthyRepo.name" />
             </v-card-header>
             <v-card-body>
-              <p class="subtitle mt-0 font-semibold text-lg">
+              <p class="mt-0 text-lg font-semibold subtitle">
                 <fa-icon icon="star" style="font-size: 17px"></fa-icon>
                 {{ noteworthyRepo.stargazers_count }}
               </p>
             </v-card-body>
             <a
               slot="footer"
-              class="mt-0 block"
+              class="block mt-0"
               :href="noteworthyRepo.html_url"
               target="_blank"
               rel="noopener noreferrer"
@@ -114,7 +113,17 @@ const popularReposUrl =
 export default {
   head() {
     return {
-      title: 'Home'
+      title: 'Home',
+
+      script: [
+        {
+          src: 'https://unpkg.com/@webcomponents/webcomponentsjs@%5E2/'
+        },
+        {
+          src:
+            'https://unpkg.com/@codersrank/summary@0.9.11/codersrank-summary.min.js'
+        }
+      ]
     }
   },
 

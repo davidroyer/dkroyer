@@ -1,18 +1,18 @@
-import { resolve, join } from 'path'
-import PurgecssPlugin from 'purgecss-webpack-plugin'
+import { join } from 'path'
 import { sync } from 'glob-all'
+import PurgecssPlugin from 'purgecss-webpack-plugin'
 import {
-  siteTitle,
-  siteDescription,
-  twitterUsername,
+  analyticsID,
+  fontAwesomeIcons,
+  ogImage,
   ogTitle,
   ogType,
-  siteUrl,
-  ogImage,
-  fontAwesomeIcons,
   shortName,
+  siteDescription,
+  siteTitle,
+  siteUrl,
   themeColor,
-  analyticsID
+  twitterUsername
 } from './website.config'
 
 // const isProduction = process.env.NODE_ENV === 'production'
@@ -98,6 +98,7 @@ export default {
         content: 'summary'
       }
     ],
+
     link: [
       {
         rel: 'icon',
