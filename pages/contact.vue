@@ -40,7 +40,8 @@
 </template>
 
 <script>
-import { validationRules, netlifyFormHandler } from '@/utils'
+import { validationRules } from '@/utils'
+import netlifyFormHandler from 'netlify-form-handler'
 
 export default {
   data: () => ({
