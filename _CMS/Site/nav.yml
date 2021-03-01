@@ -1,0 +1,17 @@
+- to: /
+  label: Home
+
+# - label: About Me
+#   to: /about
+#   title: About Me
+#   description: Work and personal information about David Royer.
+
+- label: Blog
+  to: /blog
+  title: My Blog
+  description: Learn about Vue.js, Nuxt.js, JavaScript and other web development topics.
+
+- label: Contact
+  to: /contact
+  title: Contact
+  description: Get in touch by sending a message.

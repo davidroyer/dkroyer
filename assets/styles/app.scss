@@ -1,0 +1,73 @@
+@import './article.scss';
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: translate(10px, 0);
+}
+
+// Fix Style issues that Vuetify is messing up by overriding
+
+.v-application {
+  .article {
+    .custom-block {
+      p {
+        margin-top: 1em !important;
+      }
+
+      &-title {
+        margin-top: 1em !important;
+        font-size: 16px !important;
+      }
+
+      &.warning {
+        background-color: rgba(255, 229, 100, 0.3) !important;
+        border-color: #e7c000 !important;
+      }
+    }
+  }
+}
+
+code:before {
+  content: none;
+}
+
+.card-grid {
+  .v-card {
+    height: 100%;
+
+    &__title {
+      line-height: 1.5;
+      align-items: flex-start;
+    }
+
+    &__text {
+      flex: 1;
+    }
+
+    a {
+      color: #2f365f;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+@media (min-width: 1264px) {
+  .container {
+    max-width: 1185px !important;
+  }
+}
