@@ -7,8 +7,8 @@ export default {
       ? netlifySiteUrl
       : 'http://localhost:3000',
 
-  title: `Nuxtify 2021 Template`,
-  description: `A Nuxt.js template for my sites`,
+  title: `David Royer`,
+  description: `Personal site of David Royer, Full Stack Developer.`,
 
   analyticsId: 'UA-56060335-5'
 }
