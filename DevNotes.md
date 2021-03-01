@@ -1,4 +1,4 @@
-# Nuxtify 2021
+# My Site
 
 - Use [Greg's site](https://gregives.co.uk/) as perfect example to follow.
 

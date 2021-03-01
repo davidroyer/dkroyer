@@ -1,6 +1,6 @@
 {
-  "name": "nuxtify-2021",
-  "version": "1.0.0",
+  "name": "dkroyer",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",

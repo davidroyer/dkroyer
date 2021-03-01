@@ -1,4 +1,4 @@
-# nuxtify-2021
+# My Site
 
 ## Build Setup
 
