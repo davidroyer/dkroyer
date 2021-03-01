@@ -1,14 +1,13 @@
 {
-    // "files.associations": {
-    //     "*.css": "postcss"
-    // },
-
-    // "eslint.autoFixOnSave": true,
-    "css.validate": false, // Disable css built-in lint
-    // "stylelint.enable": true,
-    "prettier.stylelintIntegration": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.organizeImports": false
-    }, // Enable sytlelint
+  "cSpell.words": [
+    "drdark"
+  ],
+  "vetur.completion.autoImport": false,
+  "files.exclude": {
+    "_CMS/.cmsApi": true,
+    ".cmsApi": true,
+    "**/*/.cmsApi": true,
+  },
+  "rewrap.autoWrap.enabled": false,
+  "autoimport.autoComplete": false
 }
