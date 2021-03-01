@@ -11,7 +11,7 @@
           :href="item.url"
           target="_blank"
         >
-          <v-icon color="primary darken-1" large> {{ item.icon }}</v-icon>
+          <v-icon color="primary lighten-2" large> {{ item.icon }}</v-icon>
         </v-btn>
         <hr class="my-3" width="200%" style="margin-left: -50%" />
         <div class="primary--text text--darken-1 font-weight-thin">
