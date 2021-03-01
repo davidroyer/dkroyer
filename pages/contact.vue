@@ -42,6 +42,8 @@
 <script>
 import { validationRules } from '@/utils'
 import netlifyFormHandler from 'netlify-form-handler'
+// eslint-disable-next-line no-console
+console.log('WORKS - netlifyFormHandler', netlifyFormHandler)
 
 export default {
   data: () => ({
