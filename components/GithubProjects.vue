@@ -33,6 +33,8 @@
 import { titleCase } from '@/utils'
 
 export default {
+  fetchOnServer: false,
+
   filters: {
     titleCase
   },
