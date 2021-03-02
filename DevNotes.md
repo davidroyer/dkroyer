@@ -52,6 +52,12 @@
   `sitemap.xml`. Because of this, I can't imagine this is a good thing so it
   seems like it's best to get pages lowercased.
 
+### Fetch
+
+- Need to set `fetchOnServer` to false inside the component.
+  Without this Nuxt will make the API call when generating the site.  
+  Also, by using `<nuxt keep-alive />` this will cache the page and its data so it doesn't make the API call multiple times if a user navigates to another page and then back to the page with the API call.
+
 ### SEO & Meta
 
 - I have a built a very simple but elegant solution. It's the `seo-handler.js`
