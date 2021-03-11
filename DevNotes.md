@@ -47,59 +47,11 @@
 
 ## Nuxt
 
-- If a page route is capitalized such as `About.vue` then a route will get
-  generated for `/about` and `/About` which would also shows up in the
-  `sitemap.xml`. Because of this, I can't imagine this is a good thing so it
-  seems like it's best to get pages lowercased.
-
 ### Fetch
 
 - Need to set `fetchOnServer` to false inside the component.
   Without this Nuxt will make the API call when generating the site.  
   Also, by using `<nuxt keep-alive />` this will cache the page and its data so it doesn't make the API call multiple times if a user navigates to another page and then back to the page with the API call.
-
-### SEO & Meta
-
-- I have a built a very simple but elegant solution. It's the `seo-handler.js`
-  plugin file. It can be used as follows:
-
-  ```js
-  export default {
-    head() {
-      const { title, description } = this.post
-      const seoMetaArray = this.$seo({ title, description })
-
-      return {
-        meta: [...seoMetaArray]
-      }
-    }
-  }
-  ```
-
-### Head Meta
-
-The best way of setting up the `titleTemplate` is by setting it in the layout
-file, such as `default.vue`.
-
-This is the only way to use some variable value from the `site.config.js` file.
-Before this realization, you had to hard-code the title inside the function
-which means it would need to be updated in 2 locations if its updated.
-
-### Adding a Module
-
-Using the `requireModule` function will allow this as shown in the example
-below:
-
-```js
-export default function () {
-  this.requireModule([
-    '@nuxtjs/google-analytics',
-    {
-      id: 'UA-1234-5'
-    }
-  ])
-}
-```
 
 ---
 
@@ -147,54 +99,6 @@ element.
 ---
 
 ## Vuetify
-
-- **IMPORTANT:** key to customizing with SASS Variables is shown below:
-
-```scss
-$material-light: (
-  // cards: blue,
-  text:
-    (
-      primary: #2c3e50
-    )
-);
-```
-
-- This Vuetify Vuepress theme is a great resource for this project.
-  Especially helpful for looking up SASS variable names.
-
-- Need to start using the new typography classes of like `text-h1`. They make a
-  lot more sense and the originals will be depreciated at some point probably.
-
-- [This file](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/styles/settings/_light.scss) is key to setting up customizations for styles.
-
-### Vuetify Icons
-
-- For viewing the icons library when using `@mdi/js` -> <https://materialdesignicons.com/>
-
-If you are referencing the `$vuetify.icons` to render an icon then how you do
-this actually depends on whether its happening in the template or within the
-`script/JavaScript`.
-
-An example of showing the exact same icon is shown below using both ways.  
-Notice the use of `.values`.
-
-```html
-<template>
-  <v-icon>{{ vIcon }}</v-icon>
-  <v-icon>$vuetify.icons.mdiGithub</v-icon>
-</template>
-
-<script>
-  export default {
-    computed: {
-      vIcon() {
-        return this.$vuetify.icons.values.mdiGithub
-      }
-    }
-  }
-</script>
-```
 
 ### SASS Variables & Customization
 
